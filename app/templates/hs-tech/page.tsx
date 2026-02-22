@@ -1623,8 +1623,8 @@ function HSTechContent() {
                 <CatalogPage currentTab="contact">
                     <div className="pt-8 pb-28 px-6 max-w-6xl mx-auto">
                         <h2 className="text-4xl md:text-7xl font-black text-neutral-900 mb-4 tracking-tighter uppercase leading-none text-center">
-                            Reach<br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-sky-400">Out.</span>
+                            Contact<br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-sky-400">Us</span>
                         </h2>
                         <p className="text-sm text-neutral-500 mb-16 max-w-sm mx-auto text-center">Get in touch for product inquiries, technical consultations, and pricing information.</p>
 
@@ -1669,8 +1669,8 @@ function HSTechContent() {
                                 <Phone className="w-6 h-6 text-cyan-600 mb-4" />
                                 <p className="text-[10px] text-neutral-400 uppercase tracking-widest mb-2">Contact</p>
                                 <div className="space-y-1">
-                                    <p className="text-sm font-bold text-neutral-900">Tel: 070-4346-1844</p>
-                                    <p className="text-sm font-bold text-neutral-900">Fax: 031-8016-3510</p>
+                                    <p className="text-sm font-bold text-neutral-900">Tel: +82-70-4346-1844</p>
+                                    <p className="text-sm font-bold text-neutral-900">Fax: +82-31-8016-3510</p>
                                     <p className="text-sm font-bold text-cyan-600">hs-tech@hs-tech.co.kr</p>
                                     <p className="text-xs text-neutral-400 pt-2">Reg. No. 144-81-08640</p>
                                 </div>
