@@ -3119,7 +3119,7 @@ Vaisala's BAROCAP® barometers and HUMICAP® humidity and temperature transmitte
         externalLink: 'http://hs-tech.co.kr/page/0406.php'
     },
     power: {
-        title: 'Power Industry',
+        title: 'Power',
         shortDesc: 'Transformer oil moisture and hydrogen monitoring for grid asset protection.',
         image: '/hstech/images/POWER.png',
         applications: [
@@ -3127,26 +3127,22 @@ Vaisala's BAROCAP® barometers and HUMICAP® humidity and temperature transmitte
             { title: 'SF6 Gas Insulated Equipment' },
             { title: 'Turbine Inlet Air' }
         ],
-        content: `The power industry is currently facing the challenges of equipment coming to the end of its operational lifespan, the impact of overload situations, as well as an increasing number of network faults.
-
-Vaisala offers a diverse portfolio of real-time online measurement transmitters for utilities who want to mitigate these risks and safeguard their critical assets. Using Vaisala moisture-in-oil, hydrogen-in-oil, temperature, dew point, pressure and density meters, utilities can safely increase equipment performance and prepare timely maintenance plans to prevent unexpected outages.`,
+        content: `The power industry is currently facing the challenges of equipment coming to the end of its operational lifespan, the impact of overload situations, as well as an increasing number of network faults. Vaisala offers a diverse portfolio of real-time online measurement transmitters for utilities who want to mitigate these risks and safeguard their critical assets. Using Vaisala moisture-in-oil, hydrogen-in-oil, temperature, dew point, pressure and density meters, utilities can safely increase equipment performance and prepare timely maintenance plans to prevent unexpected outages.`,
         systems: [
             {
                 title: '1. Power Transformers',
-                desc: `Dissolved Gas Analysis (DGA) in Power Transformers. A multi-gas DGA monitor, like the Optimus DGA Monitor, is the best choice for your critical transformers providing a comprehensive understanding of the condition of your transformer, whereas a single-gas monitor, Moisture, Hydrogen and Temperature Transmitter MHT410, can be used as a simple early warning indicator of a fault condition.`,
-                recommendedProducts: ['mht410', 'mmt310', 'mm70', 'mmt330', 'mmt162']
+                desc: `Dissolved Gas Analysis(DGA) in Power Transformers A multi-gas DGA monitor, like the Optimus DGA Monitor, is the best choice for your critical transformers providing a comprehensive understanding of the condition of your transformer, whereas a single-gas monitor, Moisture, Hydrogen and Temperature Transmitter MHT410, can be used as a simple early warning indicator of a fault condition.`,
+                recommendedProducts: ['mht410', 'opt100', 'mmt310', 'mm70', 'mmt330', 'mmt162', 'dpt145']
             },
             {
                 title: '2. SF6 Gas Insulated Equipment',
-                desc: `The electric power industry uses SF6 to insulate switchgears, circuit breakers and other equipment used in electricity transmission and distribution. To ensure the integrity of SF6 gas as an insulator, the amount of water vapor in SF6 gas should be kept to a minimum.
-
-Online monitoring of SF6 is convenient with Vaisala's Multiparameter Transmitter DPT145. The DPT145 is a unique innovation that not only monitors dewpoint online but also pressure and temperature. Both sudden and minor leaks are detected by the direct normalized pressure measurement, while online dew point measurement alerts the user to moisture issues.`,
-                recommendedProducts: ['dm70']
+                desc: `The electric power industry uses SF6 to insulate switchgears, circuit breakers and other equipment used in electricity transmission and distribution. To ensure the integrity of SF6 gas as an insulator, the amount of water vapor in SF6 gas should be kept to a minimum. Moisture may also increase the formation of unwanted secondary decomposition products, which can lead to arcing and equipment failure. Online monitoring of SF6 is convenient with Vaisala's Multiparameter Transmitter DPT145. The DPT145 is a unique innovation that not only monitors dewpoint online but also pressure and temperature. In addition the instrument calculates four other values, including gas density and ppm. The DPT145 provides an excellent assessment of the SF6 insulation. Both sudden and minor leaks are detected by the direct normalized pressure measurement, while online dew point measurement alerts the user to moisture issues, which can weaken the insulation properties of SF6 and cause rapid deterioration. Integrating the DPT145 into a condition-based monitoring system minimizes the need for on-site visits and helps to ensure that no SF6 is released into the atmosphere. Spot-checking is easy with Vaisala's hand-held dew point meter DM70 which is a lightweight, battery-powered instrument for measuring the dew point in SF6. It provides fast response time and internal data logging to optimize the field technician's time. A unique sample cell allows dew point measurement at both in gas pressure and in ambient atmospheric pressure. The cell meets and even exceeds environmental regulations by ensuring protection against accidental discharge of SF6, requiring minimal amount of SF6 for sampling, and enabling collection and recycling of SF6.`,
+                recommendedProducts: ['dm70', 'dpt145']
             },
             {
                 title: '3. Turbine Inlet Air',
-                desc: `The accurate measurement of the humidity of inlet air is essential for good turbine control. When the air is cooler the turbine performs better because as the temperature decreases, the density of the air increases. With reliable humidity monitoring the utility operator can cool and compress the inlet air, maximizing the power generated without risking condensation.`,
-                recommendedProducts: ['hmt330', 'hm70']
+                desc: `Monitoring humidity to optimize gas turbine performance The accurate measurement of the humidity of inlet air is essential for good turbine control. When the air is cooler the turbine performs better because as the temperature decreases, the density of the air increases. This results in a greater mass of air flowing through the turbine, resulting in increased power generation. A 1ºC increase in temperature may mean a 0.5% electricity loss. However, inlet air that is too cold or humid must be avoided as it may lead to water condensation or even icing, which damages the turbine blades. With reliable humidity monitoring the utility operator can cool and compress the inlet air, maximizing the power generated without risking condensation. Vaisala's 30 years of experience of industrial humidity measurements is incorporated into the Vaisala HUMICAP® Humidity and Temperature transmitter Series HMT330. For operators in the power industry this means reliable, stable and accurate measurements. With the HMT330 series you have many versatile options to choose from: a numerical and graphical display, a multilingual menu, alarms, trends, a one-year history, and WLAN/LAN.`,
+                recommendedProducts: ['hmt300tmk', 'ptu300', 'hm70']
             }
         ],
         externalLink: 'http://www.vaisala.com/en/energy/Pages/default.aspx'
