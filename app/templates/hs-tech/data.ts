@@ -3148,7 +3148,7 @@ Vaisala's BAROCAP® barometers and HUMICAP® humidity and temperature transmitte
         externalLink: 'http://www.vaisala.com/en/energy/Pages/default.aspx'
     },
     hvac: {
-        title: 'HVAC & Buildings',
+        title: 'HVAC',
         shortDesc: 'Indoor air quality and energy-efficient building automation.',
         image: '/hstech/images/HVAC.png',
         applications: [
@@ -3159,13 +3159,17 @@ Vaisala's BAROCAP® barometers and HUMICAP® humidity and temperature transmitte
             { title: 'Metro Station' }
         ],
         content: `Vaisala's reliable and accurate HVAC meters and sensors are designed with energy efficiency in mind, whether you are optimizing cooling towers or demand-controlled ventilation. Our large selection includes ±3% and ±2% humidity and temperature measurement HVAC meters, CO2 measurement sensors and also handheld meters. They can be used indoors and outdoors, and installed on walls or in ventilation ducts.`,
+        features: [
+            'Easy installation method',
+            'Easy maintenance',
+            'CO2 Sensor of Innovative New Technology',
+            'Reliable Humidity and Temperature Measurement'
+        ],
         systems: [
             {
                 title: '1. Demand Controlled Ventilation',
-                desc: `Achieve energy efficiency and employee well-being with accurate CO2 measurements. Insufficient ventilation causes human-produced carbon dioxide to build up indoors, decreasing employee well-being and productivity substantially. With accurate CO2 measurement, both energy efficiency and employee well-being can be achieved simultaneously.
-
-Green building initiatives, like the US Green Building Council's LEEDv4, British BREEAM and Australian Energy Rating all encourage commercial constructors and building operators to reduce their impact on environment by increasing their energy efficiency. The efficiency of DCV can only be optimized by accurate carbon dioxide sensing. Vaisala CARBOCAP® technology delivers maintenance-free accuracy and performance that lasts.`,
-                recommendedProducts: ['gmp343', 'gmw90', 'gmw80', 'gmw90']
+                desc: `Achieve energy efficiency and employee well-being with accurate CO2 measurements Insufficient ventilation causes human-produced carbon dioxide to build up indoors, decreasing employee well-being and productivity substantially. With accurate CO2 measurement, both energy efficiency and employee well-being can be achieved simultaneously. Green building initiatives, like the US Green Building Council's LEEDv4, British BREEAM and Australian Energy Rating all encourage commercial constructors and building operators to reduce their impact on environment by increasing their energy efficiency. Especially LEED v4 stresses the importance of precise ventilation automation control using accurate sensors. Also the ASHRAE Green Standard 189.1 (USA) and the European standard EN 13779 recommend using demand-controlled ventilation (DCV) primarily to reduce energy usage while promoting healthy indoor air. In DCV the ventilation intensity is adjusted to correspond to the true need in order to save energy. It has clear advantages especially when occupancy varies widely, such as in schools, conference centers, and auditoriums. The CO2 level in a space indicates human presence and can be used to control ventilation. The efficiency of DCV can only be optimized by accurate carbon dioxide sensing. Vaisala CARBOCAP® technology delivers maintenance-free accuracy and performance that lasts. The CO2 sensors can be used in a wide variety of applications, including variable outdoor CO2 levels or facilities with around-the-clock occupancy such as hospitals, workplaces, and residential buildings.`,
+                recommendedProducts: ['gmp251', 'gmw90', 'gmw80', 'gmd20']
             },
             {
                 title: '2. Indoor Air Quality',
@@ -3174,17 +3178,17 @@ Green building initiatives, like the US Green Building Council's LEEDv4, British
             },
             {
                 title: '3. Data Centers',
-                desc: `Data centers are energy-intensive facilities, currently consuming more than 1.3% of the world's total electricity production. Cooling and air conditioning is one of the most important processes in any data center. Data center cooling can be done in a variety of ways, depending on the location and the local climate.`,
+                desc: `Data centers are the brains of almost any company whose success depends on efficient and reliable software operations. As there is quite a bit of powerful hardware sitting in one place, data centers must be safeguarded against both external and internal environmental influences, while the buildings also require sufficient cooling. Data centers are energy-intensive facilities, currently consuming more than 1.3% of the world's total electricity production. This energy is transformed into heat that has to be conveyed and dissipated away from the equipment racks in order to maintain the correct operating temperature. Cooling and air conditioning is one of the most important processes in any data center. Data center cooling can be done in a variety of ways, depending on the location and the local climate. Refrigerant cooling consumes a lot of energy, but its usage can be reduced by taking the climate into consideration when choosing the location for the data center. In dry climates evaporative cooling is effective at dissipating heat. In cold climates direct cooling with dry, cold air can be used. Locations near water offer the possibility to dissipate the heat into the water.`,
                 recommendedProducts: ['hmt330', 'hmp1_9', 'hmt120', 'hmw90', 'hmd60', 'hmdw110']
             },
             {
                 title: '4. Hazardous Area',
-                desc: `Humidity control is critical in many spaces where flammable or explosive materials such as fuels, chemicals, explosives are being stored. These spaces are designated as hazardous due to potentially explosive atmospheres. They require specially designed and approved instruments for safe operation.`,
+                desc: `Humidity control is critical in many spaces where flammable or explosive materials such as fuels, chemicals, explosives are being stored. These spaces are designated as hazardous due to potentially explosive atmospheres. They require specially designed and approved instruments for safe operation. Vaisala offers a family of intrinsically safe humidity instruments for hazardous locations. These instruments must be properly installed with appropriate safety barriers or isolators. Always refer to the User's Manual for complete information regarding the installation and wiring of intrinsically safe instruments.`,
                 recommendedProducts: ['hmt360']
             },
             {
                 title: '5. Metro Station',
-                desc: `Humidity and temperature transmitters are used in metro stations to control ventilation and air conditioning. The control of air moisture levels provides a comfortable environment for passengers, optimizes HVAC equipment energy consumption, and maintains the integrity of the equipment.`,
+                desc: `Humidity and temperature transmitters are used in metro stations to control ventilation and air conditioning. The control of air moisture levels provides a comfortable environment for passengers, optimizes HVAC equipment energy consumption, and maintains the integrity of the equipment. The Vaisala INTERCAP® and HUMICAP® Humidity and Temperature transmitters provide accurate and stable measurements with minimal maintenance requirements. Vaisala humidity sensors fully recover from condensation without compromising the performance. This is important especially in high humidity climates, where condensation is likely to occur.`,
                 recommendedProducts: ['gmw90', 'gmw80', 'hmdw110', 'hmdw80']
             }
         ],
