@@ -3113,13 +3113,9 @@ Vaisala's BAROCAP® barometers and HUMICAP® humidity and temperature transmitte
         applications: [
             { title: 'Greenhouse' }
         ],
-        content: `Greenhouses are closed environments where conditions are optimized for plant growth. Optimal controls require information both from the indoor and outdoor environments.
-
-Typically, carbon dioxide (CO2), relative humidity, and temperature are measured in the greenhouse. Outside measurement parameters include wind speed and direction, rain and solar radiation.
-
-Vaisala offers instruments for measuring CO2, relative humidity and temperature in the greenhouse. Vaisala's outdoor transmitter portfolio includes products for measuring wind, precipitation, various humidity parameters and temperature. Outdoor transmitters come with wide operating temperature ranges suitable for most climates, flexible installation options, and solar and radiation shields for protection from the elements.`,
+        content: `Greenhouses are closed environments where conditions are optimized for plant growth. Optimal controls require information both from the indoor and outdoor environments. Typically, carbon dioxide (CO2), relative humidity, and temperature are measured in the greenhouse. Outside measurement parameters include wind speed and direction, rain and solar radiation. Vaisala offers instruments for measuring CO2, relative humidity and temperature in the greenhouse. Vaisala's outdoor transmitter portfolio includes products for measuring wind, precipitation, various humidity parameters and temperature. Outdoor transmitters come with wide operating temperature ranges suitable for most climates, flexible installation options, and solar and radiation shields for protection from the elements.`,
         systems: [],
-        recommendedProducts: ['hmt330', 'gmp343', 'hmt120', 'hmp60', 'gmw90'],
+        recommendedProducts: ['hmt330', 'gmp252', 'gm70', 'hmt120', 'hms110', 'hmp110', 'gmd20', 'dtr500'],
         externalLink: 'http://hs-tech.co.kr/page/0406.php'
     },
     power: {
