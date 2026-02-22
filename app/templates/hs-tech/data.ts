@@ -3009,12 +3009,18 @@ Learn more about our solutions for continuous monitoring systems and continuous 
                 title: '3. Semiconductor Tool Monitoring',
                 desc: `Ultra-precision sensors ensure long-term stability enable precise control of the micro-environment around semiconductor equipment. VAISALA provides various types of temperature and pressure transducers applicable to the semiconductor industry.`,
                 features: [
-                    'HMT120/130 Humidity and Temperature Transmitters for Cleanrooms',
-                    'PTU300 Combined Pressure, Humidity and Temperature Transmitter',
-                    'Industrial CMS for continuous monitoring',
-                    'OEM modules for various applications'
+                    'HMT120/130 Humidity and Temperature Transmitters for Cleanrooms - VAISALA HUMICAP® Humidity and Temperature Transmitters HMT120 and HMT130 are designed for humidity and temperature monitoring in cleanrooms and are also suitable for demanding HVAC and light industrial applications.',
+                    'PTU300 Combined Pressure, Humidity and Temperature Transmitter for Demanding Applications - PTU300 is a unique instrument measuring three parameters simultaneously. Barometric pressure, humidity and temperature measurement in one transmitter.',
+                    'Industrial CMS - Continuous monitoring systems for industrial environments protect your valuable assets and critical processes. The control system and dual-run CMS provide accurate data, real-time trends, and easy report writing.',
+                    'PTB110 Barometer for Industrial Use - VAISALA BAROCAP® Barometer PTB110 is designed both for accurate barometric pressure measurements at room temperature and for general environmental pressure monitoring over a wide temperature range.',
+                    'PTB330 Digital Barometer for professional Meteorology, Aviation and Industrial Users - VAISALA BAROCAP® Digital Barometer PTB330 is a new-generation barometer, designed for a wide range of high-end atmospheric pressure measurement.',
+                    'OEM module for Relative Humidity, Temperature and Dewpoint - Depending on your needs, you can select different types of OEM modules for relative humidity, temperature, and stall application.',
+                    'HM70 Handheld Humidity and Temperature Meter for Spot-checking Applications - Designed for on-site transmission calibration and on-site inspection. Authorized calibration report can be issued for portable measuring instruments.',
+                    'HMM100 Humidity Module for Environmental Chambers - VAISALA HUMICAP® Humidity Module HMM100 is an open frame module for integration into environmental chambers. The modules provide a single analog output channel for relative humidity(RH) or dew point(Td).',
+                    'HMP110 Humidity and Temperature Probe - HMP110 is a trouble-free and cost-effective humidity transmitter with high accuracy and good stability.',
+                    'HMP60 Humidity and Temperature Probe - HMP60 is a simple durable and cost-effective humidity probe. It is suitable for volume applications, integration into other manufacturers\' equipment, incubators, glove boxes, greenhouses, fermentation chambers and data loggers.'
                 ],
-                recommendedProducts: ['hmt120', 'hmt330', 'hmp1_9', 'hmm170', 'hmm170', 'dmt340', 'mmt330']
+                recommendedProducts: ['hmt120', 'ptu300', 'hmt330', 'hmp9', 'hmm170', 'hmm100', 'hmm105', 'dmt340', 'mmt330']
             }
         ],
         externalLink: 'http://www.vaisala.com/en/industrialmeasurements/applications/semiconductortoolmonitoring/Pages/default.aspx'
