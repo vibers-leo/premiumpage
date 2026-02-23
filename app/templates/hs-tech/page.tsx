@@ -1163,9 +1163,11 @@ function BrandPage({
                 )}
 
                 {/* Application section grids */}
-                {applicationSections && applicationSections.map((sec, i) => (
-                    sectionIdx === i && (
-                        <div key={i} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {applicationSections && applicationSections.map((sec, i) => {
+                    const itemCount = sec.items.length
+                    const gridCols = itemCount <= 4 ? 'md:grid-cols-2' : itemCount <= 8 ? 'md:grid-cols-3' : 'md:grid-cols-4'
+                    return sectionIdx === i && (
+                        <div key={i} className={`grid grid-cols-1 sm:grid-cols-2 ${gridCols} gap-4`}>
                             {sec.items.map((item, j) => {
                                 const appKey = appTitleToKey[item.title]
                                 const isSetraSensor = SETRA_APPLICATIONS_SENSOR[appKey] !== undefined
@@ -1215,7 +1217,7 @@ function BrandPage({
                             })}
                         </div>
                     )
-                ))}
+                })}
             </div>
         </CatalogPage>
     )
