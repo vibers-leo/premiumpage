@@ -1441,7 +1441,7 @@ function HSTechContent() {
                             image: app.image
                         }))
                     }]}
-                    sectionIdx={1}
+                    sectionIdx={0}
                     onOpen={open}
                 />
             )}
@@ -1565,19 +1565,34 @@ function HSTechContent() {
                     headline="Applications &" sub="Sensor."
                     desc="SETRA's precision pressure sensors serve diverse industrial and HVAC applications — from cleanroom monitoring to refrigeration systems and semiconductor processes."
                     logo="/templates/hs-tech/images/brands/setra.svg"
-                    categories={[]}
-                    applicationSections={[{
-                        label: 'Applications & Sensor',
-                        items: [
-                            { title: 'Precise Measurement Differential Pressure', desc: 'High-accuracy differential pressure measurement for critical environments requiring ±0.25% FS precision or better, including reference laboratories and calibration facilities.' },
-                            { title: 'Air Conditioning Differential Pressure', desc: 'Monitoring supply, return, and exhaust air pressure differentials in commercial HVAC systems and air handling units for energy optimization.' },
-                            { title: 'Precision Measurement Pressure Sensor', desc: 'Absolute and gauge pressure measurement for industrial process control, leak testing, and quality assurance applications.' },
-                            { title: 'Cooling and Air Conditioning Pressure', desc: 'Refrigerant pressure monitoring in cooling systems, chiller plants, and commercial HVAC installations for performance and safety.' },
-                            { title: 'UHP Pressure Sensor', desc: 'Ultra-high purity pressure sensing for semiconductor process gas lines, cleanroom air systems, and pharmaceutical manufacturing with wetted stainless or PTFE materials.' },
-                            { title: 'Barometric Pressure Sensor', desc: 'Atmospheric reference pressure measurement for altitude compensation, weather monitoring, and environmental control systems.' },
-                        ]
-                    }]}
-                    sectionIdx={1}
+                    categories={[
+                        { tab: 'setra_visual', title: 'Differential Pressure Indicator', desc: 'LED and touchscreen room pressure monitors for real-time visual display.', count: setraVisual.length },
+                        { tab: 'setra_sensor', title: 'Differential Pressure Sensor', desc: 'High-accuracy DP sensors for HVAC, cleanrooms, and filtration monitoring.', count: setraSensor.length },
+                        { tab: 'setra_ind',    title: 'Industrial Pressure Transducer', desc: 'Rugged stainless steel transducers for harsh industrial process environments.', count: setraInd.length },
+                    ]}
+                    applicationSections={[
+                        {
+                            label: 'Applications & Sensor',
+                            items: [
+                                { title: 'Precise Measurement Differential Pressure', desc: 'High-accuracy differential pressure measurement for critical environments requiring ±0.25% FS precision or better, including reference laboratories and calibration facilities.' },
+                                { title: 'Air Conditioning Differential Pressure', desc: 'Monitoring supply, return, and exhaust air pressure differentials in commercial HVAC systems and air handling units for energy optimization.' },
+                                { title: 'Precision Measurement Pressure Sensor', desc: 'Absolute and gauge pressure measurement for industrial process control, leak testing, and quality assurance applications.' },
+                                { title: 'Cooling and Air Conditioning Pressure', desc: 'Refrigerant pressure monitoring in cooling systems, chiller plants, and commercial HVAC installations for performance and safety.' },
+                                { title: 'UHP Pressure Sensor', desc: 'Ultra-high purity pressure sensing for semiconductor process gas lines, cleanroom air systems, and pharmaceutical manufacturing with wetted stainless or PTFE materials.' },
+                                { title: 'Barometric Pressure Sensor', desc: 'Atmospheric reference pressure measurement for altitude compensation, weather monitoring, and environmental control systems.' },
+                            ]
+                        },
+                        {
+                            label: 'Applications & Solution',
+                            items: [
+                                { title: 'Setra CEMS™', desc: 'Continuous Emissions Monitoring System solution using Setra\'s precision differential pressure sensors to monitor stack flow velocity, draft, and filter pressure drop in power plants and industrial stacks.' },
+                                { title: 'Cleanroom Manufacturing', desc: 'Maintaining ISO-classified differential pressure cascades between cleanroom zones (e.g., ISO 5→ISO 7→corridor) to prevent particle ingress and ensure GMP compliance in semiconductor and pharmaceutical manufacturing.' },
+                                { title: 'Isolation & Treatment Rooms', desc: 'Negative pressure isolation rooms (airborne infection) and positive pressure protective environments in hospitals, monitored in real-time with Setra\'s visual pressure indicators to prevent cross-contamination.' },
+                                { title: 'Compounding Pharmacies', desc: 'USP <797> and <800> compliant pressure monitoring for sterile compounding suites, hazardous drug buffer rooms, and ante-rooms — ensuring proper pressure relationships at all times.' },
+                            ]
+                        }
+                    ]}
+                    sectionIdx={0}
                     onOpen={open}
                 />
             )}
@@ -1587,16 +1602,33 @@ function HSTechContent() {
                     headline="Applications &" sub="Solution."
                     desc="Complete pressure monitoring solutions for critical environments — cleanrooms, hospitals, compounding pharmacies, and emissions monitoring systems."
                     logo="/templates/hs-tech/images/brands/setra.svg"
-                    categories={[]}
-                    applicationSections={[{
-                        label: 'Applications & Solution',
-                        items: [
-                            { title: 'Setra CEMS™', desc: 'Continuous Emissions Monitoring System solution using Setra\'s precision differential pressure sensors to monitor stack flow velocity, draft, and filter pressure drop in power plants and industrial stacks.' },
-                            { title: 'Cleanroom Manufacturing', desc: 'Maintaining ISO-classified differential pressure cascades between cleanroom zones (e.g., ISO 5→ISO 7→corridor) to prevent particle ingress and ensure GMP compliance in semiconductor and pharmaceutical manufacturing.' },
-                            { title: 'Isolation & Treatment Rooms', desc: 'Negative pressure isolation rooms (airborne infection) and positive pressure protective environments in hospitals, monitored in real-time with Setra\'s visual pressure indicators to prevent cross-contamination.' },
-                            { title: 'Compounding Pharmacies', desc: 'USP <797> and <800> compliant pressure monitoring for sterile compounding suites, hazardous drug buffer rooms, and ante-rooms — ensuring proper pressure relationships at all times.' },
-                        ]
-                    }]}
+                    categories={[
+                        { tab: 'setra_visual', title: 'Differential Pressure Indicator', desc: 'LED and touchscreen room pressure monitors for real-time visual display.', count: setraVisual.length },
+                        { tab: 'setra_sensor', title: 'Differential Pressure Sensor', desc: 'High-accuracy DP sensors for HVAC, cleanrooms, and filtration monitoring.', count: setraSensor.length },
+                        { tab: 'setra_ind',    title: 'Industrial Pressure Transducer', desc: 'Rugged stainless steel transducers for harsh industrial process environments.', count: setraInd.length },
+                    ]}
+                    applicationSections={[
+                        {
+                            label: 'Applications & Sensor',
+                            items: [
+                                { title: 'Precise Measurement Differential Pressure', desc: 'High-accuracy differential pressure measurement for critical environments requiring ±0.25% FS precision or better, including reference laboratories and calibration facilities.' },
+                                { title: 'Air Conditioning Differential Pressure', desc: 'Monitoring supply, return, and exhaust air pressure differentials in commercial HVAC systems and air handling units for energy optimization.' },
+                                { title: 'Precision Measurement Pressure Sensor', desc: 'Absolute and gauge pressure measurement for industrial process control, leak testing, and quality assurance applications.' },
+                                { title: 'Cooling and Air Conditioning Pressure', desc: 'Refrigerant pressure monitoring in cooling systems, chiller plants, and commercial HVAC installations for performance and safety.' },
+                                { title: 'UHP Pressure Sensor', desc: 'Ultra-high purity pressure sensing for semiconductor process gas lines, cleanroom air systems, and pharmaceutical manufacturing with wetted stainless or PTFE materials.' },
+                                { title: 'Barometric Pressure Sensor', desc: 'Atmospheric reference pressure measurement for altitude compensation, weather monitoring, and environmental control systems.' },
+                            ]
+                        },
+                        {
+                            label: 'Applications & Solution',
+                            items: [
+                                { title: 'Setra CEMS™', desc: 'Continuous Emissions Monitoring System solution using Setra\'s precision differential pressure sensors to monitor stack flow velocity, draft, and filter pressure drop in power plants and industrial stacks.' },
+                                { title: 'Cleanroom Manufacturing', desc: 'Maintaining ISO-classified differential pressure cascades between cleanroom zones (e.g., ISO 5→ISO 7→corridor) to prevent particle ingress and ensure GMP compliance in semiconductor and pharmaceutical manufacturing.' },
+                                { title: 'Isolation & Treatment Rooms', desc: 'Negative pressure isolation rooms (airborne infection) and positive pressure protective environments in hospitals, monitored in real-time with Setra\'s visual pressure indicators to prevent cross-contamination.' },
+                                { title: 'Compounding Pharmacies', desc: 'USP <797> and <800> compliant pressure monitoring for sterile compounding suites, hazardous drug buffer rooms, and ante-rooms — ensuring proper pressure relationships at all times.' },
+                            ]
+                        }
+                    ]}
                     sectionIdx={1}
                     onOpen={open}
                 />
@@ -1663,7 +1695,7 @@ function HSTechContent() {
                             { title: 'Aquaculture', desc: 'Continuous pH, dissolved oxygen, and conductivity monitoring for fish farming and recirculating aquaculture systems.', image: '/templates/hs-tech/images/jumo/aquaculture.jpg' },
                         ]
                     }]}
-                    sectionIdx={1}
+                    sectionIdx={0}
                     onOpen={open}
                 />
             )}
