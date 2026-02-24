@@ -37,7 +37,7 @@ function JumoContent() {
                     className="relative aspect-video bg-slate-100 rounded-3xl overflow-hidden shadow-2xl"
                 >
                     <Image
-                        src="/hstech/Module_Probe_files/47644de215289.jpg"
+                        src="/hstech/images/JUMO LOGOSCREEN 700   Highly-Scalable Paperless Recorder (706530).jpg"
                         alt="Jumo Tech"
                         fill
                         className="object-cover"
@@ -69,7 +69,7 @@ function JumoContent() {
                         ))}
                     </ul>
 
-                    <Link href="/templates/hs-tech/products/jumo_temp">
+                    <Link href="/templates/hs-tech?tab=jumo&category=jumo">
                         <button className="flex items-center gap-2 text-red-700 font-bold hover:gap-4 transition-all mt-4">
                             Explore Products <ArrowRight className="w-5 h-5" />
                         </button>

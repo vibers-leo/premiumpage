@@ -814,7 +814,7 @@ Wall type transmitters with Calibration function Service Port. Optional display 
             title: 'HMDW110',
             subtitle: '±2%RH HUMIDITY AND TEMPERATURE TRANSMITTER',
             category: 'hvac',
-            image: '/hstech/images/HMDW110 .png',
+            image: '/hstech/images/HMDW110.png',
             gallery: [],
             desc: `VAISALA HUMICAP® Humidity and Temperature Transmitter Series HMDW110 measure relative humidity and temperature in multiple HVAC applications. The series includes transmitters for duct mounting, IP65-classified wall transmitters and outdoor transmitters with integrated radiation shields.
 
@@ -1440,8 +1440,8 @@ Output: RH+T+Td+Tdf`,
         },
         {
             id: 'dmt345', title: 'DMT345/346', subtitle: 'HIGH TEMPERATURE DEWPOINT', category: 'fixed',
-            image: '/hstech/images/ DMT345:346.png',
-            gallery: ['/hstech/images/ DMT345:346.png'],
+            image: '/hstech/images/DMT345:346.png',
+            gallery: ['/hstech/images/DMT345:346.png'],
             desc: 'High temperature dewpoint transmitter for process streams up to +180 °C. Ideal for plastic drying, industrial ovens, and compressed air systems with high temperatures.',
             specs: [
                 { label: 'DMT345 (High Temp)', value: 'Accurate in hot and dry environments (up to +180°C)\nTd: -40…+100°C (±2°C)\nT: 0…+180°C (±0.4°C @ 100°C)\nRH: 0…100% / Mixing ratio: 0…1000 g/kg' },
@@ -1453,8 +1453,8 @@ Output: RH+T+Td+Tdf`,
         },
         {
             id: 'dmt132', title: 'DMT132', subtitle: 'DEWPOINT & HUMIDITY MODULE', category: 'module',
-            image: '/hstech/images/ DMT132.jpg',
-            gallery: ['/hstech/images/ DMT132.jpg'],
+            image: '/hstech/images/DMT132.jpg',
+            gallery: ['/hstech/images/DMT132.jpg'],
             desc: 'OEM dewpoint and humidity module for integration into instruments and systems.',
             specs: [
                 { label: 'Features', value: 'For refrigerant dryers\nAuto-calibration\nChemical purging\nOptional LED warning light' },
@@ -1514,8 +1514,8 @@ Output: RH+T+Td+Tdf`,
         },
         {
             id: 'dpt145', title: 'DPT145', subtitle: 'SF6 GAS DEWPOINT MONITOR', category: 'module',
-            image: '/hstech/images/ DPT145.png',
-            gallery: ['/hstech/images/ DPT145.png'],
+            image: '/hstech/images/DPT145.png',
+            gallery: ['/hstech/images/DPT145.png'],
             desc: 'Dewpoint measurement in SF6 gas systems for high-voltage switchgear monitoring.',
             specs: [
                 { label: 'Features', value: 'For SF6 gas measurement without sampling\nDetects leakage with pressure sensor' },
@@ -1672,8 +1672,8 @@ Output: RH+T+Td+a+Tw+x+h+pws`,
             title: 'HMDW110',
             subtitle: 'HIGH-PERFORMANCE TEMPERATURE SENSOR',
             category: 'industrial',
-            image: '/hstech/images/HMDW110 .png',
-            gallery: ['/hstech/images/HMDW110 .png'],
+            image: '/hstech/images/HMDW110.png',
+            gallery: ['/hstech/images/HMDW110.png'],
             desc: `High-performance temperature sensor with excellent long-term stability and accuracy
 
 ■ PRODUCT
@@ -2000,8 +2000,8 @@ Output: RH+T+Td/f+h+Tw`,
             title: 'PTB210',
             subtitle: 'BAROCAP® DIGITAL BAROMETER',
             category: 'barometer',
-            image: '/hstech/images/ PTB210.png',
-            gallery: ['/hstech/images/ PTB210.png', '/hstech/images/PTB210_2.jpg'],
+            image: '/hstech/images/PTB210.png',
+            gallery: ['/hstech/images/PTB210.png', '/hstech/images/PTB210_2.jpg'],
             desc: `VAISALA BAROCAP® Digital Barometer PTB210 is a reliable outdoor barometer for harsh conditions.`,
             specs: [
                 {
@@ -2026,8 +2026,8 @@ Output: RH+T+Td/f+h+Tw`,
             title: 'PTB110',
             subtitle: 'BAROCAP® BAROMETER',
             category: 'barometer',
-            image: '/hstech/images/ PTB110.png',
-            gallery: ['/hstech/images/ PTB110.png'],
+            image: '/hstech/images/PTB110.png',
+            gallery: ['/hstech/images/PTB110.png'],
             desc: `VAISALA BAROCAP® Barometer PTB110 is designed both for accurate barometric pressure measurements at room temperature and for general environmental pressure monitoring over a wide temperature range.`,
             specs: [
                 {
@@ -2041,50 +2041,12 @@ Output: RH+T+Td/f+h+Tw`,
             datasheet: 'https://hs-tech-en.imweb.me/154'
         },
         {
-            id: 'pdt102',
-            title: 'PDT102',
-            subtitle: 'DIFFERENTIAL PRESSURE TRANSMITTER',
-            category: 'differential',
-            image: '/hstech/images/PDT102.png',
-            gallery: ['/hstech/images/PDT102.png'],
-            desc: `PDT102 offers ultra low pressure measurement for cleanroom control and monitoring applications.`,
-            specs: [
-                {
-                    model: 'PDT102',
-                    application: '• In-place system calibration and on-line monitoring without disturbing process tubes with optional process valve actuator and test jacks\n• Ultrathin profile ideally suited for DIN rail mount reduces installation and calibration costs\n• High accuracy, two options; 0.25 % or 0.50 % of span\n• Extremely robust MEMS silicon sensor technology provides very high accuracy, sensitivity, stability and durability\n• NIST traceable 9 point calibration with certificate\n• Front side accessible zero and span adjustment potentiometers\n• Application:\n- pharmaceutical, biotechnology, medical device\n- semiconductor controlled\n- manufacturing environments etc.',
-                    typicalApplication: 'Measurement Performance\nMeasurement ranges(bidirectional)\n±50 Pa, ±0.25 in H2O\nAccuracy\n: 0.25 % span or 0.5 % span, depending on choice\nLong-term stability : ≤ 0.5 % span/year\nResponse time (10 ... 90 %) : 250 ms\nWarm-up time : 15 s\nPressure type : Differential, gauge, vacuum and compound',
-                    measurementRange: '',
-                    spec: 'Output Signal\n- 2-wire : 4 ... 20 mA\n- 3-wire : 0 ... 5 VDC\n\nOperating temperature\n: -29 … +70 °C'
-                }
-            ],
-            datasheet: 'https://hs-tech-en.imweb.me/155'
-        },
-        {
-            id: 'pdt101',
-            title: 'PDT101',
-            subtitle: 'DIFFERENTIAL PRESSURE TRANSMITTER',
-            category: 'differential',
-            image: '/hstech/images/PDT101.png',
-            gallery: ['/hstech/images/PDT101.png'],
-            desc: `PDT101 offers precise measurement and control of very low pressures.`,
-            specs: [
-                {
-                    model: 'PDT101',
-                    application: '• DIN rail, panel or wall mountable\n• 2 pressure ranges (Pa and inH2O)\n• Accessible zero and span adjustment potentiometers\n• ¼" brass tubing connections\n• LED status indicator\n• Specially designed for critical and regulated environments\n• Euro style detachable connector\n• NIST traceable(certificate included)\n• Application:\n- life science\n- semiconductor\n- electronics industries, etc.',
-                    typicalApplication: 'Measurement Performance\nMeasurement ranges(bidirectional)\n±60 Pa\n±0.25 in H2O\nAccuracy : 0.4% span\nLong-term stability : ≤ 0.5 % span/year\nResponse time (10 ... 90 %) : 250 ms\nWarm-up time : 15 s\nPressure type : Differential, gauge, vacuum and compound',
-                    measurementRange: '',
-                    spec: 'Output Signal\n- 2-wire : 4 ... 20 mA\n- 3-wire : 0 ... 5 VDC\n\nOperating temperature\n: -18 … +70 °C'
-                }
-            ],
-            datasheet: 'https://hs-tech-en.imweb.me/156'
-        },
-        {
             id: 'ptb330ts',
             title: 'PTB330TS',
             subtitle: 'BAROMETRIC PRESSURE TRANSFER STANDARD',
             category: 'transfer_standard',
-            image: '/hstech/images/PTB330TS .png',
-            gallery: ['/hstech/images/PTB330TS .png'],
+            image: '/hstech/images/PTB330TS.png',
+            gallery: ['/hstech/images/PTB330TS.png'],
             desc: `Barometric Pressure Transfer Standard PTB330TS combines a PTB330 digital barometer with a handheld MI70 indicator into a portable unit that can be used as a transfer standard.`,
             specs: [
                 {
@@ -2103,7 +2065,7 @@ Output: RH+T+Td/f+h+Tw`,
             id: 'wxt530',
             title: 'Weather Transmitter WXT530 Series',
             subtitle: 'ALL-IN-ONE WEATHER SENSOR',
-            category: '',
+            category: 'trans',
             image: '/hstech/images/Weather Transmitter WXT530 Series.png',
             gallery: ['/hstech/images/Weather Transmitter WXT530 Series.png'],
             desc: `The perfect mix of accurate air pressure, temperature, humidity, rainfall, wind speed, and wind direction data to measure weather conditions without the expense or magnitude of an automatic weather station.
@@ -2134,31 +2096,12 @@ WXT536 replaces the WXT520 Weather Transmitter. WXT532 replaces WMT52 Ultrasonic
             datasheet: 'https://hs-tech-en.imweb.me/252'
         },
         {
-            id: 'hmp155',
-            title: 'HMP155 Series',
-            subtitle: 'METEOROLOGICAL HUMIDITY AND TEMPERATURE PROBE',
-            category: '',
-            image: '/hstech/images/HMP155 Series.png',
-            gallery: ['/hstech/images/HMP155 Series.png'],
-            desc: `Vaisala's HUMICAP® HMP155 is a plug-and-play sensor that has excellent stability and withstands well even in harsh environments. The probe provides reliable humidity and temperature measurement and it is designed specifically for demanding outdoor applications.`,
-            specs: [
-                {
-                    model: 'HMP155',
-                    application: 'Meteorology, aviation and road weather, instrumentation',
-                    typicalApplication: '▪ Weather-proof housing IP66\n▪ Various Output options; V, RS-485, resistive Pt100\n▪ Optional warmed humidity probe and chemical purge\n▪ Plug & Play\n▪ Using with DTR13 and DTR503 radiation shields and a Stevenson screen for long lifetime (optional)',
-                    measurementRange: 'RH range: 0…100% RH\nTemperature range: -80..+60°C',
-                    spec: 'Accuracy\n▪ ± 1%RH (0…90%)\n▪ ±0.15°C at 20℃\n\nOutput\n▪ Voltage output: 0…1/5/10V\n▪ Resistive Pt100 4-wire connection\n▪ RS-485'
-                }
-            ],
-            datasheet: 'https://hs-tech-en.imweb.me/141'
-        },
-        {
             id: 'hms110',
             title: 'HMS110',
             subtitle: 'OUTDOOR HUMIDITY AND TEMPERATURE TRANSMITTER',
-            category: '',
-            image: '/hstech/images/ HMS110.png',
-            gallery: ['/hstech/images/ HMS110.png'],
+            category: 'hvac_weather',
+            image: '/hstech/images/HMS110.png',
+            gallery: ['/hstech/images/HMS110.png'],
             desc: `Vaisala HUMICAP® Humidity and Temperature Transmitter Series HMS110 are ideal for cooling tower control and differential enthalpy control of economizers.`,
             specs: [
                 {
@@ -2182,7 +2125,7 @@ WXT536 replaces the WXT520 Weather Transmitter. WXT532 replaces WMT52 Ultrasonic
             id: 'hms80',
             title: 'HMS80',
             subtitle: 'OUTDOOR HVAC HUMIDITY AND TEMPERATURE TRANSMITTER',
-            category: '',
+            category: 'hvac_weather',
             image: '/hstech/images/HMS80.png',
             gallery: ['/hstech/images/HMS80.png'],
             desc: `The Humidity and Temperature Sensor Transmitter Series HMS80 are optimized for outdoor measurements HVAC.`,
@@ -2222,7 +2165,7 @@ WXT536 replaces the WXT520 Weather Transmitter. WXT532 replaces WMT52 Ultrasonic
             id: 'hmt337',
             title: 'HMT337',
             subtitle: 'OUTDOOR HUMIDITY AND TEMPERATURE TRANSMITTER',
-            category: '',
+            category: 'trans',
             image: '/hstech/images/HMT337.png',
             gallery: ['/hstech/images/HMT337.png', '/hstech/images/HMT337_2.jpg'],
             desc: `For weather observation and prediction of water vapour from precipitation`,
@@ -2248,7 +2191,7 @@ WXT536 replaces the WXT520 Weather Transmitter. WXT532 replaces WMT52 Ultrasonic
             id: 'ptu307',
             title: 'PTU307',
             subtitle: 'COMBINED BAROMETRIC PRESSURE, HUMIDITY AND TEMPERATURE TRANSMITTER',
-            category: '',
+            category: 'trans',
             image: '/hstech/images/PTU307.png',
             gallery: ['/hstech/images/PTU307.png', '/hstech/images/PTU307_2.jpg'],
             desc: `This is a unique instrument measuring three parameters simultaneously: barometric pressure, humidity, and temperature. The instrument has four different humidity probe options for various measurement needs. Reliable HUMICAP® and BAROCAP® sensor technologies make it suitable for several applications such as engine testing booths, calibration laboratories, marine engine air intake monitoring and demanding meteorology applications.`,
@@ -2274,8 +2217,8 @@ WXT536 replaces the WXT520 Weather Transmitter. WXT532 replaces WMT52 Ultrasonic
     h2o2: [
         {
             id: 'hpp271', title: 'HPP271 / HPP272', subtitle: 'H₂O₂ VAPOR PROBE', category: 'sensor',
-            image: '/hstech/images/Model AXD Pressure Sensor.png',
-            gallery: ['/hstech/images/Model AXD Pressure Sensor.png'],
+            image: '/hstech/images/HPP271:HPP272.png',
+            gallery: ['/hstech/images/HPP271:HPP272.png', '/hstech/images/VAISALA H2O2 sensor PEROXCAP®.jpg'],
             desc: 'Vaporized hydrogen peroxide (VHP/H2O2) measurement probe for bio-decontamination process monitoring. Enables real-time control of decontamination cycles in pharmaceutical and healthcare environments.',
             specs: [
                 { label: 'Gas', value: 'H₂O₂ vapor (VHP)' },
@@ -2327,8 +2270,8 @@ Setra Lite also integrates seamlessly with the Setra FLEX environmental monitor.
         },
         {
             id: 'setra_flex', title: 'Setra Flex', subtitle: 'TOUCHSCREEN ROOM PRESSURE MONITOR', category: 'diff_ind',
-            image: '/hstech/images/Setra Lite™  Visual Differential Pressure Indicator.png',
-            gallery: ['/hstech/images/Setra Lite™  Visual Differential Pressure Indicator.png'],
+            image: '/hstech/images/Setra Lite™  Visual Differential Pressure Indicator 2.png',
+            gallery: ['/hstech/images/Setra Lite™  Visual Differential Pressure Indicator 2.png', '/hstech/images/Setra Lite™  Visual Differential Pressure Indicator.png'],
             desc: 'Advanced touchscreen room pressure monitor with numeric display and configurable alarms. Provides visual and audible alerts when room pressure goes out of range.',
             specs: [
                 { label: 'Display', value: '4.3" color touchscreen' },
@@ -2548,8 +2491,8 @@ Only Setra can claim ownership to the stainless steel capacitive design used in 
     jumo: [
         {
             id: 'plastosens_pt0', title: 'PlastoSENS PT0', subtitle: 'SURFACE TEMPERATURE SENSOR', category: 'temperature',
-            image: '/hstech/images/201.jpg',
-            gallery: ['/hstech/images/201.jpg'],
+            image: '/hstech/images/plastoSENS T01.jpg',
+            gallery: ['/hstech/images/plastoSENS T01.jpg'],
             desc: 'PlastoSENS PT0 — Flush-mount surface temperature sensor for plastics processing. Designed for injection molding machines, extruders, and hot runner systems. Provides direct melt temperature measurement for process optimization.',
             specs: [
                 { label: 'Type', value: 'Thermocouple Type J / Type K (application-specific)' },
@@ -2562,8 +2505,8 @@ Only Setra can claim ownership to the stainless steel capacitive design used in 
         },
         {
             id: 'plastosens_pt2', title: 'PlastoSENS PT2', subtitle: 'MELT TEMPERATURE SENSOR', category: 'temperature',
-            image: '/hstech/images/201.jpg',
-            gallery: ['/hstech/images/201.jpg'],
+            image: '/hstech/images/plastoSENS T02.jpg',
+            gallery: ['/hstech/images/plastoSENS T02.jpg'],
             desc: 'PlastoSENS PT2 — High-pressure melt temperature sensor for continuous melt temperature measurement in high-temperature plastics processes. Spring-loaded tip ensures permanent contact with melt for reliable readings.',
             specs: [
                 { label: 'Type', value: 'Thermocouple Type J / Type K' },
@@ -2576,8 +2519,8 @@ Only Setra can claim ownership to the stainless steel capacitive design used in 
         },
         {
             id: 'dtrans_ph02', title: 'dTRANS pH 02', subtitle: 'PROCESS pH TRANSMITTER', category: 'ph_transmitter',
-            image: '/hstech/images/201.jpg',
-            gallery: ['/hstech/images/201.jpg'],
+            image: '/hstech/images/JUMO dTRANS pH 02 Compact multichannel transmitter:controller for pH, redox, ammonia, standard signals, and temperature (202551).jpg',
+            gallery: ['/hstech/images/JUMO dTRANS pH 02 Compact multichannel transmitter:controller for pH, redox, ammonia, standard signals, and temperature (202551).jpg'],
             desc: 'Industrial field-mount pH transmitter with IP65 protection. HART communication for smart instrumentation integration. Supports JUMO and third-party electrodes.',
             specs: [
                 { label: 'Measurement', value: 'pH 0 ... 14 / ORP / Temperature' },
@@ -2625,8 +2568,8 @@ Only Setra can claim ownership to the stainless steel capacitive design used in 
             title: 'JUMO tecLine CR-GT',
             subtitle: 'CONDUCTIVE TWO-ELECTRODES CONDUCTIVITY SENSOR (202925)',
             category: 'ph_electrode',
-            image: '/hstech/images/ JUMO tecLine CR-GT, Conductive Two-Electrodes Conductivity Sensor (202925).jpg',
-            gallery: ['/hstech/images/ JUMO tecLine CR-GT, Conductive Two-Electrodes Conductivity Sensor (202925).jpg'],
+            image: '/hstech/images/JUMO tecLine CR-GT, Conductive Two-Electrodes Conductivity Sensor (202925).jpg',
+            gallery: ['/hstech/images/JUMO tecLine CR-GT, Conductive Two-Electrodes Conductivity Sensor (202925).jpg'],
             desc: 'Two-electrode conductivity sensor with special graphite electrodes. Ideal for medium separation, drinking water treatment, and wastewater control.',
             specs: [
                 { label: 'Principle', value: 'Two-electrode' },
@@ -2744,6 +2687,46 @@ Only Setra can claim ownership to the stainless steel capacitive design used in 
                 { label: 'Features', value: 'Learning function for temperature coefficient\nDesalination control\nPlant documentation' },
                 { label: 'Applications', value: 'Product separation (food/beverage)\nBottle cleaning plants\nConcentration measurement\nCIP plants\nWater/wastewater technology\nChemical dispensing' }
             ]
+        },
+        {
+            id: 'logoscreen_700',
+            title: 'JUMO LOGOSCREEN 700',
+            subtitle: 'HIGHLY-SCALABLE PAPERLESS RECORDER (706530)',
+            category: 'control',
+            image: '/hstech/images/JUMO LOGOSCREEN 700   Highly-Scalable Paperless Recorder (706530).jpg',
+            gallery: ['/hstech/images/JUMO LOGOSCREEN 700   Highly-Scalable Paperless Recorder (706530).jpg', '/hstech/images/JUMO LOGOSCREEN 600.jpg'],
+            desc: 'The JUMO LOGOSCREEN 700 is a highly scalable paperless recorder designed for demanding industrial process recording and visualization. Supports FDA 21 CFR Part 11 compliance, batch reporting, and advanced data management.',
+            specs: [
+                { label: 'Display', value: 'TFT color touch display' },
+                { label: 'Analog inputs', value: 'Up to 8 universal inputs' },
+                { label: 'Analog outputs', value: 'Up to 3 analog outputs' },
+                { label: 'Digital I/O', value: 'Up to 8 counter inputs (max. 12.5 kHz)' },
+                { label: 'Communication', value: 'Ethernet, USB, RS-485 Modbus\nPROFINET IO (optional)' },
+                { label: 'Compliance', value: 'FDA 21 CFR Part 11\nAMS2750 / CQI-9 (optional)' },
+                { label: 'Features', value: 'Web server for online visualization\nBatch report recording (up to 5)\nLimit value monitoring (120 channels)\nUser-specific ST programming\nManipulation detection with digital certificate' },
+                { label: 'Applications', value: 'Pharmaceutical, Food & Beverage\nChemical, Automotive heat treatment\nEnergy management' }
+            ],
+            datasheet: 'https://www.jumo.net/products/recorders/JUMO-LOGOSCREEN-700-706530.html'
+        },
+        {
+            id: 'quantrol_702030',
+            title: 'JUMO Quantrol',
+            subtitle: 'COMPACT CONTROLLER (702030)',
+            category: 'control',
+            image: '/hstech/images/JUMO Quantrol Compact Controller (702030).jpg',
+            gallery: ['/hstech/images/JUMO Quantrol Compact Controller (702030).jpg'],
+            desc: 'The JUMO Quantrol is a compact PID controller in 48×48 mm format, offering two-state, three-state, and continuous control with autotuning for precise process control in a space-saving design.',
+            specs: [
+                { label: 'Format', value: '48 × 48 mm (1/16 DIN)' },
+                { label: 'Control modes', value: 'Two-state, Three-state, Continuous PID' },
+                { label: 'Outputs', value: 'Up to 5 outputs' },
+                { label: 'Autotuning', value: 'Yes (exact PID tuning)' },
+                { label: 'Communication', value: 'RS-485 Modbus RTU' },
+                { label: 'Interface', value: 'USB Mini-B setup interface' },
+                { label: 'Features', value: 'Sensor monitoring & fault detection\nSetpoint changeover\nRamp and timer function\nLevel inhibit / keyboard lock\nFiring curve for pottery kilns' },
+                { label: 'Applications', value: 'Temperature control\nProcess automation\nIndustrial ovens, Pottery kilns' }
+            ],
+            datasheet: 'https://www.jumo.net/products/controllers/JUMO-Quantrol-Compact-Controller-702030.html'
         },
     ],
 
@@ -3453,8 +3436,6 @@ export const SETRA_APPLICATIONS_SOLUTION: Record<string, any> = {
             'Compounding Pharmacies'
         ],
         howItWorks: {
-            flowImage: '/templates/hs-tech/images/setra/cems_flow.png',
-            sensorsImage: '/templates/hs-tech/images/setra/cems_sensors.png',
             steps: [
                 {
                     title: 'Sensor Hardware',
