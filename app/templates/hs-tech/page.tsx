@@ -1016,7 +1016,7 @@ function CategoryPage({
             </div>
             <div className="px-6 pb-28 max-w-6xl mx-auto">
                 {filtered.length > 0 ? (
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                         {filtered.map((product: any) => (
                             <ProductCard key={product.id} product={product} onOpen={() => onOpen(product)} />
                         ))}
@@ -1308,7 +1308,7 @@ function HSTechContent() {
                         </div>
 
                         {/* Service Highlights */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                             {[
                                 { label: 'Sales', desc: 'Authorized product sales for Korea & Vietnam' },
                                 { label: 'Technical Support', desc: 'Expert consultation & application guidance' },
