@@ -1189,7 +1189,7 @@ function BrandPage({
                 {/* Application section grids */}
                 {applicationSections && applicationSections.map((sec, i) => {
                     const itemCount = sec.items.length
-                    const gridCols = itemCount === 3 ? 'md:grid-cols-3' : itemCount === 5 ? 'md:grid-cols-3' : itemCount === 6 ? 'md:grid-cols-3' : 'md:grid-cols-2'
+                    const gridCols = (itemCount === 2 || itemCount === 4) ? 'md:grid-cols-2' : 'md:grid-cols-3'
                     return sectionIdx === i && (
                         <div key={i} className={`grid grid-cols-1 sm:grid-cols-2 ${gridCols} gap-6`}>
                             {sec.items.map((item, j) => {
