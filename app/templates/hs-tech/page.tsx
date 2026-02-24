@@ -1016,7 +1016,7 @@ function CategoryPage({
             </div>
             <div className="px-6 pb-28 max-w-6xl mx-auto">
                 {filtered.length > 0 ? (
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                         {filtered.map((product: any) => (
                             <ProductCard key={product.id} product={product} onOpen={() => onOpen(product)} />
                         ))}
@@ -1184,9 +1184,9 @@ function BrandPage({
                 {/* Application section grids */}
                 {applicationSections && applicationSections.map((sec, i) => {
                     const itemCount = sec.items.length
-                    const gridCols = itemCount <= 4 ? 'md:grid-cols-2' : itemCount <= 8 ? 'md:grid-cols-3' : 'md:grid-cols-4'
+                    const gridCols = itemCount === 3 ? 'md:grid-cols-3' : itemCount === 5 ? 'md:grid-cols-3' : itemCount === 6 ? 'md:grid-cols-3' : 'md:grid-cols-2'
                     return sectionIdx === i && (
-                        <div key={i} className={`grid grid-cols-1 sm:grid-cols-2 ${gridCols} gap-4`}>
+                        <div key={i} className={`grid grid-cols-1 sm:grid-cols-2 ${gridCols} gap-6`}>
                             {sec.items.map((item, j) => {
                                 const appKey = appTitleToKey[item.title]
                                 const isSetraSensor = SETRA_APPLICATIONS_SENSOR[appKey] !== undefined
