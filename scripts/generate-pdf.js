@@ -115,10 +115,9 @@ async function captureScreenshot(page, url, label, { afterGoto } = {}) {
     console.log(`  📸 ${label}`)
     try {
         await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 })
-        // 애니메이션 대기
         await page.waitForTimeout(1500)
-        // 페이지 로드 후 추가 처리 (모달 닫기 등)
         if (afterGoto) await afterGoto(page)
+
         // 이미지 로드 대기
         await page.evaluate(() => {
             return Promise.all(
@@ -129,30 +128,62 @@ async function captureScreenshot(page, url, label, { afterGoto } = {}) {
                     }))
             )
         })
-        await page.waitForTimeout(500)
+        await page.waitForTimeout(300)
 
-        // 페이지 전체 높이 측정 후 viewport 확장 → 스크롤 없이 전체 내용 캡처
-        // main 요소도 포함: 항성산업사처럼 root가 overflow:hidden이어도 실제 내용 높이 측정 가능
-        const fullHeight = await page.evaluate(() => {
-            const candidates = [
-                document.body,
-                document.documentElement,
-                ...Array.from(document.querySelectorAll('main')),
-            ]
-            return Math.max(...candidates.map(el => el.scrollHeight))
+        // ── Step 1: h-full / min-h-screen 강제 해제 후 자연 콘텐츠 높이 측정
+        // (항성산업사처럼 overflow:hidden 레이아웃에서 뷰포트 연동 CSS 때문에
+        //  viewport 확장 시 min-h-screen도 같이 늘어나는 악순환 방지)
+        const naturalHeight = await page.evaluate(() => {
+            const styleTag = document.createElement('style')
+            styleTag.id = '__pdf_measure__'
+            styleTag.textContent = [
+                'main[class*="overflow-y-auto"]{height:auto!important;overflow:visible!important}',
+                'main[class*="min-h-screen"]{min-height:0!important}',
+            ].join('')
+            document.head.appendChild(styleTag)
+            document.body.getBoundingClientRect() // force reflow
+
+            const scrollable = document.querySelector('main[class*="overflow-y-auto"]')
+            const h = scrollable
+                ? scrollable.scrollHeight
+                : Math.max(
+                    document.body.scrollHeight,
+                    document.documentElement.scrollHeight,
+                    ...Array.from(document.querySelectorAll('main')).map(m => m.scrollHeight)
+                )
+
+            document.getElementById('__pdf_measure__')?.remove()
+            return h
         })
+
+        // ── Step 2: min-h-screen 고정 오버라이드 유지 (뷰포트 확장 시 팽창 방지)
+        await page.evaluate(() => {
+            const s = document.createElement('style')
+            s.id = '__pdf_fix__'
+            s.textContent = 'main[class*="min-h-screen"]{min-height:0!important}'
+            document.head.appendChild(s)
+            document.body.getBoundingClientRect()
+        })
+
+        // ── Step 3: viewport를 콘텐츠 높이 + 내비게이터 공간(100px)으로 설정
         const currentViewport = page.viewportSize()
-        if (fullHeight > currentViewport.height) {
-            await page.setViewportSize({ width: currentViewport.width, height: fullHeight })
-            await page.waitForTimeout(300)
-        }
+        const targetHeight = Math.max(naturalHeight + 100, 700)
+        await page.setViewportSize({ width: currentViewport.width, height: targetHeight })
+        await page.waitForTimeout(300)
+
+        // ── Step 4: main 스크롤 끝까지 내리기 → isAtBottom=true → 하단 내비게이터 표시
+        await page.evaluate(() => {
+            const el = document.querySelector('main[class*="overflow-y-auto"]')
+                     || document.querySelector('main')
+            if (el) el.scrollTop = el.scrollHeight
+        })
+        await page.waitForTimeout(700) // React 상태 반영 + Framer Motion 애니메이션 완료 대기
 
         const screenshot = await page.screenshot({ type: 'png', fullPage: true })
 
-        // viewport 원복
-        if (fullHeight > currentViewport.height) {
-            await page.setViewportSize({ width: currentViewport.width, height: currentViewport.height })
-        }
+        // ── Step 5: 정리 (오버라이드 제거 + viewport 원복)
+        await page.evaluate(() => { document.getElementById('__pdf_fix__')?.remove() })
+        await page.setViewportSize({ width: currentViewport.width, height: currentViewport.height })
 
         return screenshot
     } catch (err) {
