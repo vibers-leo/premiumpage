@@ -46,6 +46,38 @@ const HS_TECH_PAGES = [
     { tab: 'contact',                     label: '26 · CONTACT' },
 ]
 
+const GENTOP_BASE = 'https://gentop.premiumpage.kr'
+const GENTOP_PAGES = [
+    { url: '/en',                                   label: '01 · HOME' },
+    { url: '/en/company/introduction',              label: '02 · Company Introduction' },
+    { url: '/en/company/greeting',                  label: '03 · CEO Greeting' },
+    { url: '/en/company/history',                   label: '04 · History' },
+    { url: '/en/company/philosophy',                label: '05 · Philosophy' },
+    { url: '/en/company/organization',              label: '06 · Organization' },
+    { url: '/en/company/business_scope',            label: '07 · Business Scope' },
+    { url: '/en/company/global_network',            label: '08 · Global Network' },
+    { url: '/en/company/company_view',              label: '09 · Company View' },
+    { url: '/en/company/certification',             label: '10 · Certification' },
+    { url: '/en/company/ci_bi',                     label: '11 · CI / BI' },
+    { url: '/en/company/location',                  label: '12 · Location' },
+    { url: '/en/business',                          label: '13 · Business Overview' },
+    { url: '/en/business/construction',             label: '14 · Construction' },
+    { url: '/en/business/construction.html_1',      label: '15 · Construction (2)' },
+    { url: '/en/business/construction.html_2',      label: '16 · Construction (3)' },
+    { url: '/en/business/facilities',               label: '17 · Facilities' },
+    { url: '/en/business/public_address',           label: '18 · Public Address' },
+    { url: '/en/business/access_parking',           label: '19 · Access & Parking' },
+    { url: '/en/business/access_parking.html_1',    label: '20 · Access & Parking (2)' },
+    { url: '/en/business/cctv',                     label: '21 · CCTV' },
+    { url: '/en/business/cctv.html_1',              label: '22 · CCTV (2)' },
+    { url: '/en/business/led_display',              label: '23 · LED Display' },
+    { url: '/en/business/eco_friendly',             label: '24 · Eco-Friendly' },
+    { url: '/en/business/eco_friendly.html_1',      label: '25 · Eco-Friendly (2)' },
+    { url: '/en/business/eco_friendly.html_2',      label: '26 · Eco-Friendly (3)' },
+    { url: '/en/business/eco_friendly.html_3',      label: '27 · Eco-Friendly (4)' },
+    { url: '/en/contact',                           label: '28 · Contact' },
+]
+
 const HANGSEONG_BASE = 'https://hangseong.premiumpage.kr/templates/hangseong'
 const HANGSEONG_PAGES = [
     { url: '?tab=cover',                              label: '01 · HOME' },
@@ -151,6 +183,37 @@ async function generateHSTechPDF() {
     return outputPath
 }
 
+async function generateGentopPDF() {
+    const outDir = path.join(__dirname, '..', 'public', 'report')
+    fs.mkdirSync(outDir, { recursive: true })
+    const outputPath = path.join(outDir, 'GENTOP_Catalog.pdf')
+
+    console.log('\n🚀 GENTOP 카탈로그 PDF 생성 시작')
+    console.log(`   총 ${GENTOP_PAGES.length}페이지 캡처 예정\n`)
+
+    const browser = await chromium.launch({ headless: true })
+    const page = await browser.newPage()
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.emulateMedia({ colorScheme: 'dark' })
+
+    const screenshots = []
+    for (const { url, label } of GENTOP_PAGES) {
+        const fullUrl = `${GENTOP_BASE}${url}`
+        const data = await captureScreenshot(page, fullUrl, label)
+        screenshots.push({ data, label })
+    }
+
+    await browser.close()
+
+    console.log('\n📄 PDF 생성 중...')
+    const pageCount = await screenshotsToPDF(screenshots, outputPath)
+
+    const sizeKB = Math.round(fs.statSync(outputPath).size / 1024)
+    console.log(`✅ 완료: ${outputPath}`)
+    console.log(`   ${pageCount}페이지 / ${sizeKB}KB\n`)
+    return outputPath
+}
+
 async function generateHangseongPDF() {
     const outDir = path.join(__dirname, '..', 'public', 'report')
     fs.mkdirSync(outDir, { recursive: true })
@@ -189,8 +252,8 @@ async function generateHangseongPDF() {
 async function main() {
     const target = process.argv[2] || 'all'
 
-    if (!['hstech', 'hangseong', 'all'].includes(target)) {
-        console.error('사용법: node scripts/generate-pdf.js [hstech|hangseong|all]')
+    if (!['hstech', 'hangseong', 'gentop', 'all'].includes(target)) {
+        console.error('사용법: node scripts/generate-pdf.js [hstech|hangseong|gentop|all]')
         process.exit(1)
     }
 
@@ -201,6 +264,9 @@ async function main() {
     }
     if (target === 'hangseong' || target === 'all') {
         await generateHangseongPDF()
+    }
+    if (target === 'gentop' || target === 'all') {
+        await generateGentopPDF()
     }
 
     const elapsed = Math.round((Date.now() - start) / 1000)
