@@ -108,8 +108,8 @@ const CatalogPage = ({
             </main>
 
 
-            {/* Premium Global Footer */}
-            {!hideUI && (
+            {/* Premium Global Footer — Contact 페이지에만 표시 */}
+            {!hideUI && currentTab === 'contact' && (
                 <footer className="relative z-10 w-full pt-16 pb-24 px-6 border-t dark:border-white/5 border-slate-200 bg-slate-50 dark:bg-slate-950/50 mt-12">
                     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
                         <div className="md:col-span-2 space-y-6">
