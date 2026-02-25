@@ -970,7 +970,7 @@
             <div class="m-link" onclick="go(5); toggleMobile();">ESG</div>
         </div>
         <div class="m-link-group">
-            <div class="m-link-head">Products</div>
+            <div class="m-link-head">Mobility Products</div>
             <div class="m-link" onclick="go(6); toggleMobile();">Overview</div>
             <div class="m-link" onclick="go(7); toggleMobile();">Sensors</div>
             <div class="m-link" onclick="go(11); toggleMobile();">Actuators</div>
@@ -1006,7 +1006,7 @@
                     <div class="sub-link" onclick="go(5)">ESG Management</div>
                 </div>
             </div>
-            <div class="gnb-item">Products
+            <div class="gnb-item">Mobility Products
                 <div class="submenu">
                     <div class="sub-link" onclick="go(6)">Overview</div>
                     <div class="sub-link" onclick="go(7)">SENSORS</div>
@@ -1042,7 +1042,7 @@
                     SMART SENSOR<br>& CONTROL
                 </h1>
                 <p style="color:#ddd; font-size: 24px; max-width: 900px; line-height: 1.6; font-weight: 300;">
-                    Leaping forward as a global smart sensor company leading the future mobility industry.
+                    Leaping forward as a global Smart Mobility Control Innovator leading the future mobility industry.
                 </p>
             </div>
         </div>
@@ -2109,13 +2109,7 @@
         <div class="slide">
             <span class="slide-tag">MOBILITY PRODUCTS</span>
             <h1 class="slide-title">ACTUATORS</h1>
-            <div class="product-grid" style="grid-template-columns: repeat(6, 1fr) !important; gap: 15px;">
-                <div class="p-card" onclick="openProductModal('hidden-door-handle')" style="padding-top: 15px;">
-                    <img src="assets/Hidden Door Image 824.png" onerror="this.src='assets/29.png'">
-                    <h3>Hidden Door Handle Actuator</h3>
-                    <div style="height:15px"></div>
-                    <p>An integrated hidden handle flush with the door that automatically protrudes when opening, reducing air resistance and providing a premium design with enhanced security</p>
-                </div>
+            <div class="product-grid" style="grid-template-columns: repeat(5, 1fr) !important; gap: 15px;">
                 <div class="p-card" onclick="openProductModal('fan-clutch')" style="padding-top: 15px;">
                     <img src="assets/21.png">
                     <h3>Electronic Fan Clutch Actuator</h3>
@@ -2147,10 +2141,10 @@
                     <p>An electric motor that generates rotational motion using AC power and provides high durability and stable performance for HVAC systems</p>
                 </div>
             </div>
-            <!-- Custom Style for Actuator Grid to fit 6 items -->
+            <!-- Custom Style for Actuator Grid to fit 5 items -->
             <style>
-                /* Unify image height for 6-column grid and fill gaps with background */
-                .product-grid[style*="repeat(6"] .p-card img {
+                /* Unify image height for 5-column grid */
+                .product-grid[style*="repeat(5"] .p-card img {
                     height: 220px !important;
                     background-color: #1a1a1a;
                 }
@@ -3182,25 +3176,6 @@ Control type: Voltage control or PWM ECU control
 Operating temperature: -40 <span class="deg">&deg;</span>C to +145 <span class="deg">&deg;</span>C
 Ingress protection: IP67
 Connector type: 2 pin 3 pin or multi pin`
-            },
-            'hidden-door-handle': {
-                category: 'Actuator', title: 'Hidden Door Handle Actuator', img: 'assets/hidden_door_handle.png',
-                desc: 'An integrated hidden handle flush with the door that automatically protrudes when opening, reducing air resistance and providing a premium design with enhanced security',
-                specs: [
-                     { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40 <span class="deg">&deg;</span>C ~ +85 <span class="deg">&deg;</span>C' },
-                     { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'IP Rating', value: 'IP67' },
-                     { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Resp. Time', value: '≤ 500ms' }
-                ],
-                details: `An integrated hidden handle flush with the door that automatically protrudes when opening, reducing air resistance and providing a premium design with enhanced security.
-
-Key Features:
-• Aerodynamic Design: Flush-mounted handle reduces air resistance for improved fuel efficiency
-• Premium Aesthetics: Seamless integration with vehicle body for a sleek, modern appearance  
-• Enhanced Security: Handle retracts and locks when vehicle is secured
-• Smart Key Integration: Automatic deployment when smart key is detected nearby
-• Weather Protection: IP67 rated for all-weather operation
-
-Applications: Electric vehicles, luxury vehicles, sports cars, modern sedans`
             },
             // Controllers
             'proximity': {
