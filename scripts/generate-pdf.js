@@ -174,10 +174,10 @@ async function screenshotsToPDF(screenshots, outputPath) {
     return added
 }
 
-async function generateHSTechPDF() {
+async function generateHSTechPDF(timestamp) {
     const outDir = path.join(__dirname, '..', 'public', 'report')
     fs.mkdirSync(outDir, { recursive: true })
-    const outputPath = path.join(outDir, 'HS-TECH_Catalog.pdf')
+    const outputPath = path.join(outDir, `HS-TECH_Catalog_${timestamp}.pdf`)
 
     console.log('\n🚀 HS-TECH 카탈로그 PDF 생성 시작')
     console.log(`   총 ${HS_TECH_PAGES.length}페이지 캡처 예정\n`)
@@ -207,10 +207,10 @@ async function generateHSTechPDF() {
     return outputPath
 }
 
-async function generateGentopPDF() {
+async function generateGentopPDF(timestamp) {
     const outDir = path.join(__dirname, '..', 'public', 'report')
     fs.mkdirSync(outDir, { recursive: true })
-    const outputPath = path.join(outDir, 'GENTOP_Catalog.pdf')
+    const outputPath = path.join(outDir, `GENTOP_Catalog_${timestamp}.pdf`)
 
     console.log('\n🚀 GENTOP 카탈로그 PDF 생성 시작')
     console.log(`   총 ${GENTOP_PAGES.length}페이지 캡처 예정\n`)
@@ -238,10 +238,10 @@ async function generateGentopPDF() {
     return outputPath
 }
 
-async function generateHangseongPDF() {
+async function generateHangseongPDF(timestamp) {
     const outDir = path.join(__dirname, '..', 'public', 'report')
     fs.mkdirSync(outDir, { recursive: true })
-    const outputPath = path.join(outDir, 'Hangseong_Catalog.pdf')
+    const outputPath = path.join(outDir, `Hangseong_Catalog_${timestamp}.pdf`)
 
     console.log('\n🚀 항성산업사 카탈로그 PDF 생성 시작')
     console.log(`   총 ${HANGSEONG_PAGES.length}페이지 캡처 예정\n`)
@@ -282,15 +282,17 @@ async function main() {
     }
 
     const start = Date.now()
+    const now = new Date()
+    const timestamp = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}`
 
     if (target === 'hstech' || target === 'all') {
-        await generateHSTechPDF()
+        await generateHSTechPDF(timestamp)
     }
     if (target === 'hangseong' || target === 'all') {
-        await generateHangseongPDF()
+        await generateHangseongPDF(timestamp)
     }
     if (target === 'gentop' || target === 'all') {
-        await generateGentopPDF()
+        await generateGentopPDF(timestamp)
     }
 
     const elapsed = Math.round((Date.now() - start) / 1000)
