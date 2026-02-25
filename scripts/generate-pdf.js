@@ -111,12 +111,14 @@ const HANGSEONG_PAGES = [
 // 핵심 함수
 // ──────────────────────────────────────
 
-async function captureScreenshot(page, url, label) {
+async function captureScreenshot(page, url, label, { afterGoto } = {}) {
     console.log(`  📸 ${label}`)
     try {
         await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 })
         // 애니메이션 대기
         await page.waitForTimeout(1500)
+        // 페이지 로드 후 추가 처리 (모달 닫기 등)
+        if (afterGoto) await afterGoto(page)
         // 이미지 로드 대기
         await page.evaluate(() => {
             return Promise.all(
@@ -263,7 +265,11 @@ async function generateHangseongPDF(timestamp) {
     const screenshots = []
     for (const { url, label } of HANGSEONG_PAGES) {
         const fullUrl = `${HANGSEONG_BASE}${url}`
-        const data = await captureScreenshot(page, fullUrl, label)
+        // 제품 개별 페이지는 모달이 열리므로 ESC로 닫아서 리스트뷰(사이드바+내비게이터) 상태로 캡처
+        const afterGoto = url.includes('product=')
+            ? async (p) => { await p.keyboard.press('Escape'); await p.waitForTimeout(600) }
+            : undefined
+        const data = await captureScreenshot(page, fullUrl, label, { afterGoto })
         screenshots.push({ data, label })
     }
 
