@@ -76,25 +76,13 @@ function AboutPage() {
     return (
         <div className="min-h-screen bg-[#0a0f1e] p-8 md:p-16 flex items-center">
             <div className="max-w-6xl mx-auto w-full">
-                <SectionHeader eng="GREETING" title="About HS TECH" subtitle={COMPANY.subtagline} />
+                <SectionHeader eng="COMPANY" title="About HS TECH" subtitle={COMPANY.subtagline} />
                 <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-4">
-                        {GREETING.paragraphs.map((p, i) => (
-                            <p key={i} className="text-gray-300 text-sm leading-relaxed border-l-2 border-[#00d4ff]/20 pl-4">
-                                {p}
-                            </p>
-                        ))}
-                        <div className="mt-8 pt-6 border-t border-white/10">
-                            <div className="text-[#00d4ff] font-mono text-sm">— {COMPANY.ceo}</div>
-                            <div className="text-gray-500 text-xs mt-1">CEO, HS TECH</div>
-                        </div>
-                    </div>
-                    <div className="relative">
+                    <div>
                         <div className="relative h-80 md:h-96 overflow-hidden">
-                            <Image src="/templates/air-hstech/images/ceo-photo.jpg" alt="HS TECH CEO" fill className="object-cover" />
+                            <Image src="/templates/air-hstech/images/hero-2.jpg" alt="HS TECH" fill className="object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e] to-transparent opacity-60" />
                         </div>
-                        {/* Company stats */}
                         <div className="mt-6 grid grid-cols-2 gap-3">
                             {[
                                 { label: 'Founded', value: '2017' },
@@ -108,6 +96,53 @@ function AboutPage() {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                    <div className="space-y-5">
+                        <div className="border-l-2 border-[#00d4ff]/40 pl-5">
+                            <div className="text-[#00d4ff] font-mono text-xs tracking-wider uppercase mb-2">Mission</div>
+                            <p className="text-white text-lg font-bold leading-tight">{COMPANY.tagline}</p>
+                        </div>
+                        <div className="space-y-1">
+                            {[
+                                { label: 'Business No.', value: COMPANY.businessReg },
+                                { label: 'Country', value: COMPANY.country },
+                                { label: 'Address', value: COMPANY.address },
+                                { label: 'Founded', value: COMPANY.founded },
+                            ].map(item => (
+                                <div key={item.label} className="flex gap-4 py-3 border-b border-white/5">
+                                    <span className="text-gray-500 text-xs font-mono w-28 flex-shrink-0 uppercase tracking-wider pt-0.5">{item.label}</span>
+                                    <span className="text-gray-200 text-sm">{item.value}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+// Page 03: CEO GREETING
+function GreetingPage() {
+    return (
+        <div className="min-h-screen bg-[#0a0f1e] p-8 md:p-16 flex items-center">
+            <div className="max-w-6xl mx-auto w-full">
+                <SectionHeader eng="CEO MESSAGE" title="CEO Greeting" subtitle="A message from our founder and CEO, Park JoonWoo." />
+                <div className="grid md:grid-cols-2 gap-12 items-start">
+                    <div className="space-y-4">
+                        {GREETING.paragraphs.map((p, i) => (
+                            <p key={i} className="text-gray-300 text-sm leading-relaxed border-l-2 border-[#00d4ff]/20 pl-4">
+                                {p}
+                            </p>
+                        ))}
+                        <div className="mt-8 pt-6 border-t border-white/10">
+                            <div className="text-[#00d4ff] font-mono text-sm">— {COMPANY.ceo}</div>
+                            <div className="text-gray-500 text-xs mt-1">CEO, HS TECH</div>
+                        </div>
+                    </div>
+                    <div className="relative h-[420px] md:h-[520px] overflow-hidden">
+                        <Image src="/templates/air-hstech/images/ceo-photo.jpg" alt="HS TECH CEO" fill className="object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e] to-transparent opacity-50" />
                     </div>
                 </div>
             </div>
@@ -358,6 +393,59 @@ function ProductsOverviewPage({ onSelectProduct }: { onSelectProduct: (tab: stri
                         </div>
                     )
                 })}
+            </div>
+        </div>
+    )
+}
+
+// Spec Comparison page
+function SpecComparisonPage() {
+    const acProducts = PRODUCTS.filter(p => p.category === 'separate' || p.category === 'allinone')
+    const specLabels = ['Power Supply', 'Refrigerant', 'Cooling Capacity', 'Type']
+    return (
+        <div className="min-h-screen bg-[#0a0f1e] p-8 md:p-16">
+            <div className="max-w-6xl mx-auto">
+                <SectionHeader eng="SPECIFICATIONS" title="Product Comparison" subtitle="Side-by-side specification overview of the GENWISH AC lineup." />
+                <div className="overflow-x-auto mb-10">
+                    <table className="w-full text-sm border-collapse">
+                        <thead>
+                            <tr className="border-b border-[#00d4ff]/30">
+                                <th className="text-left py-3 pr-6 text-gray-400 font-mono text-xs uppercase tracking-wider w-36">Spec</th>
+                                {acProducts.map(p => (
+                                    <th key={p.id} className="text-center py-3 px-3 text-[#00d4ff] font-mono text-xs uppercase tracking-wider">
+                                        {p.model}
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {specLabels.map(specLabel => (
+                                <tr key={specLabel} className="border-b border-white/5">
+                                    <td className="py-3 pr-6 text-gray-400 text-xs font-mono uppercase tracking-wider">{specLabel}</td>
+                                    {acProducts.map(p => {
+                                        const spec = p.specs.find(s => s.label === specLabel)
+                                        return (
+                                            <td key={p.id} className="py-3 px-3 text-center text-white text-xs font-mono">
+                                                {spec?.value || '—'}
+                                            </td>
+                                        )
+                                    })}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                    {acProducts.map(p => (
+                        <div key={p.id} className="bg-white/5 border border-white/10 p-3">
+                            <div className="relative w-full aspect-square mb-3 overflow-hidden">
+                                <Image src={p.image} alt={p.model} fill className="object-cover" />
+                            </div>
+                            <div className="text-[#00d4ff] font-mono text-xs font-bold mb-1">{p.model}</div>
+                            <div className="text-gray-500 text-[10px] leading-snug">{p.type}</div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )
@@ -853,11 +941,13 @@ function AirHSTechCatalog() {
         switch (currentTab) {
             case 'cover':        return <CoverPage onStart={() => navigate('about')} />
             case 'about':        return <AboutPage />
+            case 'greeting':     return <GreetingPage />
             case 'history':      return <HistoryPage />
             case 'brand':        return <BrandPage />
             case 'certifications': return <CertificationsPage />
             case 'process':      return <ProcessPage />
             case 'products':     return <ProductsOverviewPage onSelectProduct={navigate} />
+            case 'spec-compare': return <SpecComparisonPage />
             case 'hsd-180d':
             case 'hsh-260d':
             case 'hsp-180d':

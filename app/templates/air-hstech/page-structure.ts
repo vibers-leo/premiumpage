@@ -15,6 +15,7 @@ export const BROCHURE_FLOW: BrochurePage[] = [
 
     // ── Company ────────────────────────────────────────────────────────────
     { tab: 'about',         label: 'ABOUT US',       group: 'company' },
+    { tab: 'greeting',      label: 'CEO GREETING',   group: 'company' },
     { tab: 'history',       label: 'HISTORY',        group: 'company' },
     { tab: 'brand',         label: 'BRAND',          group: 'company' },
     { tab: 'certifications',label: 'CERTIFICATIONS', group: 'company' },
@@ -22,6 +23,7 @@ export const BROCHURE_FLOW: BrochurePage[] = [
 
     // ── Products ───────────────────────────────────────────────────────────
     { tab: 'products',      label: 'PRODUCTS',       group: 'products' },
+    { tab: 'spec-compare',  label: 'SPEC COMPARISON',group: 'products' },
     { tab: 'hsd-180d',      label: 'HSD-180D',       group: 'products' },
     { tab: 'hsh-260d',      label: 'HSH-260D',       group: 'products' },
     { tab: 'hsp-180d',      label: 'HSP-180D',       group: 'products' },

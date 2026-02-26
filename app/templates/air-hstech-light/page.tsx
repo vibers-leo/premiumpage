@@ -80,22 +80,11 @@ function AboutPage() {
     return (
         <div className="min-h-screen bg-white p-8 md:p-16 flex items-center">
             <div className="max-w-6xl mx-auto w-full">
-                <SectionHeader label="GREETING" title="About HS TECH" subtitle={COMPANY.subtagline} />
+                <SectionHeader label="COMPANY" title="About HS TECH" subtitle={COMPANY.subtagline} />
                 <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-4">
-                        {GREETING.paragraphs.map((p, i) => (
-                            <p key={i} className="text-slate-600 text-sm leading-relaxed border-l-2 border-cyan-200 pl-4">
-                                {p}
-                            </p>
-                        ))}
-                        <div className="mt-8 pt-6 border-t border-neutral-100">
-                            <div className="text-cyan-600 font-black text-sm">— {COMPANY.ceo}</div>
-                            <div className="text-slate-400 text-xs mt-1">CEO, HS TECH</div>
-                        </div>
-                    </div>
                     <div>
                         <div className="relative h-80 md:h-96 overflow-hidden rounded-xl border border-neutral-200">
-                            <Image src="/templates/air-hstech/images/ceo-photo.jpg" alt="HS TECH CEO" fill className="object-cover" />
+                            <Image src="/templates/air-hstech/images/hero-2.jpg" alt="HS TECH" fill className="object-cover" />
                         </div>
                         <div className="mt-5 grid grid-cols-2 gap-3">
                             {[
@@ -110,6 +99,51 @@ function AboutPage() {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                    <div className="space-y-5">
+                        <div className="border-l-2 border-cyan-400 pl-5">
+                            <div className="text-cyan-600 font-black text-[10px] tracking-wider uppercase mb-2">Mission</div>
+                            <p className="text-slate-900 text-lg font-black leading-tight">{COMPANY.tagline}</p>
+                        </div>
+                        <div className="space-y-1">
+                            {[
+                                { label: 'Business No.', value: COMPANY.businessReg },
+                                { label: 'Country', value: COMPANY.country },
+                                { label: 'Address', value: COMPANY.address },
+                                { label: 'Founded', value: COMPANY.founded },
+                            ].map(item => (
+                                <div key={item.label} className="flex gap-4 py-3 border-b border-neutral-100">
+                                    <span className="text-slate-400 text-[11px] font-bold w-28 flex-shrink-0 uppercase tracking-wider pt-0.5">{item.label}</span>
+                                    <span className="text-slate-700 text-sm">{item.value}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+function GreetingPage() {
+    return (
+        <div className="min-h-screen bg-white p-8 md:p-16 flex items-center">
+            <div className="max-w-6xl mx-auto w-full">
+                <SectionHeader label="CEO MESSAGE" title="CEO Greeting" subtitle="A message from our founder and CEO, Park JoonWoo." />
+                <div className="grid md:grid-cols-2 gap-12 items-start">
+                    <div className="space-y-4">
+                        {GREETING.paragraphs.map((p, i) => (
+                            <p key={i} className="text-slate-600 text-sm leading-relaxed border-l-2 border-cyan-200 pl-4">
+                                {p}
+                            </p>
+                        ))}
+                        <div className="mt-8 pt-6 border-t border-neutral-100">
+                            <div className="text-cyan-600 font-black text-sm">— {COMPANY.ceo}</div>
+                            <div className="text-slate-400 text-xs mt-1">CEO, HS TECH</div>
+                        </div>
+                    </div>
+                    <div className="relative h-[420px] md:h-[520px] overflow-hidden rounded-xl border border-neutral-200">
+                        <Image src="/templates/air-hstech/images/ceo-photo.jpg" alt="HS TECH CEO" fill className="object-cover" />
                     </div>
                 </div>
             </div>
@@ -344,6 +378,60 @@ function ProductsOverviewPage({ onSelectProduct }: { onSelectProduct: (tab: stri
                         </div>
                     )
                 })}
+            </div>
+        </div>
+    )
+}
+
+function SpecComparisonPage() {
+    const acProducts = PRODUCTS.filter(p => p.category === 'separate' || p.category === 'allinone')
+    const specLabels = ['Power Supply', 'Refrigerant', 'Cooling Capacity', 'Type']
+    return (
+        <div className="min-h-screen bg-white p-8 md:p-16">
+            <div className="max-w-6xl mx-auto">
+                <SectionHeader label="SPECIFICATIONS" title="Product Comparison" subtitle="Side-by-side specification overview of the GENWISH AC lineup." />
+                <div className="overflow-x-auto mb-10">
+                    <table className="w-full text-sm border-collapse">
+                        <thead>
+                            <tr className="border-b-2 border-cyan-500">
+                                <th className="text-left py-3 pr-6 text-slate-400 font-bold text-[11px] uppercase tracking-wider w-36">Spec</th>
+                                {acProducts.map(p => (
+                                    <th key={p.id} className="text-center py-3 px-3 text-cyan-600 font-black text-xs uppercase tracking-wider">
+                                        {p.model}
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {specLabels.map(specLabel => (
+                                <tr key={specLabel} className="border-b border-neutral-100">
+                                    <td className="py-3 pr-6 text-slate-400 text-[11px] font-bold uppercase tracking-wider">{specLabel}</td>
+                                    {acProducts.map(p => {
+                                        const spec = p.specs.find(s => s.label === specLabel)
+                                        return (
+                                            <td key={p.id} className="py-3 px-3 text-center text-slate-700 text-xs font-medium">
+                                                {spec?.value || '—'}
+                                            </td>
+                                        )
+                                    })}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                    {acProducts.map(p => (
+                        <div key={p.id} className="border border-neutral-200 rounded-xl overflow-hidden bg-white shadow-sm">
+                            <div className="relative w-full aspect-square overflow-hidden bg-neutral-50">
+                                <Image src={p.image} alt={p.model} fill className="object-cover" />
+                            </div>
+                            <div className="p-3">
+                                <div className="text-cyan-600 font-black text-xs mb-1">{p.model}</div>
+                                <div className="text-slate-400 text-[10px] leading-snug">{p.type}</div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )
@@ -785,11 +873,13 @@ function AirHSTechLightCatalog() {
         switch (currentTab) {
             case 'cover':        return <CoverPage onStart={() => navigate('about')} />
             case 'about':        return <AboutPage />
+            case 'greeting':     return <GreetingPage />
             case 'history':      return <HistoryPage />
             case 'brand':        return <BrandPage />
             case 'certifications': return <CertificationsPage />
             case 'process':      return <ProcessPage />
             case 'products':     return <ProductsOverviewPage onSelectProduct={navigate} />
+            case 'spec-compare': return <SpecComparisonPage />
             case 'hsd-180d':
             case 'hsh-260d':
             case 'hsp-180d':

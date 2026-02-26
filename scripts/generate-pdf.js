@@ -78,31 +78,33 @@ const GENTOP_PAGES = [
     { url: '/en/contact',                           label: '28 · Contact' },
 ]
 
-const AIR_HSTECH_BASE = 'https://hstechco.premiumpage.kr/templates/air-hstech'
+const AIR_HSTECH_BASE = 'https://hstechco.premiumpage.kr/templates/air-hstech-light'
 const AIR_HSTECH_PAGES = [
     { tab: 'cover',         label: '01 · COVER' },
     { tab: 'about',         label: '02 · ABOUT US' },
-    { tab: 'history',       label: '03 · HISTORY' },
-    { tab: 'brand',         label: '04 · BRAND' },
-    { tab: 'certifications',label: '05 · CERTIFICATIONS' },
-    { tab: 'process',       label: '06 · PROCESS' },
-    { tab: 'products',      label: '07 · PRODUCTS' },
-    { tab: 'hsd-180d',      label: '08 · HSD-180D' },
-    { tab: 'hsh-260d',      label: '09 · HSH-260D' },
-    { tab: 'hsp-180d',      label: '10 · HSP-180D' },
-    { tab: 'hsv-260d',      label: '11 · HSV-260D' },
-    { tab: 'hss-065s',      label: '12 · HSS-065S' },
-    { tab: 'hs-024h',       label: '13 · HS-024H' },
-    { tab: 'hs-220h',       label: '14 · HS-220H' },
-    { tab: 'controllers',   label: '15 · CONTROLLERS' },
-    { tab: 'outdoor-unit',  label: '16 · OUTDOOR UNIT' },
-    { tab: 'dc-tech',       label: '17 · DC TECHNOLOGY' },
-    { tab: 'non-operating', label: '18 · NON-OPERATING' },
-    { tab: 'crane',         label: '19 · CRANE' },
-    { tab: 'campingcar',    label: '20 · CAMPING CAR' },
-    { tab: 'ship',          label: '21 · SHIP' },
-    { tab: 'location',      label: '22 · LOCATION' },
-    { tab: 'contact',       label: '23 · CONTACT' },
+    { tab: 'greeting',      label: '03 · CEO GREETING' },
+    { tab: 'history',       label: '04 · HISTORY' },
+    { tab: 'brand',         label: '05 · BRAND' },
+    { tab: 'certifications',label: '06 · CERTIFICATIONS' },
+    { tab: 'process',       label: '07 · PROCESS' },
+    { tab: 'products',      label: '08 · PRODUCTS' },
+    { tab: 'spec-compare',  label: '09 · SPEC COMPARISON' },
+    { tab: 'hsd-180d',      label: '10 · HSD-180D' },
+    { tab: 'hsh-260d',      label: '11 · HSH-260D' },
+    { tab: 'hsp-180d',      label: '12 · HSP-180D' },
+    { tab: 'hsv-260d',      label: '13 · HSV-260D' },
+    { tab: 'hss-065s',      label: '14 · HSS-065S' },
+    { tab: 'hs-024h',       label: '15 · HS-024H' },
+    { tab: 'hs-220h',       label: '16 · HS-220H' },
+    { tab: 'controllers',   label: '17 · CONTROLLERS' },
+    { tab: 'outdoor-unit',  label: '18 · OUTDOOR UNIT' },
+    { tab: 'dc-tech',       label: '19 · DC TECHNOLOGY' },
+    { tab: 'non-operating', label: '20 · NON-OPERATING' },
+    { tab: 'crane',         label: '21 · CRANE' },
+    { tab: 'campingcar',    label: '22 · CAMPING CAR' },
+    { tab: 'ship',          label: '23 · SHIP' },
+    { tab: 'location',      label: '24 · LOCATION' },
+    { tab: 'contact',       label: '25 · CONTACT' },
 ]
 
 const HANGSEONG_BASE = 'https://hangseong.premiumpage.kr/templates/hangseong'
@@ -318,7 +320,7 @@ async function generateAirHSTechPDF(timestamp) {
     const browser = await chromium.launch({ headless: true, args: ['--disable-cache'] })
     const page = await browser.newPage()
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.emulateMedia({ colorScheme: 'light' })
 
     const screenshots = []
     for (const { tab, label } of AIR_HSTECH_PAGES) {
