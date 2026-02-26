@@ -603,12 +603,79 @@ const detailPages = [
 />
 ```
 
+#### 에어 HS-TECH (GENWISH)
+
+**특징:**
+- DC 엔진오프 에어컨 전문 (크레인, 캠핑카, 선박)
+- 라이트모드 기본 (다크모드 백업 버전도 유지)
+- 영문 전자카탈로그, 25페이지
+- 도메인: `hstechco.premiumpage.kr` → `/templates/air-hstech-light`
+- 브랜드명: GENWISH (Genius + Wish의 합성어)
+
+**다크/라이트 이중 버전 운영:**
+```
+app/templates/air-hstech/       ← 다크 (백업, 개발용)
+app/templates/air-hstech-light/ ← 라이트 (실제 서빙)
+app/templates/air-hstech/page-structure.ts  ← 두 버전이 공유
+app/templates/air-hstech/data.ts            ← 두 버전이 공유
+```
+
+**25페이지 구조:**
+```
+01. COVER       → 02. ABOUT US  → 03. CEO GREETING → 04. HISTORY
+05. BRAND       → 06. CERTIFICATIONS → 07. PROCESS
+08. PRODUCTS    → 09. SPEC COMPARISON
+10~16. 제품 상세 (HSD-180D ~ HS-220H)
+17. CONTROLLERS → 18. OUTDOOR UNIT
+19. DC TECHNOLOGY → 20. NON-OPERATING
+21. CRANE → 22. CAMPING CAR → 23. SHIP
+24. LOCATION → 25. CONTACT
+```
+
+**클라이언트 콘텐츠 확보 방법 — 핵심 노하우:**
+
+> **SSL 자체 서명 등 크롤링 차단 사이트는 클라이언트가 직접 HTML 저장**
+
+```
+방법: Chrome에서 각 페이지 Ctrl+S → "웹페이지, 완전" 선택
+저장 위치: legacy/assets/{브랜드명}/
+```
+
+- 저장된 HTML 파일에는 텍스트 + 이미지가 함께 저장됨
+- AI가 파싱하기 훨씬 용이 → 크롤링보다 정확도 높음
+- 클라이언트 입장에서도 "내 사이트 그대로 반영"이라는 신뢰감
+
 #### EMT
 
 **특징:**
-- 스마트 센서
-- 미래 모빌리티 산업
+- 스마트 센서, 미래 모빌리티 산업
 - 모던한 디자인
+- **정적 HTML 방식** (Next.js 아님) — middleware로 직접 서빙
+
+**EMT 정적 HTML 구조:**
+```
+public/emt/index.html  ← 실제 서빙 파일 (영문, 3400+ 라인)
+```
+
+**두 도메인이 같은 파일을 서빙할 때 언어 분기:**
+```javascript
+// 도메인 감지로 한글/영문 포맷 자동 전환
+(function() {
+    var isKo = window.location.hostname.includes('emt-ko');
+    if (isKo) {
+        document.getElementById('emt-phone').textContent = '055-339-6661';
+    }
+})();
+```
+
+**middleware.ts에서 정적 HTML 서빙 패턴:**
+```typescript
+if (hostname.includes('emt.premiumpage.kr')) {
+    if (url.pathname === '/') {
+        return NextResponse.rewrite(new URL('/emt/index.html', request.url))
+    }
+}
+```
 
 #### 항성산업사
 
@@ -1384,6 +1451,97 @@ apply-all --template=BaseLayout
 
 ---
 
+## 🐛 알려진 버그 패턴 및 해결책
+
+### 1. 모달 z-index가 PageNavigator를 가리는 문제
+
+**증상:** 제품 상세 모달 열린 상태에서 다음/이전 버튼을 누르면 페이지가 A→B→A→B로 무한 반복
+
+**원인:**
+```
+모달 backdrop: z-[100]
+PageNavigator: z-50
+→ 클릭이 backdrop.onClick(onClose)에 먼저 잡힘
+→ onClose() → navigate('products') → 원래 페이지로 복귀
+```
+
+**해결책:** 제품 상세를 모달이 아닌 **풀 페이지**로 처리. 이미지 확대만 라이트박스(z-[200])로.
+```tsx
+// ❌ 잘못된 패턴
+<ProductModal onClose={() => navigate('products')} />  // backdrop이 navigator 가림
+
+// ✅ 올바른 패턴
+case 'hsd-180d': return <ProductDetailPage productId={currentTab} />  // 풀 페이지
+// 이미지 클릭 시 ImageLightbox (z-[200]) 사용
+```
+
+### 2. PDF 생성 시 Vercel 배포 미완료 문제
+
+**증상:** 코드 변경 후 즉시 PDF 생성하면 이전 버전이 캡처됨
+
+**규칙:** `git push` 후 **15초 이상 대기** 후 PDF 생성
+```bash
+sleep 15 && node scripts/generate-pdf.js air-hstech
+```
+
+### 3. PDF 파일은 .gitignore 대상
+
+`public/report/*.pdf`는 `.gitignore`에 포함되어 git 추적 안 됨. 로컬에만 저장.
+→ 클라이언트 전달 시 직접 파일 전달 또는 다운로드 링크 제공
+
+---
+
+## 📋 신규 카탈로그 제작 프로세스 (검증된 방법)
+
+### 핵심: 클라이언트가 HTML 직접 저장
+
+크롤링 차단(SSL 인증, 봇 차단 등)을 우회하는 **가장 확실한 방법**:
+
+```
+1. 클라이언트가 Chrome에서 각 페이지 열기
+2. Ctrl+S → "웹페이지, 완전" 선택
+3. legacy/assets/{브랜드명}/ 폴더에 저장
+   (저장 시 _files/ 폴더에 이미지도 함께 저장됨)
+```
+
+**장점:**
+- 텍스트 + 이미지 + CSS 구조가 완벽하게 보존
+- 파싱 정확도 거의 100%
+- 클라이언트 입장: 내 사이트 내용 그대로 반영 → 신뢰감
+
+### 새 카탈로그 빠른 제작 체크리스트
+
+```markdown
+- [ ] 1. 기존 카탈로그 page.tsx 복사 (가장 가까운 스타일 선택)
+- [ ] 2. data.ts 작성 (HTML 파싱 → 제품/회사 데이터 추출)
+- [ ] 3. page-structure.ts 작성 (페이지 순서/탭명 정의)
+- [ ] 4. 색상 토큰 변경 (accent color, bg color)
+- [ ] 5. 이미지 public/templates/{브랜드}/ 복사
+- [ ] 6. middleware.ts 도메인 추가
+- [ ] 7. layout.tsx OG 태그 설정
+- [ ] 8. npm run build 확인
+- [ ] 9. git push → Vercel 배포 확인
+- [ ] 10. node scripts/generate-pdf.js {브랜드} → PDF 저장
+```
+
+### PDF 생성 스크립트 패턴
+
+```javascript
+// scripts/generate-pdf.js에 추가할 패턴
+const NEW_CATALOG_BASE = 'https://{domain}.premiumpage.kr/templates/{name}'
+const NEW_CATALOG_PAGES = [
+    { tab: 'cover',   label: '01 · COVER' },
+    // ...
+]
+
+async function generateNewCatalogPDF(timestamp) {
+    await page.emulateMedia({ colorScheme: 'light' })  // 라이트모드
+    // 또는: colorScheme: 'dark'  // 다크모드
+}
+```
+
+---
+
 ## ✅ 확인 및 검증 프로세스
 
 ### 작업 완료 후 체크리스트
@@ -1484,6 +1642,14 @@ export function validateImagePaths() {
 
 ```markdown
 ## 업데이트 히스토리
+
+### 2026-02-26
+- 에어 HS-TECH (GENWISH) 섹션 추가
+- EMT 정적 HTML 패턴 문서화
+- 모달 z-index 버그 패턴 추가
+- 신규 카탈로그 제작 프로세스 정립
+- 클라이언트 HTML 직접 저장 방식 공식화
+- PDF 생성 Vercel 배포 대기 규칙 추가
 
 ### 2024-02-14
 - 초기 버전 작성
