@@ -49,7 +49,16 @@ export function middleware(request: NextRequest) {
         }
     }
 
-    // 5. EMT (영문) 도메인 처리 - 원본 정적 HTML 서빙
+    // 5. 에어 HS-TECH (GENWISH / hstechco) 도메인 처리
+    if (hostname.includes('hstechco.premiumpage.kr')) {
+        if (url.pathname === '/') {
+            const response = NextResponse.rewrite(new URL('/templates/air-hstech', request.url))
+            response.headers.set('x-template-page', 'true')
+            return response
+        }
+    }
+
+    // 6. EMT (영문) 도메인 처리 - 원본 정적 HTML 서빙
     if (hostname.includes('emt.premiumpage.kr')) {
         if (url.pathname === '/') {
             const response = NextResponse.rewrite(new URL('/emt/index.html', request.url))

@@ -78,7 +78,7 @@ const GENTOP_PAGES = [
     { url: '/en/contact',                           label: '28 · Contact' },
 ]
 
-const AIR_HSTECH_BASE = 'https://air-hstech.premiumpage.kr/templates/air-hstech'
+const AIR_HSTECH_BASE = 'https://hstechco.premiumpage.kr/templates/air-hstech'
 const AIR_HSTECH_PAGES = [
     { tab: 'cover',         label: '01 · COVER' },
     { tab: 'about',         label: '02 · ABOUT US' },
