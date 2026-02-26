@@ -1,10 +1,10 @@
 'use client'
 
-import React, { Suspense, useState, useEffect, useCallback } from 'react'
+import { Suspense, useEffect, useCallback } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, MapPin, Phone, Mail, Printer, Clock, X, ArrowRight, Check } from 'lucide-react'
+import { ChevronLeft, ChevronRight, MapPin, Phone, Mail, Printer, Clock, X, Check } from 'lucide-react'
 import CoverView from './components/CoverView'
 import {
     COMPANY, BRAND, GREETING, HISTORY, CERTIFICATIONS,
@@ -14,6 +14,8 @@ import { BROCHURE_FLOW, ALL_TABS, getNavContext } from './page-structure'
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 const getProduct = (id: string) => PRODUCTS.find(p => p.id === id)
+
+const PRODUCT_DETAIL_TABS = ['hsd-180d', 'hsh-260d', 'hsp-180d', 'hsv-260d', 'hss-065s', 'hs-024h', 'hs-220h']
 
 // ─── Shared Section Header ────────────────────────────────────────────────────
 function SectionHeader({ eng, title, subtitle }: { eng: string; title?: string; subtitle?: string }) {
@@ -222,8 +224,8 @@ function CertificationsPage() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                     {CERTIFICATIONS.map(cert => (
                         <div key={cert.id} className="bg-white/5 border border-white/10 overflow-hidden">
-                            <div className="relative h-48 overflow-hidden">
-                                <Image src={cert.img} alt={cert.label} fill className="object-cover" />
+                            <div className="relative aspect-[3/4] overflow-hidden bg-white">
+                                <Image src={cert.img} alt={cert.label} fill className="object-contain" />
                             </div>
                             <div className="p-3 text-center">
                                 <div className="text-white font-bold text-sm">{cert.label}</div>
@@ -361,60 +363,6 @@ function ProductsOverviewPage({ onSelectProduct }: { onSelectProduct: (tab: stri
     )
 }
 
-// Individual Product Page
-function ProductDetailPage({ productId }: { productId: string }) {
-    const product = getProduct(productId)
-    if (!product) return null
-    return (
-        <div className="min-h-screen bg-[#0a0f1e] p-8 md:p-16">
-            <div className="max-w-5xl mx-auto">
-                <SectionHeader eng={product.type.toUpperCase()} />
-                <div className="grid md:grid-cols-2 gap-12 items-start">
-                    {/* Image */}
-                    <div>
-                        <div className="relative h-72 md:h-96 overflow-hidden border border-white/10">
-                            <Image src={product.image} alt={product.model} fill className="object-cover" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/50 to-transparent" />
-                        </div>
-                        {product.features && product.features.length > 0 && (
-                            <div className="mt-4 bg-white/5 border border-white/10 p-4">
-                                <h3 className="text-[#00d4ff] font-mono text-xs tracking-wider uppercase mb-3">Key Features</h3>
-                                <ul className="space-y-2">
-                                    {product.features.map((f, i) => (
-                                        <li key={i} className="flex items-start gap-2">
-                                            <Check className="w-4 h-4 text-[#00d4ff] flex-shrink-0 mt-0.5" />
-                                            <span className="text-gray-300 text-sm">{f}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                    </div>
-                    {/* Info */}
-                    <div>
-                        <div className="text-[#00d4ff] font-mono text-3xl font-bold mb-1">{product.model}</div>
-                        <div className="text-gray-400 text-sm mb-4">{product.name}</div>
-                        <p className="text-gray-300 text-sm leading-relaxed mb-8 border-l-2 border-[#00d4ff]/30 pl-4">
-                            {product.desc}
-                        </p>
-                        {/* Specs */}
-                        <div className="bg-white/5 border border-white/10 p-6">
-                            <h3 className="text-[#00d4ff] font-mono text-xs tracking-wider uppercase mb-4">Specifications</h3>
-                            <div className="space-y-0">
-                                {product.specs.map(spec => (
-                                    <SpecRow key={spec.label} label={spec.label} value={spec.value} />
-                                ))}
-                                <SpecRow label="Brand" value="GENWISH" />
-                                <SpecRow label="Manufacturer" value="HS TECH" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
-
 // Controllers page (combined)
 function ControllersPage() {
     const controllers = PRODUCTS.filter(p => p.category === 'controller')
@@ -480,6 +428,106 @@ function OutdoorUnitPage() {
                 </div>
             </div>
         </div>
+    )
+}
+
+// ─── Product Detail Modal ─────────────────────────────────────────────────────
+function ProductDetailModal({ productId, onClose }: { productId: string; onClose: () => void }) {
+    const product = getProduct(productId)
+
+    useEffect(() => {
+        const handler = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') onClose()
+        }
+        window.addEventListener('keydown', handler)
+        return () => window.removeEventListener('keydown', handler)
+    }, [onClose])
+
+    if (!product) return null
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
+        >
+            {/* Backdrop */}
+            <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose} />
+
+            {/* Modal panel */}
+            <motion.div
+                initial={{ opacity: 0, scale: 0.97, y: 12 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.97 }}
+                transition={{ duration: 0.2 }}
+                className="relative z-10 w-[80vw] max-h-[90vh] bg-[#0a0f1e] border border-white/20 flex flex-col"
+            >
+                {/* Corner brackets */}
+                <span className="absolute -top-px -left-px w-5 h-5 border-t-2 border-l-2 border-[#00d4ff]" />
+                <span className="absolute -top-px -right-px w-5 h-5 border-t-2 border-r-2 border-[#00d4ff]" />
+                <span className="absolute -bottom-px -left-px w-5 h-5 border-b-2 border-l-2 border-[#00d4ff]" />
+                <span className="absolute -bottom-px -right-px w-5 h-5 border-b-2 border-r-2 border-[#00d4ff]" />
+
+                {/* Sticky header with close button */}
+                <div className="flex items-center justify-between px-6 py-3 border-b border-white/10 flex-shrink-0">
+                    <div className="flex items-center gap-3">
+                        <div className="h-px w-6 bg-[#00d4ff]" />
+                        <span className="text-[#00d4ff] text-xs font-mono tracking-[0.3em] uppercase">{product.type.toUpperCase()}</span>
+                    </div>
+                    <button
+                        onClick={onClose}
+                        className="w-8 h-8 flex items-center justify-center bg-white/10 hover:bg-white/20 text-white transition-colors rounded-sm"
+                    >
+                        <X className="w-4 h-4" />
+                    </button>
+                </div>
+
+                {/* Scrollable content */}
+                <div className="overflow-y-auto flex-1 p-8 md:p-10">
+                    <div className="grid md:grid-cols-2 gap-10 items-start">
+                        {/* Image */}
+                        <div>
+                            <div className="relative h-64 md:h-80 overflow-hidden border border-white/10">
+                                <Image src={product.image} alt={product.model} fill className="object-cover" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/50 to-transparent" />
+                            </div>
+                            {product.features && product.features.length > 0 && (
+                                <div className="mt-4 bg-white/5 border border-white/10 p-4">
+                                    <h3 className="text-[#00d4ff] font-mono text-xs tracking-wider uppercase mb-3">Key Features</h3>
+                                    <ul className="space-y-2">
+                                        {product.features.map((f, i) => (
+                                            <li key={i} className="flex items-start gap-2">
+                                                <Check className="w-4 h-4 text-[#00d4ff] flex-shrink-0 mt-0.5" />
+                                                <span className="text-gray-300 text-sm">{f}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                        {/* Info */}
+                        <div>
+                            <div className="text-[#00d4ff] font-mono text-3xl font-bold mb-1">{product.model}</div>
+                            <div className="text-gray-400 text-sm mb-4">{product.name}</div>
+                            <p className="text-gray-300 text-sm leading-relaxed mb-8 border-l-2 border-[#00d4ff]/30 pl-4">
+                                {product.desc}
+                            </p>
+                            <div className="bg-white/5 border border-white/10 p-6">
+                                <h3 className="text-[#00d4ff] font-mono text-xs tracking-wider uppercase mb-4">Specifications</h3>
+                                <div className="space-y-0">
+                                    {product.specs.map(spec => (
+                                        <SpecRow key={spec.label} label={spec.label} value={spec.value} />
+                                    ))}
+                                    <SpecRow label="Brand" value="GENWISH" />
+                                    <SpecRow label="Manufacturer" value="HS TECH" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
+        </motion.div>
     )
 }
 
@@ -727,48 +775,48 @@ function ContactPage() {
 function PageNavigator({ currentTab, onNavigate }: { currentTab: string; onNavigate: (tab: string) => void }) {
     const ctx = getNavContext(currentTab)
     return (
-        <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#0a0f1e]/90 backdrop-blur-sm border-t border-white/10">
-            <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#0a0f1e]/95 backdrop-blur-sm border-t border-white/10">
+            <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
                 {/* Prev */}
                 <button
                     onClick={() => ctx.prev && onNavigate(ctx.prev.tab)}
                     disabled={!ctx.prev}
-                    className="flex items-center gap-2 text-gray-400 hover:text-[#00d4ff] transition-colors disabled:opacity-30 disabled:cursor-not-allowed text-xs font-mono"
+                    className="flex items-center gap-2 text-gray-400 hover:text-[#00d4ff] transition-colors disabled:opacity-30 disabled:cursor-not-allowed text-sm font-mono"
                 >
-                    <ChevronLeft className="w-4 h-4" />
+                    <ChevronLeft className="w-5 h-5" />
                     <span className="hidden md:block">{ctx.prev?.label || ''}</span>
                 </button>
 
                 {/* Page counter + mini map */}
-                <div className="flex items-center gap-3">
-                    <span className="text-[#00d4ff] font-mono text-xs">{String(ctx.position).padStart(2, '0')}</span>
-                    <div className="flex gap-[3px]">
+                <div className="flex items-center gap-4">
+                    <span className="text-[#00d4ff] font-mono text-sm font-bold">{String(ctx.position).padStart(2, '0')}</span>
+                    <div className="flex gap-1">
                         {BROCHURE_FLOW.map((p, i) => (
                             <button
                                 key={p.tab}
                                 onClick={() => onNavigate(p.tab)}
                                 title={p.label}
-                                className={`h-1.5 transition-all duration-300 ${
+                                className={`h-2 transition-all duration-300 ${
                                     p.tab === currentTab
-                                        ? 'w-6 bg-[#00d4ff]'
+                                        ? 'w-8 bg-[#00d4ff]'
                                         : i < ctx.position - 1
-                                        ? 'w-1.5 bg-[#00d4ff]/40'
-                                        : 'w-1.5 bg-white/20'
+                                        ? 'w-2 bg-[#00d4ff]/40'
+                                        : 'w-2 bg-white/20'
                                 }`}
                             />
                         ))}
                     </div>
-                    <span className="text-gray-500 font-mono text-xs">{String(ctx.total).padStart(2, '0')}</span>
+                    <span className="text-gray-500 font-mono text-sm">{String(ctx.total).padStart(2, '0')}</span>
                 </div>
 
                 {/* Next */}
                 <button
                     onClick={() => ctx.next && onNavigate(ctx.next.tab)}
                     disabled={!ctx.next}
-                    className="flex items-center gap-2 text-gray-400 hover:text-[#00d4ff] transition-colors disabled:opacity-30 disabled:cursor-not-allowed text-xs font-mono"
+                    className="flex items-center gap-2 text-gray-400 hover:text-[#00d4ff] transition-colors disabled:opacity-30 disabled:cursor-not-allowed text-sm font-mono"
                 >
                     <span className="hidden md:block">{ctx.next?.label || ''}</span>
-                    <ChevronRight className="w-4 h-4" />
+                    <ChevronRight className="w-5 h-5" />
                 </button>
             </div>
         </div>
@@ -809,13 +857,13 @@ function AirHSTechCatalog() {
             case 'certifications': return <CertificationsPage />
             case 'process':      return <ProcessPage />
             case 'products':     return <ProductsOverviewPage onSelectProduct={navigate} />
-            case 'hsd-180d':     return <ProductDetailPage productId="hsd-180d" />
-            case 'hsh-260d':     return <ProductDetailPage productId="hsh-260d" />
-            case 'hsp-180d':     return <ProductDetailPage productId="hsp-180d" />
-            case 'hsv-260d':     return <ProductDetailPage productId="hsv-260d" />
-            case 'hss-065s':     return <ProductDetailPage productId="hss-065s" />
-            case 'hs-024h':      return <ProductDetailPage productId="hs-024h" />
-            case 'hs-220h':      return <ProductDetailPage productId="hs-220h" />
+            case 'hsd-180d':
+            case 'hsh-260d':
+            case 'hsp-180d':
+            case 'hsv-260d':
+            case 'hss-065s':
+            case 'hs-024h':
+            case 'hs-220h':      return <ProductsOverviewPage onSelectProduct={navigate} />
             case 'controllers':  return <ControllersPage />
             case 'outdoor-unit': return <OutdoorUnitPage />
             case 'dc-tech':      return <DCTechPage />
@@ -830,15 +878,19 @@ function AirHSTechCatalog() {
     }
 
     return (
-        <div className="min-h-screen bg-[#0a0f1e] text-white pb-16">
+        <div className="min-h-screen bg-[#0a0f1e] text-white pb-20">
             {/* Header (hidden on cover page) */}
             {currentTab !== 'cover' && (
                 <header className="sticky top-0 z-40 bg-[#0a0f1e]/90 backdrop-blur-sm border-b border-white/10">
                     <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
-                        <button onClick={() => navigate('cover')} className="flex items-center gap-3">
-                            <div className="text-[#00d4ff] font-mono font-bold text-lg tracking-widest">GENWISH</div>
-                            <div className="h-4 w-px bg-white/20" />
-                            <div className="text-gray-400 text-xs font-mono">HS TECH</div>
+                        <button onClick={() => navigate('cover')} className="flex items-center">
+                            <Image
+                                src="/templates/air-hstech/images/logo-top.png"
+                                alt="HS TECH"
+                                width={120}
+                                height={31}
+                                className="object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
+                            />
                         </button>
                         {/* Top nav groups */}
                         <nav className="hidden md:flex items-center gap-6">
@@ -849,7 +901,9 @@ function AirHSTechCatalog() {
                                         key={tab}
                                         onClick={() => navigate(tab)}
                                         className={`text-xs font-mono tracking-wider uppercase transition-colors ${
-                                            currentTab === tab ? 'text-[#00d4ff]' : 'text-gray-400 hover:text-white'
+                                            currentTab === tab || (tab === 'products' && PRODUCT_DETAIL_TABS.includes(currentTab))
+                                                ? 'text-[#00d4ff]'
+                                                : 'text-gray-400 hover:text-white'
                                         }`}
                                     >
                                         {page?.label || tab}
@@ -861,10 +915,10 @@ function AirHSTechCatalog() {
                 </header>
             )}
 
-            {/* Page Content */}
+            {/* Page Content — product detail tabs reuse products-bg key to avoid re-animation */}
             <AnimatePresence mode="wait">
                 <motion.div
-                    key={currentTab}
+                    key={PRODUCT_DETAIL_TABS.includes(currentTab) ? 'products-bg' : currentTab}
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
@@ -876,6 +930,27 @@ function AirHSTechCatalog() {
 
             {/* Page Navigator */}
             <PageNavigator currentTab={currentTab} onNavigate={navigate} />
+
+            {/* Corner bracket overlay — visible on all non-cover pages */}
+            {currentTab !== 'cover' && (
+                <div className="pointer-events-none fixed inset-0 z-30">
+                    <span className="absolute top-[52px] left-3 w-5 h-5 border-t border-l border-[#00d4ff]/20" />
+                    <span className="absolute top-[52px] right-3 w-5 h-5 border-t border-r border-[#00d4ff]/20" />
+                    <span className="absolute bottom-[56px] left-3 w-5 h-5 border-b border-l border-[#00d4ff]/20" />
+                    <span className="absolute bottom-[56px] right-3 w-5 h-5 border-b border-r border-[#00d4ff]/20" />
+                </div>
+            )}
+
+            {/* Product Detail Modal */}
+            <AnimatePresence>
+                {PRODUCT_DETAIL_TABS.includes(currentTab) && (
+                    <ProductDetailModal
+                        key="product-modal"
+                        productId={currentTab}
+                        onClose={() => navigate('products')}
+                    />
+                )}
+            </AnimatePresence>
         </div>
     )
 }

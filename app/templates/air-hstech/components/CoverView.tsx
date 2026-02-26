@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -58,15 +58,31 @@ export default function CoverView({ onStart }: CoverViewProps) {
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.9, delay: 0.3 }}
+                    className="relative px-12 py-10"
                 >
-                    <p className="text-[#00d4ff] text-sm font-mono tracking-[0.4em] uppercase mb-6">
-                        GENWISH
-                    </p>
+                    {/* Corner brackets */}
+                    <span className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#00d4ff]/70" />
+                    <span className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#00d4ff]/70" />
+                    <span className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#00d4ff]/70" />
+                    <span className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#00d4ff]/70" />
+
+                    {/* Logo */}
+                    <div className="flex justify-center mb-8">
+                        <Image
+                            src="/templates/air-hstech/images/logo-top.png"
+                            alt="HS TECH"
+                            width={160}
+                            height={41}
+                            className="object-contain brightness-0 invert opacity-90"
+                            priority
+                        />
+                    </div>
+
                     <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-4">
                         As a leader in<br />DC Non-Starting
                     </h1>
-                    <p className="text-lg md:text-2xl text-gray-300 tracking-widest mb-10">
-                        HS TECH COMPANY
+                    <p className="text-base md:text-lg text-[#00d4ff]/80 font-mono tracking-[0.3em] uppercase mb-10">
+                        Engine-Off Air Conditioner
                     </p>
                     <button
                         onClick={onStart}
