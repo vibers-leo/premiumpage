@@ -58,7 +58,21 @@ export function middleware(request: NextRequest) {
         }
     }
 
-    // 6. EMT (영문) 도메인 처리 - 원본 정적 HTML 서빙
+    // 6. 계발자들 매거진 (magazine.vibers.co.kr)
+    if (hostname.includes('magazine.vibers.co.kr') || hostname.includes('vibers.vercel.app')) {
+        if (url.pathname === '/' || url.pathname === '') {
+            const response = NextResponse.rewrite(new URL('/vibers/magazine', request.url))
+            response.headers.set('x-template-page', 'true')
+            return response
+        }
+        if (!url.pathname.startsWith('/vibers')) {
+            const response = NextResponse.rewrite(new URL(`/vibers${url.pathname}`, request.url))
+            response.headers.set('x-template-page', 'true')
+            return response
+        }
+    }
+
+    // 7. EMT (영문) 도메인 처리 - 원본 정적 HTML 서빙
     if (hostname.includes('emt.premiumpage.kr')) {
         if (url.pathname === '/') {
             const response = NextResponse.rewrite(new URL('/emt/index.html', request.url))
