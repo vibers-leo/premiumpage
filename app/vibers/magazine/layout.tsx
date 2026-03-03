@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: '계발자들 — magazine.vibefolio.co.kr',
+    title: '계발자들 — magazine.viber.co.kr',
     description: '만들고, 탐구하고, 발견하는 사람들의 월간 매거진.',
     openGraph: {
         title: '계발자들',

@@ -135,7 +135,7 @@ export default function MagazinePage() {
             <footer className="border-t border-stone-200 py-12 px-6 mt-8">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-stone-400">
                     <div className="font-black text-stone-900 text-base">계발자들</div>
-                    <div>© 2026 계발자들 · magazine.vibefolio.co.kr</div>
+                    <div>© 2026 계발자들 · magazine.viber.co.kr</div>
                 </div>
             </footer>
         </div>

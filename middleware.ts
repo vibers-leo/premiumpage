@@ -58,8 +58,8 @@ export function middleware(request: NextRequest) {
         }
     }
 
-    // 6. 계발자들 매거진 (magazine.vibefolio.co.kr)
-    if (hostname.includes('magazine.vibefolio.co.kr') || hostname.includes('vibers.vercel.app')) {
+    // 6. 계발자들 매거진 (magazine.viber.co.kr)
+    if (hostname.includes('magazine.viber.co.kr') || hostname.includes('vibers.vercel.app')) {
         if (url.pathname === '/' || url.pathname === '') {
             const response = NextResponse.rewrite(new URL('/vibers/magazine', request.url))
             response.headers.set('x-template-page', 'true')
