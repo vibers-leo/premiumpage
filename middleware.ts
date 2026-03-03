@@ -59,7 +59,7 @@ export function middleware(request: NextRequest) {
     }
 
     // 6. 계발자들 매거진 (magazine.vibers.co.kr)
-    if (hostname.includes('magazine.vibers.co.kr') || hostname.includes('vibers.vercel.app')) {
+    if (hostname.includes('magazine.vibers.co.kr') || hostname.includes('vibers.premiumpage.kr') || hostname.includes('vibers.vercel.app')) {
         if (url.pathname === '/' || url.pathname === '') {
             const response = NextResponse.rewrite(new URL('/vibers/magazine', request.url))
             response.headers.set('x-template-page', 'true')
