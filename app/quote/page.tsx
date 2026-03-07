@@ -29,6 +29,7 @@ export default function QuotePageEnhanced() {
     // 0: 서비스 선택, 1: 템플릿(커스텀만), 2: 개발플랜, 3: 유지보수, 4: 정보입력
     const [step, setStep] = useState(0)
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const [errors, setErrors] = useState<Record<string, string>>({})
     const [formData, setFormData] = useState<FormData>({
         serviceType: null,
         templateId: '',
@@ -42,8 +43,36 @@ export default function QuotePageEnhanced() {
         files: []
     })
 
-    // 자동 저장 및 복원
+    // URL 쿼리 파라미터로 플랜 자동 선택
     useEffect(() => {
+        const params = new URLSearchParams(window.location.search)
+        const planId = params.get('plan')
+        if (planId) {
+            const plan = developmentPlans.find(p => p.id === planId)
+            if (plan) {
+                if (planId === '1') {
+                    // Lite = PDF 변환
+                    setFormData(prev => ({
+                        ...prev,
+                        serviceType: 'pdf',
+                        templateId: '1',
+                        developmentPlanId: '1',
+                    }))
+                    setStep(3) // 유지보수 선택으로 바로 이동
+                } else {
+                    // Standard/Master = 커스텀 제작
+                    setFormData(prev => ({
+                        ...prev,
+                        serviceType: 'custom',
+                        developmentPlanId: planId,
+                    }))
+                    setStep(1) // 템플릿 선택으로 이동
+                }
+            }
+            return // URL 파라미터가 있으면 로컬 스토리지 복원 스킵
+        }
+
+        // 자동 저장 복원
         const savedData = localStorage.getItem('quoteFormData')
         if (savedData) {
             const parsed = JSON.parse(savedData)
@@ -102,8 +131,29 @@ export default function QuotePageEnhanced() {
         ? (step === 0 ? 33 : step === 3 ? 66 : 100)
         : ((step + 1) / 5) * 100
 
+    const validateForm = (): boolean => {
+        const newErrors: Record<string, string> = {}
+        if (!formData.companyName.trim()) newErrors.companyName = '회사명을 입력해주세요.'
+        if (!formData.contactName.trim()) newErrors.contactName = '담당자명을 입력해주세요.'
+        if (!formData.contactPhone.trim()) newErrors.contactPhone = '연락처를 입력해주세요.'
+        if (formData.contactEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.contactEmail)) {
+            newErrors.contactEmail = '올바른 이메일 형식을 입력해주세요.'
+        }
+        setErrors(newErrors)
+        return Object.keys(newErrors).length === 0
+    }
+
+    // 예상 납기일 계산
+    const getEstimatedDelivery = (): string => {
+        if (formData.serviceType === 'pdf') return '약 1주일'
+        if (formData.developmentPlanId === '2') return '2~4주'
+        if (formData.developmentPlanId === '3') return '4~8주'
+        return '-'
+    }
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
+        if (!validateForm()) return
         setIsSubmitting(true)
 
         try {
@@ -356,27 +406,29 @@ export default function QuotePageEnhanced() {
                                         <CardContent className="space-y-4 pt-6">
                                             <div className="grid md:grid-cols-2 gap-4">
                                                 <div className="space-y-2">
-                                                    <label className="text-sm font-medium">회사/단체명</label>
+                                                    <label className="text-sm font-medium">회사/단체명 <span className="text-red-500">*</span></label>
                                                     <div className="relative">
                                                         <Building2 className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
                                                         <input
                                                             type="text"
-                                                            className="imweb-input pl-10 w-full"
+                                                            className={`imweb-input pl-10 w-full ${errors.companyName ? 'border-red-500' : ''}`}
                                                             placeholder="회사명 입력"
                                                             value={formData.companyName}
-                                                            onChange={(e) => updateFormData('companyName', e.target.value)}
+                                                            onChange={(e) => { updateFormData('companyName', e.target.value); setErrors(prev => ({ ...prev, companyName: '' })) }}
                                                         />
                                                     </div>
+                                                    {errors.companyName && <p className="text-red-500 text-xs">{errors.companyName}</p>}
                                                 </div>
                                                 <div className="space-y-2">
-                                                    <label className="text-sm font-medium">담당자명</label>
+                                                    <label className="text-sm font-medium">담당자명 <span className="text-red-500">*</span></label>
                                                     <input
                                                         type="text"
-                                                        className="imweb-input w-full"
+                                                        className={`imweb-input w-full ${errors.contactName ? 'border-red-500' : ''}`}
                                                         placeholder="담당자 성함"
                                                         value={formData.contactName}
-                                                        onChange={(e) => updateFormData('contactName', e.target.value)}
+                                                        onChange={(e) => { updateFormData('contactName', e.target.value); setErrors(prev => ({ ...prev, contactName: '' })) }}
                                                     />
+                                                    {errors.contactName && <p className="text-red-500 text-xs">{errors.contactName}</p>}
                                                 </div>
                                                 <div className="space-y-2">
                                                     <label className="text-sm font-medium">이메일</label>
@@ -384,25 +436,27 @@ export default function QuotePageEnhanced() {
                                                         <Mail className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
                                                         <input
                                                             type="email"
-                                                            className="imweb-input pl-10 w-full"
+                                                            className={`imweb-input pl-10 w-full ${errors.contactEmail ? 'border-red-500' : ''}`}
                                                             placeholder="example@company.com"
                                                             value={formData.contactEmail}
-                                                            onChange={(e) => updateFormData('contactEmail', e.target.value)}
+                                                            onChange={(e) => { updateFormData('contactEmail', e.target.value); setErrors(prev => ({ ...prev, contactEmail: '' })) }}
                                                         />
                                                     </div>
+                                                    {errors.contactEmail && <p className="text-red-500 text-xs">{errors.contactEmail}</p>}
                                                 </div>
                                                 <div className="space-y-2">
-                                                    <label className="text-sm font-medium">연락처</label>
+                                                    <label className="text-sm font-medium">연락처 <span className="text-red-500">*</span></label>
                                                     <div className="relative">
                                                         <Phone className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
                                                         <input
                                                             type="tel"
-                                                            className="imweb-input pl-10 w-full"
+                                                            className={`imweb-input pl-10 w-full ${errors.contactPhone ? 'border-red-500' : ''}`}
                                                             placeholder="010-0000-0000"
                                                             value={formData.contactPhone}
-                                                            onChange={(e) => updateFormData('contactPhone', e.target.value)}
+                                                            onChange={(e) => { updateFormData('contactPhone', e.target.value); setErrors(prev => ({ ...prev, contactPhone: '' })) }}
                                                         />
                                                     </div>
+                                                    {errors.contactPhone && <p className="text-red-500 text-xs">{errors.contactPhone}</p>}
                                                 </div>
                                             </div>
 
@@ -539,10 +593,16 @@ export default function QuotePageEnhanced() {
                                             <span className="font-medium text-muted-foreground">초기 구축비</span>
                                             <span className="text-xl font-bold">{formatPrice(selectedDevPlan?.price || 0)}</span>
                                         </div>
-                                        <div className="flex justify-between items-center text-sm">
+                                        <div className="flex justify-between items-center text-sm mb-2">
                                             <span className="text-muted-foreground">월 유지비용</span>
                                             <span className="font-medium">{formatPrice(selectedMaintPlan?.price || 0)}/월</span>
                                         </div>
+                                        {(formData.serviceType || selectedDevPlan) && (
+                                            <div className="flex justify-between items-center text-sm pt-2 border-t border-muted/30">
+                                                <span className="text-muted-foreground">예상 납기</span>
+                                                <span className="font-medium text-primary">{getEstimatedDelivery()}</span>
+                                            </div>
+                                        )}
                                     </div>
                                 </CardContent>
                             </Card>
