@@ -132,15 +132,23 @@ function vibersPostToArticle(post: VibersPost): Article {
 }
 
 export async function getDBPosts(): Promise<Article[]> {
-    const { prisma } = await import('@/lib/prisma')
-    const posts = await prisma.vibersPost.findMany({
-        orderBy: { publishedAt: 'desc' },
-    })
-    return posts.map(vibersPostToArticle)
+    try {
+        const { prisma } = await import('@/lib/prisma')
+        const posts = await prisma.vibersPost.findMany({
+            orderBy: { publishedAt: 'desc' },
+        })
+        return posts.map(vibersPostToArticle)
+    } catch {
+        return []
+    }
 }
 
 export async function getDBPostBySlug(slug: string): Promise<Article | null> {
-    const { prisma } = await import('@/lib/prisma')
-    const post = await prisma.vibersPost.findUnique({ where: { slug } })
-    return post ? vibersPostToArticle(post) : null
+    try {
+        const { prisma } = await import('@/lib/prisma')
+        const post = await prisma.vibersPost.findUnique({ where: { slug } })
+        return post ? vibersPostToArticle(post) : null
+    } catch {
+        return null
+    }
 }
