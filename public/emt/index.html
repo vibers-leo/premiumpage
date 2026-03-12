@@ -3450,6 +3450,49 @@ Fan modes: Strong medium weak and natural wind mode built in`
         <div class="toggle-ball"></div>
     </div>
 
+    <!-- Language toggle: cross-domain redirect between emt-ko / emt-en -->
+    <script>
+    (function() {
+        var host = window.location.hostname;
+        var isKo = host.includes('emt-ko');
+
+        // href="/ko" → emt-ko.premiumpage.kr
+        // href="/"   → emt-en.premiumpage.kr
+        document.querySelectorAll('.lang-link, .m-lang-link').forEach(function(link) {
+            var href = link.getAttribute('href') || '';
+            var base = href.split('?')[0];
+            if (base === '/ko') {
+                link.setAttribute('data-lang', 'ko');
+            } else if (base === '/') {
+                link.setAttribute('data-lang', 'en');
+            }
+        });
+
+        document.querySelectorAll('[data-lang]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var lang = link.getAttribute('data-lang');
+                var slide = new URLSearchParams(window.location.search).get('slide') || '1';
+                if (lang === 'ko') {
+                    window.location.href = 'https://emt-ko.premiumpage.kr/?slide=' + slide;
+                } else {
+                    window.location.href = 'https://emt-en.premiumpage.kr/?slide=' + slide;
+                }
+            });
+        });
+
+        // active 상태 표시
+        document.querySelectorAll('[data-lang]').forEach(function(link) {
+            var lang = link.getAttribute('data-lang');
+            if ((isKo && lang === 'ko') || (!isKo && lang === 'en')) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    })();
+    </script>
+
     <!-- Phone number localization: Korean domain → 055 format -->
     <script>
     (function() {
