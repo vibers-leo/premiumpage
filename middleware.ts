@@ -73,7 +73,7 @@ export function middleware(request: NextRequest) {
     }
 
     // 7. EMT (영문) 도메인 처리 - 원본 정적 HTML 서빙
-    if (hostname.includes('emt.premiumpage.kr')) {
+    if (hostname.includes('emt.premiumpage.kr') || hostname.includes('emt-en.premiumpage.kr')) {
         if (url.pathname === '/') {
             const response = NextResponse.rewrite(new URL('/emt/index.html', request.url))
             response.headers.set('x-template-page', 'true')
@@ -81,7 +81,7 @@ export function middleware(request: NextRequest) {
         }
     }
 
-    // 6. EMT (국문) 도메인 처리 - 원본 정적 HTML 서빙
+    // 8. EMT (한글) 도메인 처리 - 원본 정적 HTML 서빙 (JS가 emt-ko 감지 → 한글 포맷)
     if (hostname.includes('emt-ko.premiumpage.kr')) {
         if (url.pathname === '/') {
             const response = NextResponse.rewrite(new URL('/emt/index.html', request.url))
