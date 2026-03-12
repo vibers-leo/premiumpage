@@ -1139,7 +1139,7 @@
                             </tr>
                             <tr>
                                 <th>CEO</th>
-                                <td>Young-ho Ko</td>
+                                <td>YungHo Koh</td>
                             </tr>
                             <tr>
                                 <th>Establishment</th>
@@ -1188,7 +1188,7 @@
                 </div>
                 <div class="glass-box" style="flex:3; padding: 30px;">
                     <h2 style="color:var(--neon-cyan); font-size:16px; font-family:var(--font-sub); margin-bottom: 15px;">MISSION</h2>
-                    <p style="font-size:20px; color:white; font-weight:600; margin-bottom:15px;">Building Trust with Quality, Creating the Future with Technology</p>
+                    <p style="font-size:20px; color:white; font-weight:600; margin-bottom:15px;">Quality You Trust, Technology for the Future</p>
                     <div style="display:flex; gap:15px;">
                         <div style="flex:1; text-align:center;">
                             <div style="height:80px; border-radius:8px; overflow:hidden;"><img src="assets/mission_1.png" style="width:100%; height:100%; object-fit:cover;"></div>
@@ -2109,7 +2109,13 @@
         <div class="slide">
             <span class="slide-tag">MOBILITY PRODUCTS</span>
             <h1 class="slide-title">ACTUATORS</h1>
-            <div class="product-grid" style="grid-template-columns: repeat(5, 1fr) !important; gap: 15px;">
+            <div class="product-grid" style="grid-template-columns: repeat(3, 1fr) !important; gap: 15px;">
+                <div class="p-card" onclick="openProductModal('hidden-door')" style="padding-top: 15px;">
+                    <img src="assets/hidden-door.png">
+                    <h3>Hidden Door Handle Actuator</h3>
+                    <div style="height:15px"></div>
+                    <p>An actuator that automatically deploys and retracts the hidden door handle when the door is opened or closed, reducing air resistance while enhancing design aesthetics and security</p>
+                </div>
                 <div class="p-card" onclick="openProductModal('fan-clutch')" style="padding-top: 15px;">
                     <img src="assets/21.png">
                     <h3>Electronic Fan Clutch Actuator</h3>
@@ -2141,10 +2147,10 @@
                     <p>An electric motor that generates rotational motion using AC power and provides high durability and stable performance for HVAC systems</p>
                 </div>
             </div>
-            <!-- Custom Style for Actuator Grid to fit 5 items -->
+            <!-- Custom Style for Actuator Grid to fit 6 items (3x2) -->
             <style>
-                /* Unify image height for 5-column grid */
-                .product-grid[style*="repeat(5"] .p-card img {
+                /* Unify image height for 3-column actuator grid */
+                .product-grid[style*="repeat(3"] .p-card img {
                     height: 220px !important;
                     background-color: #1a1a1a;
                 }
@@ -3146,6 +3152,24 @@ Insulation class: Class B or Class F
 Protection rating: IP54 to IP65
 Operating temperature: -20 <span class="deg">&deg;</span>C to +80 <span class="deg">&deg;</span>C
 Connector type: Custom connector or lead wire output`
+            },
+            'hidden-door': {
+                category: 'Actuator', title: 'Hidden Door Handle Actuator', img: 'assets/hidden-door.png',
+                desc: 'An actuator that automatically deploys and retracts the hidden door handle when the door is opened or closed',
+                specs: [
+                     { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40 <span class="deg">&deg;</span>C ~ +85 <span class="deg">&deg;</span>C' },
+                     { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'IP Rating', value: 'IP67' },
+                     { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Resp. Time', value: '≤ 200ms' }
+                ],
+                details: `An actuator that automatically deploys and retracts the hidden door handle when the door is opened or closed, reducing air resistance while enhancing design aesthetics and security.
+
+Operating voltage: DC 12V ±10%
+Operating temperature: -40 <span class="deg">&deg;</span>C to +85 <span class="deg">&deg;</span>C
+Response time: ≤200 ms
+Ingress protection: IP67
+Drive type: DC motor with gear reduction mechanism
+Control signal: ECU or smart key signal
+Application: Automotive flush door handle systems`
             },
             'fan-clutch': {
                 category: 'Actuator', title: 'Electronic Fan Clutch Actuator', img: 'assets/21.png',
