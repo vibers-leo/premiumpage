@@ -983,9 +983,9 @@
         
         <!-- Mobile Language Switch -->
         <div class="m-lang-switch">
-            <a href="/ko" class="m-lang-link">KR</a>
+            <a href="https://emt-ko.premiumpage.kr/" class="m-lang-link">KR</a>
             <span style="color:#333">|</span>
-            <a href="/" class="m-lang-link active">EN</a>
+            <a href="https://emt-en.premiumpage.kr/" class="m-lang-link active">EN</a>
         </div>
     </div>
 
@@ -1023,9 +1023,9 @@
         
         <!-- Desktop Language Switch -->
         <div class="lang-switch mobile-hide">
-            <a href="/ko" class="lang-link">KR</a>
+            <a href="https://emt-ko.premiumpage.kr/" class="lang-link">KR</a>
             <span style="color:rgba(255,255,255,0.2)">|</span>
-            <a href="/" class="lang-link active">EN</a>
+            <a href="https://emt-en.premiumpage.kr/" class="lang-link active">EN</a>
         </div>
         <!-- Mobile Menu Button -->
         <div class="mobile-menu-btn" onclick="toggleMobile()">☰</div>
@@ -3474,41 +3474,14 @@ Fan modes: Strong medium weak and natural wind mode built in`
         <div class="toggle-ball"></div>
     </div>
 
-    <!-- Language toggle: cross-domain redirect between emt-ko / emt-en -->
+    <!-- Language toggle: active 상태 표시 -->
     <script>
     (function() {
-        var host = window.location.hostname;
-        var isKo = host.includes('emt-ko');
-
-        // href="/ko" → emt-ko.premiumpage.kr
-        // href="/"   → emt-en.premiumpage.kr
+        var isKo = window.location.hostname.includes('emt-ko');
         document.querySelectorAll('.lang-link, .m-lang-link').forEach(function(link) {
             var href = link.getAttribute('href') || '';
-            var base = href.split('?')[0];
-            if (base === '/ko') {
-                link.setAttribute('data-lang', 'ko');
-            } else if (base === '/') {
-                link.setAttribute('data-lang', 'en');
-            }
-        });
-
-        document.querySelectorAll('[data-lang]').forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                var lang = link.getAttribute('data-lang');
-                var slide = new URLSearchParams(window.location.search).get('slide') || '1';
-                if (lang === 'ko') {
-                    window.location.href = 'https://emt-ko.premiumpage.kr/?slide=' + slide;
-                } else {
-                    window.location.href = 'https://emt-en.premiumpage.kr/?slide=' + slide;
-                }
-            });
-        });
-
-        // active 상태 표시
-        document.querySelectorAll('[data-lang]').forEach(function(link) {
-            var lang = link.getAttribute('data-lang');
-            if ((isKo && lang === 'ko') || (!isKo && lang === 'en')) {
+            var isKoLink = href.includes('emt-ko');
+            if ((isKo && isKoLink) || (!isKo && !isKoLink)) {
                 link.classList.add('active');
             } else {
                 link.classList.remove('active');
