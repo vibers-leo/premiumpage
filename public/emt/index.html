@@ -2796,15 +2796,15 @@ Waterproof rating: IP67 or higher
 Connector type: 2 pins or 3 pins
 `
             },
-            'tpms-sensor': { 
-                category: 'Sensor', 
-                title: 'TPMS Sensor', 
-                img: 'assets/16.png', 
-                desc: 'A sensor that detects tire pressure and temperature in real time and sends the information to the driver.', 
+            'tpms-sensor': {
+                category: 'Sensor',
+                title: 'TPMS Sensor',
+                img: 'assets/16.png',
+                desc: 'A sensor that monitors tire pressure and temperature in real time and transmits the data to the driver.',
                 specs:[
                     { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Temp. Range', value: '-40<span class="deg">&deg;</span>C ~ +135<span class="deg">&deg;</span>C' },
-                    { icon: '<svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>', label: 'Signal', value: 'Digital' },
-                    { icon: '<svg viewBox="0 0 24 24"><path d="M4.93 4.93a10 10 0 0 1 14.14 0"></path><path d="M7.76 7.76a6 6 0 0 1 8.48 0"></path><path d="M10.59 10.59a2 2 0 0 1 2.82 0"></path></svg>', label: 'Type', value: 'RF Wireless' }
+                    { icon: '<svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>', label: 'Output Signal', value: 'Digital Transfer' },
+                    { icon: '<svg viewBox="0 0 24 24"><path d="M4.93 4.93a10 10 0 0 1 14.14 0"></path><path d="M7.76 7.76a6 6 0 0 1 8.48 0"></path><path d="M10.59 10.59a2 2 0 0 1 2.82 0"></path></svg>', label: 'Comm. Type', value: 'RF Wireless' }
                 ], 
                 details:`A sensor that detects tire pressure and temperature in real time and sends the information to the driver.
 
@@ -2818,15 +2818,15 @@ Communication type: RF wireless communication
 Output signal: Digital transmission
 Response interval: Approximately 1 second while driving 60 seconds when stationary`
             },
-            'aps-sensor': { 
-                category: 'Sensor', 
-                title: 'Electronic Accelerator Pedal Sensor, APS', 
-                img: 'assets/3.png', 
-                desc: 'Electronic Accelerator Pedal Sensor converting pedal depression into electrical signal.', 
+            'aps-sensor': {
+                category: 'Sensor',
+                title: 'Electronic Accelerator Pedal Sensor (APS)',
+                img: 'assets/3.png',
+                desc: 'A device that converts the pedal angle pressed by the driver into electrical signals and transmits them to the ECU to control vehicle speed.',
                 specs:[
                     { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40<span class="deg">&deg;</span>C ~ +125<span class="deg">&deg;</span>C' },
                     { icon: '<svg viewBox="0 0 24 24"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>', label: 'Connector', value: '4 or 6 pin' },
-                    { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Resp. Time', value: '≤ 5ms' }
+                    { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Response Time', value: '5ms or less' }
                 ],
                 details:`A device that converts the pedal depression depth angle into an electrical signal and delivers it to the ECU to control vehicle speed.
 
@@ -2842,7 +2842,7 @@ Connector type: 4 pin or 6 pin`
                 category: 'Sensor', 
                 title: 'Speed Sensor', 
                 img: 'assets/18.png', 
-                desc: 'Measures vehicle driving speed and sends information to ECU and cluster.', 
+                desc: 'A sensor that measures vehicle speed and transmits the data to the ECU and instrument cluster.', 
                 specs:[
                     { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Temp. Range', value: '-40<span class="deg">&deg;</span>C ~ +135<span class="deg">&deg;</span>C' },
                     { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'IP Rating', value: 'IP67' },
@@ -2862,7 +2862,7 @@ Ingress protection: IP67`
             
             'map-sensor': { 
                 category: 'Sensor', 
-                title: 'Map sensor', 
+                title: 'MAP Sensor',
                 img: 'assets/10.png', 
                 desc: 'A sensor that detects the absolute pressure inside the intake manifold and sends the information to the ECU', 
                 specs:[
@@ -2924,23 +2924,23 @@ Operating temperature: −40<span class="deg">&deg;</span>C to +125<span class="
 Response time: ≤5 ms
 Connector type: 2 pin 3 pin or multi pin connector` 
             },
-            'transfer-case': { 
-                category: 'Sensor', 
-                title: 'Transfer Case Sensor', 
-                img: 'assets/4.png', 
-                desc: 'A key component that switches between two wheel drive and four wheel drive according to driving conditions and detects and controls the distribution of power between the front and rear wheels.', 
-                specs:[], 
-                details:`A sensor that detects the gear lever position such as P R N D in an electric vehicle transmission system and sends the information to the ECU and instrument cluster. It ensures that the vehicle starts only in the correct gear position and that shift control and safety functions operate properly.
+            'transfer-case': {
+                category: 'Sensor',
+                title: 'Transfer Case Sensor',
+                img: 'assets/4.png',
+                desc: 'A core component that switches between 2WD and 4WD based on driving conditions and detects and controls power distribution between the front and rear wheels.',
+                specs:[
+                    { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40<span class="deg">&deg;</span>C ~ +125<span class="deg">&deg;</span>C' },
+                    { icon: '<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>', label: 'Supply Voltage', value: 'DC 9 ~ 16V' },
+                    { icon: '<svg viewBox="0 0 24 24"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>', label: 'Connector', value: '3 ~ 8 pin' }
+                ],
+                details:`A core component that switches between 2WD and 4WD based on driving conditions and detects and controls power distribution between the front and rear wheels.
 
-Detection type: Electrical contact Non contact magnetic sensor
-Operating voltage: DC 5V ±0.05V
-Output type: Analog voltage or digital switching signal
-Detection range: P R N D M gear positions
-Accuracy: ±1°
-Response time: ≤5 ms
-Temperature range: −40<span class="deg">&deg;</span>C to +200<span class="deg">&deg;</span>C
-Connector type: 3 pin or 6 pin
-Ingress protection: IP67`
+Operating voltage: DC 9 to 16V
+Output type: 4-bit digital output signal
+Detection type: Mechanical contact or Hall sensor type
+Operating temperature: −40<span class="deg">&deg;</span>C to +125<span class="deg">&deg;</span>C
+Connector type: Multi pin connector (3 to 8 pin)`
             },
             '4wd-shift': { 
                 category: 'Sensor', 
@@ -3004,17 +3004,14 @@ Output frequency range: 0 to 10 kHz depending on engine speed
 Response time: ≤1 ms
 Connector type: 2 pin or 3 pin`
             },
-            'oxygen-sensor': { 
-                category: 'Sensor', 
-                title: 'Oxygen Sensor', 
-                img: 'assets/12.png', 
-                desc: 'A sensor that detects the oxygen concentration in exhaust gas in real time and sends the information to the ECU to control the air-fuel mixture ratio', 
+            'oxygen-sensor': {
+                category: 'Sensor',
+                title: 'Oxygen Sensor',
+                img: 'assets/12.png',
+                desc: 'A sensor that monitors oxygen concentration in exhaust gases in real time and transmits the data to the ECU to control the air–fuel mixture ratio.',
                 specs:[
-                    { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40<span class="deg">&deg;</span>C ~ +125<span class="deg">&deg;</span>C' },
-                    { icon: '<svg viewBox="0 0 24 24"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>', label: 'Connector', value: 'Multi-pin connector' },
-                    { icon: '<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>', label: 'Op. Voltage', value: 'DC 9 ~ 16V' },
                     { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '300<span class="deg">&deg;</span>C ~ 900<span class="deg">&deg;</span>C' },
-                    { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Resp. Time', value: '≤ 100ms' },
+                    { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Response Time', value: '≤ 100ms' },
                     { icon: '<svg viewBox="0 0 24 24"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>', label: 'Connector', value: '1~4 pin' }
                 ],
                 details:`A zirconia based electrochemical oxygen sensor that detects the oxygen concentration in exhaust gas in real time and sends the information to the ECU to control the air-fuel mixture ratio.
@@ -3056,7 +3053,7 @@ Connector type: 2 pin or 3 pin`
                 desc: 'A sensor that detects abnormal combustion knocking inside the engine and sends the information to the ECU', 
                 specs:[
                     { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40 <span class="deg">&deg;</span>C ~ +145 <span class="deg">&deg;</span>C' },
-                    { icon: '<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>', label: 'Voltage', value: 'Approx. 0.1 to 4.9 V' },
+                    { icon: '<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>', label: 'Voltage Range', value: 'Approx. 0.1 to 4.9 V' },
                     { icon: '<svg viewBox="0 0 24 24"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>', label: 'Connector', value: '2 pin' }
                 ],
                 details:`A sensor that detects abnormal combustion knocking inside the engine and sends the information to the ECU allowing early detection of knocking and enabling ignition timing control to prevent engine damage and power loss.
@@ -3074,13 +3071,13 @@ Connector type: 2 pin`
                 category: 'Sensor', 
                 title: 'Idle Speed Control Valve', 
                 img: 'assets/13.png', 
-                desc: 'A valve that adjusts airflow according to ECU control signals during engine idling to maintain a stable idle speed', 
+                desc: 'A device that regulates air intake during engine idle based on ECU control signals to maintain a stable idle RPM.', 
                 specs:[
                     { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40 <span class="deg">&deg;</span>C ~ +145 <span class="deg">&deg;</span>C' },
                     { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Resp. Time', value: '≤ 10ms' },
                     { icon: '<svg viewBox="0 0 24 24"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>', label: 'Connector', value: '4 pin' }
                 ],
-                details:`A valve that adjusts airflow according to ECU control signals during engine idling to maintain a stable idle speed. It regulates the amount of air entering the engine during idle to keep the engine speed constant allowing the engine to operate stably even when the accelerator pedal is not pressed.
+                details:`A device that regulates air intake during engine idle based on ECU control signals to maintain a stable idle RPM. By controlling the air volume even when the accelerator pedal is not pressed, it prevents the engine from stalling and ensures stable operation.
 
 Operating type: Stepper motor driven valve
 Operating voltage: DC 12V
@@ -3095,28 +3092,28 @@ Connector type: 4 pin
             // Actuators
             'bldc-motor': {
                 category: 'Actuator', title: 'BLDC Motor', img: 'assets/25.png',
-                desc: 'High-efficiency brushless DC motor designed for precise control and durability in automotive applications.',
+                desc: 'A high-efficiency brushless motor that minimizes friction loss and electrical noise, enabling precise control.',
                 specs: [
                     { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40 <span class="deg">&deg;</span>C ~ +125 <span class="deg">&deg;</span>C' },
-                    { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'IP Rating', value: 'IP65+' },
-                    { icon: '<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>', label: 'Voltage', value: '12V / 24V / 48V' }
+                    { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'IP Rating', value: 'IP65 or higher' },
+                    { icon: '<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>', label: 'Supply Voltage', value: 'DC 12V / 24V / 48V' }
                 ],
-                details: `A high efficiency motor with a brushless structure that minimizes friction loss and electrical noise and enables precise control providing high power density and long service life for applications such as vehicle fans pumps and actuators.
+                details: `A high-efficiency brushless motor that minimizes friction loss and electrical noise, enabling precise control. It offers high power density and a long lifespan, making it ideal for various applications such as automotive fans, pumps, and actuators.
 
 Supply voltage: DC 12V / 24V / 48V
-Rated power: 50W to 1 kW depending on model
+Rated power: 50W to 1 kW (depending on model)
 Rated speed: 1000 to 6000 rpm
-Control type: Hall sensor feedback / sensorless control PWM FOC
+Control type: Hall sensor feedback / sensorless control (PWM, FOC)
 Efficiency: ≥85%
-Torque characteristics: Flat torque curve high output low vibration
+Torque Characteristics: High torque, high power output and low vibration
 Operating temperature: -40 <span class="deg">&deg;</span>C to +125 <span class="deg">&deg;</span>C
-Protection rating: IP65 or higher
-Bearing type: High precision ball bearing
+Protection rating: IP65 and above
+Bearing Type: High-durability bearing
 Connector type: Custom multi pin connector`
             },
             'digital-shift': {
                 category: 'Actuator', title: 'Digital-Electric Shift Control Actuator', img: 'assets/22.png',
-                desc: 'An actuator that electronically controls gear shifting in automatic transmissions and switches 4WD transfer case modes such as 2H 4H and 4L',
+                desc: 'An actuator that electronically controls automatic transmission gear shifting and switches transfer case modes such as 2H, 4H, and 4L.',
                 specs: [
                      { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40 <span class="deg">&deg;</span>C ~ +145 <span class="deg">&deg;</span>C' },
                      { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'IP Rating', value: 'IP67 or higher' },
@@ -3127,7 +3124,7 @@ Connector type: Custom multi pin connector`
 Drive type: DC or BLDC motor with gear reduction mechanism
 Operating voltage: DC 12V or 24V
 Output torque: 20 to 60 N·m depending on specification
-Control type: Digital signal control Shift by Wire
+Control type: PWM signal control and Linear Output control
 Position detection: Built in Hall sensor or potentiometer
 Response time: ≤500 ms
 Operating temperature: -40 <span class="deg">&deg;</span>C to +145 <span class="deg">&deg;</span>C
@@ -3136,7 +3133,7 @@ Connector type: Multi pin connector 4 to 8 pin`
             },
             'ac-motor': {
                 category: 'Actuator', title: 'AC Motor', img: 'assets/24.png',
-                desc: 'An electric motor that generates rotational motion using AC power and provides high durability and stable performance for HVAC systems',
+                desc: 'An electric motor that generates rotational motion using AC power. It offers high durability and stable performance, making it suitable for HVAC systems.',
                 specs: [
                      { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-20 <span class="deg">&deg;</span>C ~ +80 <span class="deg">&deg;</span>C' },
                      { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'Protection', value: 'IP54 ~ IP65' },
@@ -3147,10 +3144,10 @@ Connector type: Multi pin connector 4 to 8 pin`
 Supply voltage: AC 100V to 240V
 Rated power: 10W to 500W depending on model
 Rated speed: 1000 to 3600 rpm
-Rotation direction: Forward and reverse bidirectional control
-Insulation class: Class B or Class F
+Rotation Direction: Clockwise / Counter-clockwise (Bidirectional control available)
+Insulation class: Class B / F
 Protection rating: IP54 to IP65
-Operating temperature: -20 <span class="deg">&deg;</span>C to +80 <span class="deg">&deg;</span>C
+Operating temperature: -40 <span class="deg">&deg;</span>C to +135 <span class="deg">&deg;</span>C
 Connector type: Custom connector or lead wire output`
             },
             'hidden-door': {
@@ -3173,7 +3170,7 @@ Protection rating: IP67 or higher`
             },
             'fan-clutch': {
                 category: 'Actuator', title: 'Electronic Fan Clutch Actuator', img: 'assets/21.png',
-                desc: 'An electronic actuator that controls the rotational speed of the engine cooling fan',
+                desc: 'An electronic actuator that controls the rotation speed of the engine cooling fan in real time.',
                 specs: [
                      { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40 <span class="deg">&deg;</span>C ~ +145 <span class="deg">&deg;</span>C' },
                      { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'IP Rating', value: 'IP65 or higher' },
@@ -3187,12 +3184,12 @@ Supply voltage: DC 12V or 24V
 Operating temperature: -40 <span class="deg">&deg;</span>C to +145 <span class="deg">&deg;</span>C
 Response time: ≤300 ms
 Clutch fluid: Silicone oil
-Bearing type: High temperature resistant ball bearing
+Bearing Type: High-durability internal bearing
 Ingress protection: IP65 or higher`
             },
             '4wd-geared': {
                 category: 'Actuator', title: '4WD Geared Actuator', img: 'assets/23.png',
-                desc: 'A drive unit that shifts the gears inside the transfer case in an electronic 4WD system',
+                desc: 'An actuator that electronically shifts the transfer case gears in a four-wheel-drive system.',
                 specs: [
                      { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40 <span class="deg">&deg;</span>C ~ +145 <span class="deg">&deg;</span>C' },
                      { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'IP Rating', value: 'IP67' },
@@ -3213,7 +3210,7 @@ Connector type: 2 pin 3 pin or multi pin`
             // Controllers
             'proximity': {
                 category: 'Controller', title: 'Smart Electronic Proximity Sensor', img: 'assets/26.png',
-                desc: 'A non contact sensor that detects the proximity of an object using magnetic capacitive or ultrasonic principles',
+                desc: 'A non-contact proximity sensor that detects approaching objects using magnetic, capacitive, or ultrasonic principles.',
                 specs: [
                      { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40 <span class="deg">&deg;</span>C ~ +125 <span class="deg">&deg;</span>C' },
                      { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'Protection', value: 'IP67' },
@@ -3232,7 +3229,7 @@ Protection rating: IP67`
             },
             'flush-handle': {
                 category: 'Controller', title: 'Flush Door Handle Control Unit', img: 'assets/29.png',
-                desc: 'A control unit that automatically deploys and retracts the door handle based on smart key signals proximity detection and vehicle lock status',
+                desc: 'Controls the automatic deployment and retraction of the door handle based on smart key signals, proximity sensing, and vehicle lock status.',
                 specs: [
                      { icon: '<svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>', label: 'Comm. Interface', value: 'CAN / LIN / UART' },
                      { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40 <span class="deg">&deg;</span>C ~ +125 <span class="deg">&deg;</span>C' },
@@ -3251,7 +3248,7 @@ Ingress protection: IP67`
             },
             'smart-key': {
                 category: 'Controller', title: 'Smart Keyless Entry', img: 'assets/27.png',
-                desc: 'An electronic control module that uses RF communication and encryption technology to perform vehicle door unlocking and ignition control',
+                desc: 'An electronic control module that manages vehicle door unlocking and ignition control using RF communication and encryption technology.',
                 specs: [
                      { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40 <span class="deg">&deg;</span>C ~ +125 <span class="deg">&deg;</span>C' },
                      { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'Protection', value: 'EMC / ESD / IP65' },
@@ -3271,7 +3268,7 @@ Processor: Built in 32 bit MCU supporting low power standby mode`
             },
             'tcu': {
                 category: 'Controller', title: 'Transmission Control Unit', img: 'assets/28.png',
-                desc: 'A control unit that optimally distributes driving power between the front and rear wheels to enhance driving stability and traction',
+                desc: 'A control device that optimizes driving stability and traction by appropriately distributing power between the front and rear wheels.',
                 specs: [
                      { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40 <span class="deg">&deg;</span>C ~ +125 <span class="deg">&deg;</span>C' },
                      { icon: '<svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>', label: 'Processor', value: '32-bit MCU' },
@@ -3288,8 +3285,8 @@ Operating temperature: -40 <span class="deg">&deg;</span>C to +125 <span class="
 Connector: 20 to 30 pin`
             },
             'smart-hvac': {
-                category: 'Controller', title: 'Multi-purpose, high-efficiency, energy-saving temperature and humidity control system', img: 'assets/30.png',
-                desc: 'A multi purpose high efficiency energy saving temperature and humidity control system for HVAC applications used in automotive and agricultural industries',
+                category: 'Controller', title: 'High-Efficiency Temperature and Humidity Control System', img: 'assets/30.png',
+                desc: 'Applied to a wide range of applications, including industrial and agricultural temperature and humidity control systems.',
                  specs: [
                      { icon: '<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>', label: 'Power', value: 'AC 220V, 50/60Hz' },
                      { icon: '<svg viewBox="0 0 24 24"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>', label: 'Type', value: 'Wall-mounted box' },
