@@ -133,45 +133,85 @@ export default function PremiumLandingPage() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Showcase 1: EMT Global */}
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="group relative h-[600px] rounded-[3rem] overflow-hidden border border-border bg-black"
-            >
+          {/* Top row: 2 featured */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-10">
+            <motion.div whileHover={{ y: -10 }} className="group relative h-[500px] rounded-[3rem] overflow-hidden border border-border bg-black">
               <div className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity">
                 <Image src="/emt/assets/19.png" alt="EMT Global" fill className="object-contain p-20" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-              <div className="absolute bottom-12 left-12 right-12">
-                <div className="text-cyan-400 font-black tracking-widest text-xs mb-4 uppercase">Automotive Tech / 3D HUD Interface</div>
-                <h3 className="text-4xl font-bold text-white mb-6 font-['Syncopate']">EMT GLOBAL</h3>
-                <div className="flex gap-4">
-                  <Button asChild className="rounded-full bg-white text-black font-bold h-12 px-8">
-                    <a href="https://emt.premiumpage.kr" target="_blank">영문 버전</a>
+              <div className="absolute bottom-10 left-10 right-10">
+                <div className="text-cyan-400 font-black tracking-widest text-xs mb-3 uppercase">Smart Sensor / 3D HUD Interface</div>
+                <h3 className="text-3xl font-bold text-white mb-5">EMT GLOBAL</h3>
+                <div className="flex gap-3">
+                  <Button asChild className="rounded-full bg-white text-black font-bold h-11 px-7 text-sm">
+                    <a href="https://emt-en.premiumpage.kr" target="_blank">EN</a>
                   </Button>
-                  <Button asChild className="rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold h-12 px-8">
-                    <a href="https://emt-ko.premiumpage.kr" target="_blank">한글 버전</a>
+                  <Button asChild className="rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold h-11 px-7 text-sm">
+                    <a href="https://emt-ko.premiumpage.kr" target="_blank">KR</a>
                   </Button>
                 </div>
               </div>
             </motion.div>
 
-            {/* Showcase 2: GENTOP */}
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="group relative h-[600px] rounded-[3rem] overflow-hidden border border-border bg-[#0f172a]"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-transparent" />
-              <div className="absolute inset-0 flex items-center justify-center p-20 opacity-30 group-hover:opacity-50 transition-all group-hover:scale-110">
-                <img src="/templates/hangseong/images/logo.png" alt="GENTOP" className="w-full h-auto object-contain invert" />
+            <motion.div whileHover={{ y: -10 }} className="group relative h-[500px] rounded-[3rem] overflow-hidden border border-border bg-[#0a0f1e]">
+              <div className="absolute inset-0 opacity-30 group-hover:opacity-50 transition-all group-hover:scale-105">
+                <Image src="/templates/hs-tech/images/hmt330_6models_grid.jpg" alt="HS-TECH" fill className="object-cover" />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-              <div className="absolute bottom-12 left-12 right-12">
-                <div className="text-blue-400 font-black tracking-widest text-xs mb-4 uppercase">Security Solution / Grid System</div>
-                <h3 className="text-4xl font-bold text-white mb-6 font-['Syncopate']">GENTOP IND.</h3>
-                <Button asChild className="rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold h-12 px-8">
-                  <a href="https://gentop.premiumpage.kr" target="_blank">브랜드 쇼케이스</a>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e] via-[#0a0f1e]/30 to-transparent" />
+              <div className="absolute bottom-10 left-10 right-10">
+                <div className="text-blue-400 font-black tracking-widest text-xs mb-3 uppercase">Industrial Sensor / 80+ Products</div>
+                <h3 className="text-3xl font-bold text-white mb-5">HS-TECH</h3>
+                <div className="flex gap-3">
+                  <Button asChild className="rounded-full bg-white text-black font-bold h-11 px-7 text-sm">
+                    <a href="https://hstech.premiumpage.kr" target="_blank">EN</a>
+                  </Button>
+                  <Button asChild className="rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold h-11 px-7 text-sm">
+                    <a href="https://hstech-kr.premiumpage.kr" target="_blank">KR</a>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Bottom row: 3 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div whileHover={{ y: -8 }} className="group relative h-[340px] rounded-[2.5rem] overflow-hidden border border-border bg-[#f0f4f8]">
+              <div className="absolute inset-0 opacity-60 group-hover:opacity-80 transition-all group-hover:scale-105">
+                <Image src="/templates/air-hstech/images/HSD-180D.jpg" alt="GENWISH" fill className="object-cover" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              <div className="absolute bottom-8 left-8 right-8">
+                <div className="text-green-400 font-black tracking-widest text-xs mb-2 uppercase">DC Air-Con / Light Mode</div>
+                <h3 className="text-xl font-bold text-white mb-4">GENWISH</h3>
+                <Button asChild className="rounded-full bg-white text-black font-bold h-10 px-6 text-sm">
+                  <a href="https://hstechco.premiumpage.kr" target="_blank">EN</a>
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div whileHover={{ y: -8 }} className="group relative h-[340px] rounded-[2.5rem] overflow-hidden border border-border bg-[#0f172a]">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-slate-900" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+              <div className="absolute bottom-8 left-8 right-8">
+                <div className="text-blue-400 font-black tracking-widest text-xs mb-2 uppercase">Security Solution / Dark Mode</div>
+                <h3 className="text-xl font-bold text-white mb-4">GENTOP IND.</h3>
+                <Button asChild className="rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold h-10 px-6 text-sm">
+                  <a href="https://gentop.premiumpage.kr" target="_blank">EN</a>
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div whileHover={{ y: -8 }} className="group relative h-[340px] rounded-[2.5rem] overflow-hidden border border-border bg-[#111]">
+              <div className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-all group-hover:scale-105">
+                <Image src="/templates/hangseong/images/background_01.png" alt="항성산업사" fill className="object-cover" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+              <div className="absolute bottom-8 left-8 right-8">
+                <div className="text-orange-400 font-black tracking-widest text-xs mb-2 uppercase">Industrial / B2B</div>
+                <h3 className="text-xl font-bold text-white mb-4">항성산업사</h3>
+                <Button asChild className="rounded-full bg-white text-black font-bold h-10 px-6 text-sm">
+                  <a href="https://hangseong.premiumpage.kr" target="_blank">EN</a>
                 </Button>
               </div>
             </motion.div>
