@@ -154,37 +154,44 @@ function GreetingPage() {
 function HistoryPage() {
     return (
         <div className="min-h-screen bg-white p-8 md:p-16">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-5xl mx-auto">
                 <SectionHeader label="HISTORY" title="Company History" subtitle="From founding to becoming a leader in DC engine-off air conditioning." />
-                <div className="relative">
-                    <div className="absolute left-16 top-0 bottom-0 w-px bg-neutral-200" />
-                    <div className="space-y-8">
-                        {HISTORY.map(yr => (
-                            <div key={yr.year}>
-                                <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-32 text-right">
-                                        <span className="text-cyan-600 font-black text-2xl">20<strong className="text-slate-900">{yr.year.slice(2)}</strong></span>
-                                    </div>
-                                    <div className="w-3 h-3 rounded-full bg-cyan-500 border-2 border-white shadow-sm relative z-10 flex-shrink-0" />
+                <div className="space-y-4">
+                    {HISTORY.map(yr => {
+                        const images = yr.events.filter(ev => ev.img)
+                        return (
+                            <div key={yr.year} className="border border-neutral-200 rounded-xl overflow-hidden">
+                                {/* Year Header */}
+                                <div className="bg-neutral-50 border-b border-neutral-200 px-5 py-3 flex items-center gap-3">
+                                    <span className="text-cyan-600 font-black text-xl">20<strong className="text-slate-900">{yr.year.slice(2)}</strong></span>
+                                    <div className="w-2 h-2 rounded-full bg-cyan-400" />
+                                    <span className="text-slate-400 text-xs font-medium">{yr.events.length} milestone{yr.events.length > 1 ? 's' : ''}</span>
                                 </div>
-                                <div className="ml-36 space-y-3">
-                                    {yr.events.map((ev, i) => (
-                                        <div key={i} className="flex items-start gap-4">
-                                            <span className="text-cyan-500 font-bold text-xs w-6 flex-shrink-0 mt-0.5">{ev.month}</span>
-                                            <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-3 flex-1">
-                                                <p className="text-slate-700 text-sm">{ev.desc}</p>
-                                                {ev.img && (
-                                                    <div className="mt-2 h-20 relative overflow-hidden rounded">
-                                                        <Image src={ev.img} alt={ev.desc} fill className="object-cover" />
-                                                    </div>
-                                                )}
+                                {/* Content: events + images */}
+                                <div className={`p-5 ${images.length > 0 ? 'grid grid-cols-1 md:grid-cols-[1fr_auto] gap-5 items-start' : ''}`}>
+                                    {/* Events list */}
+                                    <div className="space-y-2">
+                                        {yr.events.map((ev, i) => (
+                                            <div key={i} className="flex items-start gap-3">
+                                                <span className="text-cyan-500 font-bold text-xs w-5 flex-shrink-0 mt-0.5">{ev.month}</span>
+                                                <p className="text-slate-700 text-sm leading-snug">{ev.desc}</p>
                                             </div>
+                                        ))}
+                                    </div>
+                                    {/* Images */}
+                                    {images.length > 0 && (
+                                        <div className={`flex gap-2 ${images.length > 1 ? 'flex-col' : ''}`}>
+                                            {images.map((ev, i) => (
+                                                <div key={i} className="relative w-[180px] h-[120px] flex-shrink-0 overflow-hidden rounded-lg border border-neutral-200">
+                                                    <Image src={ev.img!} alt={ev.desc} fill className="object-cover" />
+                                                </div>
+                                            ))}
                                         </div>
-                                    ))}
+                                    )}
                                 </div>
                             </div>
-                        ))}
-                    </div>
+                        )
+                    })}
                 </div>
             </div>
         </div>
