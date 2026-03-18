@@ -201,7 +201,7 @@ function HangseongLayoutContent({ children }: { children: React.ReactNode }) {
 
                 <Link href="/templates/hangseong?tab=cover" className="absolute left-1/2 -translate-x-1/2 block" onClick={() => setIsMobileMenuOpen(false)}>
                     <div className="bg-white px-3 py-1.5 rounded-lg h-10 flex items-center justify-center">
-                        <img src="/templates/hangseong/images/logo.png" alt="HANGSEONG" className="h-full w-auto object-contain" />
+                        <img src="/templates/hangseong/images/logo_en.png" alt="HANGSEONG" className="h-full w-auto object-contain" />
                     </div>
                 </Link>
 
@@ -226,7 +226,7 @@ function HangseongLayoutContent({ children }: { children: React.ReactNode }) {
                         <div className="p-8 pb-8 pt-10 flex-shrink-0">
                             <Link href="/templates/hangseong?tab=cover" className="block hover:opacity-80 transition-opacity">
                                 <div className="bg-white p-3 rounded-xl w-full">
-                                    <img src="/templates/hangseong/images/logo.png" alt="HANGSEONG" className="w-full h-auto object-contain" />
+                                    <img src="/templates/hangseong/images/logo_en.png" alt="HANGSEONG" className="w-full h-auto object-contain" />
                                 </div>
                             </Link>
                         </div>
