@@ -234,8 +234,8 @@ function BrandPage() {
                 <SectionHeader label="BRAND" title="GENWISH Brand" subtitle={BRAND.origin} />
                 <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                        <div className="relative h-64 overflow-hidden rounded-xl mb-5 border border-neutral-200">
-                            <Image src="/templates/air-hstech/images/brand-main.jpg" alt="GENWISH Brand" fill className="object-cover" />
+                        <div className="rounded-xl mb-5 border border-neutral-200 bg-white p-6 flex items-center justify-center">
+                            <img src="/templates/air-hstech/images/brand-main.jpg" alt="GENWISH Brand" className="w-full h-auto object-contain max-h-64" />
                         </div>
                         <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-5">
                             <h3 className="text-cyan-600 font-black text-xs tracking-wider uppercase mb-3">Symbol Mark</h3>
@@ -252,8 +252,8 @@ function BrandPage() {
                                 { src: '/templates/air-hstech/images/brand-symbol-1.jpg', label: 'Symbol A' },
                                 { src: '/templates/air-hstech/images/brand-symbol-2.jpg', label: 'Symbol B' },
                             ].map(img => (
-                                <div key={img.label} className="relative h-32 overflow-hidden rounded-lg border border-neutral-200">
-                                    <Image src={img.src} alt={img.label} fill className="object-cover" />
+                                <div key={img.label} className="rounded-lg border border-neutral-200 bg-white overflow-hidden">
+                                    <img src={img.src} alt={img.label} className="w-full h-auto object-contain" />
                                 </div>
                             ))}
                         </div>
