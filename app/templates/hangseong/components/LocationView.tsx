@@ -76,8 +76,8 @@ export default function LocationView() {
                                 {
                                     icon: Phone,
                                     label: 'Phone / Fax',
-                                    value: '051-972-9935 ~ 6',
-                                    sub: 'Fax: 051-972-9930'
+                                    value: '+82-51-972-9935 ~ 6',
+                                    sub: 'Fax: +82-51-972-9930'
                                 },
                                 {
                                     icon: Mail,
