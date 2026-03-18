@@ -128,22 +128,22 @@ function AboutPage() {
 function GreetingPage() {
     return (
         <div className="min-h-screen bg-white p-8 md:p-16 flex items-center">
-            <div className="max-w-6xl mx-auto w-full">
+            <div className="max-w-4xl mx-auto w-full">
                 <SectionHeader label="CEO MESSAGE" title="CEO Greeting" subtitle="A message from our founder and CEO, Park JoonWoo." />
-                <div className="grid md:grid-cols-2 gap-12 items-start">
-                    <div className="space-y-4">
-                        {GREETING.paragraphs.map((p, i) => (
-                            <p key={i} className="text-slate-600 text-sm leading-relaxed border-l-2 border-cyan-200 pl-4">
-                                {p}
-                            </p>
-                        ))}
-                        <div className="mt-8 pt-6 border-t border-neutral-100">
-                            <div className="text-cyan-600 font-black text-sm">— {COMPANY.ceo}</div>
-                            <div className="text-slate-400 text-xs mt-1">CEO, HS TECH</div>
+                <div className="space-y-5">
+                    {GREETING.paragraphs.map((p, i) => (
+                        <p key={i} className="text-slate-600 text-sm md:text-base leading-relaxed border-l-2 border-cyan-200 pl-5">
+                            {p}
+                        </p>
+                    ))}
+                    <div className="mt-10 pt-6 border-t border-neutral-100 flex items-center gap-4">
+                        <div className="w-10 h-10 rounded-full bg-cyan-50 border border-cyan-100 flex items-center justify-center">
+                            <span className="text-cyan-600 font-black text-sm">P</span>
                         </div>
-                    </div>
-                    <div className="relative h-[420px] md:h-[520px] overflow-hidden rounded-xl border border-neutral-200">
-                        <Image src="/templates/air-hstech/images/ceo-photo.jpg" alt="HS TECH CEO" fill className="object-cover" />
+                        <div>
+                            <div className="text-cyan-600 font-black text-sm">{COMPANY.ceo}</div>
+                            <div className="text-slate-400 text-xs mt-0.5">CEO, HS TECH</div>
+                        </div>
                     </div>
                 </div>
             </div>

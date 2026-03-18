@@ -46,7 +46,7 @@ export const HISTORY: { year: string; events: { month: string; desc: string; img
     {
         year: '2021',
         events: [
-            { month: '06', desc: 'Genwish trademark application', img: '/templates/air-hstech/images/brand-symbol-1.jpg' },
+            { month: '06', desc: 'Genwish trademark application', img: '/templates/air-hstech/images/history-2021.png' },
             { month: '06', desc: '2 patent applications of engine-off air conditioner control' },
             { month: '05', desc: 'MOU with Victory RV' },
         ],
@@ -54,7 +54,7 @@ export const HISTORY: { year: string; events: { month: string; desc: string; img
     {
         year: '2020',
         events: [
-            { month: '06', desc: 'Registration of people and technology companies' },
+            { month: '06', desc: 'Registration of people and technology companies', img: '/templates/air-hstech/images/history-2020.png' },
             { month: '04', desc: 'Venture company certification acquired' },
             { month: '01', desc: 'Company affiliated research center, established' },
         ],
@@ -72,7 +72,7 @@ export const HISTORY: { year: string; events: { month: string; desc: string; img
         year: '2018',
         events: [
             { month: '03', desc: 'ISO9001 certification acquired' },
-            { month: '02', desc: 'DY (former Dongyang Electricity) company registered' },
+            { month: '02', desc: 'DY (former Dongyang Electricity) company registered', img: '/templates/air-hstech/images/history-2018.png' },
         ],
     },
     {
