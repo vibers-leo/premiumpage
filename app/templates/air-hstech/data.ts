@@ -46,7 +46,7 @@ export const HISTORY: { year: string; events: { month: string; desc: string; img
     {
         year: '2021',
         events: [
-            { month: '06', desc: 'Genwish trademark application', img: '/templates/air-hstech/images/history-2021.png' },
+            { month: '06', desc: 'Genwish trademark application', img: '/templates/air-hstech/images/history-2021.jpg' },
             { month: '06', desc: '2 patent applications of engine-off air conditioner control' },
             { month: '05', desc: 'MOU with Victory RV' },
         ],
@@ -64,6 +64,7 @@ export const HISTORY: { year: string; events: { month: string; desc: string; img
         events: [
             { month: '08', desc: 'IATF16949 certification acquired' },
             { month: '05', desc: 'Registered as a partner of Hyosung Electronics', img: '/templates/air-hstech/images/history-2019.jpg' },
+
             { month: '04', desc: 'Excellent-technology company certification acquired — Nice D&B Co., Ltd.' },
             { month: '04', desc: 'Transfer of patent rights of HVAC motor case manufacturing' },
         ],
@@ -72,7 +73,7 @@ export const HISTORY: { year: string; events: { month: string; desc: string; img
         year: '2018',
         events: [
             { month: '03', desc: 'ISO9001 certification acquired' },
-            { month: '02', desc: 'DY (former Dongyang Electricity) company registered', img: '/templates/air-hstech/images/history-2018.png' },
+            { month: '02', desc: 'DY (former Dongyang Electricity) company registered', img: '/templates/air-hstech/images/history-2018.jpg' },
         ],
     },
     {
