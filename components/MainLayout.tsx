@@ -28,23 +28,23 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
     return (
         <>
             {!isIndividualTemplate && (
-                <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-white/5 bg-background/70 backdrop-blur-2xl">
+                <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-slate-100/80 bg-white/80 backdrop-blur-xl shadow-sm">
                     <div className="flex items-center justify-between h-20 px-6 mx-auto max-w-screen-2xl">
                         <div className="flex items-center gap-12">
-                            <Link href="/" className="text-2xl font-black gradient-text tracking-tighter">
-                                Premium Page
+                            <Link href="/" className="text-xl font-black tracking-tighter text-slate-900">
+                                Premium <span className="text-violet-600">Page</span>
                             </Link>
                             <div className="items-center hidden gap-8 lg:flex">
-                                <Link href="/#why" className="text-sm font-black uppercase tracking-widest transition-all hover:text-primary text-muted-foreground">
+                                <Link href="/#why" className="text-sm font-bold uppercase tracking-widest transition-all hover:text-violet-600 text-slate-500">
                                     Why Us
                                 </Link>
-                                <Link href="/#portfolio" className="text-sm font-black uppercase tracking-widest transition-all hover:text-primary text-muted-foreground">
+                                <Link href="/#portfolio" className="text-sm font-bold uppercase tracking-widest transition-all hover:text-violet-600 text-slate-500">
                                     Portfolio
                                 </Link>
-                                <Link href="/templates" className="text-sm font-black uppercase tracking-widest transition-all hover:text-primary text-muted-foreground">
+                                <Link href="/templates" className="text-sm font-bold uppercase tracking-widest transition-all hover:text-violet-600 text-slate-500">
                                     All Works
                                 </Link>
-                                <Link href="/quote" className="text-sm font-black uppercase tracking-widest transition-all hover:text-primary text-muted-foreground">
+                                <Link href="/quote" className="text-sm font-bold uppercase tracking-widest transition-all hover:text-violet-600 text-slate-500">
                                     Contact
                                 </Link>
                             </div>
@@ -53,17 +53,11 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                             <div className="hidden sm:block">
                                 <ThemeToggle />
                             </div>
-                            <Link
-                                href="/login"
-                                className="text-sm font-black uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
-                            >
-                                Member
-                            </Link>
                             <Button
                                 asChild
-                                className="h-10 px-8 text-xs font-black uppercase tracking-widest transition-all rounded-full bg-foreground text-background hover:scale-105"
+                                className="h-9 px-6 text-xs font-bold uppercase tracking-widest transition-all rounded-full bg-violet-600 hover:bg-violet-700 text-white shadow-sm shadow-violet-200 hover:-translate-y-0.5"
                             >
-                                <Link href="/quote">Consulting</Link>
+                                <Link href="/quote">무료 상담</Link>
                             </Button>
                         </div>
                     </div>
