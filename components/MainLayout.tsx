@@ -35,14 +35,14 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                                 Premium Page
                             </Link>
                             <div className="items-center hidden gap-8 lg:flex">
-                                <Link href="/templates" className="text-sm font-black uppercase tracking-widest transition-all hover:text-primary text-muted-foreground">
-                                    Digital Catalog
+                                <Link href="/#why" className="text-sm font-black uppercase tracking-widest transition-all hover:text-primary text-muted-foreground">
+                                    Why Us
                                 </Link>
-                                <Link href="/about" className="text-sm font-black uppercase tracking-widest transition-all hover:text-primary text-muted-foreground">
-                                    Strategy
+                                <Link href="/#portfolio" className="text-sm font-black uppercase tracking-widest transition-all hover:text-primary text-muted-foreground">
+                                    Portfolio
                                 </Link>
                                 <Link href="/templates" className="text-sm font-black uppercase tracking-widest transition-all hover:text-primary text-muted-foreground">
-                                    Portfolios
+                                    All Works
                                 </Link>
                                 <Link href="/quote" className="text-sm font-black uppercase tracking-widest transition-all hover:text-primary text-muted-foreground">
                                     Contact
