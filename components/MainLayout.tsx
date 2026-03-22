@@ -28,23 +28,23 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
     return (
         <>
             {!isIndividualTemplate && (
-                <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-slate-100/80 bg-white/80 backdrop-blur-xl shadow-sm">
+                <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-slate-100/80 dark:border-slate-800/80 bg-white/85 dark:bg-slate-900/85 backdrop-blur-xl shadow-sm dark:shadow-slate-900/20">
                     <div className="flex items-center justify-between h-20 px-6 mx-auto max-w-screen-2xl">
                         <div className="flex items-center gap-12">
-                            <Link href="/" className="text-xl font-black tracking-tighter text-slate-900">
+                            <Link href="/" className="text-xl font-black tracking-tighter text-slate-900 dark:text-white">
                                 Premium <span className="text-violet-600">Page</span>
                             </Link>
                             <div className="items-center hidden gap-8 lg:flex">
-                                <Link href="/#why" className="text-sm font-bold transition-all hover:text-violet-600 text-slate-500">
+                                <Link href="/#why" className="text-sm font-bold transition-all hover:text-violet-600 dark:hover:text-violet-400 text-slate-500 dark:text-slate-400">
                                     서비스 특징
                                 </Link>
-                                <Link href="/#portfolio" className="text-sm font-bold transition-all hover:text-violet-600 text-slate-500">
+                                <Link href="/#portfolio" className="text-sm font-bold transition-all hover:text-violet-600 dark:hover:text-violet-400 text-slate-500 dark:text-slate-400">
                                     납품 사례
                                 </Link>
-                                <Link href="/templates" className="text-sm font-bold transition-all hover:text-violet-600 text-slate-500">
+                                <Link href="/templates" className="text-sm font-bold transition-all hover:text-violet-600 dark:hover:text-violet-400 text-slate-500 dark:text-slate-400">
                                     전체 작품
                                 </Link>
-                                <Link href="/quote" className="text-sm font-bold transition-all hover:text-violet-600 text-slate-500">
+                                <Link href="/quote" className="text-sm font-bold transition-all hover:text-violet-600 dark:hover:text-violet-400 text-slate-500 dark:text-slate-400">
                                     문의하기
                                 </Link>
                             </div>
@@ -55,7 +55,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                             </div>
                             <Button
                                 asChild
-                                className="h-9 px-6 text-xs font-bold uppercase tracking-widest transition-all rounded-full bg-violet-600 hover:bg-violet-700 text-white shadow-sm shadow-violet-200 hover:-translate-y-0.5"
+                                className="h-9 px-6 text-xs font-bold uppercase tracking-widest transition-all rounded-full bg-violet-600 hover:bg-violet-700 text-white shadow-sm shadow-violet-200 dark:shadow-violet-900/30 hover:-translate-y-0.5"
                             >
                                 <Link href="/quote">무료 상담</Link>
                             </Button>

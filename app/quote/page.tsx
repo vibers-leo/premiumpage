@@ -144,7 +144,7 @@ export default function QuotePageEnhanced() {
     }
 
     return (
-        <div className="min-h-screen pt-20 pb-16 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+        <div className="min-h-screen pt-8 pb-16 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
             <div className="container mx-auto px-4 max-w-5xl">
                 <div className="mb-10">
                     <Link href="/" className="inline-flex items-center gap-1.5 text-slate-500 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-400 mb-6 transition-colors text-sm font-medium">
