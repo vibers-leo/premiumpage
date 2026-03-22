@@ -35,17 +35,17 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                                 Premium <span className="text-violet-600">Page</span>
                             </Link>
                             <div className="items-center hidden gap-8 lg:flex">
-                                <Link href="/#why" className="text-sm font-bold uppercase tracking-widest transition-all hover:text-violet-600 text-slate-500">
-                                    Why Us
+                                <Link href="/#why" className="text-sm font-bold transition-all hover:text-violet-600 text-slate-500">
+                                    서비스 특징
                                 </Link>
-                                <Link href="/#portfolio" className="text-sm font-bold uppercase tracking-widest transition-all hover:text-violet-600 text-slate-500">
-                                    Portfolio
+                                <Link href="/#portfolio" className="text-sm font-bold transition-all hover:text-violet-600 text-slate-500">
+                                    납품 사례
                                 </Link>
-                                <Link href="/templates" className="text-sm font-bold uppercase tracking-widest transition-all hover:text-violet-600 text-slate-500">
-                                    All Works
+                                <Link href="/templates" className="text-sm font-bold transition-all hover:text-violet-600 text-slate-500">
+                                    전체 작품
                                 </Link>
-                                <Link href="/quote" className="text-sm font-bold uppercase tracking-widest transition-all hover:text-violet-600 text-slate-500">
-                                    Contact
+                                <Link href="/quote" className="text-sm font-bold transition-all hover:text-violet-600 text-slate-500">
+                                    문의하기
                                 </Link>
                             </div>
                         </div>
