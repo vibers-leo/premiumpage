@@ -388,9 +388,13 @@ export default function PremiumLandingPage() {
               <strong className="text-slate-700 dark:text-slate-200"> 인터랙티브 전자카탈로그</strong>로
               수출 경쟁력을 높여 드립니다.
             </p>
-            <p className="text-sm text-slate-400 dark:text-slate-500 mb-10">
-              한/영 이중언어 · 3D 인터랙티브 · 글로벌 서버 배포 포함
-            </p>
+            <div className="flex flex-wrap items-center gap-2 mb-10">
+              {['E-Catalog', 'E-Book', 'E-Brochure', '3D Interactive'].map(tag => (
+                <span key={tag} className="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700">
+                  {tag}
+                </span>
+              ))}
+            </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-3">
               <Button
