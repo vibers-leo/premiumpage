@@ -144,23 +144,23 @@ export default function QuotePageEnhanced() {
     }
 
     return (
-        <div className="min-h-screen pt-20 pb-12 bg-background transition-colors duration-300">
+        <div className="min-h-screen pt-20 pb-16 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
             <div className="container mx-auto px-4 max-w-5xl">
-                <div className="mb-8">
-                    <Link href="/" className="inline-flex items-center text-muted-foreground hover:text-foreground mb-4 transition-colors">
-                        <ArrowLeft className="w-4 h-4 mr-1" />
+                <div className="mb-10">
+                    <Link href="/" className="inline-flex items-center gap-1.5 text-slate-500 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-400 mb-6 transition-colors text-sm font-medium">
+                        <ArrowLeft className="w-4 h-4" />
                         메인으로 돌아가기
                     </Link>
-                    <div className="flex items-center justify-between mb-4">
-                        <h1 className="text-3xl font-bold">견적 요청하기</h1>
-                        <span className="text-sm font-medium text-muted-foreground">
-                            Step {step === 0 ? 1 : (formData.serviceType === 'pdf' ? (step === 3 ? 2 : 3) : step + 1)} of {totalSteps}
+                    <div className="flex items-center justify-between mb-5">
+                        <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white">무료 상담 신청</h1>
+                        <span className="text-sm font-semibold text-slate-400 dark:text-slate-500 tabular-nums">
+                            {step === 0 ? 1 : (formData.serviceType === 'pdf' ? (step === 3 ? 2 : 3) : step + 1)} / {totalSteps}
                         </span>
                     </div>
-                    <Progress value={currentProgress} className="h-2" />
+                    <Progress value={currentProgress} className="h-1.5 bg-slate-200 dark:bg-slate-800 [&>div]:bg-violet-600" />
                 </div>
 
-                <div className="flex flex-col lg:flex-row gap-8">
+                <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
                     {/* 메인 폼 영역 */}
                     <div className="flex-1">
                         <AnimatePresence mode="wait">
@@ -173,44 +173,44 @@ export default function QuotePageEnhanced() {
                                     exit={{ opacity: 0, x: -20 }}
                                     className="space-y-6"
                                 >
-                                    <h2 className="text-2xl font-bold mb-4">어떤 서비스가 필요하신가요?</h2>
-                                    <div className="grid md:grid-cols-2 gap-6">
+                                    <h2 className="text-2xl font-black tracking-tight text-slate-900 dark:text-white mb-4">어떤 서비스가 필요하신가요?</h2>
+                                    <div className="grid md:grid-cols-2 gap-5">
                                         <Card
-                                            className={`cursor-pointer transition-all hover:border-blue-500 glass-card ${formData.serviceType === 'pdf' ? 'border-2 border-blue-500 ring-2 ring-blue-500/20' : ''}`}
+                                            className={`cursor-pointer transition-all bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-violet-400 dark:hover:border-violet-600 hover:shadow-md ${formData.serviceType === 'pdf' ? 'border-2 border-violet-500 ring-2 ring-violet-500/15 shadow-md' : ''}`}
                                             onClick={() => updateFormData('serviceType', 'pdf')}
                                         >
                                             <CardHeader>
-                                                <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-4">
-                                                    <FileText className="w-6 h-6 text-blue-500" />
+                                                <div className="w-12 h-12 rounded-xl bg-violet-50 dark:bg-violet-950/40 flex items-center justify-center mb-4">
+                                                    <FileText className="w-6 h-6 text-violet-600" />
                                                 </div>
-                                                <CardTitle>PDF to Web 변환</CardTitle>
-                                                <CardDescription className="text-muted-foreground">기존 PDF 파일을 웹 뷰어로 빠르게 변환</CardDescription>
+                                                <CardTitle className="text-slate-900 dark:text-white font-black">PDF to Web 변환</CardTitle>
+                                                <CardDescription className="text-slate-500 dark:text-slate-400">기존 PDF 파일을 웹 뷰어로 빠르게 변환</CardDescription>
                                             </CardHeader>
                                             <CardContent>
-                                                <ul className="space-y-2 text-sm text-muted-foreground">
-                                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-blue-500" /> 페이지 넘김 효과</li>
-                                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-blue-500" /> 모바일 최적화</li>
-                                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-blue-500" /> 경제적인 비용</li>
+                                                <ul className="space-y-2.5 text-sm text-slate-500 dark:text-slate-400">
+                                                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-violet-500 shrink-0" /> 페이지 넘김 효과</li>
+                                                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-violet-500 shrink-0" /> 모바일 최적화</li>
+                                                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-violet-500 shrink-0" /> 경제적인 비용</li>
                                                 </ul>
                                             </CardContent>
                                         </Card>
 
                                         <Card
-                                            className={`cursor-pointer transition-all hover:border-purple-500 glass-card ${formData.serviceType === 'custom' ? 'border-2 border-purple-500 ring-2 ring-purple-500/20' : ''}`}
+                                            className={`cursor-pointer transition-all bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-violet-400 dark:hover:border-violet-600 hover:shadow-md ${formData.serviceType === 'custom' ? 'border-2 border-violet-500 ring-2 ring-violet-500/15 shadow-md' : ''}`}
                                             onClick={() => updateFormData('serviceType', 'custom')}
                                         >
                                             <CardHeader>
-                                                <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center mb-4">
-                                                    <Sparkles className="w-6 h-6 text-purple-500" />
+                                                <div className="w-12 h-12 rounded-xl bg-violet-50 dark:bg-violet-950/40 flex items-center justify-center mb-4">
+                                                    <Sparkles className="w-6 h-6 text-violet-600" />
                                                 </div>
-                                                <CardTitle>프리미엄 커스텀 제작</CardTitle>
-                                                <CardDescription className="text-muted-foreground">전문가가 제작하는 인터랙티브 전자 카탈로그</CardDescription>
+                                                <CardTitle className="text-slate-900 dark:text-white font-black">프리미엄 커스텀 제작</CardTitle>
+                                                <CardDescription className="text-slate-500 dark:text-slate-400">전문가가 제작하는 인터랙티브 전자 카탈로그</CardDescription>
                                             </CardHeader>
                                             <CardContent>
-                                                <ul className="space-y-2 text-sm text-muted-foreground">
-                                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-purple-500" /> 맞춤형 디자인</li>
-                                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-purple-500" /> 고급 인터랙션 & 3D</li>
-                                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-purple-500" /> 검색/다국어 기능</li>
+                                                <ul className="space-y-2.5 text-sm text-slate-500 dark:text-slate-400">
+                                                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-violet-500 shrink-0" /> 맞춤형 디자인</li>
+                                                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-violet-500 shrink-0" /> 고급 인터랙션 & 3D</li>
+                                                    <li className="flex items-center gap-2"><Check className="w-4 h-4 text-violet-500 shrink-0" /> 검색/다국어 기능</li>
                                                 </ul>
                                             </CardContent>
                                         </Card>
@@ -227,29 +227,28 @@ export default function QuotePageEnhanced() {
                                     exit={{ opacity: 0, x: -20 }}
                                     className="space-y-6"
                                 >
-                                    <h2 className="text-2xl font-bold mb-4">디자인 템플릿 선택</h2>
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        {templates.filter(t => t.id !== '1').map((template) => ( // Basic Viewer 제외
+                                    <h2 className="text-2xl font-black tracking-tight text-slate-900 dark:text-white mb-4">디자인 템플릿 선택</h2>
+                                    <div className="grid md:grid-cols-2 gap-5">
+                                        {templates.filter(t => t.id !== '1').map((template) => (
                                             <Card
                                                 key={template.id}
-                                                className={`cursor-pointer transition-all hover:border-purple-500 ${formData.templateId === template.id ? 'border-2 border-purple-500 ring-2 ring-purple-500/20' : ''}`}
+                                                className={`cursor-pointer transition-all bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-violet-400 dark:hover:border-violet-600 hover:shadow-md ${formData.templateId === template.id ? 'border-2 border-violet-500 ring-2 ring-violet-500/15 shadow-md' : ''}`}
                                                 onClick={() => updateFormData('templateId', template.id)}
                                             >
-                                                <div className="aspect-video relative bg-gray-100 rounded-t-xl overflow-hidden">
-                                                    {/* 이미지 플레이스홀더 */}
-                                                    <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                                                <div className="aspect-video relative bg-slate-100 dark:bg-slate-800 rounded-t-xl overflow-hidden">
+                                                    <div className="absolute inset-0 flex items-center justify-center text-slate-400 dark:text-slate-500 text-sm font-medium">
                                                         {template.name} Preview
                                                     </div>
                                                 </div>
                                                 <CardHeader>
                                                     <div className="flex justify-between items-start">
                                                         <div>
-                                                            <Badge variant="outline" className="mb-2">{template.category}</Badge>
-                                                            <CardTitle className="text-lg">{template.name}</CardTitle>
+                                                            <Badge variant="outline" className="mb-2 border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-400">{template.category}</Badge>
+                                                            <CardTitle className="text-lg font-black text-slate-900 dark:text-white">{template.name}</CardTitle>
                                                         </div>
-                                                        {template.popular && <Badge className="bg-purple-500">Popular</Badge>}
+                                                        {template.popular && <Badge className="bg-violet-600">Popular</Badge>}
                                                     </div>
-                                                    <CardDescription>{template.description}</CardDescription>
+                                                    <CardDescription className="text-slate-500 dark:text-slate-400">{template.description}</CardDescription>
                                                 </CardHeader>
                                             </Card>
                                         ))}
@@ -266,28 +265,28 @@ export default function QuotePageEnhanced() {
                                     exit={{ opacity: 0, x: -20 }}
                                     className="space-y-6"
                                 >
-                                    <h2 className="text-2xl font-bold mb-4">개발 플랜 선택</h2>
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        {developmentPlans.filter(p => p.id !== '1').map((plan) => ( // Lite 제외
+                                    <h2 className="text-2xl font-black tracking-tight text-slate-900 dark:text-white mb-4">개발 플랜 선택</h2>
+                                    <div className="grid md:grid-cols-2 gap-5">
+                                        {developmentPlans.filter(p => p.id !== '1').map((plan) => (
                                             <Card
                                                 key={plan.id}
-                                                className={`cursor-pointer transition-all hover:border-purple-500 ${formData.developmentPlanId === plan.id ? 'border-2 border-purple-500 ring-2 ring-purple-500/20' : ''}`}
+                                                className={`cursor-pointer transition-all bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-violet-400 dark:hover:border-violet-600 hover:shadow-md ${formData.developmentPlanId === plan.id ? 'border-2 border-violet-500 ring-2 ring-violet-500/15 shadow-md' : ''}`}
                                                 onClick={() => updateFormData('developmentPlanId', plan.id)}
                                             >
                                                 <CardHeader>
                                                     <div className="flex justify-between items-center mb-2">
-                                                        <CardTitle>{plan.name}</CardTitle>
-                                                        {plan.popular && <Badge className="bg-purple-500">Popular</Badge>}
+                                                        <CardTitle className="font-black text-slate-900 dark:text-white">{plan.name}</CardTitle>
+                                                        {plan.popular && <Badge className="bg-violet-600">Popular</Badge>}
                                                     </div>
-                                                    <div className="text-3xl font-bold">
+                                                    <div className="text-3xl font-black text-slate-900 dark:text-white">
                                                         {formatPrice(plan.price)}
                                                     </div>
                                                 </CardHeader>
                                                 <CardContent>
-                                                    <ul className="space-y-2">
+                                                    <ul className="space-y-2.5">
                                                         {plan.features.map((feature, idx) => (
-                                                            <li key={idx} className="flex items-center text-sm text-gray-600">
-                                                                <Check className="w-4 h-4 mr-2 text-green-500" />
+                                                            <li key={idx} className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                                                                <Check className="w-4 h-4 text-violet-500 shrink-0" />
                                                                 {feature}
                                                             </li>
                                                         ))}
@@ -308,29 +307,29 @@ export default function QuotePageEnhanced() {
                                     exit={{ opacity: 0, x: -20 }}
                                     className="space-y-6"
                                 >
-                                    <h2 className="text-2xl font-bold mb-4">유지보수 플랜 선택</h2>
-                                    <p className="text-gray-600 mb-6">안정적인 서비스 운영을 위해 유지보수 플랜을 선택해주세요.</p>
-                                    <div className="grid md:grid-cols-2 gap-6">
+                                    <h2 className="text-2xl font-black tracking-tight text-slate-900 dark:text-white mb-1">유지보수 플랜 선택</h2>
+                                    <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">안정적인 서비스 운영을 위해 유지보수 플랜을 선택해주세요.</p>
+                                    <div className="grid md:grid-cols-2 gap-5">
                                         {maintenancePlans.map((plan) => (
                                             <Card
                                                 key={plan.id}
-                                                className={`cursor-pointer transition-all hover:border-green-500 ${formData.maintenancePlanId === plan.id ? 'border-2 border-green-500 ring-2 ring-green-500/20' : ''}`}
+                                                className={`cursor-pointer transition-all bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-violet-400 dark:hover:border-violet-600 hover:shadow-md ${formData.maintenancePlanId === plan.id ? 'border-2 border-violet-500 ring-2 ring-violet-500/15 shadow-md' : ''}`}
                                                 onClick={() => updateFormData('maintenancePlanId', plan.id)}
                                             >
                                                 <CardHeader>
                                                     <div className="flex justify-between items-center mb-2">
-                                                        <CardTitle>{plan.name}</CardTitle>
-                                                        {plan.popular && <Badge className="bg-green-500">Best Choice</Badge>}
+                                                        <CardTitle className="font-black text-slate-900 dark:text-white">{plan.name}</CardTitle>
+                                                        {plan.popular && <Badge className="bg-violet-600">Best Choice</Badge>}
                                                     </div>
-                                                    <div className="text-2xl font-bold">
-                                                        {formatPrice(plan.price)} <span className="text-sm font-normal text-gray-500">/월</span>
+                                                    <div className="text-2xl font-black text-slate-900 dark:text-white">
+                                                        {formatPrice(plan.price)} <span className="text-sm font-normal text-slate-400 dark:text-slate-500">/월</span>
                                                     </div>
                                                 </CardHeader>
                                                 <CardContent>
-                                                    <ul className="space-y-2">
+                                                    <ul className="space-y-2.5">
                                                         {plan.features.map((feature, idx) => (
-                                                            <li key={idx} className="flex items-center text-sm text-gray-600">
-                                                                <Check className="w-4 h-4 mr-2 text-green-500" />
+                                                            <li key={idx} className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                                                                <Check className="w-4 h-4 text-violet-500 shrink-0" />
                                                                 {feature}
                                                             </li>
                                                         ))}
@@ -351,14 +350,14 @@ export default function QuotePageEnhanced() {
                                     exit={{ opacity: 0, x: -20 }}
                                     className="space-y-6"
                                 >
-                                    <h2 className="text-2xl font-bold mb-4">프로젝트 정보 입력</h2>
-                                    <Card>
-                                        <CardContent className="space-y-4 pt-6">
+                                    <h2 className="text-2xl font-black tracking-tight text-slate-900 dark:text-white mb-4">프로젝트 정보 입력</h2>
+                                    <Card className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 shadow-sm">
+                                        <CardContent className="space-y-5 pt-6">
                                             <div className="grid md:grid-cols-2 gap-4">
-                                                <div className="space-y-2">
-                                                    <label className="text-sm font-medium">회사/단체명</label>
+                                                <div className="space-y-1.5">
+                                                    <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">회사/단체명</label>
                                                     <div className="relative">
-                                                        <Building2 className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
+                                                        <Building2 className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
                                                         <input
                                                             type="text"
                                                             className="imweb-input pl-10 w-full"
@@ -368,8 +367,8 @@ export default function QuotePageEnhanced() {
                                                         />
                                                     </div>
                                                 </div>
-                                                <div className="space-y-2">
-                                                    <label className="text-sm font-medium">담당자명</label>
+                                                <div className="space-y-1.5">
+                                                    <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">담당자명</label>
                                                     <input
                                                         type="text"
                                                         className="imweb-input w-full"
@@ -378,10 +377,10 @@ export default function QuotePageEnhanced() {
                                                         onChange={(e) => updateFormData('contactName', e.target.value)}
                                                     />
                                                 </div>
-                                                <div className="space-y-2">
-                                                    <label className="text-sm font-medium">이메일</label>
+                                                <div className="space-y-1.5">
+                                                    <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">이메일</label>
                                                     <div className="relative">
-                                                        <Mail className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
+                                                        <Mail className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
                                                         <input
                                                             type="email"
                                                             className="imweb-input pl-10 w-full"
@@ -391,10 +390,10 @@ export default function QuotePageEnhanced() {
                                                         />
                                                     </div>
                                                 </div>
-                                                <div className="space-y-2">
-                                                    <label className="text-sm font-medium">연락처</label>
+                                                <div className="space-y-1.5">
+                                                    <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">연락처</label>
                                                     <div className="relative">
-                                                        <Phone className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
+                                                        <Phone className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
                                                         <input
                                                             type="tel"
                                                             className="imweb-input pl-10 w-full"
@@ -406,18 +405,18 @@ export default function QuotePageEnhanced() {
                                                 </div>
                                             </div>
 
-                                            <div className="space-y-2">
-                                                <label className="text-sm font-medium">프로젝트 상세 내용</label>
+                                            <div className="space-y-1.5">
+                                                <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">프로젝트 상세 내용</label>
                                                 <textarea
-                                                    className="imweb-input w-full h-32 py-2"
+                                                    className="imweb-input w-full h-32 py-3"
                                                     placeholder={formData.serviceType === 'pdf' ? "변환할 PDF 파일에 대한 설명이나 요청사항을 적어주세요." : "제작하고자 하는 카탈로그의 목적, 타겟, 필요한 기능 등을 자유롭게 기술해주세요."}
                                                     value={formData.projectDetails}
                                                     onChange={(e) => updateFormData('projectDetails', e.target.value)}
                                                 />
                                             </div>
 
-                                            <div className="space-y-2">
-                                                <label className="text-sm font-medium">참고 자료 / PDF 파일 업로드</label>
+                                            <div className="space-y-1.5">
+                                                <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">참고 자료 / PDF 파일 업로드</label>
                                                 <FileUpload
                                                     onFilesChange={(files) => updateFormData('files', [...formData.files, ...files])}
                                                     maxFiles={5}
@@ -425,11 +424,11 @@ export default function QuotePageEnhanced() {
                                                 {formData.files.length > 0 && (
                                                     <div className="mt-2 space-y-1">
                                                         {formData.files.map((file, idx) => (
-                                                            <div key={idx} className="flex items-center text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded">
-                                                                <FileText className="w-4 h-4 mr-2" />
-                                                                {file.name}
+                                                            <div key={idx} className="flex items-center text-sm text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-lg">
+                                                                <FileText className="w-4 h-4 mr-2 shrink-0" />
+                                                                <span className="truncate">{file.name}</span>
                                                                 <button
-                                                                    className="ml-auto text-red-500"
+                                                                    className="ml-auto text-red-400 hover:text-red-600 transition-colors pl-2"
                                                                     onClick={() => updateFormData('files', formData.files.filter((_, i) => i !== idx))}
                                                                 >
                                                                     ×
@@ -451,7 +450,7 @@ export default function QuotePageEnhanced() {
                                 variant="outline"
                                 onClick={prevStep}
                                 disabled={step === 0 || isSubmitting}
-                                className="px-8"
+                                className="h-11 px-8 rounded-full border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-violet-300 hover:text-violet-600 dark:hover:border-violet-600 dark:hover:text-violet-400 font-semibold transition-all dark:bg-transparent"
                             >
                                 이전
                             </Button>
@@ -465,7 +464,7 @@ export default function QuotePageEnhanced() {
                                         (step === 2 && !formData.developmentPlanId) ||
                                         (step === 3 && !formData.maintenancePlanId)
                                     }
-                                    className="px-8 bg-blue-600 hover:bg-blue-700"
+                                    className="h-11 px-8 rounded-full bg-violet-600 hover:bg-violet-700 text-white font-bold shadow-md shadow-violet-200 dark:shadow-violet-900/30 hover:-translate-y-0.5 transition-all disabled:opacity-40 disabled:cursor-not-allowed disabled:translate-y-0"
                                 >
                                     다음 단계
                                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -474,7 +473,7 @@ export default function QuotePageEnhanced() {
                                 <Button
                                     onClick={handleSubmit}
                                     disabled={isSubmitting || !formData.companyName || !formData.contactName || !formData.contactPhone}
-                                    className="px-8 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold shadow-lg"
+                                    className="h-11 px-8 rounded-full bg-violet-600 hover:bg-violet-700 text-white font-bold shadow-md shadow-violet-200 dark:shadow-violet-900/30 hover:-translate-y-0.5 transition-all disabled:opacity-40 disabled:cursor-not-allowed disabled:translate-y-0"
                                 >
                                     {isSubmitting ? (
                                         <>
@@ -493,55 +492,57 @@ export default function QuotePageEnhanced() {
                     </div>
 
                     {/* 오른쪽: 예상 견적 요약 */}
-                    <aside className="lg:w-80">
+                    <aside className="lg:w-72 xl:w-80">
                         <div className="sticky top-24">
-                            <Card className="glass-card shadow-xl border-t-4 border-t-blue-600 overflow-hidden">
-                                <CardHeader className="bg-muted/50 pb-4">
-                                    <CardTitle className="text-lg">예상 견적 요약</CardTitle>
+                            <Card className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 shadow-lg overflow-hidden">
+                                {/* 상단 보라 강조 바 */}
+                                <div className="h-1 bg-gradient-to-r from-violet-500 to-indigo-500" />
+                                <CardHeader className="pb-4 pt-5">
+                                    <CardTitle className="text-base font-black text-slate-900 dark:text-white">예상 견적 요약</CardTitle>
                                 </CardHeader>
-                                <CardContent className="pt-6 space-y-4">
+                                <CardContent className="space-y-4">
                                     <div>
-                                        <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">Service Type</p>
-                                        <div className="font-semibold text-foreground">
-                                            {formData.serviceType === 'pdf' ? 'PDF to Web' : (formData.serviceType === 'custom' ? 'Premium Custom' : '선택 대기중')}
+                                        <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-1">SERVICE TYPE</p>
+                                        <div className="font-semibold text-slate-900 dark:text-white text-sm">
+                                            {formData.serviceType === 'pdf' ? 'PDF to Web' : (formData.serviceType === 'custom' ? 'Premium Custom' : '—')}
                                         </div>
                                     </div>
 
                                     {selectedTemplate && formData.serviceType === 'custom' && (
                                         <div>
-                                            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">Design Template</p>
-                                            <div className="font-medium text-foreground">{selectedTemplate.name}</div>
+                                            <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-1">DESIGN TEMPLATE</p>
+                                            <div className="font-semibold text-slate-900 dark:text-white text-sm">{selectedTemplate.name}</div>
                                         </div>
                                     )}
 
                                     {selectedDevPlan && (
                                         <div>
-                                            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">Development</p>
+                                            <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-1">DEVELOPMENT</p>
                                             <div className="flex justify-between items-center">
-                                                <span className="font-medium">{selectedDevPlan.name}</span>
-                                                <span className="font-bold text-blue-500">{formatPrice(selectedDevPlan.price)}</span>
+                                                <span className="font-medium text-slate-700 dark:text-slate-300 text-sm">{selectedDevPlan.name}</span>
+                                                <span className="font-black text-violet-600">{formatPrice(selectedDevPlan.price)}</span>
                                             </div>
                                         </div>
                                     )}
 
                                     {selectedMaintPlan && (
                                         <div>
-                                            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">Maintenance</p>
+                                            <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-1">MAINTENANCE</p>
                                             <div className="flex justify-between items-center">
-                                                <span className="font-medium">{selectedMaintPlan.name}</span>
-                                                <span className="font-bold text-green-500">{formatPrice(selectedMaintPlan.price)}/월</span>
+                                                <span className="font-medium text-slate-700 dark:text-slate-300 text-sm">{selectedMaintPlan.name}</span>
+                                                <span className="font-black text-violet-600">{formatPrice(selectedMaintPlan.price)}/월</span>
                                             </div>
                                         </div>
                                     )}
 
-                                    <div className="border-t border-muted/50 pt-4 mt-4">
-                                        <div className="flex justify-between items-center mb-2">
-                                            <span className="font-medium text-muted-foreground">초기 구축비</span>
-                                            <span className="text-xl font-bold">{formatPrice(selectedDevPlan?.price || 0)}</span>
+                                    <div className="border-t border-slate-100 dark:border-slate-800 pt-4 mt-2 space-y-2">
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-sm text-slate-500 dark:text-slate-400">초기 구축비</span>
+                                            <span className="text-xl font-black text-slate-900 dark:text-white">{formatPrice(selectedDevPlan?.price || 0)}</span>
                                         </div>
-                                        <div className="flex justify-between items-center text-sm">
-                                            <span className="text-muted-foreground">월 유지비용</span>
-                                            <span className="font-medium">{formatPrice(selectedMaintPlan?.price || 0)}/월</span>
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-sm text-slate-500 dark:text-slate-400">월 유지비용</span>
+                                            <span className="font-bold text-slate-700 dark:text-slate-300">{formatPrice(selectedMaintPlan?.price || 0)}/월</span>
                                         </div>
                                     </div>
                                 </CardContent>

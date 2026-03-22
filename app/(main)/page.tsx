@@ -118,10 +118,10 @@ function StatItem({ value, suffix, label }: { value: number; suffix: string; lab
   const { count, ref } = useCounter(value)
   return (
     <div ref={ref} className="text-center">
-      <div className="text-4xl md:text-5xl font-black tracking-tighter mb-1 text-slate-900">
+      <div className="text-4xl md:text-5xl font-black tracking-tighter mb-1 text-slate-900 dark:text-white">
         {count}<span className="text-violet-600">{suffix}</span>
       </div>
-      <div className="text-slate-500 font-semibold text-xs uppercase tracking-widest">{label}</div>
+      <div className="text-slate-500 dark:text-slate-400 font-semibold text-xs uppercase tracking-widest">{label}</div>
     </div>
   )
 }
@@ -132,17 +132,17 @@ function WhyCard({ number, icon, title, highlight, desc }: {
   return (
     <motion.div
       whileHover={{ y: -4 }}
-      className="group p-8 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-violet-200 transition-all"
+      className="group p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-violet-200 dark:hover:border-violet-600 transition-all"
     >
       <div className="flex items-center justify-between mb-6">
-        <div className="w-12 h-12 rounded-xl bg-violet-50 flex items-center justify-center text-violet-600">
+        <div className="w-12 h-12 rounded-xl bg-violet-50 dark:bg-violet-950/50 flex items-center justify-center text-violet-600">
           {icon}
         </div>
-        <span className="text-3xl font-black text-slate-100 group-hover:text-violet-100 transition-colors">{number}</span>
+        <span className="text-3xl font-black text-slate-100 dark:text-slate-700 group-hover:text-violet-100 dark:group-hover:text-slate-600 transition-colors">{number}</span>
       </div>
-      <h3 className="text-lg font-black text-slate-900 mb-1">{title}</h3>
+      <h3 className="text-lg font-black text-slate-900 dark:text-white mb-1">{title}</h3>
       <div className="text-violet-600 font-semibold text-sm mb-3">{highlight}</div>
-      <p className="text-slate-500 leading-relaxed text-sm">{desc}</p>
+      <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm">{desc}</p>
     </motion.div>
   )
 }
@@ -158,14 +158,14 @@ function ProcessStep({ number, icon, title, items }: {
       transition={{ duration: 0.5 }}
       className="flex flex-col items-center text-center"
     >
-      <div className="w-16 h-16 rounded-full bg-violet-600 flex items-center justify-center text-white mb-5 shadow-lg shadow-violet-200">
+      <div className="w-16 h-16 rounded-full bg-violet-600 flex items-center justify-center text-white mb-5 shadow-lg shadow-violet-200 dark:shadow-violet-900/40">
         {icon}
       </div>
       <div className="text-violet-600 font-black text-xs tracking-widest uppercase mb-2">{number}</div>
-      <h3 className="text-xl font-black text-slate-900 mb-5">{title}</h3>
+      <h3 className="text-xl font-black text-slate-900 dark:text-white mb-5">{title}</h3>
       <ul className="space-y-2.5 text-left w-full">
         {items.map((item, i) => (
-          <li key={i} className="flex items-start gap-2.5 text-slate-500 text-sm">
+          <li key={i} className="flex items-start gap-2.5 text-slate-500 dark:text-slate-400 text-sm">
             <CheckCircle2 className="w-4 h-4 text-violet-400 mt-0.5 shrink-0" />
             {item}
           </li>
@@ -190,7 +190,7 @@ function PortfolioCard({
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5 }}
       onClick={onClick}
-      className="group cursor-pointer rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+      className="group cursor-pointer rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl dark:hover:shadow-slate-900/60 transition-all duration-300 overflow-hidden"
     >
       {/* Image */}
       <div
@@ -235,10 +235,10 @@ function PortfolioCard({
       {/* Info */}
       <div className="p-5">
         <div className="text-xs font-bold uppercase tracking-wider text-violet-600 mb-1">{p.subtitle}</div>
-        <h3 className={`font-black text-slate-900 mb-3 ${size === 'large' ? 'text-2xl' : 'text-lg'}`}>{p.title}</h3>
+        <h3 className={`font-black text-slate-900 dark:text-white mb-3 ${size === 'large' ? 'text-2xl' : 'text-lg'}`}>{p.title}</h3>
         <div className="flex flex-wrap gap-1.5">
           {p.tags.slice(1, 3).map(tag => (
-            <span key={tag} className="text-xs bg-slate-50 border border-slate-200 text-slate-500 px-2 py-0.5 rounded-full">{tag}</span>
+            <span key={tag} className="text-xs bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-300 px-2 py-0.5 rounded-full">{tag}</span>
           ))}
         </div>
       </div>
@@ -248,7 +248,6 @@ function PortfolioCard({
 
 // ─── Portfolio Modal ────────────────────────────────────────────────────────
 function PortfolioModal({ p, onClose }: { p: typeof portfolios[0]; onClose: () => void }) {
-  // Close on Escape
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
     window.addEventListener('keydown', handler)
@@ -260,93 +259,93 @@ function PortfolioModal({ p, onClose }: { p: typeof portfolios[0]; onClose: () =
       {/* Backdrop */}
       <motion.div
         key="backdrop"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={onClose}
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
-        />
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={onClose}
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+      />
 
-        {/* Modal */}
-        <motion.div
-          key="modal"
-          initial={{ opacity: 0, scale: 0.94, y: 24 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.94, y: 24 }}
-          transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-          className="fixed z-50 inset-x-4 top-[4vh] bottom-[4vh] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl bg-white rounded-3xl overflow-hidden flex flex-col shadow-2xl"
-        >
-          {/* Image header */}
-          <div className="relative h-56 md:h-64 shrink-0" style={{ backgroundColor: p.bg }}>
-            {p.image ? (
-              <Image
-                src={p.image}
-                alt={p.title}
-                fill
-                className={`${p.imageMode === 'contain' ? 'object-contain p-10 opacity-80' : 'object-cover opacity-70'}`}
-              />
-            ) : (
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/60 via-slate-800 to-slate-900 flex items-center justify-center">
-                <ShieldCheck className="w-20 h-20 text-indigo-400 opacity-30" />
-              </div>
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+      {/* Modal */}
+      <motion.div
+        key="modal"
+        initial={{ opacity: 0, scale: 0.94, y: 24 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.94, y: 24 }}
+        transition={{ type: 'spring', stiffness: 320, damping: 28 }}
+        className="fixed z-50 inset-x-4 top-[4vh] bottom-[4vh] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl bg-white dark:bg-slate-900 rounded-3xl overflow-hidden flex flex-col shadow-2xl"
+      >
+        {/* Image header */}
+        <div className="relative h-56 md:h-64 shrink-0" style={{ backgroundColor: p.bg }}>
+          {p.image ? (
+            <Image
+              src={p.image}
+              alt={p.title}
+              fill
+              className={`${p.imageMode === 'contain' ? 'object-contain p-10 opacity-80' : 'object-cover opacity-70'}`}
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/60 via-slate-800 to-slate-900 flex items-center justify-center">
+              <ShieldCheck className="w-20 h-20 text-indigo-400 opacity-30" />
+            </div>
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
 
-            {/* Close */}
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/50 transition-colors"
+          {/* Close */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/50 transition-colors"
+          >
+            <X className="w-4 h-4" />
+          </button>
+
+          {/* Title */}
+          <div className="absolute bottom-5 left-6 right-16">
+            <div
+              className="text-[10px] font-black uppercase tracking-widest mb-1"
+              style={{ color: p.accent }}
             >
-              <X className="w-4 h-4" />
-            </button>
+              {p.subtitle}
+            </div>
+            <h3 className="text-2xl md:text-3xl font-black text-white leading-tight">{p.title}</h3>
+          </div>
+        </div>
 
-            {/* Title */}
-            <div className="absolute bottom-5 left-6 right-16">
-              <div
-                className="text-[10px] font-black uppercase tracking-widest mb-1"
-                style={{ color: p.accent }}
+        {/* Body */}
+        <div className="flex-1 overflow-y-auto p-6 md:p-8">
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mb-5">
+            {p.tags.map(tag => (
+              <span key={tag} className="text-xs font-semibold px-3 py-1 rounded-full bg-violet-50 dark:bg-violet-950/40 border border-violet-100 dark:border-violet-800 text-violet-700 dark:text-violet-300">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Description */}
+          <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base mb-8">{p.description}</p>
+
+          {/* Links */}
+          <div className="flex flex-col sm:flex-row gap-3">
+            {p.links.map(link => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center justify-center gap-2 h-12 px-7 rounded-full font-bold text-sm transition-all ${
+                  link.primary
+                    ? 'bg-violet-600 hover:bg-violet-700 text-white shadow-lg shadow-violet-200 dark:shadow-violet-900/40 hover:-translate-y-0.5'
+                    : 'border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-violet-300 hover:text-violet-600 bg-white dark:bg-slate-800'
+                }`}
               >
-                {p.subtitle}
-              </div>
-              <h3 className="text-2xl md:text-3xl font-black text-white leading-tight">{p.title}</h3>
-            </div>
+                {link.label}
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            ))}
           </div>
-
-          {/* Body */}
-          <div className="flex-1 overflow-y-auto p-6 md:p-8">
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-5">
-              {p.tags.map(tag => (
-                <span key={tag} className="text-xs font-semibold px-3 py-1 rounded-full bg-violet-50 border border-violet-100 text-violet-700">
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            {/* Description */}
-            <p className="text-slate-600 leading-relaxed text-sm md:text-base mb-8">{p.description}</p>
-
-            {/* Links */}
-            <div className="flex flex-col sm:flex-row gap-3">
-              {p.links.map(link => (
-                <a
-                  key={link.url}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex items-center justify-center gap-2 h-12 px-7 rounded-full font-bold text-sm transition-all ${
-                    link.primary
-                      ? 'bg-violet-600 hover:bg-violet-700 text-white shadow-lg shadow-violet-200 hover:-translate-y-0.5'
-                      : 'border-2 border-slate-200 text-slate-700 hover:border-violet-300 hover:text-violet-600 bg-white'
-                  }`}
-                >
-                  {link.label}
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+        </div>
+      </motion.div>
     </>
   )
 }
@@ -356,15 +355,15 @@ export default function PremiumLandingPage() {
   const [selectedPortfolio, setSelectedPortfolio] = useState<typeof portfolios[0] | null>(null)
 
   return (
-    <div className="flex flex-col w-full bg-white text-slate-900 selection:bg-violet-200">
+    <div className="flex flex-col w-full bg-white dark:bg-slate-950 text-slate-900 dark:text-white selection:bg-violet-200">
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           SECTION 1 · HERO
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section id="hero" className="relative w-full min-h-screen flex items-center overflow-hidden bg-white">
+      <section id="hero" className="relative w-full min-h-screen flex items-center overflow-hidden bg-white dark:bg-slate-950">
         {/* Soft background blobs */}
-        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-violet-50 rounded-full blur-[120px] opacity-80 translate-x-1/3 -translate-y-1/3 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-50 rounded-full blur-[100px] opacity-60 -translate-x-1/3 translate-y-1/3 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-violet-50 dark:bg-violet-950/30 rounded-full blur-[120px] opacity-80 translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-50 dark:bg-indigo-950/20 rounded-full blur-[100px] opacity-60 -translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
         <div className="relative z-10 container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-24 md:py-32">
           {/* Left */}
@@ -373,30 +372,30 @@ export default function PremiumLandingPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, ease: 'easeOut' }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-50 border border-violet-200 mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-50 dark:bg-violet-950/40 border border-violet-200 dark:border-violet-800 mb-8">
               <span className="w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
-              <span className="text-xs font-black text-violet-700">전자카탈로그 전문 제작 에이전시</span>
+              <span className="text-xs font-black text-violet-700 dark:text-violet-300">전자카탈로그 전문 제작 에이전시</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.0] text-slate-900 mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.0] text-slate-900 dark:text-white mb-6">
               해외에서도<br />
               <span className="text-violet-600">팔리는 카탈로그</span><br />
               만들어 드립니다
             </h1>
 
-            <p className="text-lg text-slate-500 max-w-lg mb-3 leading-relaxed">
+            <p className="text-lg text-slate-500 dark:text-slate-400 max-w-lg mb-3 leading-relaxed">
               종이 브로슈어와 PDF는 이제 그만. 해외 바이어가 직접 클릭하고 체험하는
-              <strong className="text-slate-700"> 인터랙티브 전자카탈로그</strong>로
+              <strong className="text-slate-700 dark:text-slate-200"> 인터랙티브 전자카탈로그</strong>로
               수출 경쟁력을 높여 드립니다.
             </p>
-            <p className="text-sm text-slate-400 mb-10">
+            <p className="text-sm text-slate-400 dark:text-slate-500 mb-10">
               한/영 이중언어 · 3D 인터랙티브 · 글로벌 서버 배포 포함
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-3">
               <Button
                 asChild
-                className="h-14 px-8 rounded-full bg-violet-600 hover:bg-violet-700 text-white font-bold text-base gap-2 shadow-lg shadow-violet-200 hover:-translate-y-0.5 transition-all"
+                className="h-14 px-8 rounded-full bg-violet-600 hover:bg-violet-700 text-white font-bold text-base gap-2 shadow-lg shadow-violet-200 dark:shadow-violet-900/40 hover:-translate-y-0.5 transition-all"
               >
                 <Link href="#portfolio">
                   납품 사례 보기 <ArrowRight className="w-4 h-4" />
@@ -404,7 +403,7 @@ export default function PremiumLandingPage() {
               </Button>
               <Link
                 href="/quote"
-                className="flex items-center gap-2 h-14 px-7 rounded-full border-2 border-slate-200 text-slate-700 font-bold text-base hover:border-violet-300 hover:text-violet-600 transition-all"
+                className="flex items-center gap-2 h-14 px-7 rounded-full border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-bold text-base hover:border-violet-300 dark:hover:border-violet-600 hover:text-violet-600 dark:hover:text-violet-400 transition-all"
               >
                 무료 상담 신청 <MessageSquare className="w-4 h-4" />
               </Link>
@@ -462,12 +461,12 @@ export default function PremiumLandingPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           SECTION 2 · STATS
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="py-16 bg-slate-50 border-y border-slate-100">
+      <section className="py-16 bg-slate-50 dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
             <StatItem value={5} suffix="+" label="납품 기업" />
             <StatItem value={130} suffix="+" label="제작 페이지" />
-            <StatItem value={2} suffix="개" label="지원 언어 (KO/EN)" />
+            <StatItem value={5} suffix="+" label="지원 언어" />
             <StatItem value={30} suffix="일" label="평균 납기" />
           </div>
         </div>
@@ -476,7 +475,7 @@ export default function PremiumLandingPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           SECTION 3 · WHY
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section id="why" className="py-32 bg-white">
+      <section id="why" className="py-32 bg-white dark:bg-slate-950">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -485,14 +484,14 @@ export default function PremiumLandingPage() {
             transition={{ duration: 0.6 }}
             className="max-w-2xl mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-50 border border-violet-200 text-violet-700 text-xs font-black mb-5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-50 dark:bg-violet-950/40 border border-violet-200 dark:border-violet-800 text-violet-700 dark:text-violet-300 text-xs font-black mb-5">
               <ShieldCheck className="w-3.5 h-3.5" /> 선택 이유
             </div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 dark:text-white mb-4">
               왜 프리미엄 페이지에<br />
               <span className="text-violet-600">맡겨야 할까요?</span>
             </h2>
-            <p className="text-slate-500 text-lg leading-relaxed">
+            <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed">
               일반 웹개발사, 디자인 에이전시와는 다릅니다.<br />
               전자카탈로그 하나에만 집중하기 때문에 결과물이 다릅니다.
             </p>
@@ -516,9 +515,9 @@ export default function PremiumLandingPage() {
             <WhyCard
               number="03"
               icon={<Languages className="w-5 h-5" />}
-              title="한/영 이중언어 완성"
+              title="다국어 지원 (5개 이상)"
               highlight="해외 바이어가 직접 사용 가능한 수준"
-              desc="원본 홈페이지 텍스트를 기반으로 영문화 작업을 진행합니다. SEO까지 고려한 구조로 구글 검색에서도 노출됩니다."
+              desc="한국어·영어를 기본으로, 중국어·일본어·독일어 등 주요 언어로 확장 가능합니다. SEO까지 고려한 구조로 구글 검색에서도 노출됩니다."
             />
             <WhyCard
               number="04"
@@ -534,7 +533,7 @@ export default function PremiumLandingPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           SECTION 4 · PORTFOLIO
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section id="portfolio" className="py-32 bg-slate-50">
+      <section id="portfolio" className="py-32 bg-slate-50 dark:bg-slate-900">
         <div className="container mx-auto px-6">
           {/* Header */}
           <div className="flex flex-col md:flex-row items-end justify-between mb-14 gap-6">
@@ -544,15 +543,15 @@ export default function PremiumLandingPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-50 border border-violet-200 text-violet-700 text-xs font-black mb-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-50 dark:bg-violet-950/40 border border-violet-200 dark:border-violet-800 text-violet-700 dark:text-violet-300 text-xs font-black mb-5">
                 <Layers className="w-3.5 h-3.5" /> 납품 사례
               </div>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 mb-3">
+              <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 dark:text-white mb-3">
                 실제 제작된 <span className="text-violet-600">전자카탈로그</span>
               </h2>
-              <p className="text-slate-500">카드를 클릭하면 상세 정보와 실제 사이트 링크를 확인할 수 있습니다.</p>
+              <p className="text-slate-500 dark:text-slate-400">카드를 클릭하면 상세 정보와 실제 사이트 링크를 확인할 수 있습니다.</p>
             </motion.div>
-            <Button asChild variant="outline" className="rounded-full border-2 border-slate-200 h-11 px-8 font-bold text-sm hover:border-violet-300 hover:text-violet-600 transition-all shrink-0">
+            <Button asChild variant="outline" className="rounded-full border-2 border-slate-200 dark:border-slate-700 dark:text-slate-300 h-11 px-8 font-bold text-sm hover:border-violet-300 hover:text-violet-600 dark:hover:border-violet-600 dark:hover:text-violet-400 transition-all shrink-0 dark:bg-transparent">
               <Link href="/templates">전체 작품 보기 <ArrowRight className="w-4 h-4 ml-1.5" /></Link>
             </Button>
           </div>
@@ -576,7 +575,7 @@ export default function PremiumLandingPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           SECTION 5 · PROCESS
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="py-32 bg-white border-t border-slate-100">
+      <section className="py-32 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -585,17 +584,17 @@ export default function PremiumLandingPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 dark:text-white mb-4">
               의뢰에서 납품까지 <span className="text-violet-600">딱 3단계</span>
             </h2>
-            <p className="text-slate-500 text-lg max-w-xl mx-auto">
+            <p className="text-slate-500 dark:text-slate-400 text-lg max-w-xl mx-auto">
               자료만 주시면 나머지는 저희가 합니다.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative">
             {/* Connector */}
-            <div className="hidden md:block absolute top-8 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-px bg-gradient-to-r from-violet-200 via-violet-400 to-violet-200" />
+            <div className="hidden md:block absolute top-8 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-px bg-gradient-to-r from-violet-200 via-violet-400 to-violet-200 dark:from-violet-900 dark:via-violet-600 dark:to-violet-900" />
             <ProcessStep
               number="STEP 01"
               icon={<MessageSquare className="w-6 h-6" />}
@@ -670,7 +669,7 @@ export default function PremiumLandingPage() {
             <div className="text-xl font-black text-white mb-3 tracking-tight">Premium Page</div>
             <p className="text-sm leading-relaxed text-slate-400 max-w-xs">
               수출 기업을 위한 인터랙티브 전자카탈로그 전문 에이전시.<br />
-              한/영 · 3D · 글로벌 CDN
+              한/영 · 다국어 · 3D · 글로벌 CDN
             </p>
           </div>
           <div>
