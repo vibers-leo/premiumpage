@@ -256,11 +256,10 @@ function PortfolioModal({ p, onClose }: { p: typeof portfolios[0]; onClose: () =
   }, [onClose])
 
   return (
-    <AnimatePresence>
-      <>
-        {/* Backdrop */}
-        <motion.div
-          key="backdrop"
+    <>
+      {/* Backdrop */}
+      <motion.div
+        key="backdrop"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -348,8 +347,7 @@ function PortfolioModal({ p, onClose }: { p: typeof portfolios[0]; onClose: () =
             </div>
           </div>
         </motion.div>
-      </>
-    </AnimatePresence>
+    </>
   )
 }
 
@@ -395,10 +393,10 @@ export default function PremiumLandingPage() {
               한/영 이중언어 · 3D 인터랙티브 · 글로벌 서버 배포 포함
             </p>
 
-            <div className="flex flex-col sm:flex-row items-start gap-3">
+            <div className="flex flex-col sm:flex-row items-center gap-3">
               <Button
                 asChild
-                className="h-13 px-8 rounded-full bg-violet-600 hover:bg-violet-700 text-white font-bold text-base gap-2 shadow-lg shadow-violet-200 hover:-translate-y-0.5 transition-all"
+                className="h-14 px-8 rounded-full bg-violet-600 hover:bg-violet-700 text-white font-bold text-base gap-2 shadow-lg shadow-violet-200 hover:-translate-y-0.5 transition-all"
               >
                 <Link href="#portfolio">
                   납품 사례 보기 <ArrowRight className="w-4 h-4" />
@@ -406,7 +404,7 @@ export default function PremiumLandingPage() {
               </Button>
               <Link
                 href="/quote"
-                className="flex items-center gap-2 h-13 px-7 rounded-full border-2 border-slate-200 text-slate-700 font-bold text-base hover:border-violet-300 hover:text-violet-600 transition-all"
+                className="flex items-center gap-2 h-14 px-7 rounded-full border-2 border-slate-200 text-slate-700 font-bold text-base hover:border-violet-300 hover:text-violet-600 transition-all"
               >
                 무료 상담 신청 <MessageSquare className="w-4 h-4" />
               </Link>
@@ -567,7 +565,7 @@ export default function PremiumLandingPage() {
           </div>
 
           {/* Rest: 3 small */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {portfolios.filter(p => !p.featured).map(p => (
               <PortfolioCard key={p.id} p={p} size="small" onClick={() => setSelectedPortfolio(p)} />
             ))}
@@ -597,7 +595,7 @@ export default function PremiumLandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative">
             {/* Connector */}
-            <div className="hidden md:block absolute top-8 left-[calc(16.67%+1.5rem)] right-[calc(16.67%+1.5rem)] h-px bg-gradient-to-r from-violet-200 via-violet-400 to-violet-200" />
+            <div className="hidden md:block absolute top-8 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-px bg-gradient-to-r from-violet-200 via-violet-400 to-violet-200" />
             <ProcessStep
               number="STEP 01"
               icon={<MessageSquare className="w-6 h-6" />}
