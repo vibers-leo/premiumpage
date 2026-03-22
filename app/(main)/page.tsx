@@ -389,7 +389,7 @@ export default function PremiumLandingPage() {
             <p className="text-lg text-slate-500 max-w-lg mb-3 leading-relaxed">
               종이 브로슈어는 그만. 해외 바이어가 직접 체험하는
               <strong className="text-slate-700"> 인터랙티브 전자카탈로그</strong>를
-              <strong className="text-violet-600"> 30일</strong> 안에 제작해 드립니다.
+              <strong className="text-violet-600"> 빠르게</strong> 제작해 드립니다.
             </p>
             <p className="text-sm text-slate-400 mb-10">
               한/영 이중언어 · 3D 인터랙티브 · 글로벌 CDN 배포 포함
