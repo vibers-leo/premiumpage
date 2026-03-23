@@ -34,7 +34,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ lang: 
                     <div className="mb-20">
                         <div className="relative rounded-3xl overflow-hidden mb-10 group">
                             <img
-                                src="/images/global_pic.jpg"
+                                src="/images/company/introduction/global_pic.jpg"
                                 alt="Global Network"
                                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                             />
