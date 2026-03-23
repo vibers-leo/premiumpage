@@ -384,9 +384,7 @@ export default function PremiumLandingPage() {
             </h1>
 
             <p className="text-lg text-slate-500 dark:text-slate-400 max-w-lg mb-3 leading-relaxed">
-              종이 브로슈어와 PDF는 이제 그만. 해외 바이어가 직접 클릭하고 체험하는
-              <strong className="text-slate-700 dark:text-slate-200"> 인터랙티브 전자카탈로그</strong>로
-              수출 경쟁력을 높여 드립니다.
+              글로벌 비즈니스를 위한 전자카탈로그를 만듭니다.
             </p>
             <div className="flex flex-wrap items-center gap-2 mb-10">
               {['E-Catalog', 'E-Book', 'E-Brochure', '3D Interactive'].map(tag => (
