@@ -73,7 +73,7 @@ export default function CoverView({ onStart }: CoverViewProps) {
                             alt="HS TECH"
                             width={160}
                             height={41}
-                            className="object-contain brightness-0 invert opacity-90"
+                            className="object-contain invert opacity-90"
                             priority
                         />
                     </div>
