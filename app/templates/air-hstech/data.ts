@@ -44,42 +44,63 @@ export const GREETING = {
 // ─── History Timeline ────────────────────────────────────────────────────────
 export const HISTORY: { year: string; events: { month: string; desc: string; img?: string }[] }[] = [
     {
+        year: '2024',
+        events: [
+            { month: '03', desc: 'HS TECH Co., Ltd. relocated — 425, Gwahaksandan-ro, Gangseo-gu, Busan' },
+        ],
+    },
+    {
+        year: '2023',
+        events: [
+            { month: '03', desc: '"Genwish" trademark registration' },
+        ],
+    },
+    {
+        year: '2022',
+        events: [
+            { month: '07', desc: 'Patent application — Special purpose vehicle engine-off air conditioner' },
+            { month: '06', desc: 'Patent application — Cargo crane rotation-prevention pin guide' },
+            { month: '05', desc: 'Startup Leap Package national R&D project' },
+        ],
+    },
+    {
         year: '2021',
         events: [
-            { month: '06', desc: 'Genwish trademark application', img: '/templates/air-hstech/images/history-2021.jpg' },
-            { month: '06', desc: '2 patent applications of engine-off air conditioner control' },
-            { month: '05', desc: 'MOU with Victory RV' },
+            { month: '08', desc: 'Startup company confirmation issued — Ministry of SMEs and Startups' },
+            { month: '06', desc: 'Factory registration certificate issued — Busan Economic Promotion Agency', img: '/templates/air-hstech/images/history-2021.jpg' },
+            { month: '06', desc: '2 patent applications — DC engine-off air conditioner control' },
+            { month: '05', desc: 'MOU with Victory RV Co., Ltd. — Camping Car' },
         ],
     },
     {
         year: '2020',
         events: [
-            { month: '06', desc: 'Registration of people and technology companies', img: '/templates/air-hstech/images/history-2020.png' },
+            { month: '07', desc: 'Venture company certification re-issued', img: '/templates/air-hstech/images/history-2020.png' },
             { month: '04', desc: 'Venture company certification acquired' },
-            { month: '01', desc: 'Company affiliated research center, established' },
+            { month: '01', desc: 'Company affiliated research center established' },
         ],
     },
     {
         year: '2019',
         events: [
             { month: '08', desc: 'IATF16949 certification acquired' },
-            { month: '05', desc: 'Registered as a partner of Hyosung Electronics', img: '/templates/air-hstech/images/history-2019.jpg' },
-
+            { month: '06', desc: 'Early Stage Startup Package national R&D project' },
+            { month: '05', desc: 'Registered as a partner of Hyosung Electronics Co., Ltd.', img: '/templates/air-hstech/images/history-2019.jpg' },
             { month: '04', desc: 'Excellent-technology company certification acquired — Nice D&B Co., Ltd.' },
-            { month: '04', desc: 'Transfer of patent rights of HVAC motor case manufacturing' },
         ],
     },
     {
         year: '2018',
         events: [
-            { month: '03', desc: 'ISO9001 certification acquired' },
+            { month: '08', desc: 'Capital increase — total paid-in capital KRW 100 million' },
+            { month: '04', desc: 'Transfer of HVAC motor case manufacturing patent rights' },
             { month: '02', desc: 'DY (former Dongyang Electricity) company registered', img: '/templates/air-hstech/images/history-2018.jpg' },
         ],
     },
     {
         year: '2017',
         events: [
-            { month: '10', desc: 'HS TECH Co., Ltd. founded', img: '/templates/air-hstech/images/history-2017.jpg' },
+            { month: '10', desc: 'HS TECH Co., Ltd. founded — initial capital KRW 10 million', img: '/templates/air-hstech/images/history-2017.jpg' },
         ],
     },
 ]
