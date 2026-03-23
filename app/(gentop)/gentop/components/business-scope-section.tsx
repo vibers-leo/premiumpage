@@ -11,37 +11,37 @@ export const BusinessScopeSection = ({ lang }: { lang: string }) => {
         {
             icon: <Cpu className="w-12 h-12 mb-6" />,
             title: lang === 'ko' ? "시스템 구축" : "System Introduction",
-            link: `/${lang}/business/construction`,
+            link: `/gentop/${lang}/business/construction`,
             desc: lang === 'ko' ? "최첨단 시스템 통합 솔루션" : "High-tech Integration Solutions"
         },
         {
             icon: <Megaphone className="w-12 h-12 mb-6" />,
             title: lang === 'ko' ? "전관방송" : "Public Address System",
-            link: `/${lang}/business/public_address`,
+            link: `/gentop/${lang}/business/public_address`,
             desc: lang === 'ko' ? "명료한 오디오 방송 시스템" : "Clear Audio Broadcasting"
         },
         {
             icon: <CircleParking className="w-12 h-12 mb-6" />,
             title: lang === 'ko' ? "주차관제" : "Parking Control System",
-            link: `/${lang}/business/access_parking`,
+            link: `/gentop/${lang}/business/access_parking`,
             desc: lang === 'ko' ? "스마트 주차 관리" : "Smart Parking Management"
         },
         {
             icon: <IdCard className="w-12 h-12 mb-6" />,
             title: lang === 'ko' ? "출입통제" : "Access Control System",
-            link: `/${lang}/business/access_parking`,
+            link: `/gentop/${lang}/business/access_parking`,
             desc: lang === 'ko' ? "안전한 보안 출입 시스템" : "Secure Access Management"
         },
         {
             icon: <Camera className="w-12 h-12 mb-6" />,
             title: lang === 'ko' ? "CCTV 시스템" : "CCTV System",
-            link: `/${lang}/business/cctv`,
+            link: `/gentop/${lang}/business/cctv`,
             desc: lang === 'ko' ? "지능형 영상 감시" : "Intelligent Video Surveillance"
         },
         {
             icon: <Monitor className="w-12 h-12 mb-6" />,
             title: lang === 'ko' ? "LED 전광판" : "LED Display Solution",
-            link: `/${lang}/business/led_display`,
+            link: `/gentop/${lang}/business/led_display`,
             desc: lang === 'ko' ? "고화질 디스플레이 솔루션" : "High-definition Display Solutions"
         }
     ];

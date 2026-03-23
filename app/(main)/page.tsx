@@ -377,15 +377,11 @@ export default function PremiumLandingPage() {
               <span className="text-xs font-black text-violet-700 dark:text-violet-300">전자카탈로그 전문 제작 에이전시</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.0] text-slate-900 dark:text-white mb-6">
-              해외에서도<br />
-              <span className="text-violet-600">팔리는 카탈로그</span><br />
-              만들어 드립니다
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.1] text-slate-900 dark:text-white mb-6">
+              글로벌 비즈니스를 위한<br />
+              <span className="text-violet-600">전자카탈로그</span>를 만듭니다
             </h1>
 
-            <p className="text-lg text-slate-500 dark:text-slate-400 max-w-lg mb-3 leading-relaxed">
-              글로벌 비즈니스를 위한 전자카탈로그를 만듭니다.
-            </p>
             <div className="flex flex-wrap items-center gap-2 mb-10">
               {['E-Catalog', 'E-Book', 'E-Brochure', '3D Interactive'].map(tag => (
                 <span key={tag} className="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700">
@@ -394,18 +390,18 @@ export default function PremiumLandingPage() {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-center gap-5">
               <Button
                 asChild
-                className="h-14 px-8 rounded-full bg-violet-600 hover:bg-violet-700 text-white font-bold text-base gap-2 shadow-lg shadow-violet-200 dark:shadow-violet-900/40 hover:-translate-y-0.5 transition-all"
+                className="h-14 px-9 rounded-full bg-violet-600 hover:bg-violet-700 text-white font-bold text-base gap-2 shadow-lg shadow-violet-200 dark:shadow-violet-900/40 hover:-translate-y-0.5 transition-all"
               >
                 <Link href="#portfolio">
-                  납품 사례 보기 <ArrowRight className="w-4 h-4" />
+                  포트폴리오 보기 <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
               <Link
                 href="/quote"
-                className="flex items-center gap-2 h-14 px-7 rounded-full border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-bold text-base hover:border-violet-300 dark:hover:border-violet-600 hover:text-violet-600 dark:hover:text-violet-400 transition-all"
+                className="flex items-center gap-2 h-14 px-9 rounded-full border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-bold text-base hover:border-violet-300 dark:hover:border-violet-600 hover:text-violet-600 dark:hover:text-violet-400 transition-all"
               >
                 무료 상담 신청 <MessageSquare className="w-4 h-4" />
               </Link>
