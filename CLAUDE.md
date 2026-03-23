@@ -303,7 +303,7 @@ git add .    # 하위 폴더에서 Git 작업 금지!
 ### 배포 환경
 
 **GitHub 저장소:**
-- `juuuno-coder/premiumpage`
+- `vibers-leo/premiumpage`
 
 **Vercel 빌드:**
 - 리전: Washington D.C. (iad1)
@@ -1355,7 +1355,7 @@ vercel logs
 
 ```bash
 # 1. GitHub 커밋 확인
-https://github.com/juuuno-coder/premiumpage/commits/main
+https://github.com/vibers-leo/premiumpage/commits/main
 
 # 2. Vercel 배포 확인
 https://vercel.com/dashboard
