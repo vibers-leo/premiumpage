@@ -105,8 +105,7 @@ export const CompanyBusinessScope = ({ lang = "en" }: { lang?: string }) => {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.05 }}
-                            whileHover={{ y: -10 }}
-                            className="group relative bg-white dark:bg-neutral-900/50 rounded-3xl overflow-hidden border border-neutral-100 dark:border-white/5 shadow-sm hover:shadow-2xl transition-all duration-500"
+                            className="relative bg-white dark:bg-neutral-900/50 rounded-3xl overflow-hidden border border-neutral-100 dark:border-white/5 shadow-sm"
                         >
                             {/* Image Container */}
                             <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-50 dark:bg-black">
@@ -114,17 +113,16 @@ export const CompanyBusinessScope = ({ lang = "en" }: { lang?: string }) => {
                                     src={field.img}
                                     alt={isEn ? field.titleEn : field.titleKo}
                                     fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                                    className="object-cover opacity-90"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             </div>
 
                             {/* Content */}
                             <div className="p-8 space-y-4">
-                                <h4 className="text-xl font-bold text-foreground group-hover:text-gentop-green transition-colors">
+                                <h4 className="text-xl font-bold text-foreground">
                                     {isEn ? field.titleEn : field.titleKo}
                                 </h4>
-                                <div className="w-12 h-1 bg-neutral-100 dark:bg-white/10 group-hover:w-full group-hover:bg-gentop-green transition-all duration-500" />
+                                <div className="w-12 h-1 bg-neutral-100 dark:bg-white/10" />
                             </div>
                         </motion.div>
                     ))}
