@@ -20,7 +20,7 @@ const portfolios = [
     accent: '#22d3ee',
     bg: '#030711',
     image: '/portfolio/thumbnails/emt.jpg',
-    imageMode: 'cover' as const,
+    imageMode: 'cover' as 'cover' | 'contain',
     tags: ['3D HUD Interface', '31개 제품', '한/영 이중언어', '모달 상세보기'],
     description: '자동차용 스마트 센서·액추에이터 전문 기업의 31개 제품을 3D HUD 인터페이스로 구현했습니다. 한국어·영어 이중언어를 완벽 지원하며, 각 제품별 상세 스펙 모달을 통해 바이어가 필요한 정보를 즉시 확인할 수 있습니다.',
     links: [
@@ -36,7 +36,7 @@ const portfolios = [
     accent: '#60a5fa',
     bg: '#0a0f1e',
     image: '/portfolio/thumbnails/hstech.jpg',
-    imageMode: 'cover' as const,
+    imageMode: 'cover' as 'cover' | 'contain',
     tags: ['80+ 제품', '4개 브랜드', '한/영 이중언어', 'VAISALA · SETRA'],
     description: 'VAISALA, SETRA, JUMO, KNICK 등 4개 글로벌 브랜드의 80개 이상 산업용 센서를 계층 구조로 정리했습니다. 브랜드별 제품 탐색과 상세 스펙 확인이 가능하며 한국어·영어 이중언어를 지원합니다.',
     links: [
@@ -52,7 +52,7 @@ const portfolios = [
     accent: '#34d399',
     bg: '#e8f0f8',
     image: '/portfolio/thumbnails/genwish.jpg',
-    imageMode: 'cover' as const,
+    imageMode: 'cover' as 'cover' | 'contain',
     tags: ['25페이지', '라이트 테마', '크레인·캠핑카·선박', '영문'],
     description: '크레인, 캠핑카, 선박 등 특수 산업 환경용 DC 에어컨 전문 브랜드. 25페이지 라이트 테마로 제작되어 밝고 직관적인 제품 탐색을 지원합니다.',
     links: [
@@ -67,7 +67,7 @@ const portfolios = [
     accent: '#818cf8',
     bg: '#0f172a',
     image: '/portfolio/thumbnails/gentop.jpg',
-    imageMode: 'cover' as const,
+    imageMode: 'cover' as 'cover' | 'contain',
     tags: ['다크 테마', 'CCTV·출입통제', '주차관제', '영문'],
     description: '보안 솔루션 전문 기업의 전자카탈로그. CCTV 시스템, 출입통제, 주차관제를 딥 블루 다크 테마로 고급스럽게 구현했습니다.',
     links: [
@@ -82,7 +82,7 @@ const portfolios = [
     accent: '#fbbf24',
     bg: '#111',
     image: '/portfolio/thumbnails/hangseong.jpg',
-    imageMode: 'cover' as const,
+    imageMode: 'cover' as 'cover' | 'contain',
     tags: ['B2B 산업기계', '영문 카탈로그', '수출용'],
     description: '산업용 B2B 기업의 영문 전자카탈로그. 해외 수출을 위한 영문 최적화와 제품 라인업을 깔끔하게 정리했습니다.',
     links: [

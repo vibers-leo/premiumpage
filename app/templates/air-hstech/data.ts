@@ -100,7 +100,7 @@ export const HISTORY: { year: string; events: { month: string; desc: string; img
     {
         year: '2017',
         events: [
-            { month: '10', desc: 'HS TECH Co., Ltd. founded — initial capital KRW 10 million', img: '/templates/air-hstech/images/history-2017.jpg' },
+            { month: '10', desc: 'HS TECH Co., Ltd. founded — initial capital KRW 10 million', img: '/templates/air-hstech/images/hero-2.jpg' },
         ],
     },
 ]
