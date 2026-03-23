@@ -53,7 +53,7 @@ export default function HistoryView() {
                         const isExpanded = expandedDecade === decade
                         const events = groupedHistory[decade]
                         const decadeStart = parseInt(decade)
-                        const decadeEnd = Math.max(...events.map(e => parseInt(e.year)))
+                        const decadeEnd = decadeStart + 9
 
                         return (
                             <motion.div
