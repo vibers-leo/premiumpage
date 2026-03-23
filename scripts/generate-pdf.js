@@ -147,49 +147,55 @@ async function captureScreenshot(page, url, label, { afterGoto } = {}) {
         await page.waitForTimeout(1500)
         if (afterGoto) await afterGoto(page)
 
-        // 이미지 로드 대기
+        // 이미지 로드 대기 (최대 8초)
         await page.evaluate(() => {
-            return Promise.all(
+            const timeout = new Promise(resolve => setTimeout(resolve, 8000))
+            const images = Promise.all(
                 Array.from(document.images)
                     .filter(img => !img.complete)
                     .map(img => new Promise(resolve => {
                         img.onload = img.onerror = resolve
                     }))
             )
+            return Promise.race([images, timeout])
         })
         await page.waitForTimeout(300)
 
-        // ── Step 1: h-full / min-h-screen 강제 해제 후 자연 콘텐츠 높이 측정
-        // (항성산업사처럼 overflow:hidden 레이아웃에서 뷰포트 연동 CSS 때문에
-        //  viewport 확장 시 min-h-screen도 같이 늘어나는 악순환 방지)
+        // ── Step 1: 스크롤 컨테이너 해제 후 자연 콘텐츠 높이 측정
+        // main 또는 div의 overflow-y-auto 컨테이너를 모두 탐색 (GENTOP은 div 사용)
         const naturalHeight = await page.evaluate(() => {
             const styleTag = document.createElement('style')
             styleTag.id = '__pdf_measure__'
             styleTag.textContent = [
-                'main[class*="overflow-y-auto"]{height:auto!important;overflow:visible!important}',
-                'main[class*="min-h-screen"]{min-height:0!important}',
+                '[class*="overflow-y-auto"]{height:auto!important;overflow:visible!important}',
+                '[class*="min-h-screen"]{min-height:0!important}',
+                '[class*="h-screen"]{height:auto!important}',
             ].join('')
             document.head.appendChild(styleTag)
             document.body.getBoundingClientRect() // force reflow
 
-            const scrollable = document.querySelector('main[class*="overflow-y-auto"]')
+            const scrollable = document.querySelector('[class*="overflow-y-auto"]')
             const h = scrollable
                 ? scrollable.scrollHeight
                 : Math.max(
                     document.body.scrollHeight,
                     document.documentElement.scrollHeight,
-                    ...Array.from(document.querySelectorAll('main')).map(m => m.scrollHeight)
+                    ...Array.from(document.querySelectorAll('main, section, article')).map(m => m.scrollHeight)
                 )
 
             document.getElementById('__pdf_measure__')?.remove()
             return h
         })
 
-        // ── Step 2: min-h-screen 고정 오버라이드 유지 (뷰포트 확장 시 팽창 방지)
+        // ── Step 2: 스크롤/높이 제한 오버라이드 유지
         await page.evaluate(() => {
             const s = document.createElement('style')
             s.id = '__pdf_fix__'
-            s.textContent = 'main[class*="min-h-screen"]{min-height:0!important}'
+            s.textContent = [
+                '[class*="overflow-y-auto"]{height:auto!important;overflow:visible!important}',
+                '[class*="min-h-screen"]{min-height:0!important}',
+                '[class*="h-screen"]{height:auto!important}',
+            ].join('')
             document.head.appendChild(s)
             document.body.getBoundingClientRect()
         })
@@ -200,9 +206,9 @@ async function captureScreenshot(page, url, label, { afterGoto } = {}) {
         await page.setViewportSize({ width: currentViewport.width, height: targetHeight })
         await page.waitForTimeout(300)
 
-        // ── Step 4: main 스크롤 끝까지 내리기 → isAtBottom=true → 하단 내비게이터 표시
+        // ── Step 4: 스크롤 끝까지 내리기 → 하단 내비게이터 표시
         await page.evaluate(() => {
-            const el = document.querySelector('main[class*="overflow-y-auto"]')
+            const el = document.querySelector('[class*="overflow-y-auto"]')
                      || document.querySelector('main')
             if (el) el.scrollTop = el.scrollHeight
         })

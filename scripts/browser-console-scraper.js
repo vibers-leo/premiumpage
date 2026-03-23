@@ -136,7 +136,7 @@
   // Generate download commands (for manual downloading)
   console.log('💾 DOWNLOAD INSTRUCTIONS:\n');
   console.log('For each image, right-click and "Save Image As..."');
-  console.log('Save to: /Users/admin/Desktop/jcatalog/public/templates/hs-tech/images/products/gallery/\n');
+  console.log('Save to: /Users/admin/Desktop/premiumpage/public/templates/hs-tech/images/products/gallery/\n');
 
   namingSuggestions.forEach((item, i) => {
     console.log(`${i + 1}. Open: ${item.url}`);

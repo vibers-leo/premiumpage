@@ -94,7 +94,7 @@ AI: "어느 카탈로그를 수정하시겠습니까?
 ### 디렉토리 구조
 
 ```
-jcatalog/
+premiumpage/
 ├── app/
 │   ├── (gentop)/gentop/          # GENTOP 카탈로그
 │   └── templates/
@@ -263,13 +263,13 @@ gentop-agent: 배포 버전 확인  ────┘
 
 ```bash
 ✅ 올바른 방법:
-cd /Users/admin/Desktop/jcatalog    # 상위 폴더
+cd /Users/admin/Desktop/premiumpage    # 상위 폴더
 git add .
 git commit -m "..."
 git push
 
 ❌ 잘못된 방법:
-cd /Users/admin/Desktop/jcatalog/app/templates/hs-tech
+cd /Users/admin/Desktop/premiumpage/app/templates/hs-tech
 git add .    # 하위 폴더에서 Git 작업 금지!
 ```
 
@@ -1177,7 +1177,7 @@ git add .
 git commit -m "..."
 
 ✅ 허용:
-cd /Users/admin/Desktop/jcatalog  # 상위 폴더만
+cd /Users/admin/Desktop/premiumpage  # 상위 폴더만
 git add .
 git commit -m "..."
 ```

@@ -567,7 +567,7 @@
     "step2": "Look for image galleries, product variants, technical diagrams, and detail shots",
     "step3": "Right-click on each image and copy the CDN URL (usually starts with https://cdn.imweb.me/upload/)",
     "step4": "Add all image URLs to the newGalleryImages array for each product",
-    "step5": "Download all images to /Users/admin/Desktop/jcatalog/public/templates/hs-tech/images/products/gallery/",
+    "step5": "Download all images to /Users/admin/Desktop/premiumpage/public/templates/hs-tech/images/products/gallery/",
     "step6": "Update data.ts with the new gallery arrays",
     "imageNamingConvention": "{productId}_{variant}_{number}_v1.png",
     "exampleGallery": [
