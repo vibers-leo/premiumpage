@@ -121,17 +121,9 @@ export const CompanyBusinessScope = ({ lang = "en" }: { lang?: string }) => {
 
                             {/* Content */}
                             <div className="p-8 space-y-4">
-                                <div className="flex items-center justify-between">
-                                    <h4 className="text-xl font-bold text-foreground group-hover:text-gentop-green transition-colors">
-                                        {isEn ? field.titleEn : field.titleKo}
-                                    </h4>
-                                    <div className="w-8 h-8 rounded-full bg-gentop-green/10 flex items-center justify-center text-gentop-green opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-4 group-hover:translate-x-0">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                                            <polyline points="12 5 19 12 12 19"></polyline>
-                                        </svg>
-                                    </div>
-                                </div>
+                                <h4 className="text-xl font-bold text-foreground group-hover:text-gentop-green transition-colors">
+                                    {isEn ? field.titleEn : field.titleKo}
+                                </h4>
                                 <div className="w-12 h-1 bg-neutral-100 dark:bg-white/10 group-hover:w-full group-hover:bg-gentop-green transition-all duration-500" />
                             </div>
                         </motion.div>
