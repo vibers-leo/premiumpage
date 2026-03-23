@@ -26,9 +26,9 @@ const certifications = [
     { title: "Intellectual Property Management Certificate (SME)", category: "Certification", img: "/images/company/certification/cert_ip_management.jpg" },
 
     // Rewards
-    { title: "2012 Commendation (Kyungnam Robot Industry Promotion Foundation)", category: "Rewards", img: "/images/company/certification/reward_2012_robot.jpg" },
+    { title: "2012 Commendation (Kyungnam Robot Industry Promotion Foundation)", category: "Rewards", img: "/images/company/certification/reward_2012_robot.jpg", landscape: true },
     { title: "2019 South Gyeongsang Province Governor's Award", category: "Rewards", img: "/images/company/certification/reward_2019_governor.jpg" },
-    { title: "2010 Commendation (Kyungnam Robot Industry Promotion Foundation)", category: "Rewards", img: "/images/company/certification/reward_2010_robot.jpg" },
+    { title: "2010 Commendation (Kyungnam Robot Industry Promotion Foundation)", category: "Rewards", img: "/images/company/certification/reward_2010_robot.jpg", landscape: true },
     { title: "Plaque for Promising Small and Medium-sized Enterprises", category: "Rewards", img: "/images/company/certification/reward_promising_sme.jpg" },
     { title: "Award for Excellence in Small and Medium Business", category: "Rewards", img: "/images/company/certification/reward_excellence_sme.jpg" },
     { title: "2016 Korea Inventions Promotion Association Selection", category: "Rewards", img: "/images/company/certification/reward_2016_invention.jpg" },
@@ -84,14 +84,14 @@ export const CompanyCertification = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.9 }}
                             transition={{ duration: 0.3 }}
-                            className="group bg-white dark:bg-neutral-900/40 p-4 rounded-2xl border border-neutral-100 dark:border-white/5 flex flex-col items-center hover:border-gentop-green hover:shadow-2xl transition-all duration-500"
+                            className={`group bg-white dark:bg-neutral-900/40 p-4 rounded-2xl border border-neutral-100 dark:border-white/5 flex flex-col items-center hover:border-gentop-green hover:shadow-2xl transition-all duration-500 ${'landscape' in item && item.landscape ? 'col-span-2' : ''}`}
                         >
-                            <div className="relative w-full aspect-[3/4] mb-4 overflow-hidden rounded-xl transition-colors duration-500">
+                            <div className={`relative w-full mb-4 overflow-hidden rounded-xl transition-colors duration-500 ${'landscape' in item && item.landscape ? 'aspect-[4/3]' : 'aspect-[3/4]'}`}>
                                 <Image
                                     src={item.img}
                                     alt={item.title}
                                     fill
-                                    className="object-contain transition-transform duration-500 group-hover:scale-105"
+                                    className={`object-cover transition-transform duration-500 group-hover:scale-105 ${'landscape' in item && item.landscape ? 'rotate-90 scale-[1.35]' : ''}`}
                                 />
                             </div>
                             <h4 className="text-center text-[10px] md:text-xs font-bold text-gray-500 dark:text-gray-400 group-hover:text-foreground uppercase tracking-wider leading-relaxed px-2">
