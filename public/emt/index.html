@@ -3003,10 +3003,10 @@ Connector type: 2 pin 3 pin or multi pin connector`
                 details:`A core component that switches between 2WD and 4WD based on driving conditions and detects and controls power distribution between the front and rear wheels. It primarily operates through an electronic actuator and a position-sensing sensor mounted on the transfer case.
 
 Operating voltage: DC 9 to 16V
-Output type: 4-bit digital output signal
+Output Type: 4-bit digital output signal
 Contact type: Mechanical contact or Hall sensor type
 Operating temperature: −40<span class="deg">&deg;</span>C to +125<span class="deg">&deg;</span>C
-Connector type: Multi pin connector (3 to 8 pin)`
+Connector type: Multi pin connector 3 to 8 pin (depending on model)`
             },
             '4wd-shift': { 
                 category: 'Sensor', 
@@ -3018,7 +3018,7 @@ Connector type: Multi pin connector (3 to 8 pin)`
                     { icon: '<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>', label: 'Supply Voltage', value: 'DC 5V' },
                     { icon: '<svg viewBox="0 0 24 24"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>', label: 'Connector', value: '3 ~ 8 pin' }
                 ],
-                details:`A core sensor for electronic 4WD systems that precisely detects the actuator motion inside the transfer case and sends the information to the ECU
+                details:`A core sensor for electronic 4WD systems that precisely detects actuator movement within the transfer case and transmits the data to the ECU. Based on this information, the vehicle automatically switches between driving modes (2WD ↔ 4WD).
 
 Supply voltage: DC 5V
 Output type: Analog Voltage / PWM Signal
@@ -3026,7 +3026,7 @@ Measurement range: 0° to 360°
 Accuracy: ±1° or less
 Operating temperature: −40<span class="deg">&deg;</span>C to +135<span class="deg">&deg;</span>C
 Vibration resistance: Compliant with SAE J1455
-Connector type: 3 to 8 pin depending on vehicle model`
+Connector type: 3 to 8 pin (depending on model)`
             },
             'water-temp': { 
                 category: 'Sensor', 
@@ -3043,10 +3043,10 @@ Connector type: 3 to 8 pin depending on vehicle model`
 Operating voltage: DC 5V
 Output Type: Variable resistance (Resistance decreases as temperature increases)
 Sensor type: NTC thermistor sensor or Bi metal
-Thread size: M12 x 1.5 (depending on model)
+Thread size: M12 x 1.5 (depending on  model)
 Temperature range: −40<span class="deg">&deg;</span>C to +150<span class="deg">&deg;</span>C
 Accuracy: ±2<span class="deg">&deg;</span>C at 25<span class="deg">&deg;</span>C
-Response time: ≤1.5 seconds (In flowing coolant conditions)
+Response time: ≤1.5 seconds  (In flowing coolant conditions)
 Connector type: 2 pin or 3 pin`
             },
             'crank-position': { 
@@ -3066,7 +3066,7 @@ Operating voltage: DC 5V ±0.1V
 Output type: Digital pulse signal
 Detaction Target : Crankshaft Reluctor Ring (Tone Wheel)
 Operating temperature: −40<span class="deg">&deg;</span>C to +145<span class="deg">&deg;</span>C
-Output frequency range: 0 to 10 kHz depending on engine speed
+Output frequency range: 0 to 10 kHz (depending on engine speed)
 Response time: ≤1 ms
 Connector type: 2 pin or 3 pin`
             },
@@ -3341,7 +3341,7 @@ Processor: Integrated 32-bit MCU with low-power standby mode support`
                 ],
                 details: `A control device that optimizes driving stability and traction by appropriately distributing power between the front and rear wheels.
 
-Processor: 32-bit microcontroller
+Processor: 32 bit microcontroller
 Memory: Flash ROM 512KB–2MB, RAM 64KB–256KB
 I/O : Analog/Digital Inputs, PWM Outputs, and CAN/LIN Communication
 Supply voltage: DC 9V to 16V
