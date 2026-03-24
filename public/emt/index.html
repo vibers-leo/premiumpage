@@ -2908,13 +2908,13 @@ Connector type: 4 pin or 6 pin`
                 category: 'Sensor', 
                 title: 'Speed Sensor', 
                 img: 'assets/18.png', 
-                desc: 'A sensor that measures vehicle speed and transmits the data to the ECU and instrument cluster.', 
+                desc: 'A sensor that measures vehicle speed and transmits the data to the ECU and instrument cluster. This information is utilized in various vehicle control systems, including engine control, transmission control, ABS, and cruise control.',
                 specs:[
                     { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Temp. Range', value: '-40<span class="deg">&deg;</span>C ~ +135<span class="deg">&deg;</span>C' },
                     { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'IP Rating', value: 'IP67' },
                     { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Resp. Time', value: '≤ 1ms' }
-                ], 
-                details: `A sensor that measures vehicle driving speed and sends the information to the ECU and instrument cluster
+                ],
+                details: `A sensor that measures vehicle speed and transmits the data to the ECU and instrument cluster. This information is utilized in various vehicle control systems, including engine control, transmission control, ABS, and cruise control.
 
 Detection type: Inductive, Hall Effect Sensor
 Operating voltage: DC 5V ±0.1V
@@ -2973,22 +2973,22 @@ Protection rating : IP67`
                 category: 'Sensor', 
                 title: 'Steering Angle Sensor', 
                 img: 'assets/8.png', 
-                desc: 'A sensor that measures the steering angle, direction, and rotational speed input by the driver and transmits the data to the ECU.',
+                desc: 'A sensor that measures the steering angle, direction, and rotational speed input by the driver and transmits the data to the ECU. This data serves as a core input for Advanced Driver Assistance Systems (ADAS), including Electronic Stability Control (ESC), Lane Keeping Assist (LKA), automatic parking, and Adaptive Cruise Control (ACC).',
                 specs:[
                     { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40<span class="deg">&deg;</span>C ~ +125<span class="deg">&deg;</span>C' },
                     { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Resp. Time', value: '≤ 5ms' },
                     { icon: '<svg viewBox="0 0 24 24"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>', label: 'Connector', value: '2pin/ 3pin /mult pin' }
                 ],
-                details:`A sensor that measures the steering angle direction and rotational speed of the steering wheel and sends the information to the ECU
+                details:`A sensor that measures the steering angle, direction, and rotational speed input by the driver and transmits the data to the ECU. This data serves as a core input for Advanced Driver Assistance Systems (ADAS), including Electronic Stability Control (ESC), Lane Keeping Assist (LKA), automatic parking, and Adaptive Cruise Control (ACC)
 
 Sensor type : Contact-type, GMR (Giant Magneto-Resistance)
 Operating voltage: DC 5V ±0.1V
 Measurement range: Steering angle ±720° two rotations or more
-Output type: SENT CAN digital communication to the ECU
+Output type: Digital signals (SENT, CAN, etc.) for ECU connectivity
 Resolution: ≤0.1°
 Operating temperature: −40<span class="deg">&deg;</span>C to +125<span class="deg">&deg;</span>C
 Response time: ≤5 ms
-Connector type: 2 pin 3 pin or multi pin connector` 
+Connector type: 2 pin 3 pin or multi pin connector`
             },
             'transfer-case': {
                 category: 'Sensor',
@@ -3080,12 +3080,11 @@ Connector type: 2 pin or 3 pin`
                     { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Response Time', value: '≤ 100ms' },
                     { icon: '<svg viewBox="0 0 24 24"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>', label: 'Connector', value: '1~4 pin' }
                 ],
-                details:`A sensor that detects the oxygen concentration in exhaust gas in real time and sends the information to the ECU to control the air-fuel mixture ratio
+                details:`A sensor that monitors oxygen concentration in exhaust gases in real time and transmits the data to the ECU to control the air–fuel mixture ratio.
 
-Sensor type: Zirconia based electrochemical oxygen sensor
 Operating voltage: DC 12V signal voltage 0 to 1V
-Output voltage range: 0.1V lean mixture to 0.9V rich mixture
-Operating temperature: 300<span class="deg">&deg;</span>C to 900<span class="deg">&deg;</span>C heater integrated
+Output Voltage Range: 0.1V (Lean Mixture) to 0.9V (Rich Mixture)
+Operating temperature: 300<span class="deg">&deg;</span>C to 900<span class="deg">&deg;</span>C (integrated heater)
 Response time: ≤100 ms
 Heater resistance: Approximately 6 to 12 Ω at 20<span class="deg">&deg;</span>C
 Connector type: 1 to 4 pin
@@ -3185,17 +3184,17 @@ Connector type: Custom multi pin connector`
                      { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'IP Rating', value: 'IP67 or higher' },
                      { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Resp. Time', value: '≤ 500ms' }
                 ],
-                details: `An actuator that electronically controls gear shifting in automatic transmissions and switches 4WD transfer case modes such as 2H 4H and 4L
+                details: `An actuator that electronically controls automatic transmission gear shifting and switches transfer case modes such as 2H, 4H, and 4L.
 
 Drive type: DC or BLDC motor with gear reduction mechanism
 Operating voltage: DC 12V or 24V
-Output torque: 20 to 60 N·m depending on specification
-Control type: PWM signal control and Linear Output control
-Position detection: Built in Hall sensor or potentiometer
+Output torque: 20 to 60 N·m (depending on specification)
+Control type : PWM signal control and Linear Output control
+Position detection : Integrated Hall sensor or potentiometer
 Response time: ≤500 ms
 Operating temperature: -40 <span class="deg">&deg;</span>C to +145 <span class="deg">&deg;</span>C
-Protection rating : IP67 or higher
-Connector type: Multi pin connector 4 to 8 pin`
+Protection rating : IP67 and above
+Connector type: Multi pin connector (4 to 8 pin)`
             },
             'ac-motor': {
                 category: 'Actuator', title: 'AC Motor', img: 'assets/24.png',
@@ -3205,15 +3204,15 @@ Connector type: Multi pin connector 4 to 8 pin`
                      { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'Protection', value: 'IP54 ~ IP65' },
                      { icon: '<svg viewBox="0 0 24 24"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>', label: 'Connector', value: 'Custom / lead wire' }
                 ],
-                details: `An electric motor that generates rotational motion using AC power and provides high durability and stable performance for HVAC systems
+                details: `An electric motor that generates rotational motion using AC power. It offers high durability and stable performance, making it suitable for HVAC systems.
 
 Supply voltage: AC 100V to 240V
-Rated power: 10W to 500W depending on model
+Rated power: 10W to 500W (depending on model)
 Rated speed: 1000 to 3600 rpm
 Rotation Direction: Clockwise / Counter-clockwise (Bidirectional control available)
 Insulation class: Class B / F
 Protection rating: IP54 to IP65
-Operating temperature: -40 <span class="deg">&deg;</span>C to +135 <span class="deg">&deg;</span>C
+Operating temperature : -40<span class="deg">&deg;</span>C to +135<span class="deg">&deg;</span>C
 Connector type: Custom connector or lead wire output`
             },
             'hidden-door': {
@@ -3242,7 +3241,7 @@ Protection rating: IP67 or higher`
                      { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'IP Rating', value: 'IP65 or higher' },
                      { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Resp. Time', value: '≤ 300ms' }
                 ],
-                details: `An electronic actuator that controls the rotational speed of the engine cooling fan
+                details: `An electronic actuator that controls the rotation speed of the engine cooling fan in real time. Unlike traditional viscous fan clutches that operate mechanically based on temperature, it precisely controls the fan clutch using electrical signals from the ECU to improve cooling efficiency and enhance fuel economy and noise reduction.
 
 Operating type: Electronic drive control
 Control signal: PWM signal ECU controlled
@@ -3251,7 +3250,7 @@ Operating temperature: -40 <span class="deg">&deg;</span>C to +145 <span class="
 Response time: ≤300 ms
 Clutch fluid: Silicone oil
 Bearing Type: High-durability internal bearing
-Protection rating : IP65 or higher`
+Protection rating : IP65 and above`
             },
             '4wd-geared': {
                 category: 'Actuator', title: '4WD Geared Actuator', img: 'assets/23.png',
@@ -3261,17 +3260,17 @@ Protection rating : IP65 or higher`
                      { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'IP Rating', value: 'IP67' },
                      { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Resp. Time', value: '≤ 300ms' }
                 ],
-                details: `A drive unit that shifts the gears inside the transfer case in an electronic 4WD system
+                details: `An actuator that electronically shifts the transfer case gears in a four-wheel-drive system. It receives the driver's selected mode from the ECU and automatically switches the 4WD model.
 
 Operating voltage: DC 12V or 24V
 Drive type: DC or BLDC motor with gear reduction mechanism
-Output torque: 5 to 50 N·m depending on specification
+Output torque: 5 to 50 N·m (depending on specification)
 Response time: ≤300 ms
 Position detection: Hall sensor or potentiometer
 Control type: Voltage control or PWM ECU control
 Operating temperature: -40 <span class="deg">&deg;</span>C to +145 <span class="deg">&deg;</span>C
 Protection rating : IP67
-Connector type: 2 pin 3 pin or multi pin`
+Connector type: 2 pin / 3 pin / multi pin`
             },
             // Controllers
             'proximity': {
@@ -3282,15 +3281,15 @@ Connector type: 2 pin 3 pin or multi pin`
                      { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'Protection', value: 'IP67' },
                      { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Resp. Time', value: '≤ 1ms' }
                 ],
-                details: `A non contact sensor that detects the proximity of an object using magnetic capacitive or ultrasonic principles
+                details: `A non-contact proximity sensor that detects approaching objects using magnetic, capacitive, or ultrasonic principles.
 
 Supply voltage: DC 5V to 24V
 Detection distance: 1 mm to 30 mm
-Detection type: Magnetic inductive capacitive ultrasonic
+Detection Method: Inductive, Capacitive, or Ultrasonic
 Output signal: Digital or analog voltage output
 Response time: ≤1 ms
 Operating temperature: -40 <span class="deg">&deg;</span>C to +125 <span class="deg">&deg;</span>C
-Communication interface optional: UART CAN LIN I²C
+Communication Interface (Optional): UART, CAN, LIN, and I2C
 Protection rating: IP67`
             },
             'flush-handle': {
@@ -3301,13 +3300,13 @@ Protection rating: IP67`
                      { icon: '<svg viewBox="0 0 24 24"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>', label: 'Op. Temp', value: '-40 <span class="deg">&deg;</span>C ~ +125 <span class="deg">&deg;</span>C' },
                      { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'IP Rating', value: 'IP67' }
                 ],
-                details: `A control unit that automatically deploys and retracts the door handle based on smart key signals proximity detection and vehicle lock status
+                details: `Controls the automatic deployment and retraction of the door handle based on smart key signals, proximity sensing, and vehicle lock status.
 
 Supply voltage: DC 12V ±10%
 Drive type: BLDC motor drive with built in position feedback sensor
-Communication interface: CAN LIN UART
-Control functions: Door handle deployment and retraction position detection safety cut off
-Protection functions: Overcurrent overvoltage overheating protection
+Communication interface: CAN / LIN / UART
+Control Functions: Deployment and retraction control, position sensing, and safety cut-off.
+Protection Functions: Overcurrent, overvoltage, and overtemperature protection.
 Response time: ≤300 ms
 Operating temperature: -40 <span class="deg">&deg;</span>C to +125 <span class="deg">&deg;</span>C
 Protection rating : IP67`
@@ -3320,17 +3319,17 @@ Protection rating : IP67`
                      { icon: '<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>', label: 'Protection', value: 'EMC / ESD / IP65' },
                      { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Resp. Time', value: '≤ 100ms' }
                 ],
-                details: `An electronic control module that uses RF communication and encryption technology to perform vehicle door unlocking and ignition control
+                details: `An electronic control module that manages vehicle door unlocking and ignition control using RF communication and encryption technology.
 
 Supply voltage: DC 12V
-Communication type: RF wireless communication 433 MHz / 315 MHz
-Encryption type: AES / Rolling Code secure communication
+Communication Method: RF Wireless Communication (433 MHz / 315 MHz)
+Encryption : Secure communication based on AES and Rolling Code.
 Operating distance: Approximately 1 to 3 m
 Response speed: ≤100 ms
-Input output interface: Door lock relay ignition relay RF receiving antenna
+I/O Interface: Door lock relay, ignition relay, and RF receiving antenna
 Operating temperature: -40 <span class="deg">&deg;</span>C to +125 <span class="deg">&deg;</span>C
 Protection rating: EMC / ESD / IP65 level
-Processor: Built in 32 bit MCU supporting low power standby mode`
+Processor: Integrated 32-bit MCU with low-power standby mode support`
             },
             'tcu': {
                 category: 'Controller', title: 'Transmission Control Unit', img: 'assets/28.png',
@@ -3340,13 +3339,13 @@ Processor: Built in 32 bit MCU supporting low power standby mode`
                      { icon: '<svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>', label: 'Processor', value: '32-bit MCU' },
                      { icon: '<svg viewBox="0 0 24 24"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>', label: 'Connector', value: '20~30 pin' }
                 ],
-                details: `A control unit that optimally distributes driving power between the front and rear wheels to enhance driving stability and traction
+                details: `A control device that optimizes driving stability and traction by appropriately distributing power between the front and rear wheels.
 
-Processor: 32 bit microcontroller
+Processor: 32-bit microcontroller
 Memory: Flash ROM 512KB–2MB, RAM 64KB–256KB
-Input output: Analog digital input PWM output CAN LIN communication
+I/O : Analog/Digital Inputs, PWM Outputs, and CAN/LIN Communication
 Supply voltage: DC 9V to 16V
-Protection circuit: Built in overvoltage overcurrent and reverse polarity protection
+Protection Circuits: Integrated Overvoltage, Overcurrent, and Reverse Polarity Protection.
 Operating temperature: -40 <span class="deg">&deg;</span>C to +125 <span class="deg">&deg;</span>C
 Connector: 20 to 30 pin`
             },
@@ -3358,16 +3357,16 @@ Connector: 20 to 30 pin`
                      { icon: '<svg viewBox="0 0 24 24"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg>', label: 'Type', value: 'Wall-mounted box' },
                      { icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', label: 'Output Channels', value: '3 channel' }
                 ],
-                details: `A multi purpose high efficiency energy saving temperature and humidity control system for HVAC applications used in automotive and agricultural industries
+                details: `Applied to a wide range of applications, including industrial and agricultural temperature and humidity control systems.
 
 Power supply: AC 220V 50/60Hz
-Type: Wall mounted control enclosure dust and moisture resistant case
+Form Factor: Wall-mounted control box (Dustproof and Waterproof case)
 Display: LED digital display
 Output channels: 3 channel
-Protection functions: Overcurrent cut off sensor fault alert power shutoff switch
-Display items: Temperature humidity set value operating status power status
-Energy optimization: Temperature and humidity linked energy efficiency control
-Fan modes: 3-stage speed control (High/Medium/Low) and natural breeze simulation mode built in`
+Protection Features: Overcurrent protection, sensor fault alerts, and an integrated power cut-off switch
+Display Items: Temperature, Humidity, Setpoints, Operating Status, and Power Status
+Optimization of energy efficiency through integrated temperature and humidity
+Features 3-stage speed control (High/Medium/Low) and a natural breeze simulation mode`
             }
         };
 
