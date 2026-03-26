@@ -104,7 +104,12 @@ export default function LoginPage() {
                     </div>
                 </form>
 
-                <div className="text-center text-sm">
+                <div className="text-center text-sm space-y-2">
+                    <p className="text-muted-foreground">
+                        <Link href="/forgot-password" className="font-medium text-primary hover:text-primary/80 transition-colors">
+                            비밀번호를 잊으셨나요?
+                        </Link>
+                    </p>
                     <p className="text-muted-foreground">
                         계정이 없으신가요?{' '}
                         <Link href="/register" className="font-medium text-primary hover:text-primary/80 transition-colors">
