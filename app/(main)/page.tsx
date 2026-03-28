@@ -704,8 +704,8 @@ export default function PremiumLandingPage() {
         <div className="container mx-auto px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between gap-3">
           <p className="text-white/20 text-xs">© 2026 Premium Page. All rights reserved.</p>
           <div className="flex gap-6 text-white/20 text-xs font-bold">
-            <a href="#" className="hover:text-white/40 transition-colors duration-300">이용약관</a>
-            <a href="#" className="hover:text-white/40 transition-colors duration-300">개인정보처리방침</a>
+            <a href="/terms" className="hover:text-white/40 transition-colors duration-300">이용약관</a>
+            <a href="/privacy" className="hover:text-white/40 transition-colors duration-300">개인정보처리방침</a>
           </div>
         </div>
       </footer>
