@@ -76,9 +76,9 @@ export function TemplatesList() {
                         <button
                             key={category}
                             onClick={() => setSelectedCategory(category)}
-                            className={`px-6 py-3 rounded-full font-bold transition-all ${selectedCategory === category
-                                ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-500/50'
-                                : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                            className={`px-6 py-3 rounded-full font-bold transition-all active:scale-95 ${selectedCategory === category
+                                ? 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-500/30'
+                                : 'bg-white/5 text-white/50 hover:bg-white/10 hover:text-white/70'
                                 }`}
                         >
                             {category}
@@ -100,9 +100,10 @@ export function TemplatesList() {
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.8 }}
                                 transition={{ duration: 0.3, delay: index * 0.05 }}
+                                className="hover:scale-[1.02] active:scale-[0.98] transition-transform duration-200"
                             >
                                 <Card
-                                    className="group bg-card/30 backdrop-blur-xl border-2 border-white/10 hover:border-blue-500/50 transition-all overflow-hidden flex flex-col h-full"
+                                    className="group bg-white/5 backdrop-blur-xl border-2 border-white/10 hover:border-violet-500/50 transition-all overflow-hidden flex flex-col h-full"
                                 >
                                     {/* 이미지 섹션 */}
                                     <a href={item.link} target="_blank" rel="noopener noreferrer" className="block cursor-pointer">
@@ -114,7 +115,7 @@ export function TemplatesList() {
                                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                                             />
                                             <div className="absolute top-4 right-4 z-10">
-                                                <Badge className="bg-blue-500/80 text-white border-0 font-bold backdrop-blur-sm">
+                                                <Badge className="bg-violet-500/80 text-white border-0 font-bold backdrop-blur-sm">
                                                     {item.category}
                                                 </Badge>
                                             </div>
@@ -124,10 +125,10 @@ export function TemplatesList() {
 
                                     {/* 콘텐츠 섹션 */}
                                     <div className="p-8 flex flex-col flex-1">
-                                        <h3 className="text-2xl font-black text-white mb-3 transition-all">
+                                        <h3 className="text-2xl font-black tracking-tight text-white mb-3 transition-all">
                                             {item.title}
                                         </h3>
-                                        <p className="text-gray-400 mb-6 line-clamp-2 text-base leading-relaxed">
+                                        <p className="text-white/50 mb-6 line-clamp-2 text-base leading-relaxed break-keep">
                                             {item.description}
                                         </p>
 
@@ -136,18 +137,18 @@ export function TemplatesList() {
                                                 <Badge
                                                     key={i}
                                                     variant="secondary"
-                                                    className="bg-gray-800/50 text-gray-400 text-xs border border-white/5"
+                                                    className="bg-white/5 text-white/40 text-xs border border-white/5"
                                                 >
                                                     {tag}
                                                 </Badge>
                                             ))}
                                         </div>
 
-                                        {/* 🔗 버튼 (카드 하단 고정) */}
+                                        {/* 버튼 (카드 하단 고정) */}
                                         <div className="mt-auto">
                                             <Button
                                                 asChild
-                                                className="w-full h-12 text-sm font-bold bg-gradient-to-r from-blue-600 to-cyan-600 hover:opacity-90 shadow-lg shadow-blue-500/20"
+                                                className="w-full h-12 text-sm font-bold rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:opacity-90 shadow-lg shadow-violet-500/20 active:scale-[0.98] transition-all"
                                             >
                                                 <a href={item.link} target="_blank" rel="noopener noreferrer">
                                                     <ExternalLink className="w-4 h-4 mr-2" />

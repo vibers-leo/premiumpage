@@ -88,7 +88,7 @@ export function Portfolio() {
                     className="text-center mb-16"
                 >
                     <div className="flex items-center justify-center gap-3 mb-6">
-                        <Sparkles className="w-12 h-12 text-purple-400" />
+                        <Sparkles className="w-12 h-12 text-violet-400" />
                         <h2 className="text-6xl md:text-8xl font-black gradient-text">포트폴리오</h2>
                     </div>
                     <p className="text-2xl text-gray-400 font-light max-w-3xl mx-auto">
@@ -108,8 +108,8 @@ export function Portfolio() {
                             key={category}
                             onClick={() => setSelectedCategory(category)}
                             className={`px-6 py-3 rounded-full font-bold transition-all ${selectedCategory === category
-                                ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/50'
-                                : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                                ? 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-500/30'
+                                : 'bg-white/5 text-white/50 hover:bg-white/10'
                                 }`}
                         >
                             {category}
@@ -129,7 +129,7 @@ export function Portfolio() {
                                 exit={{ opacity: 0, scale: 0.8 }}
                                 transition={{ duration: 0.3, delay: index * 0.05 }}
                             >
-                                <Card className="group bg-card/30 backdrop-blur-xl border-2 border-white/10 hover:border-purple-500/50 transition-all overflow-hidden flex flex-col h-full">
+                                <Card className="group bg-card/30 backdrop-blur-xl border-2 border-white/10 hover:border-violet-500/50 transition-all overflow-hidden flex flex-col h-full">
                                     {/* 이미지 */}
                                     <div className="aspect-video relative overflow-hidden bg-gray-900">
                                         <Image
@@ -139,7 +139,7 @@ export function Portfolio() {
                                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                                         />
                                         <div className="absolute top-4 right-4 z-10">
-                                            <Badge className="bg-purple-500/80 text-white border-0 font-bold backdrop-blur-sm">
+                                            <Badge className="bg-violet-500/80 text-white border-0 font-bold backdrop-blur-sm">
                                                 {item.category}
                                             </Badge>
                                         </div>
@@ -167,7 +167,7 @@ export function Portfolio() {
                                                     key={i}
                                                     asChild
                                                     variant="outline"
-                                                    className="flex-1 h-12 text-sm font-bold bg-white/5 hover:bg-white/10 border-white/10 hover:border-purple-500/50 transition-all"
+                                                    className="flex-1 h-12 text-sm font-bold bg-white/5 hover:bg-white/10 border-white/10 hover:border-violet-500/50 transition-all"
                                                 >
                                                     <a href={link.url} target="_blank" rel="noopener noreferrer">
                                                         <ExternalLink className="w-3 h-3 mr-2" />

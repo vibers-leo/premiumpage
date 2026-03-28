@@ -1,12 +1,5 @@
-'use client'
-
-import { Portfolio } from '@/components/Portfolio'
-import { motion } from 'framer-motion'
+import { redirect } from 'next/navigation'
 
 export default function PortfolioPage() {
-    return (
-        <div className="min-h-screen bg-background pt-8">
-            <Portfolio />
-        </div>
-    )
+    redirect('/projects')
 }
