@@ -1,0 +1,23 @@
+# Premium Page (프리미엄 페이지)
+> 산업용 전자카탈로그 제작 플랫폼. AI 에이전트 시스템으로 기업별 프리미엄 디지털 카탈로그를 빠르게 제작합니다.
+
+## 주요 기능
+- 기업별 맞춤 전자카탈로그 제작
+- AI 에이전트 기반 자동 데이터 추출
+- 다크모드/라이트모드 지원
+- 다국어 지원 (영문/한글)
+- PDF 내보내기
+
+## 운영 중인 카탈로그
+- HS-TECH (산업용 센서)
+- GENTOP
+- EMT (스마트 센서)
+- 항성산업사
+- GENWISH (DC 에어컨)
+
+## 기술 스택
+- Next.js, TypeScript, Tailwind CSS, Framer Motion
+
+## 관련 링크
+- 서비스: https://premiumpage.kr
+- 계발자들: https://vibers.co.kr
