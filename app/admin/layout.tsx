@@ -1,6 +1,7 @@
 import { auth } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
+import VibersBanner from '@/components/VibersBanner'
 import {
     LayoutDashboard,
     Users,
@@ -110,6 +111,10 @@ export default async function AdminLayout({
 
                 <div className="p-8">
                     {children}
+                    <div style={{ marginTop: 32, paddingTop: 16, borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                        <p style={{ fontSize: 12, fontWeight: 600, color: '#888', marginBottom: 8 }}>계발자들 프로젝트</p>
+                        <VibersBanner size="medium" currentProject="premiumpage" />
+                    </div>
                 </div>
             </main>
         </div>
