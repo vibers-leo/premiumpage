@@ -118,10 +118,10 @@ function StatItem({ value, suffix, label }: { value: number; suffix: string; lab
   const { count, ref } = useCounter(value)
   return (
     <div ref={ref} className="text-center">
-      <div className="text-4xl md:text-5xl font-black tracking-tighter mb-1 text-slate-900 dark:text-white">
-        {count}<span className="text-violet-600">{suffix}</span>
+      <div className="text-4xl md:text-5xl font-black tracking-tighter mb-1 text-white">
+        {count}<span className="text-violet-500">{suffix}</span>
       </div>
-      <div className="text-slate-500 dark:text-slate-400 font-semibold text-xs uppercase tracking-widest">{label}</div>
+      <div className="text-white/40 font-semibold text-xs uppercase tracking-[0.15em]">{label}</div>
     </div>
   )
 }
@@ -131,18 +131,19 @@ function WhyCard({ number, icon, title, highlight, desc }: {
 }) {
   return (
     <motion.div
-      whileHover={{ y: -4 }}
-      className="group p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-violet-200 dark:hover:border-violet-600 transition-all"
+      whileHover={{ y: -4, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      className="group p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] hover:border-violet-500/30 transition-all duration-500 ease-out"
     >
       <div className="flex items-center justify-between mb-6">
-        <div className="w-12 h-12 rounded-xl bg-violet-50 dark:bg-violet-950/50 flex items-center justify-center text-violet-600">
+        <div className="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-400">
           {icon}
         </div>
-        <span className="text-3xl font-black text-slate-100 dark:text-slate-700 group-hover:text-violet-100 dark:group-hover:text-slate-600 transition-colors">{number}</span>
+        <span className="text-3xl font-black text-white/[0.06] group-hover:text-white/10 transition-colors duration-500">{number}</span>
       </div>
-      <h3 className="text-lg font-black text-slate-900 dark:text-white mb-1">{title}</h3>
-      <div className="text-violet-600 font-semibold text-sm mb-3">{highlight}</div>
-      <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm">{desc}</p>
+      <h3 className="text-lg font-black tracking-tight text-white mb-1">{title}</h3>
+      <div className="text-violet-400 font-semibold text-sm mb-3">{highlight}</div>
+      <p className="text-white/50 leading-relaxed text-sm break-keep">{desc}</p>
     </motion.div>
   )
 }
@@ -158,14 +159,14 @@ function ProcessStep({ number, icon, title, items }: {
       transition={{ duration: 0.5 }}
       className="flex flex-col items-center text-center"
     >
-      <div className="w-16 h-16 rounded-full bg-violet-600 flex items-center justify-center text-white mb-5 shadow-lg shadow-violet-200 dark:shadow-violet-900/40">
+      <div className="w-16 h-16 rounded-full bg-violet-600 flex items-center justify-center text-white mb-5 shadow-lg shadow-violet-500/20">
         {icon}
       </div>
-      <div className="text-violet-600 font-black text-xs tracking-widest uppercase mb-2">{number}</div>
-      <h3 className="text-xl font-black text-slate-900 dark:text-white mb-5">{title}</h3>
+      <div className="text-violet-400 font-black text-xs tracking-[0.15em] uppercase mb-2">{number}</div>
+      <h3 className="text-xl font-black tracking-tight text-white mb-5">{title}</h3>
       <ul className="space-y-2.5 text-left w-full">
         {items.map((item, i) => (
-          <li key={i} className="flex items-start gap-2.5 text-slate-500 dark:text-slate-400 text-sm">
+          <li key={i} className="flex items-start gap-2.5 text-white/50 text-sm break-keep">
             <CheckCircle2 className="w-4 h-4 text-violet-400 mt-0.5 shrink-0" />
             {item}
           </li>
@@ -190,7 +191,7 @@ function PortfolioCard({
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5 }}
       onClick={onClick}
-      className="group cursor-pointer rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl dark:hover:shadow-slate-900/60 transition-all duration-300 overflow-hidden"
+      className="group cursor-pointer rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/[0.08] hover:border-violet-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-500 ease-out overflow-hidden"
     >
       {/* Image */}
       <div
@@ -207,16 +208,18 @@ function PortfolioCard({
             }`}
           />
         ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/60 via-slate-800/40 to-slate-900 flex items-center justify-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/60 via-[#0a0a0a]/40 to-[#0a0a0a] flex items-center justify-center">
             <ShieldCheck className="w-16 h-16 text-indigo-400 opacity-40" />
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent" />
 
         {/* Hover overlay */}
-        <div className="absolute inset-0 bg-violet-600/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <div className="absolute inset-0 bg-violet-600/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out flex items-center justify-center">
           <div className="text-white text-center">
-            <ArrowUpRight className="w-8 h-8 mx-auto mb-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-2">
+              <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-500" />
+            </div>
             <span className="font-bold text-sm">자세히 보기</span>
           </div>
         </div>
@@ -234,11 +237,11 @@ function PortfolioCard({
 
       {/* Info */}
       <div className="p-5">
-        <div className="text-xs font-bold uppercase tracking-wider text-violet-600 mb-1">{p.subtitle}</div>
-        <h3 className={`font-black text-slate-900 dark:text-white mb-3 ${size === 'large' ? 'text-2xl' : 'text-lg'}`}>{p.title}</h3>
+        <div className="text-xs font-bold uppercase tracking-[0.15em] text-violet-400 mb-1">{p.subtitle}</div>
+        <h3 className={`font-black tracking-tight text-white mb-3 ${size === 'large' ? 'text-2xl' : 'text-lg'}`}>{p.title}</h3>
         <div className="flex flex-wrap gap-1.5">
           {p.tags.slice(1, 3).map(tag => (
-            <span key={tag} className="text-xs bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-300 px-2 py-0.5 rounded-full">{tag}</span>
+            <span key={tag} className="text-xs bg-white/5 border border-white/10 text-white/50 px-2 py-0.5 rounded-full">{tag}</span>
           ))}
         </div>
       </div>
@@ -263,7 +266,7 @@ function PortfolioModal({ p, onClose }: { p: typeof portfolios[0]; onClose: () =
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={onClose}
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+        className="fixed inset-0 bg-black/70 backdrop-blur-md z-50"
       />
 
       {/* Modal */}
@@ -273,7 +276,7 @@ function PortfolioModal({ p, onClose }: { p: typeof portfolios[0]; onClose: () =
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.94, y: 24 }}
         transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-        className="fixed z-50 inset-x-4 top-[4vh] bottom-[4vh] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl bg-white dark:bg-slate-900 rounded-3xl overflow-hidden flex flex-col shadow-2xl"
+        className="fixed z-50 inset-x-4 top-[4vh] bottom-[4vh] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl bg-[#141414] border border-white/10 rounded-3xl overflow-hidden flex flex-col shadow-2xl"
       >
         {/* Image header */}
         <div className="relative h-56 md:h-64 shrink-0" style={{ backgroundColor: p.bg }}>
@@ -285,16 +288,16 @@ function PortfolioModal({ p, onClose }: { p: typeof portfolios[0]; onClose: () =
               className={`${p.imageMode === 'contain' ? 'object-contain p-10 opacity-80' : 'object-cover opacity-70'}`}
             />
           ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/60 via-slate-800 to-slate-900 flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/60 via-[#141414] to-[#0a0a0a] flex items-center justify-center">
               <ShieldCheck className="w-20 h-20 text-indigo-400 opacity-30" />
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#141414] to-transparent" />
 
           {/* Close */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/50 transition-colors"
+            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-colors duration-300"
           >
             <X className="w-4 h-4" />
           </button>
@@ -302,12 +305,12 @@ function PortfolioModal({ p, onClose }: { p: typeof portfolios[0]; onClose: () =
           {/* Title */}
           <div className="absolute bottom-5 left-6 right-16">
             <div
-              className="text-[10px] font-black uppercase tracking-widest mb-1"
+              className="text-[10px] font-black uppercase tracking-[0.15em] mb-1"
               style={{ color: p.accent }}
             >
               {p.subtitle}
             </div>
-            <h3 className="text-2xl md:text-3xl font-black text-white leading-tight">{p.title}</h3>
+            <h3 className="text-2xl md:text-3xl font-black tracking-tight text-white leading-tight">{p.title}</h3>
           </div>
         </div>
 
@@ -316,14 +319,14 @@ function PortfolioModal({ p, onClose }: { p: typeof portfolios[0]; onClose: () =
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-5">
             {p.tags.map(tag => (
-              <span key={tag} className="text-xs font-semibold px-3 py-1 rounded-full bg-violet-50 dark:bg-violet-950/40 border border-violet-100 dark:border-violet-800 text-violet-700 dark:text-violet-300">
+              <span key={tag} className="text-xs font-semibold px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300">
                 {tag}
               </span>
             ))}
           </div>
 
           {/* Description */}
-          <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base mb-8">{p.description}</p>
+          <p className="text-white/60 leading-relaxed text-sm md:text-base mb-8 break-keep">{p.description}</p>
 
           {/* Links */}
           <div className="flex flex-col sm:flex-row gap-3">
@@ -333,10 +336,10 @@ function PortfolioModal({ p, onClose }: { p: typeof portfolios[0]; onClose: () =
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center justify-center gap-2 h-12 px-7 rounded-full font-bold text-sm transition-all ${
+                className={`flex items-center justify-center gap-2 h-12 px-7 rounded-full font-bold text-sm transition-all duration-500 ease-out ${
                   link.primary
-                    ? 'bg-violet-600 hover:bg-violet-700 text-white shadow-lg shadow-violet-200 dark:shadow-violet-900/40 hover:-translate-y-0.5'
-                    : 'border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-violet-300 hover:text-violet-600 bg-white dark:bg-slate-800'
+                    ? 'bg-violet-600 hover:bg-violet-500 text-white shadow-lg shadow-violet-500/20 hover:-translate-y-0.5'
+                    : 'border border-white/20 text-white/70 hover:border-violet-500/40 hover:text-violet-300 bg-white/5 backdrop-blur-sm'
                 }`}
               >
                 {link.label}
@@ -355,36 +358,36 @@ export default function PremiumLandingPage() {
   const [selectedPortfolio, setSelectedPortfolio] = useState<typeof portfolios[0] | null>(null)
 
   return (
-    <div className="flex flex-col w-full bg-white dark:bg-slate-950 text-slate-900 dark:text-white selection:bg-violet-200">
+    <div className="flex flex-col w-full bg-[#0a0a0a] text-white selection:bg-violet-500/30">
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           SECTION 1 · HERO
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section id="hero" className="relative w-full min-h-screen flex items-center overflow-hidden bg-white dark:bg-slate-950">
+      <section id="hero" className="relative w-full min-h-screen flex items-center overflow-hidden bg-[#0a0a0a]">
         {/* Soft background blobs */}
-        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-violet-50 dark:bg-violet-950/30 rounded-full blur-[120px] opacity-80 translate-x-1/3 -translate-y-1/3 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-50 dark:bg-indigo-950/20 rounded-full blur-[100px] opacity-60 -translate-x-1/3 translate-y-1/3 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-violet-950/40 rounded-full blur-[120px] opacity-80 translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-950/30 rounded-full blur-[100px] opacity-60 -translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
-        <div className="relative z-10 container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-24 md:py-32">
+        <div className="relative z-10 container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-24 md:py-32 lg:py-40">
           {/* Left */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, ease: 'easeOut' }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-50 dark:bg-violet-950/40 border border-violet-200 dark:border-violet-800 mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 backdrop-blur-sm mb-8">
               <span className="w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
-              <span className="text-xs font-black text-violet-700 dark:text-violet-300">전자카탈로그 전문 제작 에이전시</span>
+              <span className="text-xs font-black uppercase tracking-[0.15em] text-violet-300">전자카탈로그 전문 에이전시</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.1] text-slate-900 dark:text-white mb-6">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black tracking-tight leading-[1.1] text-white mb-6 break-keep">
               글로벌 비즈니스를 위한<br />
-              <span className="text-violet-600">전자카탈로그</span>를 만듭니다
+              <span className="text-violet-400">전자카탈로그</span>를 만듭니다
             </h1>
 
             <div className="flex flex-wrap items-center gap-2 mb-10">
               {['E-Catalog', 'E-Book', 'E-Brochure', '3D Interactive'].map(tag => (
-                <span key={tag} className="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700">
+                <span key={tag} className="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-white/40 border border-white/10">
                   {tag}
                 </span>
               ))}
@@ -393,15 +396,18 @@ export default function PremiumLandingPage() {
             <div className="flex flex-col sm:flex-row items-center gap-5">
               <Button
                 asChild
-                className="h-14 px-9 rounded-full bg-violet-600 hover:bg-violet-700 text-white font-bold text-base gap-2 shadow-lg shadow-violet-200 dark:shadow-violet-900/40 hover:-translate-y-0.5 transition-all"
+                className="h-14 px-8 py-4 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-bold text-base gap-3 shadow-lg shadow-violet-500/20 hover:-translate-y-0.5 transition-all duration-500 ease-out"
               >
                 <Link href="#portfolio">
-                  포트폴리오 보기 <ArrowRight className="w-4 h-4" />
+                  포트폴리오 보기
+                  <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
                 </Link>
               </Button>
               <Link
                 href="/quote"
-                className="flex items-center gap-2 h-14 px-9 rounded-full border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-bold text-base hover:border-violet-300 dark:hover:border-violet-600 hover:text-violet-600 dark:hover:text-violet-400 transition-all"
+                className="flex items-center gap-3 h-14 px-8 py-4 rounded-full border border-white/20 text-white/70 font-bold text-base hover:border-violet-500/40 hover:text-violet-300 backdrop-blur-sm transition-all duration-500 ease-out"
               >
                 무료 상담 신청 <MessageSquare className="w-4 h-4" />
               </Link>
@@ -435,7 +441,7 @@ export default function PremiumLandingPage() {
               </div>
 
               {/* Card 3 — front */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] rounded-2xl overflow-hidden shadow-2xl z-10 ring-1 ring-slate-200">
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] rounded-2xl overflow-hidden shadow-2xl z-10 ring-1 ring-white/10">
                 <div className="relative aspect-[4/3]" style={{ backgroundColor: '#030711' }}>
                   <Image src="/emt/assets/19.png" alt="EMT" fill className="object-contain p-8 opacity-85" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
@@ -452,20 +458,20 @@ export default function PremiumLandingPage() {
         {/* Scroll hint */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-30">
           <div className="w-[1px] h-10 bg-gradient-to-b from-transparent to-violet-400" />
-          <span className="text-[9px] font-black tracking-widest uppercase text-slate-400">Scroll</span>
+          <span className="text-[9px] font-black tracking-[0.15em] uppercase text-white/30">Scroll</span>
         </div>
       </section>
 
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           SECTION 2 · STATS
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800">
+      <section className="py-16 bg-white/[0.02] border-y border-white/5">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
             <StatItem value={5} suffix="+" label="납품 기업" />
-            <StatItem value={130} suffix="+" label="제작 페이지" />
+            <StatItem value={127} suffix="+" label="제작 페이지" />
             <StatItem value={5} suffix="+" label="지원 언어" />
-            <StatItem value={30} suffix="일" label="평균 납기" />
+            <StatItem value={28} suffix="일" label="평균 납기" />
           </div>
         </div>
       </section>
@@ -473,7 +479,7 @@ export default function PremiumLandingPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           SECTION 3 · WHY
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section id="why" className="py-32 bg-white dark:bg-slate-950">
+      <section id="why" className="py-24 md:py-32 lg:py-40 bg-[#0a0a0a]">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -482,14 +488,14 @@ export default function PremiumLandingPage() {
             transition={{ duration: 0.6 }}
             className="max-w-2xl mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-50 dark:bg-violet-950/40 border border-violet-200 dark:border-violet-800 text-violet-700 dark:text-violet-300 text-xs font-black mb-5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-black uppercase tracking-[0.15em] mb-5">
               <ShieldCheck className="w-3.5 h-3.5" /> 선택 이유
             </div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 dark:text-white mb-4">
+            <h2 className="text-[clamp(2rem,4vw,3rem)] font-black tracking-tight text-white mb-4 break-keep">
               왜 프리미엄 페이지에<br />
-              <span className="text-violet-600">맡겨야 할까요?</span>
+              <span className="text-violet-400">맡겨야 할까요?</span>
             </h2>
-            <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed">
+            <p className="text-white/50 text-lg leading-relaxed break-keep">
               일반 웹개발사, 디자인 에이전시와는 다릅니다.<br />
               전자카탈로그 하나에만 집중하기 때문에 결과물이 다릅니다.
             </p>
@@ -531,7 +537,7 @@ export default function PremiumLandingPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           SECTION 4 · PORTFOLIO
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section id="portfolio" className="py-32 bg-slate-50 dark:bg-slate-900">
+      <section id="portfolio" className="py-24 md:py-32 lg:py-40 bg-white/[0.02]">
         <div className="container mx-auto px-6">
           {/* Header */}
           <div className="flex flex-col md:flex-row items-end justify-between mb-14 gap-6">
@@ -541,15 +547,15 @@ export default function PremiumLandingPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-50 dark:bg-violet-950/40 border border-violet-200 dark:border-violet-800 text-violet-700 dark:text-violet-300 text-xs font-black mb-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-black uppercase tracking-[0.15em] mb-5">
                 <Layers className="w-3.5 h-3.5" /> 납품 사례
               </div>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 dark:text-white mb-3">
-                실제 제작된 <span className="text-violet-600">전자카탈로그</span>
+              <h2 className="text-[clamp(2rem,4vw,3rem)] font-black tracking-tight text-white mb-3 break-keep">
+                실제 제작된 <span className="text-violet-400">전자카탈로그</span>
               </h2>
-              <p className="text-slate-500 dark:text-slate-400">카드를 클릭하면 상세 정보와 실제 사이트 링크를 확인할 수 있습니다.</p>
+              <p className="text-white/50">카드를 클릭하면 상세 정보와 실제 사이트 링크를 확인할 수 있습니다.</p>
             </motion.div>
-            <Button asChild variant="outline" className="rounded-full border-2 border-slate-200 dark:border-slate-700 dark:text-slate-300 h-11 px-8 font-bold text-sm hover:border-violet-300 hover:text-violet-600 dark:hover:border-violet-600 dark:hover:text-violet-400 transition-all shrink-0 dark:bg-transparent">
+            <Button asChild variant="outline" className="rounded-full border border-white/20 text-white/70 h-11 px-8 font-bold text-sm hover:border-violet-500/40 hover:text-violet-300 backdrop-blur-sm transition-all duration-500 ease-out shrink-0 bg-transparent">
               <Link href="/templates">전체 작품 보기 <ArrowRight className="w-4 h-4 ml-1.5" /></Link>
             </Button>
           </div>
@@ -573,7 +579,7 @@ export default function PremiumLandingPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           SECTION 5 · PROCESS
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="py-32 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800">
+      <section className="py-24 md:py-32 lg:py-40 bg-[#0a0a0a] border-t border-white/5">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -582,17 +588,20 @@ export default function PremiumLandingPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 dark:text-white mb-4">
-              의뢰에서 납품까지 <span className="text-violet-600">딱 3단계</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-black uppercase tracking-[0.15em] mb-5">
+              진행 과정
+            </div>
+            <h2 className="text-[clamp(2rem,4vw,3rem)] font-black tracking-tight text-white mb-4 break-keep">
+              의뢰에서 납품까지 <span className="text-violet-400">딱 3단계</span>
             </h2>
-            <p className="text-slate-500 dark:text-slate-400 text-lg max-w-xl mx-auto">
+            <p className="text-white/50 text-lg max-w-xl mx-auto break-keep">
               자료만 주시면 나머지는 저희가 합니다.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative">
             {/* Connector */}
-            <div className="hidden md:block absolute top-8 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-px bg-gradient-to-r from-violet-200 via-violet-400 to-violet-200 dark:from-violet-900 dark:via-violet-600 dark:to-violet-900" />
+            <div className="hidden md:block absolute top-8 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-px bg-gradient-to-r from-violet-900 via-violet-600 to-violet-900" />
             <ProcessStep
               number="STEP 01"
               icon={<MessageSquare className="w-6 h-6" />}
@@ -618,9 +627,9 @@ export default function PremiumLandingPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           SECTION 6 · CTA
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <section className="py-32 relative overflow-hidden bg-violet-600">
+      <section className="py-24 md:py-32 lg:py-40 relative overflow-hidden bg-violet-600">
         {/* Background pattern */}
-        <div className="absolute inset-0 opacity-10"
+        <div className="absolute inset-0 opacity-[0.07]"
           style={{
             backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
             backgroundSize: '32px 32px'
@@ -636,21 +645,26 @@ export default function PremiumLandingPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/25 text-white/90 text-xs font-black mb-8">
-              <Clock className="w-3.5 h-3.5" /> 상담부터 납품까지 원스톱
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-xs font-black uppercase tracking-[0.15em] mb-8">
+              <Clock className="w-3.5 h-3.5" /> 원스톱 프로세스
             </div>
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-white mb-6 leading-[1.05]">
+            <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] font-black tracking-tight text-white mb-6 leading-[1.05] break-keep">
               지금 바로<br />시작하세요
             </h2>
-            <p className="text-white/70 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-white/60 text-lg mb-12 max-w-2xl mx-auto leading-relaxed break-keep">
               보유하신 홈페이지나 PDF 자료만 있으면 됩니다.<br />
               영업일 기준 1일 이내 연락드리며, 견적 상담은 무료입니다.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild size="lg" className="h-14 px-12 rounded-full bg-white text-violet-700 font-black text-lg hover:bg-violet-50 hover:-translate-y-0.5 transition-all shadow-xl shadow-violet-900/30">
-                <Link href="/quote">무료 상담 신청하기</Link>
+              <Button asChild size="lg" className="h-14 px-8 py-4 rounded-full bg-white text-violet-700 font-black text-lg gap-3 hover:bg-violet-50 hover:-translate-y-0.5 transition-all duration-500 ease-out shadow-xl shadow-violet-900/30">
+                <Link href="/quote">
+                  무료 상담 신청하기
+                  <span className="w-8 h-8 rounded-full bg-violet-500/20 flex items-center justify-center">
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="h-14 px-12 rounded-full border-2 border-white/30 text-white font-bold text-lg hover:bg-white/10 transition-all">
+              <Button asChild variant="outline" size="lg" className="h-14 px-8 py-4 rounded-full border border-white/20 text-white font-bold text-lg hover:bg-white/10 backdrop-blur-sm transition-all duration-500 ease-out">
                 <Link href="#portfolio">납품 사례 먼저 보기</Link>
               </Button>
             </div>
@@ -661,37 +675,37 @@ export default function PremiumLandingPage() {
       {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           FOOTER
       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <footer className="py-16 bg-slate-900 text-slate-400">
+      <footer className="py-16 bg-[#0a0a0a] border-t border-white/5">
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
           <div>
             <div className="text-xl font-black text-white mb-3 tracking-tight">Premium Page</div>
-            <p className="text-sm leading-relaxed text-slate-400 max-w-xs">
+            <p className="text-sm leading-relaxed text-white/40 max-w-xs break-keep">
               수출 기업을 위한 인터랙티브 전자카탈로그 전문 에이전시.<br />
               한/영 · 다국어 · 3D · 글로벌 CDN
             </p>
           </div>
           <div>
-            <div className="font-black text-xs text-slate-500 mb-4">서비스</div>
-            <ul className="space-y-2.5 text-sm">
-              <li><Link href="/templates" className="hover:text-violet-400 transition-colors">전자카탈로그 제작</Link></li>
-              <li><Link href="/templates" className="hover:text-violet-400 transition-colors">3D 인터랙티브 쇼케이스</Link></li>
-              <li><Link href="/quote" className="hover:text-violet-400 transition-colors">무료 상담 신청</Link></li>
+            <div className="font-black text-xs text-white/30 uppercase tracking-[0.15em] mb-4">서비스</div>
+            <ul className="space-y-2.5 text-sm text-white/50">
+              <li><Link href="/templates" className="hover:text-violet-400 transition-colors duration-300">전자카탈로그 제작</Link></li>
+              <li><Link href="/templates" className="hover:text-violet-400 transition-colors duration-300">3D 인터랙티브 쇼케이스</Link></li>
+              <li><Link href="/quote" className="hover:text-violet-400 transition-colors duration-300">무료 상담 신청</Link></li>
             </ul>
           </div>
           <div>
-            <div className="font-black text-xs text-slate-500 mb-4">바로가기</div>
-            <ul className="space-y-2.5 text-sm">
-              <li><Link href="/#why" className="hover:text-violet-400 transition-colors">서비스 특징</Link></li>
-              <li><Link href="/#portfolio" className="hover:text-violet-400 transition-colors">납품 사례</Link></li>
-              <li><Link href="/quote" className="hover:text-violet-400 transition-colors">의뢰 문의</Link></li>
+            <div className="font-black text-xs text-white/30 uppercase tracking-[0.15em] mb-4">바로가기</div>
+            <ul className="space-y-2.5 text-sm text-white/50">
+              <li><Link href="/#why" className="hover:text-violet-400 transition-colors duration-300">서비스 특징</Link></li>
+              <li><Link href="/#portfolio" className="hover:text-violet-400 transition-colors duration-300">납품 사례</Link></li>
+              <li><Link href="/quote" className="hover:text-violet-400 transition-colors duration-300">의뢰 문의</Link></li>
             </ul>
           </div>
         </div>
-        <div className="container mx-auto px-6 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between gap-3">
-          <p className="text-slate-600 text-xs">© 2026 Premium Page. All rights reserved.</p>
-          <div className="flex gap-6 text-slate-600 text-xs font-bold">
-            <a href="#" className="hover:text-slate-400 transition-colors">이용약관</a>
-            <a href="#" className="hover:text-slate-400 transition-colors">개인정보처리방침</a>
+        <div className="container mx-auto px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between gap-3">
+          <p className="text-white/20 text-xs">© 2026 Premium Page. All rights reserved.</p>
+          <div className="flex gap-6 text-white/20 text-xs font-bold">
+            <a href="#" className="hover:text-white/40 transition-colors duration-300">이용약관</a>
+            <a href="#" className="hover:text-white/40 transition-colors duration-300">개인정보처리방침</a>
           </div>
         </div>
       </footer>
