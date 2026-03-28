@@ -1,6 +1,7 @@
 import { auth } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
+import Script from 'next/script'
 import VibersBanner from '@/components/VibersBanner'
 import {
     LayoutDashboard,
@@ -29,6 +30,13 @@ export default async function AdminLayout({
     }
 
     return (
+        <>
+        <Script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7704550771011130"
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+        />
         <div className="flex min-h-screen bg-[#050505] text-white font-sans">
             {/* Sidebar */}
             <aside className="w-64 border-r border-white/5 bg-[#0a0a0a] flex flex-col sticky top-0 h-screen">
@@ -118,5 +126,6 @@ export default async function AdminLayout({
                 </div>
             </main>
         </div>
+        </>
     )
 }
