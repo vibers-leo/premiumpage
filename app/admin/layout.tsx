@@ -23,9 +23,7 @@ export default async function AdminLayout({
     const session = await auth()
 
     // 어드민 권한 체크 (role이 'admin'인 경우만 허용)
-    // 현재는 편리함을 위해 로그인이 되어있으면 기본적으로 접근 가능하게 하되, 
-    // 실제 운영시에는 if (session?.user?.role !== 'admin') 로 엄격하게 제한해야 합니다.
-    if (!session?.user) {
+    if (!session?.user?.role || session.user.role !== 'admin') {
         redirect('/login')
     }
 
