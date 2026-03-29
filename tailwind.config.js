@@ -1,29 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./app/**/*.{js,jsx,ts,tsx}",
-    "./components/**/*.{js,jsx,ts,tsx}",
-    "./lib/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: "#3b82f6",
-          light: "#60a5fa",
-          dark: "#2563eb",
-        },
-        secondary: "#1e40af",
-        bg: "#ffffff",
-        surface: "#eff6ff",
-        text: {
-          DEFAULT: "#0f172a",
-          muted: "#64748b",
-        },
-        border: "#e2e8f0",
-        success: "#10b981",
-        error: "#ef4444",
+        primary: { DEFAULT: "#3b82f6", dark: "#2563eb" },
+      },
+      borderRadius: {
+        'card': '24px',
+        'button': '9999px',
+        'modal': '32px',
+      },
+      fontSize: {
+        'heading-1': ['28px', { lineHeight: '36px', fontWeight: '700' }],
+        'heading-2': ['22px', { lineHeight: '30px', fontWeight: '700' }],
+        'heading-3': ['18px', { lineHeight: '26px', fontWeight: '600' }],
+        'body': ['15px', { lineHeight: '22px', fontWeight: '400' }],
+        'caption': ['12px', { lineHeight: '16px', fontWeight: '500' }],
       },
     },
   },
