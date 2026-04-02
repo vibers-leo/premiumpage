@@ -1,0 +1,87 @@
+{
+    "$schema": "catalog-blueprint-v1",
+    "name": "product-hierarchy",
+    "displayName": "Product Hierarchy",
+    "description": "브랜드/카테고리 계층 구조, 50+ 제품 보유 기업용 카탈로그",
+    "basedOn": "HS-TECH",
+    "suitableFor": [
+        "복수 브랜드 취급",
+        "제품 카테고리가 계층적",
+        "50개 이상 제품 보유",
+        "기술 사양 비교 필요"
+    ],
+    "structure": {
+        "routing": "query-param",
+        "pattern": "?brand=X&category=Y&product=Z",
+        "example": "/templates/hs-tech?brand=vaisala&category=humidity"
+    },
+    "hierarchy": {
+        "levels": 4,
+        "structure": ["brand", "category", "subcategory", "product"],
+        "example": {
+            "brand": "VAISALA",
+            "category": "Temperature",
+            "subcategory": "Industrial",
+            "product": "HMT330"
+        }
+    },
+    "sections": [
+        {
+            "id": "cover",
+            "type": "intro",
+            "required": true,
+            "hero": "minimal",
+            "components": ["Spotlight", "BackgroundGradient"]
+        },
+        {
+            "id": "brands",
+            "type": "product",
+            "required": true,
+            "layout": "grid",
+            "components": ["CardContainer", "HoverEffect", "BackgroundGradient"]
+        },
+        {
+            "id": "categories",
+            "type": "product",
+            "required": true,
+            "layout": "sidebar-content",
+            "components": ["BentoGrid"]
+        },
+        {
+            "id": "product-detail",
+            "type": "product",
+            "required": true,
+            "layout": "split",
+            "components": ["ParallaxScroll", "TracingBeam"]
+        },
+        {
+            "id": "contact",
+            "type": "contact",
+            "required": false,
+            "components": []
+        }
+    ],
+    "features": {
+        "pageNavigator": true,
+        "wheelNavigation": false,
+        "darkMode": true,
+        "lightMode": true,
+        "footer": "inline-grid",
+        "translations": ["en"],
+        "search": true,
+        "productComparison": false
+    },
+    "layout": {
+        "header": "solid-sticky",
+        "footer": "inline-grid",
+        "navigator": "bottom-right",
+        "sidebar": "left-collapsible",
+        "pageTransition": "slide"
+    },
+    "pageCount": {
+        "displayed": 24,
+        "actual": "80+",
+        "note": "세부 제품 시리즈는 네비게이터 카운팅에서 제외"
+    },
+    "defaultTheme": "dark"
+}

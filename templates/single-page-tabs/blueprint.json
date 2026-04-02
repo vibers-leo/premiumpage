@@ -1,0 +1,69 @@
+{
+    "$schema": "catalog-blueprint-v1",
+    "name": "single-page-tabs",
+    "displayName": "Single Page Tabs",
+    "description": "소규모 사이트, 10페이지 미만의 간결한 탭 기반 카탈로그",
+    "basedOn": "Hangseong",
+    "suitableFor": [
+        "소규모 기업",
+        "제품군이 단순",
+        "10페이지 미만",
+        "빠른 로딩 중시"
+    ],
+    "structure": {
+        "routing": "tab-based",
+        "pattern": "?tab=section",
+        "example": "/templates/hangseong?tab=about"
+    },
+    "sections": [
+        {
+            "id": "cover",
+            "type": "intro",
+            "required": true,
+            "hero": "split-layout",
+            "components": ["Spotlight"]
+        },
+        {
+            "id": "about",
+            "type": "company",
+            "required": true,
+            "components": ["TracingBeam"]
+        },
+        {
+            "id": "products",
+            "type": "product",
+            "required": true,
+            "layout": "grid",
+            "components": ["CardContainer", "HoverEffect"]
+        },
+        {
+            "id": "history",
+            "type": "history",
+            "required": false,
+            "components": ["TracingBeam"]
+        },
+        {
+            "id": "contact",
+            "type": "contact",
+            "required": true,
+            "components": []
+        }
+    ],
+    "features": {
+        "pageNavigator": true,
+        "wheelNavigation": false,
+        "darkMode": true,
+        "lightMode": true,
+        "footer": "inline-grid",
+        "translations": ["en", "ko"],
+        "tabNavigation": true
+    },
+    "layout": {
+        "header": "solid-sticky",
+        "footer": "inline-grid",
+        "navigator": "bottom-center",
+        "tabs": "top-horizontal",
+        "pageTransition": "fade"
+    },
+    "defaultTheme": "dark"
+}

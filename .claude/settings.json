@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(# Check if /public/hstech/HS TECH_files/ exists ls \"\"/Users/admin/Desktop/jcatalog/public/hstech/HS TECH_files/\"\")",
+      "Bash(gh run list --repo juuuno-coder/premiumpage --limit 3)",
+      "Bash(rsync -a --delete /tmp/empty_dir/ \"/Volumes/새 볼륨/projects/premiumpage/\")"
+    ],
+    "additionalDirectories": [
+      "/Volumes/새 볼륨/projects/premiumpage"
+    ]
+  }
+}

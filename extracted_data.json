@@ -1,0 +1,375 @@
+{
+  "portable instrument": {
+    "desc": "Home > Product > Dewpoint > Portable Instrument",
+    "specs": [
+      "▶ Measurement Range: -50…+60℃/-70...+30℃ Td Accuracy: ±2℃ Td"
+    ]
+  },
+  "dmt340": {
+    "desc": "Fixed installed typeHome > Product > Dewpoint > Fixed installed type",
+    "specs": []
+  },
+  "hs-tech": {
+    "desc": "HOME > Field of application > HVAC",
+    "specs": []
+  },
+  "fixed installed type": {
+    "desc": "Home > Product > Dewpoint >Fixed installed type",
+    "specs": [
+      "▶ Measurement range 70 to +80℃ Td Accuracy: ±2℃ Td"
+    ]
+  },
+  "demanding industrial applications": {
+    "desc": "Demanding Industrial Applications",
+    "specs": []
+  },
+  "water & wastewater": {
+    "desc": "HOME > APPLICATION > Water & Wastewater",
+    "specs": []
+  },
+  "indigo80+hmp80": {
+    "desc": "Hand-held InstrumentHome > Product > Humidity > Hand-held Instrument",
+    "specs": [
+      "▪ Measurement range:- RH range: 0…100%- Temperature range: -20…+60℃▪ Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃ at 20℃",
+      "▪ Measurement range:- RH range: 0…100%- Temperature range: -50…+120℃▪ Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃ at 20℃",
+      "▪ Measurement range:- RH range: 0…100%- Temperature range: -70…+180℃▪ Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃ at 20℃"
+    ]
+  },
+  "dpt145": {
+    "desc": "Module/OEMHome > Product > Dewpoint > Module/OEM",
+    "specs": []
+  },
+  "hvac": {
+    "desc": "HOME > PRODUCT > HUMIDITY > HVAC",
+    "specs": []
+  },
+  "control & recording": {
+    "desc": "HOME > PRODUCT > Control & Recording",
+    "specs": []
+  },
+  "about us": {
+    "desc": "HS TECH 주식회사는 환경센서 전문업체로 온도, 습도, 압력 및 대기 수질 측정장비에 대한 판매, 기술지원, 교정, 설치 및 A/S를 지원하고 있습니다.",
+    "specs": []
+  },
+  "hmt120_130": {
+    "desc": "IndustrialHome > Product > Humidity > Industrial",
+    "specs": []
+  },
+  "transmitter": {
+    "desc": "Home > Product > Carbon dioxide > Transmitter",
+    "specs": [
+      "▶ Measurement Range: 0…5000ppm CO2, T -5…+55℃, 0…95%RH",
+      "▶ Measurement Range: 0…2000ppm CO2, T 0…50℃, 0…95%RH",
+      "▶ Measurement Range: 0…10 000 ppm CO2",
+      "▶ Accuracy: ±2 % of reading"
+    ]
+  },
+  "hmt330": {
+    "desc": "Demanding Industrial ApplicationsHome > Product > Dewpoint > Demanding Industrial Applications",
+    "specs": []
+  },
+  "semiconductor & display": {
+    "desc": "Semiconductor & Display",
+    "specs": []
+  },
+  "shipbuilding": {
+    "desc": "HOME > APPLICATION > Shipbuilding",
+    "specs": []
+  },
+  "shm40": {
+    "desc": "Hand-held InstrumentHome > Product > Humidity > Hand-held Instrument",
+    "specs": [
+      "Accuracy: RH",
+      "Accuracy: RH"
+    ]
+  },
+  "dmt345_346": {
+    "desc": "Fixed installed typeHome > Product > Dewpoint > Fixed installed type",
+    "specs": []
+  },
+  "conductivity transmitter": {
+    "desc": "Conductivity Transmitter",
+    "specs": []
+  },
+  "contact": {
+    "desc": "HS TECH 본사HS TECH Co.,Ltd에이치에스테크 주식회사주소1394 경기도 성남시 분당구 대왕판교로670 판교테크노밸리 유스페이스2B동 4층 410호대표번호: 070 4346 1844FAX: 031-8016-3510E-mail: hs-tech@hs-tech.co.kr",
+    "specs": []
+  },
+  "gmw80": {
+    "desc": "TransmitterHome > Product > Carbon dioxide > Transmitter",
+    "specs": []
+  },
+  "hmt310": {
+    "desc": "IndustrialHome > Product > Humidity > Industrial",
+    "specs": [
+      "Output: RH+T+Td+a+Tw+x+h+pws"
+    ]
+  },
+  "ph transmitter": {
+    "desc": "HOME > PRODUCT > Liquid Analysis > pH Transmitter",
+    "specs": []
+  },
+  "hmt120": {
+    "desc": "Demanding Industrial ApplicationsHome > Product > Dewpoint > Demanding Industrial Applications",
+    "specs": [
+      "Output: RH+T+Td+a+Tw+x+h+pws"
+    ]
+  },
+  "combined transmitter": {
+    "desc": "Home > Product >Pressure> Combined Transmitter",
+    "specs": []
+  },
+  "differential pressure transmitter": {
+    "desc": "Differential Pressure Transmitter",
+    "specs": []
+  },
+  "dm70": {
+    "desc": "Portable InstrumentHome > Product > Dewpoint > Portable Instrument",
+    "specs": []
+  },
+  "hmt360": {
+    "desc": "Explosion ProofHome > Product > Humidity > Explosion Proof",
+    "specs": [
+      "Output: RH+T+Td+a+x+Tw+Aw+ppm+rs+Ts+W+ppmV"
+    ]
+  },
+  "hand-held meter": {
+    "desc": "Home > Product > Carbon dioxide > Hand-held Meter",
+    "specs": []
+  },
+  "mmt162": {
+    "desc": "Module/OEMHome > Product > MOISTURE IN OIL > Module/OEM",
+    "specs": []
+  },
+  "aquaculture": {
+    "desc": "HOME > APPLICATION > aquaculture",
+    "specs": []
+  },
+  "probe": {
+    "desc": "Home > Product > Carbon dioxide > Probe",
+    "specs": [
+      "▶ Measurement Range: 0…2% Accuracy: ±3ppm+1%RV",
+      "▶Measurement Range: 0…20% Accuracy: ±0.1%"
+    ]
+  },
+  "h2o2 sensor": {
+    "desc": "Home > Product > H202 > HPP271/HPP272",
+    "specs": [
+      "▶ Measurement Range: 0...2000ppm"
+    ]
+  },
+  "mm70": {
+    "desc": "Hand-held measurementHome > Product > MOISTURE IN OIL > Hand-held measurement",
+    "specs": []
+  },
+  "weather": {
+    "desc": "Home > Product > Weather",
+    "specs": []
+  },
+  "dmt143l": {
+    "desc": "Module/OEMHome > Product > Dewpoint > Module/OEM",
+    "specs": []
+  },
+  "gmd110": {
+    "desc": "TransmitterHome > Product > Carbon dioxide > Transmitter",
+    "specs": []
+  },
+  "gmw90": {
+    "desc": "TransmitterHome > Product > Carbon dioxide > Transmitter",
+    "specs": []
+  },
+  "plant": {
+    "desc": "HOME > Field of application >PLANT",
+    "specs": []
+  },
+  "hand-held instrument": {
+    "desc": "Home > Product > Humidity > Hand-held Instrument",
+    "specs": []
+  },
+  "heating & air conditioning": {
+    "desc": "Heating & air conditioning",
+    "specs": []
+  },
+  "semiconductor": {
+    "desc": "HOME > Field of application > SEMICONDUCTOR",
+    "specs": []
+  },
+  "hs tech": {
+    "desc": "5-year warrantyon HVAC transmitters",
+    "specs": []
+  },
+  "barometer": {
+    "desc": "Home > Product > Pressure > Barometer",
+    "specs": []
+  },
+  "power transformer": {
+    "desc": "Home > Product > MOISTURE IN OIL > Power Transformer",
+    "specs": []
+  },
+  "explosion proof": {
+    "desc": "Home > Product > Humidity >Explosion Proof",
+    "specs": []
+  },
+  "dmt132": {
+    "desc": "Module/OEMHome > Product > Dewpoint > Module/OEM",
+    "specs": []
+  },
+  "maritime": {
+    "desc": "HOME > Field of application >Maritime",
+    "specs": []
+  },
+  "information": {
+    "desc": "CMSContinuous Monitoring System (CMS) is an easy-to-use system for manufacturers of bio, pharmaceutical, food and cosmetics that are important for environmental management. The sensor can be used with...",
+    "specs": []
+  },
+  "module_probe": {
+    "desc": "Home > Product > Humidity >Module / Probe",
+    "specs": []
+  },
+  "반도체": {
+    "desc": "HOME > Field of application > SEMICONDUCTOR",
+    "specs": []
+  },
+  "pharmaceutical & biotechnology": {
+    "desc": "Pharmaceutical & Biotechnology",
+    "specs": []
+  },
+  "hm70": {
+    "desc": "Hand-held InstrumentHome > Product > Humidity > Hand-held Instrument",
+    "specs": [
+      "Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2",
+      "Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2",
+      "Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2",
+      "▪ Measurement range:- RH range: 0…100%- Temperature range: -20…+60℃▪ Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃ at 20℃",
+      "▪ Measurement range:- RH range: 0…100%- Temperature range: -50…+120℃▪ Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃ at 20℃",
+      "▪ Measurement range:- RH range: 0…100%- Temperature range: -70…+180℃▪ Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃ at 20℃"
+    ]
+  },
+  "barometric pressure transfer standard": {
+    "desc": "Barometric Pressure Transfer Standard",
+    "specs": []
+  },
+  "hmw90": {
+    "desc": "HVACHome > Product > Humidity >HVAC",
+    "specs": []
+  },
+  "ph combination electrodes": {
+    "desc": "pH Combination Electrodes",
+    "specs": []
+  },
+  "dmt152": {
+    "desc": "Module/OEMHome > Product > Dewpoint > Module/OEM",
+    "specs": []
+  },
+  "hmk15": {
+    "desc": "Hand-held InstrumentHome > Product > Humidity > Hand-held Instrument",
+    "specs": []
+  },
+  "dss70a": {
+    "desc": "Portable InstrumentHome > Product > Dewpoint > Portable Instrument",
+    "specs": []
+  },
+  "mmt330": {
+    "desc": "Fixed Installation TypeHome > Product > MOISTURE IN OIL > Fixed Installation Type",
+    "specs": []
+  },
+  "dmt143": {
+    "desc": "Module/OEMHome > Product > Dewpoint > Module/OEM",
+    "specs": []
+  },
+  "power": {
+    "desc": "HOME > Field of application > POWER",
+    "specs": []
+  },
+  "knick 트랜스미터": {
+    "desc": "Setra Lite™Visual Differential Pressure Indicator",
+    "specs": []
+  },
+  "hmt370ex": {
+    "desc": "Explosion ProofHome > Product > Humidity > Explosion Proof",
+    "specs": [
+      "Output: RH+T+Td+a+x+Tw+Aw+ppm+rs+Ts+W+ppmV"
+    ]
+  },
+  "mht410": {
+    "desc": "Power TransformerHome > Product > MOISTURE IN OIL > Power Transformer",
+    "specs": []
+  },
+  "gmp231": {
+    "desc": "ProbeHome > Product > Carbon dioxide > Probe",
+    "specs": []
+  },
+  "life science": {
+    "desc": "HOME > Field of application > LIFE SCIENCE",
+    "specs": []
+  },
+  "hmd60": {
+    "desc": "IndustrialHome > Product > Humidity > Industrial",
+    "specs": []
+  },
+  "기상용": {
+    "desc": "Home > Product > Weather > 기상용",
+    "specs": []
+  },
+  "agriculture": {
+    "desc": "HOME > Field of application >Agriculture",
+    "specs": []
+  },
+  "mmt310": {
+    "desc": "Fixed Installation TypeHome > Product > MOISTURE IN OIL > Fixed Installation Type",
+    "specs": []
+  },
+  "automotive": {
+    "desc": "HOME > Field of application >Automotive",
+    "specs": []
+  },
+  "hm40": {
+    "desc": "Hand-held InstrumentHome > Product > Humidity > Hand-held Instrument",
+    "specs": [
+      "Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2",
+      "Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2",
+      "Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2",
+      "Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2",
+      "▪ Measurement range:- RH range: 0…100%- Temperature range: -10…+60℃▪ Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2℃ at 20℃",
+      "▪ Measurement range:- RH range: 0…100%- Temperature range: -40…+100℃▪ Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2℃ at 20℃",
+      "▪ Measurement range:- RH range: 0…100%- Temperature range: -40…+60℃▪ Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2℃ at 20℃",
+      "▪ Measurement range:- RH range: 0…100%- Temperature range: -40…+100℃▪ Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2℃ at 20℃"
+    ]
+  },
+  "dpt146": {
+    "desc": "Module/OEMHome > Product > Dewpoint > Module/OEM",
+    "specs": []
+  },
+  "hmdw110": {
+    "desc": "Demanding Industrial ApplicationsHome > Product > Dewpoint > Demanding Industrial Applications",
+    "specs": [
+      "Output: RH+T+Td/f+h+Tw"
+    ]
+  },
+  "fixed installation type": {
+    "desc": "Fixed Installation Type",
+    "specs": [
+      "▶ Measurement Range: 0…1 aw, -40…180℃",
+      "▶ Measurement Range: 0…1 aw, -40…180℃"
+    ]
+  },
+  "gmp343": {
+    "desc": "ProbeHome > Product > Carbon dioxide > Probe",
+    "specs": []
+  },
+  "gmp251": {
+    "desc": "ProbeHome > Product > Carbon dioxide > Probe",
+    "specs": [
+      "▪ Measurement Range: 0…20%",
+      "(Accuracy: ±0.1%CO2 @ 5% CO2)",
+      "(Accuracy: ±40%CO2 @ 0…3000ppmCO2)",
+      "▪ Measurement Range: 0…20%(Accuracy: ±0.1%CO2 @ 5% CO2)▪ IP65 classified housing▪ Sensor head heated to prevent condensation▪ Compatible with Indigo200 transmitters and VAISALA Insight",
+      "▪ Measurement Range: 0…20%(Accuracy: ±0.1%CO2 @ 5% CO2)▪ IP65 classified housing▪ Sensor head heated to prevent condensation▪ Compatible with Indigo200 transmitters and VAISALA Insight",
+      "▪ Measurement range: 0…10,000ppmCO2(Accuracy: ±40%CO2 @ 0…3000ppmCO2)▪ IP65 classified housing▪ Sensor head heated to prevent condensation▪ Compatible with Indigo200 transmitters and VAISALA Insight"
+    ]
+  },
+  "hand-held measurement": {
+    "desc": "Hand-held measurement",
+    "specs": []
+  }
+}

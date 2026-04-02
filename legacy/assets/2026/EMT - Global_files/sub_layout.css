@@ -1,0 +1,60 @@
+@charset "UTF-8";
+#container:has(.sub-header){background:url("../img/layout/sub_bg.png") no-repeat center top;}
+#container.sub{padding-bottom:16rem;}
+
+/* sub header 타이틀이 가려지는 조건 */
+#container:has(.product-view) .sub-title,
+#container:has(.board-view:not(.show-title)) .sub-title,
+#container:has(.board-write) .sub-title {display:none;}
+
+#container:has(.sub-board) .sub-title{margin-bottom:0; padding-bottom:0;}
+#container:has(.sub-board) .sub-title .desc{display:none;}
+#container:has(.board_view) .sub-title{display:none;}
+#container:has(.sub-search) .sub-title .desc{display:none;}
+#container:has(.sub-search) .sub-header .breadcrumb{display:none;}
+ 
+.sub-header{padding:14rem 0 12rem;}
+.sub-header .breadcrumb{display:flex; align-items:center; margin-bottom:8rem;}
+.sub-header .breadcrumb .breadcrumb-item{position:relative;}
+.sub-header .breadcrumb .breadcrumb-item:not(:first-child):before{content:""; position:absolute; top:50%; left:0; width:1px; height:1.6rem; background:var(--border-white-20); transform:translateY(-50%);}
+.sub-header .breadcrumb .breadcrumb-item + .breadcrumb-item{padding-left:2.2rem; margin-left:2.2rem;}
+.sub-header .breadcrumb .home{opacity:0.2; transition:opacity 0.3s;}
+.sub-header .breadcrumb .home:hover{opacity:1;}
+.sub-header .breadcrumb .label{font-family:var(--font-family-mixed); font-size:var(--font-size-body-md); font-weight:var(--fw-medium); display:flex; align-items:center; gap:2.4rem; padding:1em 0;}
+.sub-header .breadcrumb .label:after{content:""; display:block; width:0; height:0; border-top:6px solid #4A4D4C; border-left:5px solid transparent; border-right:5px solid transparent;}
+.sub-header .breadcrumb .breadcrumb-item:last-child .label{color:var(--color-point)}
+.sub-header .breadcrumb .breadcrumb-item:last-child .label:after{border-top-color:var(--color-point);}
+.sub-header .breadcrumb .menu-list{position:absolute; top:100%; left:0; min-width:18rem; background:#212827; padding:1.2rem 1.2rem; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.25); border:1px solid var(--border-white-10); opacity:0; visibility:hidden; transform:translateY(10px); transition:opacity 0.3s, visibility 0.3s, transform 0.3s; z-index:5;}
+.sub-header .breadcrumb .menu-list a{opacity:0.5; font-family:var(--font-family-mixed); line-height:var(--lh-loose); display:flex; padding:1rem 1.2rem; border-radius:8px; transition:all 0.3s; white-space:nowrap;}
+.sub-header .breadcrumb .menu-list a:hover{opacity:1; background:rgba(255,255,255,0.1);}
+.sub-header .breadcrumb .breadcrumb-item.active .menu-list{opacity:1; visibility:visible; transform:translateY(0);}
+/* .sub-header .inner{position:relative;}
+.sub-header .inner:before{content:""; width:80%; aspect-ratio:2/1; background:#00ff80; opacity:0.13; position:absolute; top:0; left:50%; transform:translateX(-50%) translateY(-80%); filter:blur(200px); z-index:-1; border-radius:50%;} */
+.sub-header .sub-title{text-align:center; margin-bottom:0;}
+.sub-header .sub-title .badge{font-family:var(--font-family-point); font-size:var(--font-size-body-md); margin-bottom:2.4rem; opacity:0.5}
+.sub-header .sub-title .title{font-size:var(--font-size-title-lg); font-weight:var(--fw-medium); letter-spacing:var(--ls-tight);}
+.sub-header .sub-title .desc{font-size:var(--font-size-body-md); line-height:var(--lh-relaxed); color:var(--color-gray); margin-top:4rem;}
+[lang="ko"] .sub-header .breadcrumb .breadcrumb-item:last-child .menu-list a, [lang="ko"] .sub-header .breadcrumb .breadcrumb-item:last-child .label{font-family:var(--font-family-base)}
+@media screen and (max-width:1440px){
+    .sub-header{padding-top:10rem;}
+}
+
+@media screen and (max-width:1024px){
+    #container.sub{padding-bottom:10rem;}
+    #container:has(.sub-header){background-size:auto 240px;}
+
+    .sub-header{padding-top:14rem;}
+    .sub-header .breadcrumb{display:none;}
+    .sub-header .sub-title .badge{font-size:var(--font-size-body-sm); margin-bottom:1.8rem;}
+    .sub-header .sub-title .title{font-size:var(--font-size-title-sm); margin-bottom:3rem;}
+    .sub-header .sub-title .desc{font-size:var(--font-size-body-xs); line-height:var(--lh-normal);}
+}
+
+@media screen and (max-width:768px){
+
+    .sub-header{padding:10rem 0 10rem; }
+    .sub-header .sub-title .badge{font-size:var(--font-size-body-xs); margin-bottom:1.2rem;}
+    .sub-header .sub-title .title{font-size:var(--font-size-body-lg); margin-bottom:2rem;}
+    .sub-header .sub-title .desc{font-size:var(--font-size-body-xs); line-height:var(--lh-loose); margin-top:2rem;}
+    .sub-header .sub-title .desc br{display:none;}
+}

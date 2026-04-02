@@ -1,0 +1,74 @@
+{
+    "$schema": "catalog-blueprint-v1",
+    "name": "company-multi-page",
+    "displayName": "Company Multi-Page",
+    "description": "10+ 섹션, 회사/사업/연락처 구분이 명확한 기업용 카탈로그",
+    "basedOn": "GENTOP",
+    "suitableFor": [
+        "회사소개 중심 기업",
+        "다양한 사업 분야 보유",
+        "글로벌 네트워크 보유",
+        "10개 이상 독립 페이지 필요"
+    ],
+    "structure": {
+        "routing": "file-based",
+        "pattern": "[lang]/section/slug",
+        "example": "/en/company/introduction"
+    },
+    "sections": [
+        {
+            "id": "intro",
+            "type": "intro",
+            "required": true,
+            "hero": "fullscreen-image",
+            "components": ["BackgroundBeams", "HeroHighlight"]
+        },
+        {
+            "id": "company",
+            "type": "company",
+            "required": true,
+            "pages": [
+                "introduction",
+                "global_network",
+                "company_view",
+                "greeting",
+                "history",
+                "philosophy",
+                "organization",
+                "business_scope",
+                "certification",
+                "ci_bi",
+                "location"
+            ],
+            "components": ["TracingBeam", "BentoGrid"]
+        },
+        {
+            "id": "business",
+            "type": "business",
+            "required": true,
+            "pages": "dynamic",
+            "components": ["BentoGrid", "HoverEffect", "ParallaxScroll"]
+        },
+        {
+            "id": "contact",
+            "type": "contact",
+            "required": true,
+            "components": ["HeroHighlight"]
+        }
+    ],
+    "features": {
+        "pageNavigator": true,
+        "wheelNavigation": true,
+        "darkMode": true,
+        "lightMode": true,
+        "footer": "fixed-hover-reveal",
+        "translations": ["en", "ko"]
+    },
+    "layout": {
+        "header": "transparent-sticky",
+        "footer": "fixed-hover-reveal",
+        "navigator": "bottom-right",
+        "pageTransition": "fade"
+    },
+    "defaultTheme": "dark"
+}

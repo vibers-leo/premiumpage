@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/ko",
+      "destination": "/ko/index.html"
+    },
+    {
+      "source": "/ko/:path*",
+      "destination": "/ko/:path*"
+    },
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/before",
+      "destination": "/e_catalog_v1.html"
+    }
+  ]
+}

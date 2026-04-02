@@ -1,0 +1,81 @@
+{
+  "example": "This shows what a completed product entry looks like after scraping",
+  "product_example": {
+    "productId": "hmt330",
+    "productName": "HMT330",
+    "category": "humidity",
+    "priority": 1,
+    "imwebUrl": "https://hs-tech-en.imweb.me/hmt330",
+    "currentImage": "/templates/hs-tech/images/products/hmt330_v1.png",
+    "currentGallery": ["/templates/hs-tech/images/products/hmt330_v1.png"],
+    "newGalleryImages": [
+      "/templates/hs-tech/images/products/gallery/hmt330_main_v1.png",
+      "/templates/hs-tech/images/products/gallery/hmt330_variant_hmt331_v1.png",
+      "/templates/hs-tech/images/products/gallery/hmt330_variant_hmt333_v1.png",
+      "/templates/hs-tech/images/products/gallery/hmt330_variant_hmt334_v1.png",
+      "/templates/hs-tech/images/products/gallery/hmt330_variant_hmt335_v1.png",
+      "/templates/hs-tech/images/products/gallery/hmt330_diagram_dimensions_v1.png",
+      "/templates/hs-tech/images/products/gallery/hmt330_diagram_wiring_v1.png",
+      "/templates/hs-tech/images/products/gallery/hmt330_installation_wall_v1.png",
+      "/templates/hs-tech/images/products/gallery/hmt330_installation_duct_v1.png"
+    ],
+    "notes": "Found 9 images total: 1 main + 4 variants + 2 diagrams + 2 installation examples"
+  },
+  "instructions": {
+    "step1": "Visit https://hs-tech-en.imweb.me/hmt330 in browser",
+    "step2": "Right-click each image → Save As → Save to gallery folder",
+    "step3": "Add all saved image paths to newGalleryImages array",
+    "step4": "Repeat for all 50 products"
+  },
+  "cdn_url_examples": [
+    "https://cdn.imweb.me/upload/S201809055b8fc5a79a8fe/abc123def456.png",
+    "https://cdn.imweb.me/upload/S201809055b8fc5a79a8fe/diagram_xyz789.jpg",
+    "https://cdn.imweb.me/thumbnail/S201809055b8fc5a79a8fe/abc123def456.png?w=800"
+  ],
+  "how_to_update_data_ts": {
+    "before": {
+      "id": "hmt330",
+      "gallery": ["/templates/hs-tech/images/products/hmt330_v1.png"]
+    },
+    "after": {
+      "id": "hmt330",
+      "gallery": [
+        "/templates/hs-tech/images/products/gallery/hmt330_main_v1.png",
+        "/templates/hs-tech/images/products/gallery/hmt330_variant_hmt331_v1.png",
+        "/templates/hs-tech/images/products/gallery/hmt330_variant_hmt333_v1.png",
+        "/templates/hs-tech/images/products/gallery/hmt330_variant_hmt334_v1.png",
+        "/templates/hs-tech/images/products/gallery/hmt330_variant_hmt335_v1.png",
+        "/templates/hs-tech/images/products/gallery/hmt330_diagram_dimensions_v1.png",
+        "/templates/hs-tech/images/products/gallery/hmt330_diagram_wiring_v1.png",
+        "/templates/hs-tech/images/products/gallery/hmt330_installation_wall_v1.png",
+        "/templates/hs-tech/images/products/gallery/hmt330_installation_duct_v1.png"
+      ]
+    }
+  },
+  "quality_checklist": {
+    "minimum_images_per_product": 3,
+    "recommended_images_per_product": "5-10",
+    "image_types_to_collect": [
+      "Main product photo (hero shot)",
+      "Product variant photos (different models)",
+      "Technical diagrams (dimensions, specs)",
+      "Wiring/connection diagrams",
+      "Installation examples",
+      "Detail shots (display, connectors, etc.)",
+      "Application photos (in-use examples)"
+    ],
+    "image_quality_requirements": {
+      "minimum_width": "800px",
+      "recommended_width": "1200px+",
+      "format": "PNG or JPG",
+      "background": "White or transparent preferred"
+    }
+  },
+  "estimated_results": {
+    "total_products": 50,
+    "estimated_images_per_product_average": 6,
+    "estimated_total_images": "300+",
+    "estimated_total_size": "100-300 MB",
+    "estimated_time_to_complete": "4-6 hours"
+  }
+}

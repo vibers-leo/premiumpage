@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+
+# env files
+.env*
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Crawled data
+/public/images/*_files/
+/public/images/*.html
+package-lock.json

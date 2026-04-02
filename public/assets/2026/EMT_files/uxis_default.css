@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+/* 툴팁 */
+.tooltipBox {text-indent:-30px;padding-left:30px;}
+.tooltipIcon {text-indent:0;display:inline-block;width:20px;height:20px;background:url(/share/boss/img/Default/tooltip.svg) no-repeat center center;vertical-align:middle;}
+.tooltipBox .txt {display:inline-block;vertical-align:middle;text-indent:0;}
+.tippy-box[data-theme~='wcon'] {background-color: #333;border: 1px solid #333;border-radius: 3px;box-shadow:5px 5px 15px rgba(0, 0, 0, 0.05)}
+.tippy-box[data-theme~='wcon'] .tippy-content {text-indent:0;color: #ffffff !important;line-height:160%;word-wrap:break-word;word-break:keep-all}
+.tippy-box[data-theme~='wcon'][data-placement^='top'] > .tippy-arrow::before {border-top-color:#333;}
+.tippy-box[data-theme~='wcon'][data-placement^='left'] > .tippy-arrow::before {border-left-color:#333;}
+.tippy-box[data-theme~='wcon'][data-placement^='right'] > .tippy-arrow::before {border-right-color:#333;}
+.tippy-box[data-theme~='wcon'][data-placement^='bottom'] > .tippy-arrow::before {border-bottom-color:#333;}
+
+
+/* 로딩 이미지    */
+#menuLoading-mask{position: fixed;z-index: 10000;display: none;top:0px;left:0px;right:0px;bottom:0;width:100%;height:100%;background-color:rgba(255, 255, 255, 0.8);}
+#menuLoading-img {position: fixed;z-index: 10001;top:50%;left:50%;margin:-50px 0 0 -50px;display:block;width: 80px;height: 80px;border: 6px solid #bbbbbb;border-radius: 50%;border-top-color: #fff;animation: spin 1s ease-in-out infinite;-webkit-animation: spin 1s ease-in-out infinite;}
+  
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+
+
+/* datepicker custom */
+#ui-datepicker-div {box-shadow:0 5px 10px rgba(0, 0, 0, 0.1); border:none; padding:0px; border-radius:5px; width:auto;background:#fff !important;}
+.ui-datepicker-title {font-size:16px;}
+.ui-datepicker-header {background:#333 !important; border:none !important; border-radius:5px 5px 0 0 !important; padding:12px 12px 0 10px !important;color:#fff !important;}
+.ui-datepicker-header select {width:43% !important;font-size:14px !important;background:url(/share/cmm/img/Default/datepicker_select.svg) no-repeat right 10px center rgba(255, 255, 255, 0.2);border:none; vertical-align:middle; height:30px; margin:0 2px !important; color:#fff; border-radius:3px !important; padding:0 20px 0 10px !important;}
+.ui-datepicker-header select option {color:#333;}
+.ui-datepicker-month {color:#fff; margin-left:5px; vertical-align:middle;}
+.ui-datepicker-calendar thead {background:#333; color:#fff;}
+.ui-datepicker-calendar thead th {padding:12px; color:rgba(255, 255, 255, 0.8);font-size:13px !important;}
+.ui-datepicker-calendar thead th span {color:rgba(255, 255, 255, 0.8);}
+.ui-datepicker-calendar td {text-align:center;}
+.ui-datepicker-calendar td a {font-size:15px;width:30px;height:30px;line-height:26px;margin:0 auto;border:none !important; background:none !important; text-align:center !important; color:#333 !important; border-radius:50%;font-weight:bold !important;text-decoration:none !important;}
+.ui-datepicker-calendar td.ui-datepicker-current-day a {background:#333 !important; color:#fff !important;}
+.ui-datepicker-calendar thead th span {display:block;}
+.ui-datepicker-calendar thead th:nth-child(1) {padding-left:12px;}
+.ui-datepicker-calendar thead th:nth-child(7) {padding-right:12px;}
+.ui-datepicker-calendar tbody tr:first-child td {padding-top:12px;}
+.ui-datepicker-calendar tbody tr:last-child td {padding-bottom:5px;}
+.ui-datepicker-calendar td:nth-child(7n+1) {padding-left:12px;}
+.ui-datepicker-calendar td:nth-child(7n) {padding-right:12px;}
+.ui-datepicker-prev {width:auto !important;height:auto !important;top:12px !important;left:7px !important;cursor:pointer;}
+.ui-datepicker-next {width:auto !important;height:auto !important;top:12px !important;right:7px !important;cursor:pointer;}
+.ui-datepicker-prev span {position:static !important;width:30px;height:30px;margin:0 !important;background:url(/share/cmm/img/Default/datepicker_mprev.svg) no-repeat center center !important;transition:all 0.3s;}
+.ui-datepicker-next span {position:static !important;width:30px;height:30px;margin:0 !important;background:url(/share/cmm/img/Default/datepicker_mnext.svg) no-repeat center center !important;transition:all 0.3s;}
+
+.ui-datepicker-calendar td a:hover,
+.ui-datepicker-calendar td a:focus {background:#333 !important;color:#fff !important;}
+.ui-datepicker-prev:hover,
+.ui-datepicker-prev:focus,
+.ui-datepicker-next:hover,
+.ui-datepicker-next:focus {background:none !important; border:none !important;}
+.ui-datepicker-buttonpane button {border:1px solid #ddd !important;color:#333 !important;font-weight:500 !important;opacity:1 !important;font-family: 'NanumSquare',sans-serif;font-size:1.2rem;}
+
+
+/* timepicker custom */
+.ui-timepicker {padding:0;}
+.ui-timepicker-standard {border:1px solid #e3e3e3;padding:0;z-index:1 !important;box-shadow:0 5px 10px rgba(0, 0, 0, 0.1)}
+.ui-timepicker-standard .ui-menu-item {border-top:1px solid #e4e4e4}
+.ui-timepicker-standard .ui-menu-item:first-child {border-top:none;}
+.ui-timepicker-standard a {padding:0.5rem 0.4rem;border-radius:0;}
+.ui-timepicker-standard a.ui-state-hover {background:#f2f5f9;}
+
+
+
+/* 가로 스크롤 테이블 */
+.h-scroll-infoWrap {position:relative;padding-top:70px;}
+.h-scroll-infoWrap:before {content:url(/share/cmm/img/Default/h-scroll-info.svg) "\00a0\00a0옆으로 드래그하세요";position:absolute;top:0px;left:0;width:100%;height:60px;background:#f2f5f9;border-radius:3px;
+display: -ms-flexbox; 
+display: flex;
+-ms-flex-align: center; 
+align-items: center;
+-ms-flex-pack: center; 
+justify-content: center;
+}
+.h-scroll-wrapper.h-scroll-init {overflow-x: scroll;cursor: pointer;}
+.h-scroll-wrapper.no-scroll-bar {
+    /*FireFox*/
+    scrollbar-width: none;
+    /*IE10+*/-ms-overflow-style: -ms-autohiding-scrollbar;-ms-overflow-style: none;
+}
+.h-scroll-wrapper.no-scroll-bar::-webkit-scrollbar {
+    /*Chrome, Safari, Edge*/
+    display: none;
+}
+
+/* ckeditor 행간 */
+.ck-editor__editable p{line-height: 160%;letter-spacing:0;}
+/* ckeditor view 글자크기 */
+.text-tiny {font-size: 0.7em;}
+.text-small {font-size: 0.85em;}
+.text-big {font-size: 1.4em;}
+.text-huge {font-size: 1.8em;}

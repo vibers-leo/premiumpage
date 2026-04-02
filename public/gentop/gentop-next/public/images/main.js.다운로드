@@ -1,0 +1,236 @@
+document.addEventListener("DOMContentLoaded", () => {
+  safeRun(main_hero, "main_hero");
+  safeRun(main_product, "main_product");
+  safeRun(main_industry, "main_industry");
+  safeRun(main_career, "main_career");
+  safeRun(main_esg, "main_esg");
+  safeRun(main_cs, "main_cs");
+  safeRun(main_fadeup, "main_fadeup");
+});
+
+function main_fadeup() {
+  const fadeUpElements = document.querySelectorAll('[data-fade-up]');
+  // split by name
+  const fadeUpGroups = {};
+  fadeUpElements.forEach((el) => {
+    const groupName = el.dataset.fadeUp || "default";
+    if (!fadeUpGroups[groupName]) {
+      fadeUpGroups[groupName] = [];
+    }
+    fadeUpGroups[groupName].push(el);
+  });
+
+  Object.values(fadeUpGroups).forEach((elements) => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: elements,
+        start: "top 80%",
+      },
+    });
+
+    tl.from(elements, {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      stagger: 0.1,
+      ease: "power3.out",
+    });
+  });
+
+}
+
+function main_hero() {
+  const section = document.querySelector(".section-hero");
+  if (!section) return;
+
+  const modal = document.querySelector(".video-modal");
+  const videoWrapper = document.querySelector(".video-wrapper");
+  const openBtn = section.querySelector(".play-btn");
+  const closeBtn = modal.querySelector(".overlay-close-btn");
+  const videoId = "eXuBElpY5zw";
+
+  function scrollPrevent(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
+  openBtn.addEventListener("click", () => {
+    modal.dataset.open = "true";
+    modal.addEventListener("wheel", scrollPrevent, { passive: false });
+
+    // iframe API 대신 단순 embed URL 사용
+    videoWrapper.innerHTML = `
+      <iframe
+        src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        title="YouTube video player"
+      ></iframe>
+    `;
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.dataset.open = "false";
+    modal.removeEventListener("wheel", scrollPrevent, { passive: false });
+
+    // iframe 제거 → 영상 자동정지
+    videoWrapper.innerHTML = "";
+  });
+}
+
+function main_product() {
+  if (!document.querySelector(".product-tab")) return;
+
+  const tab = new CommonTab(".product-tab", "horizontal", false);
+  tab.init();
+
+  const swipers = [];
+
+  const containers = document.querySelectorAll(".product-slide");
+  containers.forEach((container) => {
+    const swiper = new Swiper(container, {
+      slidesPerView: 1.2,
+      spaceBetween: 12,
+      breakpoints: {
+        600: {
+          slidesPerView: 1.8,
+          spaceBetween: 16,
+        },
+        768: {
+          slidesPerView: 2.2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 2.5,
+          spaceBetween: 24,
+        },
+        1440: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        }
+      }
+    });
+
+    swipers.push(swiper);
+  });
+
+  const tabBtns = document.querySelectorAll('.product-tab [role="tab"]');
+  tabBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      swipers.forEach((swiper) => {
+        swiper.update();
+        swiper.slideTo(0);
+
+        // gsap : current tab insdie slide item stagger fade up
+        const currentTab = btn.getAttribute("aria-controls");
+        const activeSlide = document.querySelector(
+          `#${currentTab} .swiper-wrapper`
+        );
+        const items = activeSlide.querySelectorAll(".swiper-slide");
+        gsap.fromTo(items, 
+          { opacity: 0, y: 30 }, 
+          { opacity: 1, y: 0, duration: 1, stagger: 0.1, ease: "power3.out" }
+        );
+
+      });
+    });
+  });
+}
+
+function main_industry() {
+  const btns = document.querySelectorAll(".industry-slide .slide-item a");
+
+  btns.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      btns.forEach((b) => b.closest(".slide-item").classList.remove("active"));
+      this.closest(".slide-item").classList.add("active");
+    });
+  });
+}
+
+function main_esg() {
+  if (!document.querySelector(".esg-list")) return;
+
+  const createLoopAnimation = (selector, fromProps) => {
+    const elements = document.querySelectorAll(selector);
+
+    if (!elements.length) return;
+    const container = elements[0].closest(".esg-symbol");
+    gsap.to(container, { opacity: 1, duration: 0.5 });
+
+    /*const tl = gsap.timeline({ repeat: -1 });
+    tl.from(elements, {
+      ...fromProps,
+      opacity: 0,
+      duration: 1.4,
+      stagger: 0.1,
+      ease: "power3.inOut",
+    }).to(elements, {
+      opacity: 0,
+      duration: 0.4,
+      stagger: -0.1,
+      delay: 0.8,
+      ease: "power3.inOut",
+    });
+    */
+  };
+
+  const esgItems = document.querySelectorAll(".esg-list li");
+  if (!esgItems.length) return;
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".esg-list",
+      start: "top 95%",
+    },
+  });
+
+  tl.from(esgItems, {
+    opacity: 0,
+    y: 100,
+    duration: 1.4,
+    stagger: 0.1,
+    ease: "power3.out",
+  });
+
+  //tl.add(() => createLoopAnimation(".octagon", { scale: 0.7 }), 0);
+  //tl.add(() => createLoopAnimation(".ring", { x: 50 }), 0.2);
+  //tl.add(() => createLoopAnimation(".square", { y: 50 }), 0.4);
+}
+
+function main_career() {
+  if (!document.querySelector(".pill-wrapper")) return;
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".pill-wrapper",
+        start: "top 80%",
+        end: "bottom 70%",
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
+    })
+    .to(".pill-wrapper .pill-bg", {
+      width: "37.08vw",
+      height: "19.90vw",
+      clipPath: "inset(0 round 9.95vw)",
+      ease: "power1.inOut",
+    });
+}
+
+function main_cs() {
+  if (!document.querySelector(".section-cs")) return;
+
+  gsap.to(".section-cs .cs-img-frame img", {
+    x: -50,
+    scrollTrigger: {
+      trigger: ".section-cs",
+      start: "top 80%",
+      end: "bottom 20%",
+      scrub: 1,
+      invalidateOnRefresh: true,
+    },
+  });
+}

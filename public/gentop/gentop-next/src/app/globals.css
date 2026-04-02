@@ -1,0 +1,511 @@
+@import "tailwindcss";
+
+:root {
+  /* Dynamic Theme Variables */
+  --background: #ffffff;
+  --foreground: #111111;
+
+  --muted: #f9fafb;
+  --muted-foreground: #6b7280;
+
+  --border: #e5e7eb;
+  --accent: #ade813;
+  --accent-foreground: #000000;
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+
+  --muted: #111111;
+  --muted-foreground: #9ca3af;
+
+  --border: #262626;
+  --accent: #ade813;
+  --accent-foreground: #000000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gentop-green: #ade813;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Legacy Content Restoration - Clean and Dynamic */
+.legacy-content {
+  font-family: var(--font-sans);
+  line-height: 1.7;
+}
+
+/* Typography Restoration */
+.legacy-content h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  color: var(--foreground);
+  border-left: 4px solid var(--accent);
+  padding-left: 1.5rem;
+}
+
+.legacy-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--foreground);
+}
+
+.legacy-content p,
+.legacy-content li {
+  margin-bottom: 1.25rem;
+  color: var(--muted-foreground);
+  font-size: 1.1rem;
+}
+
+/* Table Optimization - Theme Aware */
+.legacy-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.5rem 0;
+  font-size: 0.95rem;
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.legacy-content th,
+.legacy-content td {
+  border: 1px solid var(--border);
+  padding: 1rem 1.25rem;
+  text-align: left;
+}
+
+.legacy-content th {
+  background-color: var(--border);
+  color: var(--foreground);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.legacy-content td {
+  color: var(--muted-foreground);
+}
+
+/* Tab Menu Styling */
+.legacy-content .tabmenu-section {
+  margin-bottom: 4rem;
+}
+
+.legacy-content .tabmenu-section ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.legacy-content .tabmenu-section li {
+  margin: 0;
+}
+
+.legacy-content .tabmenu-section a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  background: var(--muted);
+  color: var(--muted-foreground);
+  font-weight: 600;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.legacy-content .tabmenu-section a:hover,
+.legacy-content .tabmenu-section a.curr {
+  background: var(--accent);
+  color: var(--accent-foreground);
+  border-color: var(--accent);
+}
+
+/* Image centering and styling */
+.legacy-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  margin: 4rem auto;
+  display: block;
+}
+
+.dark .legacy-content img {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  position: relative !important;
+  z-index: 1;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Hide legacy elements that might leak (just in case, but script handles most) */
+.gnb,
+.menu-overlay,
+#header,
+.title-box,
+.sub-visual,
+.page-navigator,
+#skipNavi,
+#bo_btn_top,
+#bo_sch,
+.sound_only,
+form#fsearch {
+  display: none !important;
+}
+
+/* Legacy Business Section Styles */
+.legacy-content .txt01 {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: var(--muted);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+}
+
+.legacy-content .bns-part {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.legacy-content .box1-area ul,
+.legacy-content .box2-area ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.legacy-content .box1-area li,
+.legacy-content .box2-area .right-area li {
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.75rem;
+  background: var(--muted);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  color: var(--muted-foreground);
+  transition: all 0.2s;
+}
+
+.legacy-content .box1-area li:hover,
+.legacy-content .box2-area .right-area li:hover {
+  background: var(--accent);
+  color: var(--accent-foreground);
+  transform: translateX(4px);
+}
+
+.legacy-content .box2-area {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .legacy-content .box2-area {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+.legacy-content .stit-box {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  padding: 1rem;
+  background: var(--accent);
+  color: var(--accent-foreground);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.legacy-content .stit-box span {
+  display: block;
+}
+
+.legacy-content .left-area,
+.legacy-content .right-area {
+  width: 100%;
+}
+
+.legacy-content .txt3-area {
+  margin: 2rem 0;
+}
+
+.legacy-content .wd-info {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.legacy-content .wd-tb {
+  overflow-x: auto;
+}
+
+.legacy-content .oimg {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+
+/* Custom Utilities for Premium Look */
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-black/70 backdrop-blur-md border border-white/10;
+  }
+}
+
+/* Utility to hide scrollbar but keep functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+/* --- ADDED: Specific Page Styles (History, Philosophy, etc.) --- */
+
+/* HISTORY */
+.legacy-content .his-part1 {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  padding: 3rem 0;
+}
+
+@media (min-width: 768px) {
+  .legacy-content .his-part1 {
+    flex-direction: row;
+    gap: 4rem;
+  }
+
+  .legacy-content .his-part1 .left-area {
+    width: 150px;
+    flex-shrink: 0;
+  }
+}
+
+.legacy-content .his-part1 .left-area h2 {
+  margin: 0;
+  font-size: 3rem;
+  color: var(--accent);
+  border: none;
+  padding: 0;
+  line-height: 1;
+}
+
+.legacy-content .his-part1 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legacy-content .his-part1 li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.legacy-content .his-part1 li strong {
+  color: var(--foreground);
+  min-width: 40px;
+}
+
+/* PHILOSOPHY */
+.legacy-content .vis-txt01 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.legacy-content .vis-txt02 {
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+}
+
+.legacy-content .vis-box01 ul.box1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+@media(min-width: 768px) {
+  .legacy-content .vis-box01 ul.box1 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.legacy-content .vis-box01 li {
+  background: var(--muted);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.legacy-content .vis-box01 li h2 {
+  margin-top: 1rem;
+  border: none;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+/* ORGANIZATION */
+.legacy-content .organization-part .org-box {
+  text-align: center;
+  padding: 2rem;
+  background: var(--muted);
+  border-radius: 16px;
+}
+
+/* GALLERY / CERTIFICATION / PORTFOLIO */
+.legacy-content .gall_row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+@media(min-width: 640px) {
+  .legacy-content .gall_row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(min-width: 1024px) {
+  .legacy-content .gall_row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.legacy-content .gall_box {
+  background: var(--muted);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border: 1px solid var(--border);
+}
+
+.legacy-content .gall_box:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.legacy-content .gall_img img {
+  margin: 0 !important;
+  width: 100%;
+  height: auto;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.legacy-content .gall_text_href {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.legacy-content .bo_tit {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--foreground);
+}
+
+/* INFO AREA for Notice/Board Lists */
+.legacy-content .tbl_head01 {
+  overflow-x: auto;
+}
+
+.legacy-content .bo_tit a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--foreground);
+  transition: color 0.2s;
+}
+
+.legacy-content .bo_tit a:hover {
+  color: var(--accent);
+}
+
+.legacy-content .info_area ul {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+}
+
+/* Standarized Bullet List */
+.legacy-content ul.gentop-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.legacy-content ul.gentop-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+.legacy-content ul.gentop-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  /* Or 2px for a square */
+  box-shadow: 0 0 10px var(--accent);
+}
+
+@keyframes slow-zoom {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s ease-in-out infinite alternate;
+}

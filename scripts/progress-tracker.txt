@@ -1,0 +1,202 @@
+================================================================================
+        HS-TECH GALLERY IMAGE SCRAPING - PROGRESS TRACKER
+================================================================================
+
+Project Started: _______________
+Target Completion: _______________
+
+Total Products: 50
+Total Images Target: 300+
+
+================================================================================
+TIER 1: VAISALA HUMIDITY (15 PRODUCTS)
+================================================================================
+Priority: HIGHEST - Do these first!
+
+[ ] 1.  HMT330       https://hs-tech-en.imweb.me/hmt330        Images: ___
+[ ] 2.  HMT310       https://hs-tech-en.imweb.me/hmt310        Images: ___
+[ ] 3.  HMT120       https://hs-tech-en.imweb.me/hmt120        Images: ___
+[ ] 4.  HMT370EX     https://hs-tech-en.imweb.me/hmt370ex      Images: ___
+[ ] 5.  HMT360       https://hs-tech-en.imweb.me/hmt360        Images: ___
+[ ] 6.  HMD60        https://hs-tech-en.imweb.me/hmd60         Images: ___
+[ ] 7.  HMW90        https://hs-tech-en.imweb.me/hmw90         Images: ___
+[ ] 8.  HMDW110      https://hs-tech-en.imweb.me/hmdw110       Images: ___
+[ ] 9.  HMDW80       https://hs-tech-en.imweb.me/hmdw80        Images: ___
+[ ] 10. Indigo80     https://hs-tech-en.imweb.me/indigo80      Images: ___
+[ ] 11. HM70         https://hs-tech-en.imweb.me/hm70          Images: ___
+[ ] 12. HM40         https://hs-tech-en.imweb.me/hm40          Images: ___
+[ ] 13. SHM40        https://hs-tech-en.imweb.me/shm40         Images: ___
+[ ] 14. HMK15        https://hs-tech-en.imweb.me/hmk15         Images: ___
+[ ] 15. HMP155       https://hs-tech-en.imweb.me/hmp155        Images: ___
+
+Tier 1 Progress: ___/15 (___%)
+Tier 1 Images:   ___
+
+================================================================================
+TIER 2: VAISALA DEWPOINT (10 PRODUCTS)
+================================================================================
+
+[ ] 16. DMT340       https://hs-tech-en.imweb.me/dmt340        Images: ___
+[ ] 17. DMT345       https://hs-tech-en.imweb.me/dmt345        Images: ___
+[ ] 18. DM70         https://hs-tech-en.imweb.me/dm70          Images: ___
+[ ] 19. DMT143       https://hs-tech-en.imweb.me/dmt143        Images: ___
+[ ] 20. DMT143L      https://hs-tech-en.imweb.me/dmt143l       Images: ___
+[ ] 21. DMT152       https://hs-tech-en.imweb.me/dmt152        Images: ___
+[ ] 22. DMT132       https://hs-tech-en.imweb.me/dmt132        Images: ___
+[ ] 23. Indigo+DMP   https://hs-tech-en.imweb.me/dmp80         Images: ___
+[ ] 24. DPT146       https://hs-tech-en.imweb.me/dpt146        Images: ___
+[ ] 25. DPT145       https://hs-tech-en.imweb.me/dpt145        Images: ___
+
+Tier 2 Progress: ___/10 (___%)
+Tier 2 Images:   ___
+
+================================================================================
+TIER 3: VAISALA CO2 (6 PRODUCTS)
+================================================================================
+
+[ ] 26. GMW90        https://hs-tech-en.imweb.me/gmw90         Images: ___
+[ ] 27. GMD110       https://hs-tech-en.imweb.me/gmd110        Images: ___
+[ ] 28. GMP343       https://hs-tech-en.imweb.me/gmp343        Images: ___
+[ ] 29. GMP251       https://hs-tech-en.imweb.me/gmp251        Images: ___
+[ ] 30. GMP252       https://hs-tech-en.imweb.me/gmp252        Images: ___
+[ ] 31. GMW80        https://hs-tech-en.imweb.me/gmw80         Images: ___
+
+Tier 3 Progress: ___/6 (___%)
+Tier 3 Images:   ___
+
+================================================================================
+TIER 4: VAISALA OIL (5 PRODUCTS)
+================================================================================
+
+[ ] 32. MHT410       https://hs-tech-en.imweb.me/mht410        Images: ___
+[ ] 33. MMT330       https://hs-tech-en.imweb.me/mmt330        Images: ___
+[ ] 34. MMT310       https://hs-tech-en.imweb.me/mmt310        Images: ___
+[ ] 35. MM70         https://hs-tech-en.imweb.me/mm70          Images: ___
+[ ] 36. MMT162       https://hs-tech-en.imweb.me/mmt162        Images: ___
+
+Tier 4 Progress: ___/5 (___%)
+Tier 4 Images:   ___
+
+================================================================================
+TIER 5: VAISALA BAROMETER + H2O2 (5 PRODUCTS)
+================================================================================
+
+[ ] 37. PTB330       https://hs-tech-en.imweb.me/ptb330        Images: ___
+[ ] 38. PTB210       https://hs-tech-en.imweb.me/ptb210        Images: ___
+[ ] 39. PTB110       https://hs-tech-en.imweb.me/ptb110        Images: ___
+[ ] 40. PTU300       https://hs-tech-en.imweb.me/ptu300        Images: ___
+[ ] 41. HPP271       https://hs-tech-en.imweb.me/hpp271        Images: ___
+
+Tier 5 Progress: ___/5 (___%)
+Tier 5 Images:   ___
+
+================================================================================
+TIER 6: SETRA PRESSURE (9 PRODUCTS)
+================================================================================
+
+[ ] 42. Setra Lite   https://hs-tech-en.imweb.me/setra-lite    Images: ___
+[ ] 43. Setra Flex   https://hs-tech-en.imweb.me/setra-flex    Images: ___
+[ ] 44. Model MRC    https://hs-tech-en.imweb.me/model-mrc     Images: ___
+[ ] 45. Model MRG    https://hs-tech-en.imweb.me/model-mrg     Images: ___
+[ ] 46. Model 264    https://hs-tech-en.imweb.me/model-264     Images: ___
+[ ] 47. PDT101       https://hs-tech-en.imweb.me/pdt101        Images: ___
+[ ] 48. PDT102       https://hs-tech-en.imweb.me/pdt102        Images: ___
+[ ] 49. Model AXD    https://hs-tech-en.imweb.me/model-axd     Images: ___
+[ ] 50. Model 206    https://hs-tech-en.imweb.me/model-206     Images: ___
+
+Tier 6 Progress: ___/9 (___%)
+Tier 6 Images:   ___
+
+================================================================================
+OVERALL PROGRESS
+================================================================================
+
+Products Completed:  ___/50 (___%)
+Total Images:        ___
+
+Breakdown by Tier:
+  Tier 1 (Humidity):    ___/15   (___%)   Images: ___
+  Tier 2 (Dewpoint):    ___/10   (___%)   Images: ___
+  Tier 3 (CO2):         ___/6    (___%)   Images: ___
+  Tier 4 (Oil):         ___/5    (___%)   Images: ___
+  Tier 5 (Baro/H2O2):   ___/5    (___%)   Images: ___
+  Tier 6 (Setra):       ___/9    (___%)   Images: ___
+
+================================================================================
+SESSION LOG
+================================================================================
+
+Session 1:
+Date: ___________  Time: ___________  Products: ___  Images: ___
+Notes: _____________________________________________________________
+
+Session 2:
+Date: ___________  Time: ___________  Products: ___  Images: ___
+Notes: _____________________________________________________________
+
+Session 3:
+Date: ___________  Time: ___________  Products: ___  Images: ___
+Notes: _____________________________________________________________
+
+Session 4:
+Date: ___________  Time: ___________  Products: ___  Images: ___
+Notes: _____________________________________________________________
+
+Total Time Spent: ___________ hours
+
+================================================================================
+QUALITY METRICS
+================================================================================
+
+Products with 3+ images:     ___/50 (___%)
+Products with 5+ images:     ___/50 (___%)
+Products with 10+ images:    ___/50 (___%)
+
+Average images per product:  ___
+
+Image types collected:
+  [ ] Main product photos
+  [ ] Product variants
+  [ ] Dimensional diagrams
+  [ ] Wiring diagrams
+  [ ] Installation examples
+  [ ] Detail shots
+  [ ] Application photos
+
+================================================================================
+ISSUES / NOTES
+================================================================================
+
+Products not found (404):
+_____________________________________________________________
+
+Products with limited images:
+_____________________________________________________________
+
+High-quality finds (10+ images):
+_____________________________________________________________
+
+Other notes:
+_____________________________________________________________
+_____________________________________________________________
+_____________________________________________________________
+
+================================================================================
+FINAL CHECKLIST
+================================================================================
+
+[ ] All 50 products scraped
+[ ] Minimum 150 images collected (3+ per product average)
+[ ] Target 300+ images collected (6+ per product average)
+[ ] All images saved to /gallery/ folder
+[ ] All images properly named following convention
+[ ] JSON mapping file fully populated
+[ ] data.ts updated with new gallery arrays
+[ ] Build test passed (npm run build)
+[ ] Browser test passed (images display correctly)
+[ ] Git commit created
+[ ] Changes pushed to repository
+
+Project Completed: _______________
+
+================================================================================

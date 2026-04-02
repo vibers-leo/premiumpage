@@ -1,0 +1,37 @@
+{
+  "agencyName": "jcatalog Agency",
+  "vision": "Transforming Industrial Marketing through Immersive Digital Catalogs.",
+  "services": [
+    {
+      "title": "3D Product Visualization",
+      "description": "High-fidelity 3D modeling and rendering for web-based interaction.",
+      "icon": "cube"
+    },
+    {
+      "title": "Interactive Storytelling",
+      "description": "Dynamic scrolling and navigation that guides users through product technicalities.",
+      "icon": "scroll"
+    },
+    {
+      "title": "Global Ready",
+      "description": "Built-in multi-language support and ultra-fast global CDN delivery.",
+      "icon": "globe"
+    }
+  ],
+  "templates": [
+    {
+      "id": "masterpiece-emt",
+      "name": "EMT Global Standard",
+      "style": "Industrial Futurist",
+      "thumbnail": "assets/company.jpg",
+      "description": "The benchmark for high-tech manufacturing catalogs."
+    },
+    {
+      "id": "premium-minimal",
+      "name": "Zen Minimalist",
+      "style": "Clean & Airy",
+      "thumbnail": "assets/overview_robot.jpg",
+      "description": "Perfect for high-end boutique brands and artists."
+    }
+  ]
+}

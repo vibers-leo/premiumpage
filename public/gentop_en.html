@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">
+<title>GENTOP</title>
+<link rel="stylesheet" href="http://www.gentop.co.kr/eng/theme/basic/css/default.css?t=1770105070">
+<!--[if lte IE 8]>
+<script src="http://www.gentop.co.kr/eng/js/html5.js"></script>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "http://www.gentop.co.kr/eng";
+var g5_bbs_url   = "http://www.gentop.co.kr/eng/bbs";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "";
+var g5_sca       = "";
+var g5_editor    = "";
+var g5_cookie_domain = "";
+</script>
+<script src="http://www.gentop.co.kr/eng/js/jquery-1.8.3.min.js"></script>
+<script src="http://www.gentop.co.kr/eng/js/TweenMax.min.js"></script>
+<script src="http://www.gentop.co.kr/eng/js/jquery.menu.js?ver=171222"></script>
+<script src="http://www.gentop.co.kr/eng/js/common.js?ver=171222"></script>
+<script src="http://www.gentop.co.kr/eng/js/wrest.js?ver=171222"></script>
+<script src="http://www.gentop.co.kr/eng/js/placeholders.min.js"></script>
+<script src="http://www.gentop.co.kr/eng/js/bss.js"></script>
+<link rel="stylesheet" href="http://www.gentop.co.kr/eng/js/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+
+<div id="hd">
+	<h1 id="hd_h1">GENTOP</h1>
+	<div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
+	
+<!-- 팝업레이어 시작 { -->
+<div id="hd_pop">
+    <h2>팝업레이어 알림</h2>
+
+<span class="sound_only">팝업레이어 알림이 없습니다.</span></div>
+
+<script>
+$(function() {
+    $(".hd_pops_reject").click(function() {
+        var id = $(this).attr('class').split(' ');
+        var ck_name = id[1];
+        var exp_time = parseInt(id[2]);
+        $("#"+id[1]).css("display", "none");
+        set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+    });
+    $('.hd_pops_close').click(function() {
+        var idb = $(this).attr('class').split(' ');
+        $('#'+idb[1]).css('display','none');
+    });
+    $("#hd").css("z-index", 1000);
+});
+</script>
+<!-- } 팝업레이어 끝 -->	<div id="hd_wrapper">
+		<div id="logo">
+			<a href="http://www.gentop.co.kr/eng"><img src="http://www.gentop.co.kr/eng/img/logo.png" alt="GENTOP"></a>
+		</div>
+		<nav id="gnb">
+			<h2>메인메뉴</h2>
+			<div class="gnb_wrap">
+				<ul id="gnb_1dul">
+										<li class="gnb_1dli" style="z-index:20000">
+							<a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=overview" target="_self" class="gnb_1da">COMPANY</a>
+							<ul class="gnb_2dul">
+									<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=overview" target="_self" class="gnb_2da">Introduction</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=greeting" target="_self" class="gnb_2da">Greeting</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=history" target="_self" class="gnb_2da">History</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=philosophy" target="_self" class="gnb_2da">Philosophy</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=organization" target="_self" class="gnb_2da">Organization</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=partners" target="_self" class="gnb_2da">Business Scope</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=certification" target="_self" class="gnb_2da">Certification</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=ci" target="_self" class="gnb_2da">CI/BI</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=location" target="_self" class="gnb_2da">Location</a></li>
+							</ul>
+					</li>
+										<li class="gnb_1dli" style="z-index:19999">
+							<a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business00" target="_self" class="gnb_1da">BUSINESS SCOPE</a>
+							<ul class="gnb_2dul">
+									<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business00" target="_self" class="gnb_2da">Construction</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business01" target="_self" class="gnb_2da">Facilities Management</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business02" target="_self" class="gnb_2da">Public Address System</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business04" target="_self" class="gnb_2da">Access, Parking</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business05" target="_self" class="gnb_2da">CCTV System</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business06" target="_self" class="gnb_2da">LED Display Solution</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business07" target="_self" class="gnb_2da">Eco-Friendly</a></li>
+							</ul>
+					</li>
+										<li class="gnb_1dli" style="z-index:19998">
+							<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example" target="_self" class="gnb_1da">PORTFOLIO</a>
+							<ul class="gnb_2dul">
+									<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example" target="_self" class="gnb_2da">Portfolio</a></li>
+							</ul>
+					</li>
+										<li class="gnb_1dli" style="z-index:19997">
+							<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=notice" target="_self" class="gnb_1da">CUSTOMER CENTER</a>
+							<ul class="gnb_2dul">
+									<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=notice" target="_self" class="gnb_2da">Notice</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=catalog" target="_self" class="gnb_2da">Catalog</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=pr_video" target="_self" class="gnb_2da">Promotional Film</a></li>
+																<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=event_gallery&page=" target="_self" class="gnb_2da">Event</a></li>
+							</ul>
+					</li>
+										<li class="gnb_1dli" style="z-index:19996">
+							<a href="http://www.gentop.co.kr/eng/bbs/write.php?bo_table=inquiry" target="_self" class="gnb_1da">INQUIRY</a>
+							<ul class="gnb_2dul">
+									<li class="gnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/write.php?bo_table=inquiry" target="_self" class="gnb_2da">Inquiry</a></li>
+							</ul>
+					</li>
+									</ul>
+			</div>
+		</nav>
+		<div class="lan-box language">
+			<a href="/eng/" class="btn-lan">ENGLISH</a>
+			<div class="lang-area">
+				<div class="lang-arrst"></div>
+				<div class="lang_list-btn">
+					<div class="lang_list_box"><a href="/">KOREAN</a></div>
+					<div class="lang_list_box"><a href="/chi/">CHINESE</a></div>
+					<div class="lang_list_box"><a href="/cam/">CAMBODIA</a></div>
+					<div class="lang_list_box"><a href="/lao/">LAOS</a></div>
+					<div class="lang_list_box"><a href="/hin/">HINDI</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="allmenu-box">
+			<a href="#" class="menu"></a>
+		</div>
+		<button type="button" class="res-header-btn" onclick="openMenu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
+	</div>
+	<div class="header-mbtn" onclick="openMenu()"></div>
+	<div class="submenu-wrap">
+		<div class="submenu-box">
+			<div class="left-area"><a href="http://www.gentop.co.kr/eng"><img src="http://www.gentop.co.kr/eng/img/logo.png" alt="GENTOP"></a></div>
+			<div class="center-area">
+				<ul id="pgnb_1dul">
+										<li class="pgnb_1dli" style="z-index:20000">
+							<a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=overview" target="_self" class="pgnb_1da">COMPANY</a>
+							<ul class="pgnb_2dul">
+									<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=overview" target="_self" class="pgnb_2da">Introduction</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=greeting" target="_self" class="pgnb_2da">Greeting</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=history" target="_self" class="pgnb_2da">History</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=philosophy" target="_self" class="pgnb_2da">Philosophy</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=organization" target="_self" class="pgnb_2da">Organization</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=partners" target="_self" class="pgnb_2da">Business Scope</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=certification" target="_self" class="pgnb_2da">Certification</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=ci" target="_self" class="pgnb_2da">CI/BI</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=location" target="_self" class="pgnb_2da">Location</a></li>
+							</ul>
+					</li>
+										<li class="pgnb_1dli" style="z-index:19999">
+							<a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business00" target="_self" class="pgnb_1da">BUSINESS SCOPE</a>
+							<ul class="pgnb_2dul">
+									<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business00" target="_self" class="pgnb_2da">Construction</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business01" target="_self" class="pgnb_2da">Facilities Management</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business02" target="_self" class="pgnb_2da">Public Address System</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business04" target="_self" class="pgnb_2da">Access, Parking</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business05" target="_self" class="pgnb_2da">CCTV System</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business06" target="_self" class="pgnb_2da">LED Display Solution</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business07" target="_self" class="pgnb_2da">Eco-Friendly</a></li>
+							</ul>
+					</li>
+										<li class="pgnb_1dli" style="z-index:19998">
+							<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example" target="_self" class="pgnb_1da">PORTFOLIO</a>
+							<ul class="pgnb_2dul">
+									<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example" target="_self" class="pgnb_2da">Portfolio</a></li>
+							</ul>
+					</li>
+										<li class="pgnb_1dli" style="z-index:19997">
+							<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=notice" target="_self" class="pgnb_1da">CUSTOMER CENTER</a>
+							<ul class="pgnb_2dul">
+									<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=notice" target="_self" class="pgnb_2da">Notice</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=catalog" target="_self" class="pgnb_2da">Catalog</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=pr_video" target="_self" class="pgnb_2da">Promotional Film</a></li>
+																<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=event_gallery&page=" target="_self" class="pgnb_2da">Event</a></li>
+							</ul>
+					</li>
+										<li class="pgnb_1dli" style="z-index:19996">
+							<a href="http://www.gentop.co.kr/eng/bbs/write.php?bo_table=inquiry" target="_self" class="pgnb_1da">INQUIRY</a>
+							<ul class="pgnb_2dul">
+									<li class="pgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/write.php?bo_table=inquiry" target="_self" class="pgnb_2da">Inquiry</a></li>
+							</ul>
+					</li>
+									</ul>
+			</div>
+			<div class="right-area">
+				<a href="javascript:;" class="side-close"></a>
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+	$(function(){
+			$(".gnb_menu_btn").click(function(){
+					$("#gnb_all").show();
+			});
+			$(".gnb_close_btn").click(function(){
+					$("#gnb_all").hide();
+			});
+	});
+
+	</script>
+</div>
+<div id="sideMask">
+	<div class="menu-in">
+		<div id="side-menuTop">
+			<div class="side-close" onclick="closeMenu()">Ⅹ</div>
+			<nav id="sgnb">
+				<h1><img src="http://www.gentop.co.kr/eng/img/logo.png" alt="GENTOP"></h1>
+				<div class="lan">
+					<select id="lan" name="lan">
+						<option value="/eng/" selected>ENGLISH</option>
+						<option value="/">KOREAN</option>
+						<option value="/chi/">CHINESE</option>
+						<option value="/cam/">CAMBODIA</option>
+						<option value="/lao/">LAOS</option>
+						<option value="/hin/">HINDI</option>
+					</select>
+					<script>
+						jQuery(function(){
+							jQuery("#lan").change(function(){
+								jQuery(location).attr("href", jQuery(this).val());
+							});
+						});
+					</script>
+				</div>
+				<ul id="sgnb_1dul">
+										<li class="sgnb_1dli">
+						<a href="javascript:;" target="_self" class="sgnb_1da">COMPANY<span></span></a>
+						<ul class="sgnb_2dul">
+								<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=overview" target="_self" class="sgnb_2da"><span></span>Introduction</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=greeting" target="_self" class="sgnb_2da"><span></span>Greeting</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=history" target="_self" class="sgnb_2da"><span></span>History</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=philosophy" target="_self" class="sgnb_2da"><span></span>Philosophy</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=organization" target="_self" class="sgnb_2da"><span></span>Organization</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=partners" target="_self" class="sgnb_2da"><span></span>Business Scope</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=certification" target="_self" class="sgnb_2da"><span></span>Certification</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=ci" target="_self" class="sgnb_2da"><span></span>CI/BI</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=location" target="_self" class="sgnb_2da"><span></span>Location</a></li>
+						</ul>
+					</li>
+										<li class="sgnb_1dli">
+						<a href="javascript:;" target="_self" class="sgnb_1da">BUSINESS SCOPE<span></span></a>
+						<ul class="sgnb_2dul">
+								<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business00" target="_self" class="sgnb_2da"><span></span>Construction</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business01" target="_self" class="sgnb_2da"><span></span>Facilities Management</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business02" target="_self" class="sgnb_2da"><span></span>Public Address System</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business04" target="_self" class="sgnb_2da"><span></span>Access, Parking</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business05" target="_self" class="sgnb_2da"><span></span>CCTV System</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business06" target="_self" class="sgnb_2da"><span></span>LED Display Solution</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business07" target="_self" class="sgnb_2da"><span></span>Eco-Friendly</a></li>
+						</ul>
+					</li>
+										<li class="sgnb_1dli">
+						<a href="javascript:;" target="_self" class="sgnb_1da">PORTFOLIO<span></span></a>
+						<ul class="sgnb_2dul">
+								<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example" target="_self" class="sgnb_2da"><span></span>Portfolio</a></li>
+						</ul>
+					</li>
+										<li class="sgnb_1dli">
+						<a href="javascript:;" target="_self" class="sgnb_1da">CUSTOMER CENTER<span></span></a>
+						<ul class="sgnb_2dul">
+								<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=notice" target="_self" class="sgnb_2da"><span></span>Notice</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=catalog" target="_self" class="sgnb_2da"><span></span>Catalog</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=pr_video" target="_self" class="sgnb_2da"><span></span>Promotional Film</a></li>
+														<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=event_gallery&page=" target="_self" class="sgnb_2da"><span></span>Event</a></li>
+						</ul>
+					</li>
+										<li class="sgnb_1dli">
+						<a href="javascript:;" target="_self" class="sgnb_1da">INQUIRY<span></span></a>
+						<ul class="sgnb_2dul">
+								<li class="sgnb_2dli"><a href="http://www.gentop.co.kr/eng/bbs/write.php?bo_table=inquiry" target="_self" class="sgnb_2da"><span></span>Inquiry</a></li>
+						</ul>
+					</li>
+									</ul>
+			</nav>
+			<script>
+				jQuery(function(){
+					jQuery(".sgnb_1da").click(function(){
+						var $this = $(this);
+						var $vis = $this.next(".sgnb_2dul").is(":visible");
+						$(".sgnb_1da").removeClass("on");
+						$(".sgnb_2dul").slideUp();
+						if( $vis )
+						{
+							$this.removeClass("on");
+							$this.next(".sgnb_2dul").slideUp();
+						}
+						else
+						{
+							$this.addClass("on");
+							$this.next(".sgnb_2dul").slideDown();
+						}
+					});
+				});
+			</script>
+		</div>
+	</div>
+</div>
+<div id="wrapper">
+	<script src="http://www.gentop.co.kr/eng/js/owl/owl.carousel.min.js"></script>
+	<link rel="stylesheet" href="http://www.gentop.co.kr/eng/js/owl/owl.carousel.css">
+	<link rel="stylesheet" href="http://www.gentop.co.kr/eng/theme/basic/css/main.css?t=1770105070">
+	<link rel="stylesheet" href="http://www.gentop.co.kr/eng/theme/basic/css/animate.min.css">
+	
+<div id="visual-section">
+	<div class="visual-box">
+		<div class="in-txt01">
+			<div class="txt01"><img src="http://www.gentop.co.kr/eng/img/visual_logo.png"></div>
+			<div class="txt02">Always with you, GENTOP</div>
+		</div>
+		<div class="effect-box">
+			<span class="icon icon1"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=overview"><img src="http://www.gentop.co.kr/eng/img/visual_icon1.png"></a></span>
+			<span class="icon icon2"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=partners"><img src="http://www.gentop.co.kr/eng/img/visual_icon2.png"></a></span>
+			<span class="icon icon3"><a href="http://www.gentop.co.kr/eng/bbs/write.php?bo_table=inquiry"><img src="http://www.gentop.co.kr/eng/img/visual_icon3.png"></a></span>
+			<span class="icon icon4"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=location"><img src="http://www.gentop.co.kr/eng/img/visual_icon4.png"></a></span>
+			<span class="icon icon5"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example"><img src="http://www.gentop.co.kr/eng/img/visual_icon5.png"></a></span>
+			<img src="http://www.gentop.co.kr/eng/img/visual_img.png" class="effect-img">
+		</div>
+		<div class="img-box">
+			<ul>
+				<li>
+					<a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=overview">
+						<img src="http://www.gentop.co.kr/eng/img/visual_icon1b.png">
+						<div class="txt01">Company</div>
+					</a>
+				</li>
+				<li>
+					<a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=partners">
+						<img src="http://www.gentop.co.kr/eng/img/visual_icon2b.png">
+						<div class="txt01">Business Scope</div>
+					</a>
+				</li>
+				<li>
+					<a href="http://www.gentop.co.kr/eng/bbs/write.php?bo_table=inquiry">
+						<img src="http://www.gentop.co.kr/eng/img/visual_icon3b.png">
+						<div class="txt01">Inquiry</div>
+					</a>
+				</li>
+				<li>
+					<a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=location">
+						<img src="http://www.gentop.co.kr/eng/img/visual_icon4b.png">
+						<div class="txt01">Location</div>
+					</a>
+				</li>
+				<li>
+					<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example">
+						<img src="http://www.gentop.co.kr/eng/img/visual_icon5b.png">
+						<div class="txt01">Portfolio</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="owl-carousel">
+		<div class="stretchy_wrapper ratio_slider"><div class="item" style="background:url('http://www.gentop.co.kr/eng/data/banner/1')"></div></div><div class="stretchy_wrapper ratio_slider"><div class="item" style="background:url('http://www.gentop.co.kr/eng/data/banner/3')"></div></div><div class="stretchy_wrapper ratio_slider"><div class="item" style="background:url('http://www.gentop.co.kr/eng/data/banner/4')"></div></div>	</div>
+</div>
+
+<script>
+	jQuery(document).ready(function() {
+		var owl = $('#visual-section .owl-carousel');
+
+		owl.owlCarousel({
+			items:1,
+			nav:false,
+			loop:true,
+			responsiveClass:true,
+			autoplay:true,
+			autoplayTimeout:5000,
+			autoplayHoverPause:true
+		});
+
+		var icon1 = $('.icon1').position();
+		var icon2 = $('.icon2').position();
+		var icon3 = $('.icon3').position();
+		var icon4 = $('.icon4').position();
+		var icon5 = $('.icon5').position();
+
+		setTimeout(function() {
+			$('.icon1').animate({
+				top: icon1.top - 95,
+				left: icon1.left - 117
+			}, 500);
+		}, 250);
+
+		setTimeout(function() {
+			$('.icon2').animate({
+				top: icon2.top - 80,
+				left: icon2.left + 165
+			}, 500);
+		}, 350);
+
+		setTimeout(function() {
+			$('.icon3').animate({
+				top: icon3.top + 79,
+				left: icon3.left + 205
+			}, 500);
+		}, 450);
+
+		setTimeout(function() {
+			$('.icon4').animate({
+				top: icon4.top + 192,
+				left: icon4.left - 138
+			}, 500);
+		}, 550);
+
+		setTimeout(function() {
+			$('.icon5').animate({
+				top: icon5.top + 30,
+				left: icon5.left - 185
+			}, 500);
+		}, 650);
+
+		jQuery('.btn-play').click(function(e){
+			owl.trigger('stop.owl.autoplay');
+			jQuery('.btn-play').addClass("dn");
+			jQuery('.btn-stop').removeClass("dn");
+		})
+
+		jQuery('.btn-stop').click(function(e){
+			owl.trigger('play.owl.autoplay');
+			jQuery('.btn-play').removeClass("dn");
+			jQuery('.btn-stop').addClass("dn");
+		})
+	});
+</script>
+
+	<div id="mcont1-section">
+		<h2><span>G</span>EN<span>T</span>OP</h2>
+		<h3>GENTOP believes that technology can make people’s lives wiser and be filled with smiles. <br>
+		Through challenges and leaps, GENTOP will be a business that offers happiness to your lives with technology that precedes always. </h3>
+	</div>
+	<div id="mcont2-section">
+		<h3>GENTOP</h3>
+		<h2>Business Scope</h2>
+		<div class="more-btn"><a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business00">More View</a></div>
+		<div class="box">
+			<ul>
+				<li>
+					<a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business01">
+						<div class="ibox">
+							<span></span>
+							<div class="txt01"><em>System<br>Introduction</em></div>
+							<!-- <div class="txt02">ការណែនាំពី ប្រពន្ធ័</div> -->
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business02">
+						<div class="ibox">
+							<span></span>
+							<div class="txt01"><em>Public Address<br>System</em></div>
+							<!-- <div class="txt02">ប្រព័ន្ធអាស័យដ្ឋានសាធារណៈ</div> -->
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business04_1">
+						<div class="ibox">
+							<span></span>
+							<div class="txt01"><em>Parking Control<br>System</em></div>
+							<!-- <div class="txt02">ប្រព័ន្ធអាស័យដ្ឋានសាធារណៈ</div> -->
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business04">
+						<div class="ibox">
+							<span></span>
+							<div class="txt01"><em>Access Control<br>System</em></div>
+							<!-- <div class="txt02">ប្រព័ន្ធគ្រប់គ្រងការចេញចូល</div> -->
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business05">
+						<div class="ibox">
+							<span></span>
+							<div class="txt01"><em>CCTV<br>System</em></div>
+							<!-- <div class="txt02">ប្រពន្ធ័ CCTV</div> -->
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="http://www.gentop.co.kr/eng/bbs/content.php?co_id=business06">
+						<div class="ibox">
+							<span></span>
+							<div class="txt01"><em>LED Display<br>Solution</em></div>
+							<!-- <div class="txt02">ផ្លាកនៃប្រពន្ធ័បង្ហាញ អេឡិចត្រូនិច</div> -->
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="mcont3-section">
+		<!-- <h3>ការងារ ជាប្រចាំ ជាក់ស្តែង</h3> -->
+		<h2>PORTFOLIO</h2>
+		<div class="txt01">Going forward, and benefiting society as well.<br>
+		The philosophy of our company is to respect human dignity.</div>
+		<div class="conts-box">
+			<div id="example-slider">
+	<div class="owl-carousel">
+				<div class="stretchy_wrapper">
+			<div class="item">
+				<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example&amp;wr_id=39">
+					<img src="http://www.gentop.co.kr/eng/data/file/example/thumb-3391079384_d90r2t7B_da6341868478d556de3f54b2f484aad62542dee1_294x190.jpg">
+					<div class="s-box">
+						<div class="txt">Cambodia Vattanac Industrial Park CCTV System Installation</div>
+					</div>
+				</a>
+			</div>
+		</div>
+				<div class="stretchy_wrapper">
+			<div class="item">
+				<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example&amp;wr_id=38">
+					<img src="http://www.gentop.co.kr/eng/data/file/example/thumb-3391079384_IdF3PLN1_4bb9617af49ed9bc0106740340bc63fb91ebcf3b_294x190.jpg">
+					<div class="s-box">
+						<div class="txt">Geothermal System Installation Yangpyeong-eup</div>
+					</div>
+				</a>
+			</div>
+		</div>
+				<div class="stretchy_wrapper">
+			<div class="item">
+				<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example&amp;wr_id=37">
+					<img src="http://www.gentop.co.kr/eng/data/file/example/thumb-3391079384_wghLMcB3_fe3a04872ea2f3e428120e48ecf5a86312928ffe_294x190.jpg">
+					<div class="s-box">
+						<div class="txt">Geothermal Heat Pump Installation Korea Rural Community Corporation</div>
+					</div>
+				</a>
+			</div>
+		</div>
+				<div class="stretchy_wrapper">
+			<div class="item">
+				<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example&amp;wr_id=36">
+					<img src="http://www.gentop.co.kr/eng/data/file/example/thumb-34_copy_36_3391079384_BAjTGLRn_be0c0b72dc091f7a8ebc7714b95986f63466ac76_294x190.jpg">
+					<div class="s-box">
+						<div class="txt">Changwon-si Geothermal System Installtation</div>
+					</div>
+				</a>
+			</div>
+		</div>
+				<div class="stretchy_wrapper">
+			<div class="item">
+				<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example&amp;wr_id=35">
+					<img src="http://www.gentop.co.kr/eng/data/file/example/thumb-33_copy_35_3391079384_O6MU3in0_71c876dfe439e3466a993de49d67ce0bde948a72_294x190.jpg">
+					<div class="s-box">
+						<div class="txt">Korea Gas Corporation Grid-Connected Solar Power Plant</div>
+					</div>
+				</a>
+			</div>
+		</div>
+				<div class="stretchy_wrapper">
+			<div class="item">
+				<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example&amp;wr_id=33">
+					<img src="http://www.gentop.co.kr/eng/data/file/example/thumb-3391079384_aUDVMAvm_fbff0cadda05d78bbb69c430d40abf8c5f911256_294x190.jpg">
+					<div class="s-box">
+						<div class="txt">Automatic Control System Installation Korea Water Resource Corporation</div>
+					</div>
+				</a>
+			</div>
+		</div>
+				<div class="stretchy_wrapper">
+			<div class="item">
+				<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example&amp;wr_id=32">
+					<img src="http://www.gentop.co.kr/eng/data/file/example/thumb-3391079384_pWuOt7d9_31ae4ea8666366629dcd6c53b052725a3d87adf2_294x190.jpg">
+					<div class="s-box">
+						<div class="txt">Instrumentation Control System Installation</div>
+					</div>
+				</a>
+			</div>
+		</div>
+				<div class="stretchy_wrapper">
+			<div class="item">
+				<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example&amp;wr_id=31">
+					<img src="http://www.gentop.co.kr/eng/data/file/example/thumb-3391079384_BjDqk3nS_d952e5ec2cf52b3b4877d745354b01a74bcaf33e_294x190.jpg">
+					<div class="s-box">
+						<div class="txt">Tongyeong-Si Automatic Control System Installation</div>
+					</div>
+				</a>
+			</div>
+		</div>
+				<div class="stretchy_wrapper">
+			<div class="item">
+				<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example&amp;wr_id=30">
+					<img src="http://www.gentop.co.kr/eng/data/file/example/thumb-3391079384_czCFrovq_fa142cdf5b1b510113c1372b805e868e2b601540_294x190.jpg">
+					<div class="s-box">
+						<div class="txt">Instrumentation Control System Installation Korea Water Resource Corporation</div>
+					</div>
+				</a>
+			</div>
+		</div>
+				<div class="stretchy_wrapper">
+			<div class="item">
+				<a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example&amp;wr_id=29">
+					<img src="http://www.gentop.co.kr/eng/data/file/example/thumb-3391079384_vCo5IEmu_92c42376ec1d95e5967b3c119949e6574b1397cf_294x190.jpg">
+					<div class="s-box">
+						<div class="txt">Kangwon Security CCTV System Installation</div>
+					</div>
+				</a>
+			</div>
+		</div>
+			</div>
+</div>
+
+<script>
+	jQuery(document).ready(function() {
+		var example = jQuery('#example-slider .owl-carousel');
+
+		example.owlCarousel({
+			items:4,
+			nav:true,
+			loop:true,
+			responsiveClass:true,
+			autoplay:true,
+			autoplayTimeout:5000,
+			autoplayHoverPause:true,
+			responsive:{
+				0:{
+					items:1,
+					margin:10
+				},
+				500:{
+					items:2,
+					margin:10
+				},
+				700:{
+					items:4,
+					margin:15
+				}
+			}
+		});
+	});
+</script>		</div>
+		<div class="more-btn"><a href="http://www.gentop.co.kr/eng/bbs/board.php?bo_table=example">More View</a></div>
+	</div>
+
+		</div>
+	</div>
+</div>
+
+<div id="ft">
+	<div id="ft_wr">
+		<div class="copyright">
+			<strong>Address</strong> : 715~717, 7F, 59, Gwangnyeocheonnam-ro, Naeseo-eup, Masanhoewon-gu, Changwon-si, Gyeongsangnam-do, Korea<br>
+			<strong>TEL</strong> : +82-55-231-9152(9153, 9158)<span></span><strong>FAX</strong> : +82-55-231-9168<span></span><strong>E-MAIL</strong> : <a href="mailto:ceo@gentoop.co.kr">ceo@gentop.co.kr</a> 
+			<div class="ft_copy">COPYRIGHT(C)2019 <strong>GENTOP Co., Ltd.</strong> All Rights Reserved.</div>
+		</div>
+	</div>
+
+	<button type="button" id="top_btn"><i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span></button>
+	<script>
+		$(function() {
+			$("#top_btn").on("click", function() {
+				$("html, body").animate({scrollTop:0}, '500');
+				return false;
+			});
+		});
+	</script>
+</div>
+
+
+<!-- } 하단 끝 -->
+
+<script>
+$(function() {
+	// 폰트 리사이즈 쿠키있으면 실행
+	font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+});
+</script>
+
+
+
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+
+</body>
+</html>

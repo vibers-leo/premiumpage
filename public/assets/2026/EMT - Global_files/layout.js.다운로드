@@ -1,0 +1,303 @@
+document.addEventListener("DOMContentLoaded", () => {
+  if(!document.querySelector('#header')) return;
+
+  // gsap settings
+  gsap.registerPlugin(CustomEase);
+  gsap.registerPlugin(ScrollTrigger);
+  CustomEase.create("hop", ".87, 0, .13, 1");
+
+  new ScrollManager();
+  new MenuHandler();
+
+  safeRun(layout_scrollHeader, "layout_scrollHeader");
+  safeRun(layout_searchPanel, "layout_searchPanel");
+  safeRun(handleEnglishFont, "handle_english_font")
+});
+
+function handleEnglishFont(){
+	const targetClasses = [".breadcrumb-item .label", ".breadcrumb-item .menu-list a", ".sub-header .sub-title .title", ".search-list .item-path span"];
+	const addClassName = "eng-only";
+	
+	targetClasses.forEach(selector => {
+	  $(selector).each(function () {
+	    const text = $(this).text().trim();
+	    const hasKorean = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(text);
+	
+	    if (!hasKorean && text.length > 0) {
+	    	$(this).addClass(addClassName);
+	    }
+	  });
+	})
+}
+
+
+function layout_scrollHeader() {
+  const header = document.querySelector("#header");
+
+  function scrollCheck() {
+    if (window.scrollY > 20) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  }
+
+  scrollCheck();
+  document.addEventListener("scroll", scrollCheck);
+}
+
+function layout_searchPanel() {
+  const searchBtn = document.querySelector("#header .search-btn");
+  const overlay = document.querySelector(".search-overlay");
+  const closeBtn = document.querySelector(".search-overlay .overlay-close-btn");
+  const searchInput = document.querySelector(".search-overlay input[name='sw']");
+
+  if (!searchBtn || !overlay || !closeBtn) return;
+
+  function preventScroll(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
+  function closeOverlay() {
+    overlay.classList.remove("active");
+    overlay.removeEventListener('wheel', preventScroll, { passive: false });
+    
+    if (searchInput) {
+      searchInput.value = "";
+    }
+
+    setTimeout(() => {
+      overlay.dataset.open = "false";
+    }, 200);
+  }
+  
+  function openOverlay() {
+    overlay.dataset.open = "true";
+    overlay.classList.add("active");
+    overlay.addEventListener("wheel", preventScroll, { passive: false });
+    
+    setTimeout(function(){
+		searchInput.focus();
+	}, 500)
+  }
+
+  searchBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    openOverlay();
+  });
+
+  closeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeOverlay();
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      const isOpen = overlay.dataset.open === "true";
+      if (isOpen) {
+        closeOverlay();
+      }
+    }
+  });
+}
+
+class ScrollManager {
+  constructor() {
+    this.setScrollbarWidth();
+    window.addEventListener("resize", this.setScrollbarWidth.bind(this));
+  }
+
+  static toggleScrollLock(shouldLock) {
+    document.body.dataset.scrollLocked = shouldLock ? "true" : "false";
+  }
+
+  setScrollbarWidth() {
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.setProperty("--scrollbar-width", `${scrollbarWidth}px`);
+  }  
+}
+
+class MenuHandler {
+  /**
+   * @param {object} dependencies - 외부 의존성 객체.
+   * @param {object} dependencies.smoothScroller - SmoothScroller 인스턴스 (Lenis 관리).
+   */
+  constructor(dependencies) {
+    //this.smoothScroller = dependencies.smoothScroller;
+
+    this.container = document.querySelector("#container");
+    this.menuBtn = document.querySelector(".menu-btn");
+    this.menuOverlay = document.querySelector(".menu-overlay");
+    this.menuOverlayContainer = this.menuOverlay?.querySelector(
+      ".menu-overlay-content"
+    );
+    this.menus = document.querySelectorAll(".menu-content .mn_l1");
+    this.menuBg = this.menuOverlay?.querySelector(".menu-bg");
+    this.slogon = this.menuOverlay?.querySelector(".slogon");
+
+    this.isMenuOpen = false;
+    this.isAnimating = false;
+
+    this.init();
+  }
+
+  init() {
+    if (!this.container || !this.menuBtn || !this.menuOverlay) {
+      console.error("필요한 메뉴 DOM 요소가 없습니다.");
+      return;
+    }
+
+    const textContainers = this.slogon.querySelectorAll("span");
+    this.splitTexts = [];
+
+    textContainers.forEach((container) => {
+      const split = SplitText.create(container, {
+        type: "lines",
+        mask: "lines",
+        linesClass: "line",
+      });
+      this.splitTexts.push(split);
+      gsap.set(split.lines, { y: "-220%" });
+    });
+
+    this.menuBtn.addEventListener("click", this.handleMenuToggle.bind(this));
+  }
+
+  openMenu() {
+    this.isAnimating = true;
+    //this.smoothScroller.stop();
+    ScrollManager.toggleScrollLock(true);
+
+    const tl = gsap.timeline({
+      onComplete: () => {
+        this.isAnimating = false;
+        this.isMenuOpen = true;
+      },
+    });
+
+    const copyLines = this.splitTexts.flatMap((split) => split.lines);
+
+    tl.to(
+      [this.container, '#footer'],
+      {
+        y: "100vh",
+        duration: 1,
+        ease: "hop",
+      },
+      "<"
+    )
+      .to(
+        this.menuOverlay,
+        {
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          duration: 1,
+          ease: "hop",
+        },
+        "<"
+      )
+      .to(
+        this.menuOverlayContainer,
+        {
+          yPercent: 0,
+          duration: 1,
+          ease: "hop",
+        },
+        "<"
+      )
+      .to(
+        this.menuBg,
+        {
+          opacity: 1,
+          duration: 0.75,
+          ease: "powser2.out",
+          delay: 0.5,
+        },
+        "<"
+      )
+      .to(
+        this.menus,
+        {
+          y: "0%",
+          opacity: 1,
+          duration: 1.8,
+          ease: "hop",
+          stagger: -0.075,
+        },
+        "-0.15"
+      )
+      .to(
+        copyLines,
+        {
+          y: "0%",
+          duration: 1.7,
+          ease: "hop",
+          stagger: -0.075,
+        },
+        "-0.01"
+      );
+
+    this.menuBtn.classList.add("active");
+  }
+
+  closeMenu() {
+    this.isAnimating = true;
+    this.menuBtn.classList.remove("active");
+
+    const tl = gsap.timeline({
+      onComplete: () => {
+        gsap.set(this.menus, { y: "-110%", opacity: 0 });
+        gsap.set(this.menuBg, { opacity: 0 });
+
+        this.isAnimating = false;
+        this.isMenuOpen = false;
+
+        ScrollManager.toggleScrollLock(false);
+        //this.smoothScroller.resume();
+
+        const copyLines = this.splitTexts.flatMap((split) => split.lines);
+        gsap.set(copyLines, { y: "-220%" });
+      },
+    });
+
+    tl.to(
+      [this.container, '#footer'],
+      {
+        y: "0vh",
+        duration: 1,
+        ease: "hop",
+      },
+      "<"
+    )
+      .to(
+        this.menuOverlay,
+        {
+          clipPath: "polygon(0% 0%, 100% 0, 100% 0%, 0% 0%)",
+          duration: 1,
+          ease: "hop",
+        },
+        "<"
+      )
+      .to(
+        this.menuOverlayContainer,
+        {
+          yPercent: -50,
+          duration: 1,
+          ease: "hop",
+        },
+        "<"
+      );
+  }
+
+  handleMenuToggle(e) {
+    e.preventDefault();
+
+    if (this.isAnimating) return;
+
+    if (!this.isMenuOpen) {
+      this.openMenu();
+    } else {
+      this.closeMenu();
+    }
+  }
+}

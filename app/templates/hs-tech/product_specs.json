@@ -1,0 +1,2276 @@
+{
+  "dmt340": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "TYPE",
+        "APPLICATION",
+        "TECHNICAL DATA"
+      ],
+      [
+        "FEATURES",
+        "SPEC"
+      ],
+      [
+        "DMT340Series",
+        "DMT341",
+        "Wall Mount",
+        "▪Dry\nrooms",
+        "▪Graphical LCD\n  monitoring",
+        "Measurement range(Accuracy):- Td -70…+80℃(± 2ºC, up to 20bar)- T 0…+80℃(±0.2ºC)- RH 0…70%(±0.004 %RH + 20% of reading)Outputs- 0/4...20mA, 0...1/5/10V(2 Analog outputs, 3rd\n  Optional)- RS485(option)Operating Environment- Operating temparture for probes -40...+80℃- Mechanical Durability Up to +180℃- Mechanical Durability of transmitter 40…60℃- Mechanical Durability(w/ Display) 0…60℃"
+      ],
+      [
+        "DMT342",
+        "Flange\n  Probe",
+        "▪Flange\ntype probes for large equipment or high pressure installations",
+        "▪Pressure range: 0…50bar▪Mechanical\n  Durability: Up to 250bar▪(option) Sampling\n  cell"
+      ],
+      [
+        "DMT344",
+        "High\n  Pressure",
+        "▪Application\nto high pressure and vacuum facilities (Up to 100bar)",
+        "▪Pressure range: 0…50bar▪Mechanical\n  Durability: Up to 100bar"
+      ],
+      [
+        "DMT347",
+        "Thread\n  Probe",
+        "▪Small\nprobe that can be installed in a small space",
+        "▪Pressure range: 0…10bar▪Mechanical\n  Durability: Up to 10bar"
+      ],
+      [
+        "DMT348",
+        "Pipeline\n  Probe",
+        "▪I nstall\nwith ball valve option to replace probes during process operation",
+        "▪Pressure range: 0…40bar▪Mechanical\n  Durability: Up to 70bar▪(option) Ball-valve\n  set or Sampling cell"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "TYPE",
+        "APPLICATION",
+        "TECHNICAL DATA"
+      ],
+      [
+        "FEATURES",
+        "SPEC"
+      ],
+      [
+        "DMT340Series",
+        "DMT341",
+        "Wall Mount",
+        "▪Dry rooms",
+        "▪ Graphical LCD monitoring",
+        "Measurement range(Accuracy):- Td -70…+80℃(± 2ºC, up to 20bar)- T 0…+80℃(±0.2ºC)- RH 0…70%(±0.004 %RH + 20% of reading)Outputs- 0/4...20mA, 0...1/5/10V(2 Analog outputs, 3rd Optional)- RS485(option)Operating Environment- Operating temparture for probes -40...+80℃- Mechanical Durability Up to +180℃- Mechanical Durability of transmitter 40…60℃- Mechanical Durability(w/ Display) 0…60℃"
+      ],
+      [
+        "DMT342",
+        "Flange Probe",
+        "▪Flange type probes for large equipment or high pressure installations",
+        "▪ Pressure range: 0…50bar▪ Mechanical Durability: Up to 250bar▪ (option) Sampling cell"
+      ],
+      [
+        "DMT344",
+        "High Pressure",
+        "▪Application to high pressure and vacuum facilities (Up to 100bar)",
+        "▪ Pressure range: 0…50bar▪ Mechanical Durability: Up to 100bar"
+      ],
+      [
+        "DMT347",
+        "Thread Probe",
+        "▪Small probe that can be installed in a small space",
+        "▪ Pressure range: 0…10bar▪ Mechanical Durability: Up to 10bar"
+      ],
+      [
+        "DMT348",
+        "Pipeline Probe",
+        "▪I nstall with ball valve option to replace probes during process operation",
+        "▪ Pressure range: 0…40bar▪ Mechanical Durability: Up to 70bar▪ (option) Ball-valve set or Sampling cell"
+      ]
+    ]
+  ],
+  "indigo80+hmp80": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "SPEC"
+      ],
+      [
+        "HM70",
+        "MI70Indicator",
+        "LCD display+buttons",
+        "▪Operating temperature: -10…+40℃▪LCD with Back light▪Data logging capacity (2,700points)▪ Audible alarm function▪ (Option) LINK software with USB cable"
+      ],
+      [
+        "HMP75Probe",
+        "General Purpose Probe(118mm)",
+        "▪ Measurement range:- RH range: 0…100%- Temperature range: -20…+60℃▪ Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃ at 20℃"
+      ],
+      [
+        "HMP76Probe",
+        "Long, Stainless steel Probe(328mm)- Duct Spot checking",
+        "▪ Measurement range:- RH range: 0…100%- Temperature range: -50…+120℃▪ Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃ at 20℃"
+      ],
+      [
+        "HMP77Probe",
+        "Small probe+5m cable- ideal for difficult-to-reach areas- on-site calibration",
+        "▪ Measurement range:- RH range: 0…100%- Temperature range: -70…+180℃▪ Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃ at 20℃"
+      ]
+    ]
+  ],
+  "dpt145": [
+    [
+      [
+        "MODEL",
+        "FEATURE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "DPT145",
+        "▪for SF6 Gas▪SF6 Gas Measurements Without Sampling▪Detects Leakage with Pressure Sensor",
+        "Measurement range(Accuracy)_Measured:Parameters:- Td -50…+30℃(± 3ºC)- Pressure(absolute) 1…12bar(± 0.4%FS)- T -40…+80℃Measurement Range(Accuracy)_Calculated Parameters:- Pressure(normalized to +20℃) 1…12bar- SF6 or SF6/N2 density 0…100kg/㎥- Moisture 40…40,000ppm- Td(Converted to Atmospheric Pressure) -65...+30℃",
+        "Outputs: RS-485, Modbus RTUOperation Environment: T -40…+60℃: RH 0…100%RH: Pressure 0…50bar"
+      ]
+    ],
+    [
+      [
+        "MODEL",
+        "FEATURE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "DPT145",
+        "▪for SF6 Gas▪SF6 Gas Measurements Without Sampling▪Detects Leakage with Pressure Sensor",
+        "Measurement range(Accuracy)_Measured:Parameters:- Td -50…+30℃(± 3ºC)- Pressure(absolute) 1…12bar(± 0.4%FS)- T -40…+80℃Measurement Range(Accuracy)_Calculated Parameters:- Pressure(normalized to +20℃) 1…12bar- SF6 or SF6/N2 density 0…100kg/㎥- Moisture 40…40,000ppm- Td(Converted to Atmospheric Pressure) -65...+30℃",
+        "Outputs: RS-485, Modbus RTUOperation Environment: T -40…+60℃: RH 0…100%RH: Pressure 0…50bar"
+      ]
+    ]
+  ],
+  "hmt120_130": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "FEATURES",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "HMT120/ HMT130",
+        "HMT120",
+        "▪Wall Mount▪Duct Type▪Outdoor",
+        "▪ Humidity and Temperature monitoring in cleanrooms▪Sensor one-to-one replacement▪ Display Options▪ Duct Installation Kit Options▪ Cable maximum length 20m▪ Dewpoint output function▪ Plastic sensors can be selected (Wall Mount)",
+        "Measurement range▪RH range: 0…100%\n  RH▪Temperature\n  range:  -40..+80°C (-40...+176°F)Accuracy▪±1.5%RH (0…90%)▪± 0.2ºC @ 20ºC PT1000IP rating▪IP65",
+        "▪2-Wire Current (4…20mA)"
+      ],
+      [
+        "HMT130",
+        "▪3-Wire Voltage\n  (0…1V/5V/10V)▪RS485"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "FEATURES",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "HMT120/ HMT130",
+        "HMT120",
+        "▪ Wall Mount▪ Duct Type▪ Outdoor",
+        "▪Humidity and Temperature monitoring in cleanrooms ▪▪Sensor one-to-one replacement ▪▪Display Options ▪▪Duct Installation Kit Options▪ Cable maximum length 20m▪ Dewpoint output function▪ Plastic sensors can be selected (Wall Mount)",
+        "Measurement range▪ RH range: 0…100% RH▪ Temperature range:  -40..+80°C (-40...+176°F)Accuracy▪  ±1.5%RH (0…90%)▪  ± 0.2ºC @ 20ºC PT1000IP rating▪ IP65",
+        "▪ 2-Wire Current (4…20mA)"
+      ],
+      [
+        "HMT130",
+        "▪ 3-Wire Voltage (0…1V/5V/10V)▪ RS485"
+      ]
+    ]
+  ],
+  "hmt330": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "TYPICAL APPLICATION",
+        "TECHNICAL DATA"
+      ],
+      [
+        "Measurement range",
+        "SPEC"
+      ],
+      [
+        "HMT330Series",
+        "HMT331",
+        "Wall Mount",
+        "▪cleanrooms▪pharmaceutical\n  processes▪swimming\n  halls▪museums and\n  archives",
+        "RH range: 0…100% RHTemperature range:  -40...+60°C\n  (-40...+140°F)",
+        "Other Available\n  Variables(Model-Dependent)Dew point temperature, mixing ratio, absolute\n  humidity, wet bulb temperature, enthalpy, water vapor pressureAccuracy▪±1%RH (0…90%)▪± 0.2ºC @ 20ºC PT100Operating voltage: 10 ... 35 VDC, 24 VAC ±20%with optional power supply module:\n  100 ... 240 VAC,  50/60 HZOutput▪Current outputs:\n  0..20mA or 4…20mA▪Voltage outputs: 0…\n  1V / 5V / 10V▪Digtal outputs:\n  RS232 , RS485(optional)▪(optional) WLAN\n  interface▪(optional) Relay\n  outputs: 0.5A, 250VACIP rating▪IP66▪IP65 with local\n  display"
+      ],
+      [
+        "HMT333",
+        "Duct\n  Type",
+        "▪cleanrooms▪Industrial HVAC\n  systems▪pharmaceutical\n  processes▪environmental\n  chambers▪processes with\n  moderate temperature and humidity",
+        "RH\n  range: 0…100% RHTemperature range: rubber cable -40...+80°C (-40...+176°F) or teflon cable\n  -40...+120°C (-40...+248°F)"
+      ],
+      [
+        "HMT334",
+        "High\n  Pressure",
+        "▪test chambers▪high-pressure and\n  vacuum processes",
+        "RH\n  range: 0…100% RHTemperature range: -70 ...+180 °C (-94...+356°F)Operating pressure: 0...10 MPa (0...100 bar)"
+      ],
+      [
+        "HMT335",
+        "High\n  Temperature",
+        "​▪hot drying processes▪food processes e.g.\n  baking ovens",
+        "RH\n  range: 0…100% RHTemperature range: -70...+180°C (-94...+356 °F)"
+      ],
+      [
+        "HMT337",
+        "High\n  Humidity",
+        "▪professional  meteorology▪intake air\n  monitoring of engines and gas turbines▪timber drying\n  kilns​",
+        "RH\n  range: 0…100% RHTemperature range: -70...+180°C (-94...+356°F)"
+      ],
+      [
+        "HMT338",
+        "Pressurized\n  ​Piplelines",
+        "▪process lines▪environmental\n  chambers▪vacuum-drying\n  processes▪compressed air\n  lines with refrigerant dryers​",
+        "RH\n  range: 0…100% RHTemperature range: -70...+180°C (-94...+356°F)Operating pressure:  0...4 MPa\n  (0…40bar)"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "TYPICAL APPLICATION",
+        "TECHNICAL DATA"
+      ],
+      [
+        "Measurement range",
+        "SPEC"
+      ],
+      [
+        "HMT330Series",
+        "HMT331",
+        "Wall Mount",
+        "▪ cleanrooms▪ pharmaceutical processes▪ swimming halls▪ museums and archives",
+        "RH range: 0…100% RHTemperature range:  -40...+60°C (-40...+140°F)",
+        "Other Available Variables(Model-Dependent)Dew point temperature, mixing ratio, absolute humidity, wet bulb temperature, enthalpy, water vapor pressureAccuracy▪  ±1%RH (0…90%)▪  ± 0.2ºC @ 20ºC PT100Operating voltage: 10 ... 35 VDC, 24 VAC ±20%with optional power supply module: 100 ... 240 VAC,  50/60 HZOutput▪ Current outputs: 0..20mA or 4…20mA▪ Voltage outputs: 0… 1V / 5V / 10V▪ Digtal outputs: RS232 , RS485(optional)▪ (optional) WLAN interface▪ (optional) Relay outputs: 0.5A, 250VACIP rating▪ IP66▪ IP65 with local display"
+      ],
+      [
+        "HMT333",
+        "Duct Type",
+        "▪ cleanrooms▪ Industrial HVAC systems▪ pharmaceutical processes▪ environmental chambers▪ processes with moderate temperature and humidity",
+        "RH range: 0…100% RHTemperature range: rubber cable -40...+80°C (-40...+176°F) or teflon cable -40...+120°C (-40...+248°F)"
+      ],
+      [
+        "HMT334",
+        "High Pressure",
+        "▪ test chambers▪ high-pressure and vacuum processes",
+        "RH range: 0…100% RHTemperature range: -70 ...+180 °C (-94...+356°F)Operating pressure: 0...10 MPa (0...100 bar)"
+      ],
+      [
+        "HMT335",
+        "High Temperature",
+        "▪ hot drying processes▪ food processes e.g. baking ovens",
+        "RH range: 0…100% RHTemperature range: -70...+180°C (-94...+356 °F)"
+      ],
+      [
+        "HMT337",
+        "High Humidity",
+        "▪ professional  meteorology▪ intake air monitoring of engines and gas turbines▪ timber drying kilns",
+        "RH range: 0…100% RHTemperature range: -70...+180°C (-94...+356°F)"
+      ],
+      [
+        "HMT338",
+        "PressurizedPiplelines",
+        "▪ process lines▪ environmental chambers▪ vacuum-drying processes▪ compressed air lines with refrigerant dryers",
+        "RH range: 0…100% RHTemperature range: -70...+180°C (-94...+356°F)Operating pressure:  0...4 MPa (0…40bar)"
+      ]
+    ]
+  ],
+  "shm40": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "FEATURE﻿"
+      ],
+      [
+        "SHM40",
+        "HM40Indicator",
+        "▪ Alkaline Batteries 2xAA, 1.5V▪LCD display▪ Calculated Variables (Td, Tw, a, x, h)▪IP54"
+      ],
+      [
+        "HMP40SProbe",
+        "▪TRRS male 3.5mm cable connector▪ Borehole Diameter Needed (16mm)▪Stainless steelProbe▪Measurement range: RH range: 0…100% / Temperature range: -40…+80℃▪Accuracy: RH±1.5%RH(0…90%RH)\n  / T±0.2℃(0…40℃)▪Pt1000 RTD▪Housing IP65"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "FEATURE﻿"
+      ],
+      [
+        "SHM40",
+        "HM40Indicator",
+        "▪Alkaline Batteries 2xAA, 1.5V▪LCD display▪Calculated Variables (Td, Tw, a, x, h)▪IP54"
+      ],
+      [
+        "HMP40SProbe",
+        "▪TRRS male 3.5mm cable connector▪Borehole Diameter Needed (16mm)▪Stainless steelProbe▪Measurement range: RH range: 0…100% / Temperature range: -40…+80℃▪Accuracy: RH±1.5%RH(0…90%RH) / T±0.2℃(0…40℃)▪Pt1000 RTD▪Housing IP65"
+      ]
+    ]
+  ],
+  "dmt345_346": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "TYPE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "SPEC",
+        "SPEC"
+      ],
+      [
+        "DMT345/346",
+        "DMT345",
+        "High TemperatureAccurate in Hot and Dry Environments(up to 180℃)",
+        "Measurement range(Accuracy):- Td -40…+100℃(±\n  2ºC)- T 0…+180℃(±0.4℃@ 100℃)- RH 0…100%- Mixing Ratio 0…1000g/kgOperating Environment- Mechanical Durability of Probe: up to 180℃",
+        "Outputs- 0/4...20mA, 0...1/5/10V(2 Analog outputs, 3rd\n  Optional)- RS485(option)Operating Environment- Mechanical Durability of Transmitter\n  body: -40…+60℃(with Display: 0…+60℃)"
+      ],
+      [
+        "DMT346",
+        "Cooling FlangeReliable in Very Hot Processes(up to 350℃)",
+        "Measurement range(Accuracy):- Td -25…+100℃(±\n  2ºC)- Mixing Ratio 0…1000g/kgOperating Environment- Mechanical Durability of Probe: up to 350℃Cooling Set Included"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "TYPE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "SPEC",
+        "SPEC"
+      ],
+      [
+        "DMT345/346",
+        "DMT345",
+        "High TemperatureAccurate in Hot and Dry Environments(up to 180℃)",
+        "Measurement range(Accuracy):- Td -40…+100℃(± 2ºC)- T 0…+180℃(±0.4℃ @ 100℃)- RH 0…100%- Mixing Ratio 0…1000g/kgOperating Environment- Mechanical Durability of Probe: up to 180℃",
+        "Outputs- 0/4...20mA, 0...1/5/10V(2 Analog outputs, 3rd Optional)- RS485(option)Operating Environment- Mechanical Durability of Transmitter body: -40…+60℃(with Display: 0…+60℃)"
+      ],
+      [
+        "DMT346",
+        "Cooling FlangeReliable in Very Hot Processes(up to 350℃)",
+        "Measurement range(Accuracy):- Td -25…+100℃(± 2ºC)- Mixing Ratio 0…1000g/kgOperating Environment- Mechanical Durability of Probe: up to 350℃Cooling Set Included"
+      ]
+    ]
+  ],
+  "gmw80": [
+    [
+      [
+        "MODEL",
+        "TYPE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENTS",
+        "OUTPUT",
+        "SPEC"
+      ],
+      [
+        "GMW80",
+        "GMW86P",
+        "Wall+PT1000",
+        "CO2",
+        "CO2 current and voltage output",
+        "*Refer\nto the specifications below, depending on each model measurement and output\noptionMeasurement range▪CO2 0…2000ppm▪Temperature 0…+50℃▪RH 0…95%Accuracy▪CO2 ±(30ppm+3% of\n  reading)(@+20..+30℃)▪Temperature ±0.5℃(@+10...+30℃)▪RH ±3%RH(@0…80%RH)Outputs▪4...20mA an/or\n  0...10V"
+      ],
+      [
+        "GMW83RP",
+        "Wall+PT1000",
+        "CO2+T+RH",
+        "voltage\n  output"
+      ],
+      [
+        "GMW83DRP",
+        "Wall+PT1000+Display",
+        "CO2+T+RH",
+        "voltage\n  output"
+      ],
+      [
+        "GMW83",
+        "Wall",
+        "CO2",
+        "voltage\n  output"
+      ],
+      [
+        "GMW83A",
+        "Wall+LED",
+        "CO2",
+        "voltage\n  output"
+      ],
+      [
+        "GMW83DRP",
+        "Wall+Display",
+        "CO2",
+        "voltage\n  output"
+      ],
+      [
+        "GMW84",
+        "Wall",
+        "CO2",
+        "CO2\n  current output"
+      ],
+      [
+        "GMW84S",
+        "Wall+Relay",
+        "CO2",
+        "CO2\n  current output"
+      ],
+      [
+        "GMW88",
+        "Wall",
+        "CO2",
+        "CO2\n  current output"
+      ]
+    ],
+    [
+      [
+        "MODEL",
+        "TYPE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENTS",
+        "OUTPUT",
+        "SPEC"
+      ],
+      [
+        "GMW80",
+        "GMW86P",
+        "Wall+PT1000",
+        "CO2",
+        "CO2 current and voltage output",
+        "*Refer to the specifications below, depending on each model measurement and output optionMeasurement range▪CO2 0…2000ppm▪Temperature 0…+50℃▪RH 0…95%Accuracy▪CO2 ±(30ppm+3% of reading)(@+20..+30℃)▪Temperature ±0.5℃(@+10...+30℃)▪RH ±3%RH(@0…80%RH)Outputs▪4...20mA an/or 0...10V"
+      ],
+      [
+        "GMW83RP",
+        "Wall+PT1000",
+        "CO2+T+RH",
+        "voltage output"
+      ],
+      [
+        "GMW83DRP",
+        "Wall+PT1000+Display",
+        "CO2+T+RH",
+        "voltage output"
+      ],
+      [
+        "GMW83",
+        "Wall",
+        "CO2",
+        "voltage output"
+      ],
+      [
+        "GMW83A",
+        "Wall+LED",
+        "CO2",
+        "voltage output"
+      ],
+      [
+        "GMW83DRP",
+        "Wall+Display",
+        "CO2",
+        "voltage output"
+      ],
+      [
+        "GMW84",
+        "Wall",
+        "CO2",
+        "CO2 current output"
+      ],
+      [
+        "GMW84S",
+        "Wall+Relay",
+        "CO2",
+        "CO2 current output"
+      ],
+      [
+        "GMW88",
+        "Wall",
+        "CO2",
+        "CO2 current output"
+      ]
+    ]
+  ],
+  "hmt310": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "TYPICAL APPLICATION",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT\n  RANGE",
+        "SPEC"
+      ],
+      [
+        "HMT310",
+        "HMT311",
+        "Wall Mount",
+        "▪cleanrooms▪pharmaceutical\n  processes▪swimming\n  halls▪museums and\n  archives",
+        "RH range: 0…100% RHTemperature range:  -40...+60°C\n  (-40...+140°F)",
+        "Accuracy▪±1%RH (0…90%)▪± 0.2ºC @ 20ºC PT1000Operating voltage12...28V (with serial port 15...28V)Output▪Operating voltage:\n  10 ... 35 VDC▪Two analog\n  outputs,selectable and scalable0 ... 20 mA or 4 ...20 mA1 ...5 V, 0 … 5 V or 0 … 10 V▪Serial output:\n  RS-232 in one M12/8 pin connectorIP rating▪IP66▪IP65 with local\n  display"
+      ],
+      [
+        "HMT313",
+        "Duct\n  Type",
+        "▪cleanrooms▪Industrial HVAC\n  systems▪pharmaceutical\n  processes▪environmental\n  chambers▪processes with\n  moderate temperature and humidity",
+        "RH\n  range: 0…100% RHTemperature range: rubber cable -40...+80°C (-40...+176°F) or teflon cable\n  -40...+120°C (-40...+248°F)"
+      ],
+      [
+        "HMT314",
+        "High\n  Pressure",
+        "▪test chambers▪high-pressure and\n  vacuum processes",
+        "RH\n  range: 0…100% RHTemperature range: -70 ...+180 °C (-94...+356°F)Operating pressure: 0...10 MPa (0...100 bar)"
+      ],
+      [
+        "HMT315",
+        "High\n  Temperature",
+        "​▪hot drying processes▪food processes e.g.\n  baking ovens",
+        "RH\n  range: 0…100% RHTemperature range: -70...+180°C (-94...+356 °F)"
+      ],
+      [
+        "HMT317",
+        "High\n  Humidity",
+        "▪professional  meteorology▪intake air\n  monitoring of engines and gas turbines▪timber drying\n  kilns​",
+        "RH\n  range: 0…100% RHTemperature range: -70...+180°C (-94...+356°F)"
+      ],
+      [
+        "HMT318",
+        "Pressurized\n  ​Piplelines",
+        "▪process lines▪environmental\n  chambers▪vacuum-drying\n  processes▪compressed air\n  lines with refrigerant dryers​",
+        "RH\n  range: 0…100% RHTemperature range: -70...+180°C (-94...+356°F)Operating pressure:  0...4 MPa\n  (0…40bar)"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "TYPICAL APPLICATION",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "HMT310",
+        "HMT311",
+        "Wall Mount",
+        "▪ cleanrooms▪ pharmaceutical processes▪ swimming halls▪ museums and archives",
+        "RH range: 0…100% RHTemperature range: -40...+60°C (-40...+140°F)",
+        "Accuracy▪ ±1%RH (0…90%)▪ ± 0.2ºC @ 20ºC PT1000Operating voltage12...28V (with serial port 15...28V)Output▪ Operating voltage: 10 ... 35 VDC▪ Two analog outputs,selectable and scalable0 ... 20 mA or 4 ...20 mA1 ...5 V, 0 … 5 V or 0 … 10 V▪ Serial output: RS-232 in one M12/8 pin connectorIP rating▪ IP66▪ IP65 with local display"
+      ],
+      [
+        "HMT313",
+        "Duct Type",
+        "▪ cleanrooms▪ Industrial HVAC systems▪ pharmaceutical processes▪ environmental chambers▪ processes with moderate temperature and humidity",
+        "RH range: 0…100% RHTemperature range: rubber cable -40...+80°C (-40...+176°F) or teflon cable -40...+120°C (-40...+248°F)"
+      ],
+      [
+        "HMT314",
+        "High Pressure",
+        "▪ test chambers▪ high-pressure and vacuum processes",
+        "RH range: 0…100% RHTemperature range: -70 ...+180 °C (-94...+356°F)Operating pressure: 0...10 MPa (0...100 bar)"
+      ],
+      [
+        "HMT315",
+        "High Temperature",
+        "▪ hot drying processes▪ food processes e.g. baking ovens",
+        "RH range: 0…100% RHTemperature range: -70...+180°C (-94...+356 °F)"
+      ],
+      [
+        "HMT317",
+        "High Humidity",
+        "▪ professional meteorology▪ intake air monitoring of engines and gas turbines▪ timber drying kilns",
+        "RH range: 0…100% RHTemperature range: -70...+180°C (-94...+356°F)"
+      ],
+      [
+        "HMT318",
+        "PressurizedPiplelines",
+        "▪ process lines▪ environmental chambers▪ vacuum-drying processes▪ compressed air lines with refrigerant dryers",
+        "RH range: 0…100% RHTemperature range: -70...+180°C (-94...+356°F)Operating pressure: 0...4 MPa (0…40bar)"
+      ]
+    ]
+  ],
+  "hmt120": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "FEATURES",
+        "TECHNICAL DATA"
+      ],
+      [
+        "SPEC",
+        "OUTPUT"
+      ],
+      [
+        "HMT120/ HMT130",
+        "HMT120",
+        "▪Wall Mount▪Duct Type▪Outdoor",
+        "▪Monitoring the temperature of the clean room▪ Sensor one-to-one replacement▪ Display Options▪ Duct Installation Kit Options▪ Dew point output function▪ Cable maximum length 20m▪ For wall mount types, plastic sensors can be selected",
+        "Measurement range▪RH range: 0…100%\n  RH▪Temperature\n  range:  -40..+80°C (-40...+176°F)Other Variables(Optional)Dew point/frost point, mixing ratio, absolute humidity, wet bulb\n  temperature, enthalpy, vapor pressure, saturation vapor pressureAccuracy▪±1.5%RH (0…90%)▪± 0.2ºC @ 20ºC PT1000IP rating▪IP65",
+        "▪2-Wire Current (4…20mA)"
+      ],
+      [
+        "HMT130",
+        "▪3-Wire Voltage\n  (0…1V/5V/10V)▪RS485"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "FEATURES",
+        "TECHNICAL DATA"
+      ],
+      [
+        "SPEC",
+        "OUTPUT"
+      ],
+      [
+        "HMT120/ HMT130",
+        "HMT120",
+        "▪ Wall Mount▪ Duct Type▪ Outdoor",
+        "▪Monitoring the temperature of the clean room▪ Sensor one-to-one replacement▪ Display Options▪ Duct Installation Kit Options▪ Dew point output function▪ Cable maximum length 20m▪ For wall mount types, plastic sensors can be selected",
+        "Measurement range▪ RH range: 0…100% RH▪ Temperature range:  -40..+80°C (-40...+176°F)Other Variables(Optional)Dew point/frost point, mixing ratio, absolute humidity, wet bulb temperature, enthalpy, vapor pressure, saturation vapor pressureAccuracy▪  ±1.5%RH (0…90%)▪  ± 0.2ºC @ 20ºC PT1000IP rating▪ IP65",
+        "▪ 2-Wire Current (4…20mA)"
+      ],
+      [
+        "HMT130",
+        "▪ 3-Wire Voltage (0…1V/5V/10V)▪ RS485"
+      ]
+    ]
+  ],
+  "dm70": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "SPEC"
+      ],
+      [
+        "DM70",
+        "MI70Indicator",
+        "LCD display+buttons",
+        "▪Operating temperature: -10…+40℃▪LCD with Back light▪Data Logging Capacity (2,700points)▪Audible Alarm Function▪LINK Software with USB Cable (Option)"
+      ],
+      [
+        "DMP74AProbe",
+        "Pressure\n  tight ProbeHigher TdMeasurement",
+        "▪Measurement range(Accuracy):- Td range: -50…+60℃Td(Td ±2℃Td)- Temperature range: -10…+60℃(T ±0.2℃at 20℃)"
+      ],
+      [
+        "DMP74BProbe",
+        "Pressure\n  tight ProbeLow Td Measurement",
+        "▪Measurement range(Accuracy):- Td range: -70…+30℃Td(Td ±2℃Td)- Temperature range: -10…+60℃(T ±0.2℃at 20℃)"
+      ],
+      [
+        "DMP74CProbe",
+        "for SF6 Gas",
+        "▪Measurement range(Accuracy):- Td range: -70…+30℃Td(Td ±2℃Td)- Temperature range: -10…+60℃(T ±0.2℃at 20℃)"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "SPEC"
+      ],
+      [
+        "DM70",
+        "MI70Indicator",
+        "LCD display+buttons",
+        "▪Operating temperature: -10…+40℃▪LCD with Back light▪Data Logging Capacity (2,700points)▪Audible Alarm Function▪LINK Software with USB Cable (Option)"
+      ],
+      [
+        "DMP74AProbe",
+        "Pressure tight ProbeHigher TdMeasurement",
+        "▪ Measurement range(Accuracy):- Td range: -50…+60℃ Td(Td ±2℃Td)- Temperature range: -10…+60℃(T ±0.2℃ at 20℃)"
+      ],
+      [
+        "DMP74BProbe",
+        "Pressure tight ProbeLow Td Measurement",
+        "▪ Measurement range(Accuracy):- Td range: -70…+30℃ Td(Td ±2℃Td)- Temperature range: -10…+60℃(T ±0.2℃ at 20℃)"
+      ],
+      [
+        "DMP74CProbe",
+        "for SF6 Gas",
+        "▪ Measurement range(Accuracy):- Td range: -70…+30℃ Td(Td ±2℃Td)- Temperature range: -10…+60℃(T ±0.2℃ at 20℃)"
+      ]
+    ]
+  ],
+  "hmt360": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "TECHNICAL DATA"
+      ],
+      [
+        "HMT360",
+        "HMT361",
+        "Wall\n  Mount",
+        "RH range: 0…100% RHTemperature range -40...+60°C(-40...+140°F)Probe diameter 12 mm",
+        "Accuracy▪±1%RH (0…90%)▪± 0.2ºC @ 20ºC PT1000Output▪2-Wire Current\n  (4…20mA)IP rating▪IP66Operating Environment▪Operating\n  temperature for electronics -40…+60°C▪Operating\n  temperature with display -20…+60°C▪Storage temperature\n  -40…+70°C (-40…+158°F)Classification▪Korea (KOSHA) Ex ia\n  IIC T4▪EU (94/9/EC,\n  ATEX100a) II 1 G Ex ia IIC T4 Ga"
+      ],
+      [
+        "HMT363",
+        "Duct\n  Type",
+        "RH\n  range: 0…100% RHTemperature range withteflon cable   -40...+120°C(-40 ... +248 °F)rubber  cable  \n  -40...+80°C(-40 ... +176 °F)Probe cable length  2, 5 or 10\n  metersProbe diameter 12 mm"
+      ],
+      [
+        "HMT364",
+        "High\n  Pressure",
+        "RH\n  range: 0…100% RHTemperature range  \n  -70…+180°C(-94…+356 °F)Pressure range  0...10 MPaProbe cable length  2, 5 or 10\n  metersProbe diameter 12 mm"
+      ],
+      [
+        "HMT365",
+        "High\n  Temperature",
+        "RH\n  range: 0…100% RHTemperature range  \n  -70…+180°C(-94…+356 °F)Probe cable length  2, 5 or 10\n  metersProbe diameter 13.5 mm"
+      ],
+      [
+        "HMT367",
+        "High\n  Humidity",
+        "RH\n  range: 0…100% RHTemperature range  \n  -70…+180°C(-94…+356°F)Probe cable length  2, 5 or 10\n  metersProbe diameter 12mm"
+      ],
+      [
+        "HMT368",
+        "Pressurized\n  ​Piplelines",
+        "RH\n  range: 0…100% RHTemperature range  \n  -70…+180°C(-94…+356 °F)Pressure range 0…4MPaProbe cable length  2, 5 or 10\n  metersProbe diameter 13.5mm / 12mm"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "TECHNICAL DATA"
+      ],
+      [
+        "HMT360",
+        "HMT361",
+        "Wall Mount",
+        "RH range: 0…100% RHTemperature range -40...+60°C(-40...+140°F)Probe diameter 12 mm",
+        "Accuracy▪  ±1%RH (0…90%)▪  ± 0.2ºC @ 20ºC PT1000Output▪ 2-Wire Current (4…20mA)IP rating▪ IP66Operating Environment▪ Operating temperature for electronics -40…+60°C▪ Operating temperature with display -20…+60°C▪ Storage temperature -40…+70°C (-40…+158°F)Classification▪ Korea (KOSHA) Ex ia IIC T4▪ EU (94/9/EC, ATEX100a) II 1 G Ex ia IIC T4 Ga"
+      ],
+      [
+        "HMT363",
+        "Duct Type",
+        "RH range: 0…100% RHTemperature range withteflon cable   -40...+120°C(-40 ... +248 °F)rubber  cable   -40...+80°C(-40 ... +176 °F)Probe cable length  2, 5 or 10 metersProbe diameter 12 mm"
+      ],
+      [
+        "HMT364",
+        "High Pressure",
+        "RH range: 0…100% RHTemperature range   -70…+180°C(-94…+356 °F)Pressure range  0...10 MPaProbe cable length  2, 5 or 10 metersProbe diameter 12 mm"
+      ],
+      [
+        "HMT365",
+        "High Temperature",
+        "RH range: 0…100% RHTemperature range   -70…+180°C(-94…+356 °F)Probe cable length  2, 5 or 10 metersProbe diameter 13.5 mm"
+      ],
+      [
+        "HMT367",
+        "High Humidity",
+        "RH range: 0…100% RHTemperature range   -70…+180°C(-94…+356°F)Probe cable length  2, 5 or 10 metersProbe diameter 12mm"
+      ],
+      [
+        "HMT368",
+        "PressurizedPiplelines",
+        "RH range: 0…100% RHTemperature range   -70…+180°C(-94…+356 °F)Pressure range 0…4MPaProbe cable length  2, 5 or 10 metersProbe diameter 13.5mm / 12mm"
+      ]
+    ]
+  ],
+  "mmt162": [
+    [
+      [
+        "MODEL",
+        "Model/Application",
+        "TECHNICAL DATA"
+      ],
+      [
+        "FEATURES",
+        "SPEC",
+        "OUTPUT"
+      ],
+      [
+        "MMT162",
+        "Metal type",
+        "▪ Economical online detection of moisture in oil▪ Direct installation in pipelin▪ MI70 can be used as a display, communication and datalogging device for the MMT162",
+        "Working range:- Water Activity aw 0…1(±0.02 aw)- Temperature -40…+80℃(±0.2℃)- Pressure range: Up to 200barConnection:ISO\n  G1/2\" thread or NPT 1/2\" thread",
+        "Outputs:2 Analog outputs(3rd optional)- 0/4...20mA, 0…5/10VDigital outputs- RS-485 non-isolated, Vaisala protocol, Modbus RTU protocolOperating Environment: EMC compliance EN61326-1: Operating temperature -40…+60℃: Storage temperature -40…+80℃: Oil temperature -40…+80℃"
+      ],
+      [
+        "Plastic type",
+        "Working range:- Water Activity aw 0…1(±0.02 aw)- Temperature -40…+80℃(±0.2℃)- Pressure range: Up to 40barConnection:ISO G1/2\" thread"
+      ]
+    ],
+    [
+      [
+        "MODEL",
+        "Model/Application",
+        "TECHNICAL DATA"
+      ],
+      [
+        "FEATURES",
+        "SPEC",
+        "OUTPUT"
+      ],
+      [
+        "MMT162",
+        "Metal type",
+        "▪ Economical online detection of moisture in oil▪ Direct installation in pipelin▪ MI70 can be used as a display, communication and datalogging device for the MMT162",
+        "Working range:- Water Activity aw 0…1(±0.02 aw)- Temperature -40…+80℃(±0.2℃)- Pressure range: Up to 200barConnection: ISO G1/2\" thread or NPT 1/2\" thread",
+        "Outputs:2 Analog outputs(3rd optional)- 0/4...20mA, 0…5/10VDigital outputs- RS-485 non-isolated, Vaisala protocol, Modbus RTU protocolOperating Environment: EMC compliance EN61326-1: Operating temperature -40…+60℃: Storage temperature -40…+80℃: Oil temperature -40…+80℃"
+      ],
+      [
+        "Plastic type",
+        "Working range:- Water Activity aw 0…1(±0.02 aw)- Temperature -40…+80℃(±0.2℃)- Pressure range: Up to 40barConnection: ISO G1/2\" thread"
+      ]
+    ]
+  ],
+  "mm70": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "SPEC"
+      ],
+      [
+        "MM70",
+        "MI70Indicator",
+        "LCD display+buttons",
+        "Operating temperature: -10…+40℃LCD with Back lightData logging capacity (2,700 points)Audible alarm fuctionLINK software with USB cable (Option)"
+      ],
+      [
+        "MM70Probe",
+        "In-line type",
+        "Moisture in Oil Sensorin-line process checking through ball valveAw measurement, ppm calculationMeasurement range(Accuracy):- Water Activity aw 0…1(±0.02aw\n  @0…0.9)- Temperature -40…+100℃(±0.2℃@ 20℃)"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "SPEC"
+      ],
+      [
+        "MM70",
+        "MI70Indicator",
+        "LCD display+buttons",
+        "Operating temperature: -10…+40℃LCD with Back lightData logging capacity (2,700 points)Audible alarm fuctionLINK software with USB cable (Option)"
+      ],
+      [
+        "MM70Probe",
+        "In-line type",
+        "Moisture in Oil Sensorin-line process checking through ball valveAw measurement, ppm calculationMeasurement range(Accuracy):- Water Activity aw 0…1(±0.02aw @0…0.9)- Temperature -40…+100℃(±0.2℃@ 20℃)"
+      ]
+    ]
+  ],
+  "dmt143l": [
+    [
+      [
+        "MODEL",
+        "FEATURE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "DMT143L",
+        "▪Auto-calibration▪Chemical purging▪Compact for OEM Applications▪ DMT242 Replacement",
+        "Measurement range(Accuracy):- Td -60…+60℃(± 2ºC)",
+        "Outputs: 4...20mA(3 wire): RS485 or Modbus RTUOperation Environment: T -40…+60℃: RH 0…100%RH: Pressure 0…50bar"
+      ]
+    ],
+    [
+      [
+        "MODEL",
+        "FEATURE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "DMT143L",
+        "▪Auto-calibration▪Chemical purging▪Compact for OEM Applications ▪▪DMT242Replacement",
+        "Measurement range(Accuracy):- Td -60…+60℃(± 2ºC)",
+        "Outputs: 4...20mA(3 wire): RS485 or Modbus RTUOperation Environment: T -40…+60℃: RH 0…100%RH: Pressure 0…50bar"
+      ]
+    ]
+  ],
+  "gmd110": [
+    [
+      [
+        "MODEL",
+        "TYPE",
+        "FEATURES",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENTS",
+        "OUTPUT"
+      ],
+      [
+        "GMD20",
+        "DUCT",
+        "▪IP65▪ Display (Optional)▪ Easy one-to-one replacement▪ Excellent long-term stability",
+        "CO2 0…2000ppm(±2% + 2% RV)",
+        "0…20, 4…20mA0…10VRelay(option)"
+      ]
+    ]
+  ],
+  "gmw90": [
+    [
+      [
+        "MODEL",
+        "TYPE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENTS",
+        "OUTPUT",
+        "SPEC"
+      ],
+      [
+        "GMW90",
+        "GMW93",
+        "Wall",
+        "CO2+T",
+        "3-wire, voltage output",
+        "*Refer to the specifications below, depending\non each model measurement and output optionMeasurement range▪CO2 0…5000ppm▪Temperature -5…+55℃▪RH 0…95%Accuracy▪CO2 ±(30ppm+2% of\n  reading)(@+20..+30℃)▪Temperature ±0.5℃(@+20..+30℃)▪RH ±2.5%RH(@0…60%RH)OutputsCurrent: 0/4...20mA, 2 and 3 channel modelsVoltage: 0...5/10V, 2 and 3 channel modelsDigital: RS-485Operating Environment▪Operating\n  Temperature: -5…+55℃▪Storage Temperature: -30…+60℃▪Operating Humidity: 0...95%RH(Dewpoint <+30℃)"
+      ],
+      [
+        "GMW93D",
+        "Wall+Display",
+        "CO2+T",
+        "3-wire,\n  voltage output"
+      ],
+      [
+        "GMW94",
+        "Wall",
+        "CO2+T",
+        "3-wire,\n  current output"
+      ],
+      [
+        "GMW94D",
+        "Wall+Display",
+        "CO2+T",
+        "3-wire,\n  current output"
+      ],
+      [
+        "GMW93R",
+        "Wall",
+        "CO2+T+RH",
+        "3-wire,\n  voltage output"
+      ],
+      [
+        "GMW93RD",
+        "Wall+Display",
+        "CO2+T+RH",
+        "3-wire,\n  voltage output"
+      ],
+      [
+        "GMW93RA",
+        "Wall+Display+LED indicator",
+        "CO2+T+RH",
+        "3-wire,\n  voltage output"
+      ],
+      [
+        "GMW94R",
+        "Wall",
+        "CO2+T+RH",
+        "3-wire,\n  current output"
+      ],
+      [
+        "GMW94RD",
+        "Wall+Display",
+        "CO2+T+RH",
+        "3-wire,\n  current output"
+      ],
+      [
+        "GMW95",
+        "Wall",
+        "CO2+T",
+        "Digital(BACnet/Modbus)"
+      ],
+      [
+        "GMW95D",
+        "Wall+Display",
+        "CO2+T",
+        "Digital(BACnet/Modbus)"
+      ],
+      [
+        "GMW95R",
+        "Wall",
+        "CO2+T+RH",
+        "Digital(BACnet/Modbus)"
+      ],
+      [
+        "GMW95RD",
+        "Wall+Display",
+        "CO2+T+RH",
+        "Digital(BACnet/Modbus)"
+      ],
+      [
+        "GMW90",
+        "Wall",
+        "CO2+T",
+        "Configurable\n  analog/digital"
+      ],
+      [
+        "GMW90R",
+        "Wall",
+        "CO2+T+RH",
+        "Configurable\n  analog/digital"
+      ]
+    ],
+    [
+      [
+        "MODEL",
+        "TYPE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENTS",
+        "OUTPUT",
+        "SPEC"
+      ],
+      [
+        "GMW90",
+        "GMW93",
+        "Wall",
+        "CO2+T",
+        "3-wire, voltage output",
+        "*Refer to the specifications below, depending on each model measurement and output optionMeasurement range▪CO2 0…5000ppm▪Temperature -5…+55℃▪RH 0…95%Accuracy▪CO2 ±(30ppm+2% of reading)(@+20..+30℃)▪Temperature ±0.5℃(@+20..+30℃)▪RH ±2.5%RH(@0…60%RH)OutputsCurrent: 0/4...20mA, 2 and 3 channel modelsVoltage: 0...5/10V, 2 and 3 channel modelsDigital: RS-485Operating Environment▪Operating Temperature: -5…+55℃▪Storage Temperature: -30…+60℃▪Operating Humidity: 0...95%RH(Dewpoint <+30℃)"
+      ],
+      [
+        "GMW93D",
+        "Wall+Display",
+        "CO2+T",
+        "3-wire, voltage output"
+      ],
+      [
+        "GMW94",
+        "Wall",
+        "CO2+T",
+        "3-wire, current output"
+      ],
+      [
+        "GMW94D",
+        "Wall+Display",
+        "CO2+T",
+        "3-wire, current output"
+      ],
+      [
+        "GMW93R",
+        "Wall",
+        "CO2+T+RH",
+        "3-wire, voltage output"
+      ],
+      [
+        "GMW93RD",
+        "Wall+Display",
+        "CO2+T+RH",
+        "3-wire, voltage output"
+      ],
+      [
+        "GMW93RA",
+        "Wall+Display+LED indicator",
+        "CO2+T+RH",
+        "3-wire, voltage output"
+      ],
+      [
+        "GMW94R",
+        "Wall",
+        "CO2+T+RH",
+        "3-wire, current output"
+      ],
+      [
+        "GMW94RD",
+        "Wall+Display",
+        "CO2+T+RH",
+        "3-wire, current output"
+      ],
+      [
+        "GMW95",
+        "Wall",
+        "CO2+T",
+        "Digital(BACnet/Modbus)"
+      ],
+      [
+        "GMW95D",
+        "Wall+Display",
+        "CO2+T",
+        "Digital(BACnet/Modbus)"
+      ],
+      [
+        "GMW95R",
+        "Wall",
+        "CO2+T+RH",
+        "Digital(BACnet/Modbus)"
+      ],
+      [
+        "GMW95RD",
+        "Wall+Display",
+        "CO2+T+RH",
+        "Digital(BACnet/Modbus)"
+      ],
+      [
+        "GMW90",
+        "Wall",
+        "CO2+T",
+        "Configurable analog/digital"
+      ],
+      [
+        "GMW90R",
+        "Wall",
+        "CO2+T+RH",
+        "Configurable analog/digital"
+      ]
+    ]
+  ],
+  "dmt132": [
+    [
+      [
+        "MODEL",
+        "FEATURE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "DMT132",
+        "▪for Refrigerant Dryers▪Auto-calibration▪Chemical purging▪Optional LED Warning Light",
+        "Measurement range(Accuracy):- Td -30…+50℃(± 1ºC @\n  -3…20℃)",
+        "Outputs: 4...20mA(2 wire)Operating Voltage(Low power requirements): 10…28VDC"
+      ]
+    ],
+    [
+      [
+        "MODEL",
+        "FEATURE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "DMT132",
+        "▪for Refrigerant Dryers▪Auto-calibration▪Chemical purging▪Optional LED Warning Light",
+        "Measurement range(Accuracy):- Td -30…+50℃(± 1ºC @ -3…20℃)",
+        "Outputs: 4...20mA(2 wire)Operating Voltage(Low power requirements): 10…28VDC"
+      ]
+    ]
+  ],
+  "hm70": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "SPEC"
+      ],
+      [
+        "HM70",
+        "MI70Indicator",
+        "LCD display+buttons",
+        "▪Operating temperature: -10…+40℃▪LCD with Back light▪Data logging capacity (2,700points)▪ Audible alarm function▪ (Option) LINK software with USB cable"
+      ],
+      [
+        "HMP75Probe",
+        "General Purpose Probe(118mm)",
+        "▪Measurement range:- RH range: 0…100%- Temperature range: -20…+60℃▪Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃at 20℃"
+      ],
+      [
+        "HMP76Probe",
+        "Long, Stainless steel Probe(328mm)- Duct Spot checking",
+        "▪Measurement range:- RH range: 0…100%- Temperature range: -50…+120℃▪Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃at 20℃"
+      ],
+      [
+        "HMP77Probe",
+        "Small probe+5m cable- ideal for difficult-to-reach areas- on-site calibration",
+        "▪Measurement range:- RH range: 0…100%- Temperature range: -70…+180℃▪Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃at 20℃"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "SPEC"
+      ],
+      [
+        "HM70",
+        "MI70Indicator",
+        "LCD display+buttons",
+        "▪Operating temperature: -10…+40℃▪LCD with Back light▪Data logging capacity (2,700points)▪ Audible alarm function▪ (Option) LINK software with USB cable"
+      ],
+      [
+        "HMP75Probe",
+        "General Purpose Probe(118mm)",
+        "▪ Measurement range:- RH range: 0…100%- Temperature range: -20…+60℃▪ Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃ at 20℃"
+      ],
+      [
+        "HMP76Probe",
+        "Long, Stainless steel Probe(328mm)- Duct Spot checking",
+        "▪ Measurement range:- RH range: 0…100%- Temperature range: -50…+120℃▪ Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃ at 20℃"
+      ],
+      [
+        "HMP77Probe",
+        "Small probe+5m cable- ideal for difficult-to-reach areas- on-site calibration",
+        "▪ Measurement range:- RH range: 0…100%- Temperature range: -70…+180℃▪ Accuracy:- RH ±1%RH(0…90%RH)- T  ±0.2℃ at 20℃"
+      ]
+    ]
+  ],
+  "hmw90": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "측정값",
+        "FEATURES",
+        "TECHNICAL DATA"
+      ],
+      [
+        "SPEC",
+        "OUTPUT"
+      ],
+      [
+        "TMW90",
+        "TMW92",
+        "T-only",
+        "▪ Wall Type Transmitter▪ forHVAC, Cleanroom▪ Display Option (D; HMW92D, HMW93D, HMW9  5D)▪ On-site calibration▪ Housing: IP30",
+        "Measurement\n  range: T only▪Temperature range:  -5...+55°C (-23...+131 °F)Accuracy▪± 0.2ºC @ 20ºC",
+        "2-Wire\n  Current(4…20mA)"
+      ],
+      [
+        "TMW93",
+        "T-only",
+        "3-Wire\n  Voltage​(0…5 or 10V)"
+      ],
+      [
+        "TMW90",
+        "T-only",
+        "Configurable analog\n  output"
+      ],
+      [
+        "HMW90",
+        "HMW92",
+        "RH+T",
+        "Measurement\n  range: RH & T▪RH range: 0…100% RH▪Temperature\n  range:  -5...+55°C (-23...+131°F)Accuracy▪±1.7%RH(0…90%RH)▪± 0.2ºC @\n  20ºC",
+        "2-Wire\n  Current(4…20mA)"
+      ],
+      [
+        "HMW92D",
+        "RH+T",
+        "2-Wire\n  Current(4…20mA)"
+      ],
+      [
+        "HMW93",
+        "RH+T",
+        "3-Wire\n  Voltage​(0…5 or 10V)"
+      ],
+      [
+        "HMW93D",
+        "RH+T",
+        "3-Wire\n  Voltage​(0…5 or 10V)"
+      ],
+      [
+        "HMW90",
+        "RH+T",
+        "Configurable analog\n  output"
+      ],
+      [
+        "HMW95",
+        "RH+T",
+        "Digital(BACnet,\n  Modbus)"
+      ],
+      [
+        "HMW95D",
+        "RH+T",
+        "Digital(BACnet, Modbus)"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "Measurements",
+        "FEATURES",
+        "TECHNICAL DATA"
+      ],
+      [
+        "SPEC",
+        "OUTPUT"
+      ],
+      [
+        "TMW90",
+        "TMW92",
+        "T-only",
+        "▪Wall Type Transmitter▪ for HVAC, Cleanroom▪ Display Option(D; HMW92D, HMW93D, HMW9  5D)▪ On-site calibration▪ Housing: IP30",
+        "Measurement range: T only▪ Temperature range:  -5...+55°C (-23...+131 °F)Accuracy▪  ± 0.2ºC @ 20ºC",
+        "2-Wire Current(4…20mA)"
+      ],
+      [
+        "TMW93",
+        "T-only",
+        "3-Wire Voltage(0…5 or 10V)"
+      ],
+      [
+        "TMW90",
+        "T-only",
+        "Configurable analog output"
+      ],
+      [
+        "HMW90",
+        "HMW92",
+        "RH+T",
+        "Measurement range: RH & T▪ RH range: 0…100% RH▪ Temperature range:  -5...+55°C (-23...+131°F)Accuracy▪ ±1.7%RH(0…90%RH)▪ ± 0.2ºC @ 20ºC",
+        "2-Wire Current(4…20mA)"
+      ],
+      [
+        "HMW92D",
+        "RH+T",
+        "2-Wire Current(4…20mA)"
+      ],
+      [
+        "HMW93",
+        "RH+T",
+        "3-Wire Voltage(0…5 or 10V)"
+      ],
+      [
+        "HMW93D",
+        "RH+T",
+        "3-Wire Voltage(0…5 or 10V)"
+      ],
+      [
+        "HMW90",
+        "RH+T",
+        "Configurable analog output"
+      ],
+      [
+        "HMW95",
+        "RH+T",
+        "Digital(BACnet, Modbus)"
+      ],
+      [
+        "HMW95D",
+        "RH+T",
+        "Digital(BACnet, Modbus)"
+      ]
+    ]
+  ],
+  "dmt152": [
+    [
+      [
+        "MODEL",
+        "FEATURE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "DMT152",
+        "▪Auto-calibration▪Chemical\n  purging▪Compressed Air, Dry Chambers",
+        "Measurement range(Accuracy):- Td -100…+20℃(± 2ºC @\n  -80…-40℃)",
+        "Outputs: 0/4...20mA, 0...5/10V(2 Analog outputs): RS485(option)Operation Environment: T -40…+70℃: RH 0…100%RH: Pressure 0…50bar"
+      ]
+    ],
+    [
+      [
+        "MODEL",
+        "FEATURE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "DMT152",
+        "▪Auto-calibration▪Chemical purging▪Compressed Air, Dry Chambers",
+        "Measurement range(Accuracy):- Td -100…+20℃(± 2ºC @ -80…-40℃)",
+        "Outputs: 0/4...20mA, 0...5/10V(2 Analog outputs): RS485(option)Operation Environment: T -40…+70℃: RH 0…100%RH: Pressure 0…50bar"
+      ]
+    ]
+  ],
+  "hmk15": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "FEATURE﻿"
+      ],
+      [
+        "HMK15",
+        "Chamber",
+        "▪12/13.5/18.5mm Covers for Probe▪Themometer for Temperature-Monitor"
+      ],
+      [
+        "Solution",
+        "▪LiCl salt 11%RH;±1.3%RH▪MgCl2 salt 33%RH;\n  ±1.2%RH▪NaCl salt 75%RH;\n  ±1.5%RH▪K2SO4 salt 97%RH;\n  ±2.0%RH▪KCl salt 85%RH;\n  ±2.0%RH"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "FEATURE"
+      ],
+      [
+        "HMK15",
+        "Chamber",
+        "▪12/13.5/18.5mm Covers for Probe▪Themometer for Temperature-Monitor"
+      ],
+      [
+        "Solution",
+        "▪ LiCl salt 11%RH; ±1.3%RH▪ MgCl2 salt 33%RH; ±1.2%RH▪ NaCl salt 75%RH; ±1.5%RH▪ K2SO4 salt 97%RH; ±2.0%RH▪ KCl salt 85%RH; ±2.0%RH"
+      ]
+    ]
+  ],
+  "dss70a": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "SPEC"
+      ],
+      [
+        "DSS70A",
+        "DSS70A",
+        "Metal\n  treatment and plastics drying processes",
+        "Operating Environment:- Operating gases: Air, N2, and other non-toxic, inert gases- Inlet/outlet connection: 1/4\" Swagelok- Operating ambient Temerature: 0...+40℃- Operating process gas Temperature(w/ PTFE\n  tube): Max. +200℃- Operating pressure with pump: 0.6...1.2\n  bara- Operating pressure with pump disconnected: 0...20baraMechanical Spececifications:- Battery Operation Time for Pump: 8H continuous use (Battery can be recharged using DM70 Charger)- Filter: 7mm Inline Filter Cartridge 1/4\""
+      ],
+      [
+        "(Option)Sampling cell",
+        "DSC74",
+        "Sampling\n  cell for pressurized gases",
+        "-\n  Pressure limit: 1MPa- Multiple\nconnection adaptors can be applied to different installation environments"
+      ],
+      [
+        "DSC74B",
+        "Two\n  pressure sampling cell",
+        "-\n  Pressure limit: 1MP- Especially\nsuitable for dew point measurements in SF6 gas with the DMP74C probe"
+      ],
+      [
+        "DSC74C",
+        "DSC74B\n  + DMCOIL",
+        "- DSC\n74B with DMCOIL(Cooling/venting coil), optionally applicable to other sampling\ncells"
+      ],
+      [
+        "DMT242SC",
+        "Sampling\n  cell",
+        "-\n  Pressure limit: 10MPa"
+      ],
+      [
+        "DMT242SC2",
+        "Sampling\n  cell + Swagelokconnectors(1/4” pipeline)",
+        "-\n  Pressure limit: 4MPa"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "SPEC"
+      ],
+      [
+        "DSS70A",
+        "DSS70A",
+        "Metal treatment and plastics drying processes",
+        "Operating Environment:- Operating gases: Air, N2, and other non-toxic, inert gases- Inlet/outlet connection: 1/4\" Swagelok- Operating ambient Temerature: 0...+40℃- Operating process gas Temperature(w/ PTFE tube): Max. +200℃- Operating pressure with pump: 0.6...1.2 bara- Operating pressure with pump disconnected: 0...20baraMechanical Spececifications:- Battery Operation Time for Pump: 8H continuous use (Battery can be recharged using DM70 Charger)- Filter: 7mm Inline Filter Cartridge 1/4\""
+      ],
+      [
+        "(Option)Sampling cell",
+        "DSC74",
+        "Sampling cell for pressurized gases",
+        "- Pressure limit: 1MPa- Multiple connection adaptors can be applied to different installation environments"
+      ],
+      [
+        "DSC74B",
+        "Two pressure sampling cell",
+        "- Pressure limit: 1MP- Especially suitable for dew point measurements in SF6 gas with the DMP74C probe"
+      ],
+      [
+        "DSC74C",
+        "DSC74B + DMCOIL",
+        "- DSC 74B with DMCOIL(Cooling/venting coil), optionally applicable to other sampling cells"
+      ],
+      [
+        "DMT242SC",
+        "Sampling cell",
+        "- Pressure limit: 10MPa"
+      ],
+      [
+        "DMT242SC2",
+        "Sampling cell + Swagelokconnectors(1/4” pipeline)",
+        "- Pressure limit: 4MPa"
+      ]
+    ]
+  ],
+  "mmt330": [
+    [
+      [
+        "MODEL",
+        "Model/Application",
+        "TECHNICAL DATA"
+      ],
+      [
+        "FEATURES",
+        "INSTALLATION OPTION",
+        "SPEC"
+      ],
+      [
+        "MMT330",
+        "MMT332/ Flange type",
+        "▪ MAN Diesel & Turbo Two-Stroke Diesel Engine▪ DNV Certified▪ Button options for changing display and settings▪ Maximum cable length: 10m(MMT332), 20m(MMT337, MMT338)▪ IP66(without display)▪ Field-checking available with MM70",
+        "Pressure range: 0…250 barTemperature range: -40…+180℃",
+        "Measurement range:- Water Activity aw 0…1- Temperature -40…+180℃Outputs:2 Analog outputs(3rd optional)- 0/4...20mA, 0…1/5/10VDigital outputs- RS-232, RS-485(optional)Operation Environment: EMC compliance EN61326-1: Operating temperature- Probe for each temperature range-\n  Transmitter -40...+60℃-\n  Transmitter(w/ display) 0...+60℃"
+      ],
+      [
+        "MMT337/ Swagelok Connector type",
+        "Pressure range: 0…10 barTemperature range: -40…+180℃Fitting body: R 3/8\" ISO, 1/2\" ISO or\n  NPT1/2\""
+      ],
+      [
+        "MMT338/ Ball valve connector type",
+        "Pressure range: 0…10 barTemperature range: -40…+180℃Fitting body: R1/2\" ISO or\n  NPT1/2\"Ball-valve setSampling cell"
+      ]
+    ],
+    [
+      [
+        "MODEL",
+        "Model/Application",
+        "TECHNICAL DATA"
+      ],
+      [
+        "FEATURES",
+        "INSTALLATION OPTION",
+        "SPEC"
+      ],
+      [
+        "MMT330",
+        "MMT332/ Flange type",
+        "▪ MAN Diesel & Turbo Two-Stroke Diesel Engine▪ DNV Certified▪ Button options for changing display and settings▪ Maximum cable length: 10m(MMT332), 20m(MMT337, MMT338)▪ IP66(without display)▪ Field-checking available with MM70",
+        "Pressure range: 0…250 barTemperature range: -40…+180℃",
+        "Measurement range:- Water Activity aw 0…1- Temperature -40…+180℃Outputs:2 Analog outputs(3rd optional)- 0/4...20mA, 0…1/5/10VDigital outputs- RS-232, RS-485(optional)Operation Environment: EMC compliance EN61326-1: Operating temperature- Probe for each temperature range- Transmitter -40...+60℃- Transmitter(w/ display) 0...+60℃"
+      ],
+      [
+        "MMT337/ Swagelok Connector type",
+        "Pressure range: 0…10 barTemperature range: -40…+180℃Fitting body: R 3/8\" ISO, 1/2\" ISO or NPT1/2\""
+      ],
+      [
+        "MMT338/ Ball valve connector type",
+        "Pressure range: 0…10 barTemperature range: -40…+180℃Fitting body: R1/2\" ISO or NPT1/2\"Ball-valve setSampling cell"
+      ]
+    ]
+  ],
+  "dmt143": [
+    [
+      [
+        "MODEL",
+        "FEATURE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "DMT143",
+        "▪Auto-calibration▪Chemical\n  purging▪LEDAlarm▪Miniature Dew Point Measurement Instrument",
+        "Measurement range(Accuracy):- Td -70…+60℃(± 2ºC)",
+        "Outputs: 4...20mA, 0…1/5/10V: RS485 or Modbus RTUOperation Environment: T -40…+60℃: RH 0…100%RH: Pressure 0…50bar"
+      ]
+    ],
+    [
+      [
+        "MODEL",
+        "FEATURE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "DMT143",
+        "▪Auto-calibration▪Chemical purging▪LEDAlarm▪ Miniature Dew Point Measurement Instrument",
+        "Measurement range(Accuracy):- Td -70…+60℃(± 2ºC)",
+        "Outputs: 4...20mA, 0…1/5/10V: RS485 or Modbus RTUOperation Environment: T -40…+60℃: RH 0…100%RH: Pressure 0…50bar"
+      ]
+    ]
+  ],
+  "hmt370ex": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "TECHNICAL   DATA"
+      ],
+      [
+        "HMT370EX",
+        "HMT371",
+        "Wall Mount",
+        "RH   range: 0…100% RHTemperature range -40...+60°C(-40...+140°F)Probe diameter 12 mm",
+        "Accuracy▪  ±0.8%RH (0…90%)▪  ± 0.1℃ @ 23℃ PT1000Output▪ 2-Wire Current (4…20mA)IP rating▪ IP66(NEMA4)Operating Environment▪ Operating temperature for electronics -40…+60°C▪ Operating temperature with display -20…+60°C▪ Storage temperature -40…+70°CClassification▪ Korea (KTL) Ex ia IIC T4 Ga▪ Global (IECEx) Ex ia IIC T4 Ga▪ EU (ATEX) II 1G Ex ia IIC T4 Ga▪ Japan (CML) Ex ia IIC T4 Ga▪ China (NEPSI) Ex ia IIC T4 Ga"
+      ],
+      [
+        "HMT373",
+        "Confined Spaces",
+        "RH   range: 0…100% RHTemperature range withteflon cable   -40...+120°C(-40 ...   +248 °F)rubber  cable   -40...+80°C(-40 ... +176 °F)Probe cable length  2, 5 or 10   metersProbe diameter 12 mm"
+      ],
+      [
+        "HMT374",
+        "Pressurized Spaces",
+        "RH   range: 0…100% RHTemperature range     -70…+180°C(-94…+356 °F)Pressure range  0...10 MPaProbe cable length  2, 5 or 10   metersProbe diameter 12 mm"
+      ],
+      [
+        "HMT375",
+        "High Temperature",
+        "RH   range: 0…100% RHTemperature range     -70…+180°C(-94…+356 °F)Probe cable length  2, 5 or 10   metersProbe diameter 13.5 mm"
+      ],
+      [
+        "HMT377",
+        "High Humidity",
+        "RH   range: 0…100% RHTemperature range     -70…+180°C(-94…+356°F)Probe cable length  2, 5 or 10   metersProbe diameter 12mm"
+      ],
+      [
+        "HMT378",
+        "Pressurized Pipelines",
+        "RH   range: 0…100% RHTemperature range     -70…+180°C(-94…+356 °F)Pressure range 0…4MPaProbe cable length  2, 5 or 10   metersProbe diameter 13.5mm / 12mm"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "TECHNICAL   DATA"
+      ],
+      [
+        "HMT370EX",
+        "HMT371",
+        "Wall Mount",
+        "RH   range: 0…100% RHTemperature range -40...+60°C(-40...+140°F)Probe diameter 12 mm",
+        "Accuracy▪  ±0.8%RH (0…90%)▪  ± 0.1℃ @ 23℃ PT1000Output▪ 2-Wire Current (4…20mA)IP rating▪ IP66(NEMA4)Operating Environment▪ Operating temperature for electronics -40…+60°C▪ Operating temperature with display -20…+60°C▪ Storage temperature -40…+70°CClassification▪ Korea (KTL) Ex ia IIC T4 Ga▪ Global (IECEx) Ex ia IIC T4 Ga▪ EU (ATEX) II 1G Ex ia IIC T4 Ga▪ Japan (CML) Ex ia IIC T4 Ga▪ China (NEPSI) Ex ia IIC T4 Ga"
+      ],
+      [
+        "HMT373",
+        "Confined Spaces",
+        "RH   range: 0…100% RHTemperature range withteflon cable   -40...+120°C(-40 ...   +248 °F)rubber  cable   -40...+80°C(-40 ... +176 °F)Probe cable length  2, 5 or 10   metersProbe diameter 12 mm"
+      ],
+      [
+        "HMT374",
+        "Pressurized Spaces",
+        "RH   range: 0…100% RHTemperature range     -70…+180°C(-94…+356 °F)Pressure range  0...10 MPaProbe cable length  2, 5 or 10   metersProbe diameter 12 mm"
+      ],
+      [
+        "HMT375",
+        "High Temperature",
+        "RH   range: 0…100% RHTemperature range     -70…+180°C(-94…+356 °F)Probe cable length  2, 5 or 10   metersProbe diameter 13.5 mm"
+      ],
+      [
+        "HMT377",
+        "High Humidity",
+        "RH   range: 0…100% RHTemperature range     -70…+180°C(-94…+356°F)Probe cable length  2, 5 or 10   metersProbe diameter 12mm"
+      ],
+      [
+        "HMT378",
+        "Pressurized Pipelines",
+        "RH   range: 0…100% RHTemperature range     -70…+180°C(-94…+356 °F)Pressure range 0…4MPaProbe cable length  2, 5 or 10   metersProbe diameter 13.5mm / 12mm"
+      ]
+    ]
+  ],
+  "mht410": [
+    [
+      [
+        "MODEL",
+        "TYPE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "FEATURES",
+        "SPEC"
+      ],
+      [
+        "MHT410",
+        "Main_Online type",
+        "▪ Measurement of the condition of a real-time transformer▪ Can be installed directly in transformers▪ Installation Depth Adjustable Probe▪ Moisture, Hydrogen, Temperature Measurement▪ IP66▪ 5 years of general warranty",
+        "Measurement range(Accuracy):- Hydrogen in oil0...5000ppmv(±20% of reading or\n  ±25ppmv)- Moisture in oil0...100%RS / aw 0...1(±2%RS / aw\n  ±0...1)- Temperature-40...+120℃(±0.2℃)Inputs and Outputs:- Operating voltage: 15...30VDC,\n  24VAC- Analog output(Current):3 isolated 4...20mA(loop\n  powering)- Digital outputs: Isolated RS-485\n  half-duplex/ RS-485(Service port,\n  non-isolated)Protocols: Modbus RTU, DNP3,\n  serial ASCII"
+      ],
+      [
+        "(option) Display_External installation"
+      ]
+    ],
+    [
+      [
+        "MODEL",
+        "TYPE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "FEATURES",
+        "SPEC"
+      ],
+      [
+        "MHT410",
+        "Main_Online type",
+        "▪ Measurement of the condition of a real-time transformer▪ Can be installed directly in transformers▪ Installation Depth Adjustable Probe▪ Moisture, Hydrogen, Temperature Measurement▪ IP66▪ 5 years of general warranty",
+        "Measurement range(Accuracy):- Hydrogen in oil0...5000ppmv(±20% of reading or ±25ppmv)- Moisture in oil  0...100%RS / aw 0...1(±2%RS / aw ±0...1)- Temperature -40...+120℃(±0.2℃)Inputs and Outputs: - Operating voltage: 15...30VDC, 24VAC- Analog output(Current):3 isolated 4...20mA(loop powering)- Digital outputs: Isolated RS-485 half-duplex/ RS-485(Service port, non-isolated)Protocols: Modbus RTU, DNP3, serial ASCII"
+      ]
+    ]
+  ],
+  "gmp231": [
+    [
+      [
+        "MODEL",
+        "TYPE",
+        "APPLICATION",
+        "FEATURES",
+        "TECHNICAL\n  DATA"
+      ],
+      [
+        "SPEC"
+      ],
+      [
+        "GMP231",
+        "Probe type",
+        "CO2 Incubator",
+        "▪ Max. Temperature durability in standby mode (sensor head only)▪ High accuracy and stability as temperature and pressure can be compensated▪ Strong in sterilizing chemicals such as hydrogen peroxide and ethanol▪ Sensor head heating for condensation prevention",
+        "Measurement range▪0…20% CO2Accuracy▪±0.1%CO2(@ 5%CO2)Outputs▪Digital output I2C\n  5 V, RS-485(2-wire with Vaisalaindustrial protocol)▪Analog output\n  4…20mA"
+      ]
+    ],
+    [
+      [
+        "MODEL",
+        "TYPE",
+        "APPLICATION",
+        "FEATURES",
+        "TECHNICAL DATA"
+      ],
+      [
+        "SPEC"
+      ],
+      [
+        "GMP231",
+        "Probe type",
+        "CO2 Incubator",
+        "▪ Max. Temperature durability in standby mode (sensor head only)▪ High accuracy and stability as temperature and pressure can be compensated▪ Strong in sterilizing chemicals such as hydrogen peroxide and ethanol▪ Sensor head heating for condensation prevention",
+        "Measurement range▪ 0…20% CO2Accuracy▪  ±0.1%CO2(@ 5%CO2)Outputs▪ Digital output I2C 5 V, RS-485(2-wire with Vaisalaindustrial protocol)▪ Analog output 4…20mA"
+      ]
+    ]
+  ],
+  "hmd60": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "FEATURES",
+        "TECHNICAL DATA"
+      ],
+      [
+        "SPEC",
+        "OUTPUT"
+      ],
+      [
+        "HMD60",
+        "HMD62",
+        "Duct type",
+        "▪ for HVAC, Cleanroom▪ Aluminium body▪ Probe length: 250mm (HMD60/TMD60 can select 100mm short probe)▪ IP66(NEMA 4X)",
+        "Measurement range: RH & T▪RH range: 0…100%\n  RH▪Temperature\n  range:  -20..+80°C (-4...+176°F)Accuracy▪±1.5%RH (0…90%)▪± 0.1ºC @ 20ºC PT1000",
+        "▪2 analog outputs, 4…20 mA"
+      ],
+      [
+        "TMD62",
+        "Duct type",
+        "Measurement range: T only▪Temperature\n  range:  -20..+80°C (-4...+176°F)Accuracy▪± 0.1ºC @ 20ºC PT1000",
+        "▪1 analog output, 4…20 mA"
+      ],
+      [
+        "HMD65",
+        "Duct type",
+        "Measurement range: RH & T▪RH range: 0…100%\n  RH▪Temperature\n  range:  -20..+80°C (-4...+176°F)Accuracy▪±1.5%RH (0…90%)▪± 0.1ºC @ 20ºC PT1000",
+        "▪2 analog outputs, 0…10 VDigital output: BACnet MS/TP, ModbusRTU"
+      ],
+      [
+        "HMD60",
+        "Duct type",
+        "Measurement range: RH & T▪RH range: 0…100%\n  RH▪Temperature\n  range:  -20..+80°C (-4...+176°F)Accuracy▪±1.5%RH (0…90%)▪± 0.1ºC @ 20ºC PT1000",
+        "▪Configurable outputs and scale,\n  shortprobe option"
+      ],
+      [
+        "TMD60",
+        "Duct type",
+        "Measurement range: T only▪Temperature\n  range:  -20..+80°C (-4...+176°F)Accuracy▪± 0.1ºC @ 20ºC PT1000",
+        "▪1 analog output (4…20 mA,\n  configurablescale), short probe option"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "FEATURES",
+        "TECHNICAL DATA"
+      ],
+      [
+        "SPEC",
+        "OUTPUT"
+      ],
+      [
+        "HMD60",
+        "HMD62",
+        "Duct type",
+        "▪for HVAC, Cleanroom▪ Aluminium body▪ Probe length: 250mm(HMD60/TMD60 can select 100mm short probe)▪ IP66(NEMA 4X)",
+        "Measurement range: RH & T▪ RH range: 0…100% RH▪ Temperature range:  -20..+80°C (-4...+176°F)Accuracy▪  ±1.5%RH (0…90%)▪  ± 0.1ºC @ 20ºC PT1000",
+        "▪ 2 analog outputs, 4…20 mA"
+      ],
+      [
+        "TMD62",
+        "Duct type",
+        "Measurement range: T only▪ Temperature range:  -20..+80°C (-4...+176°F)Accuracy▪  ± 0.1ºC @ 20ºC PT1000",
+        "▪ 1 analog output, 4…20 mA"
+      ],
+      [
+        "HMD65",
+        "Duct type",
+        "Measurement range: RH & T▪ RH range: 0…100% RH▪ Temperature range:  -20..+80°C (-4...+176°F)Accuracy▪  ±1.5%RH (0…90%)▪  ± 0.1ºC @ 20ºC PT1000",
+        "▪ 2 analog outputs, 0…10 VDigital output: BACnet MS/TP, ModbusRTU"
+      ],
+      [
+        "HMD60",
+        "Duct type",
+        "Measurement range: RH & T▪ RH range: 0…100% RH▪ Temperature range:  -20..+80°C (-4...+176°F)Accuracy▪  ±1.5%RH (0…90%)▪  ± 0.1ºC @ 20ºC PT1000",
+        "▪ Configurable outputs and scale, shortprobe option"
+      ],
+      [
+        "TMD60",
+        "Duct type",
+        "Measurement range: T only▪ Temperature range:  -20..+80°C (-4...+176°F)Accuracy▪  ± 0.1ºC @ 20ºC PT1000",
+        "▪ 1 analog output (4…20 mA, configurablescale), short probe option"
+      ]
+    ]
+  ],
+  "mmt310": [
+    [
+      [
+        "MODEL",
+        "Model/Application",
+        "TECHNICAL DATA"
+      ],
+      [
+        "FEATURES",
+        "SPEC",
+        "INSTALLATION OPTION"
+      ],
+      [
+        "MMT310",
+        "MMT317",
+        "▪ Continuous measurement of moisture in oil▪ max. cable length: 10m▪IP66",
+        "Measurement range:- Water Activity aw 0…1(0…100%RS)- Temperature -40…+180℃Outputs:2 Analog outputs(3rd optional)- 0/4...20mA, 0…1/5/10VSerial output- RS-232C",
+        "Small pressure tight probe- Swagelok: NPT 1/2\", ISO 3/8\" or ISO 1/2\"- Pressure range: 0…10bar"
+      ],
+      [
+        "MMT318",
+        "Pressurized pipelines- Fitting body: ISO 1/2\", NPT 1/2\"- Pressure range(with ball-valve up to 120℃): 0…40bar"
+      ]
+    ],
+    [
+      [
+        "MODEL",
+        "Model/Application",
+        "TECHNICAL DATA"
+      ],
+      [
+        "FEATURES",
+        "SPEC",
+        "INSTALLATION OPTION"
+      ],
+      [
+        "MMT310",
+        "MMT317",
+        "▪ Continuous measurement of moisture in oil▪ max. cable length: 10m▪IP66",
+        "Measurement range:- Water Activity aw 0…1(0…100%RS)- Temperature -40…+180℃Outputs:2 Analog outputs(3rd optional)- 0/4...20mA, 0…1/5/10VSerial output- RS-232C",
+        "Small pressure tight probe- Swagelok: NPT 1/2\", ISO 3/8\" or ISO 1/2\"- Pressure range: 0…10bar"
+      ],
+      [
+        "MMT318",
+        "Pressurized pipelines- Fitting body: ISO 1/2\", NPT 1/2\"- Pressure range(with ball-valve up to 120℃): 0…40bar"
+      ]
+    ]
+  ],
+  "hm40": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "특징",
+        "SPEC"
+      ],
+      [
+        "HM40",
+        "HM41",
+        "RH&T\n  meter for general use",
+        "▪ Fixed Probe▪ Sensor one-to-one replaceable",
+        "▪Measurement range:- RH range: 0…100%- Temperature range: -10…+60℃▪Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2℃at 20℃"
+      ],
+      [
+        "HM42",
+        "RH&T\n  meter for tight spaces",
+        "▪ Thin 4mm diameter probe▪ 150mm cable▪ Stainless steel Probe",
+        "▪Measurement range:- RH range: 0…100%- Temperature range: -40…+100℃▪Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2℃at 20℃"
+      ],
+      [
+        "HM45",
+        "RH&T\n  meter with remote probe",
+        "▪ Sensor one-to-one replaceable▪ 120mm cable▪ Stainless Steel Probe",
+        "▪Measurement range:- RH range: 0…100%- Temperature range: -40…+60℃▪Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2℃at 20℃"
+      ],
+      [
+        "HM46",
+        "RH&T\n  meter for mechanical durability and extra reach",
+        "▪ Stainless Steel Probe, Brass Filter▪ 150mm Cable",
+        "▪Measurement range:- RH range: 0…100%- Temperature range: -40…+100℃▪Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2℃at 20℃"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "특징",
+        "SPEC"
+      ],
+      [
+        "HM40",
+        "HM41",
+        "RH&T meter for general use",
+        "▪ Fixed Probe▪ Sensor one-to-one replaceable",
+        "▪ Measurement range:- RH range: 0…100%- Temperature range: -10…+60℃▪ Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2℃ at 20℃"
+      ],
+      [
+        "HM42",
+        "RH&T meter for tight spaces",
+        "▪ Thin 4mm diameter probe▪ 150mm cable▪ Stainless steel Probe",
+        "▪ Measurement range:- RH range: 0…100%- Temperature range: -40…+100℃▪ Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2℃ at 20℃"
+      ],
+      [
+        "HM45",
+        "RH&T meter with remote probe",
+        "▪ Sensor one-to-one replaceable▪ 120mm cable▪ Stainless Steel Probe",
+        "▪ Measurement range:- RH range: 0…100%- Temperature range: -40…+60℃▪ Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2℃ at 20℃"
+      ],
+      [
+        "HM46",
+        "RH&T meter for mechanical durability and extra reach",
+        "▪ Stainless Steel Probe, Brass Filter▪ 150mm Cable",
+        "▪ Measurement range:- RH range: 0…100%- Temperature range: -40…+100℃▪ Accuracy:- RH ±1.5%RH(0…90%RH)- T  ±0.2℃ at 20℃"
+      ]
+    ]
+  ],
+  "dpt146": [
+    [
+      [
+        "MODEL",
+        "FEATURE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "DPT146",
+        "▪for Monitoring Compressed Air▪Simultaneous Measurement Dew point and Process Pressure▪Digital Output RS-485 with Modbus",
+        "Measurement range(Accuracy):- Td -70…+30℃(± 2ºC)- Pressure 1…12bar(±0.4%FS)- T(RS-485 only) -40…+80℃",
+        "Outputs: 0/4…20mA, 0…5/10V: RS-485, Modbus RTU, Vaisala protocolOperation Environment: T -40…+60℃: RH 0…100%RH: Pressure 0…50bar"
+      ]
+    ],
+    [
+      [
+        "MODEL",
+        "FEATURE",
+        "TECHNICAL DATA"
+      ],
+      [
+        "MEASUREMENT RANGE",
+        "SPEC"
+      ],
+      [
+        "DPT146",
+        "▪for Monitoring Compressed Air▪ Simultaneous Measurement Dew point and Process Pressure▪Digital Output RS-485 with Modbus",
+        "Measurement range(Accuracy):- Td -70…+30℃(± 2ºC)- Pressure 1…12bar(± 0.4%FS)- T(RS-485 only) -40…+80℃",
+        "Outputs: 0/4…20mA, 0…5/10V: RS-485, Modbus RTU, Vaisala protocolOperation Environment: T -40…+60℃: RH 0…100%RH: Pressure 0…50bar"
+      ]
+    ]
+  ],
+  "hmdw110": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "SPEC",
+        "Output"
+      ],
+      [
+        "HMW110",
+        "HMW110",
+        "Wall type",
+        "Measurement range: RH & T▪RH range: 0…100% RH▪Temperature\n  range:  -40..+60°CCalculated Parameters▪Td & wet bulb T\n  -40…+60°C▪Enthalpy -40 ...\n  460 kJ/kgAccuracy▪± 2%RH (0…90%)▪± 0.2ºC @ 20ºC PT1000",
+        "2-wire\n  current(4…20mA)or Modbus RTU output"
+      ],
+      [
+        "HMW112",
+        "Wall type",
+        "2-wire current\n  output(4…20mA)"
+      ],
+      [
+        "HMD110",
+        "HMD110",
+        "Duct type",
+        "2-wire\n  current(4…20mA)or Modbus RTU output"
+      ],
+      [
+        "HMD112",
+        "Duct type",
+        "2-wire current\n  output(4…20mA)"
+      ],
+      [
+        "HMS110",
+        "HMS110",
+        "Outdoor\ntype(RH +T)",
+        "2-wire\n  current(4…20mA)or Modbus RTU output"
+      ],
+      [
+        "HMS112",
+        "Outdoor\ntype(RH +T)",
+        "2-wire current\n  output(4…20mA)"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "SPEC",
+        "Output"
+      ],
+      [
+        "HMW110",
+        "HMW110",
+        "Wall type",
+        "Measurement range: RH & T▪ RH range: 0…100% RH▪ Temperature range:  -40..+60°CCalculated Parameters▪ Td & wet bulb T -40…+60°C▪ Enthalpy -40 ... 460 kJ/kgAccuracy▪  ± 2%RH (0…90%)▪  ± 0.2ºC @ 20ºC PT1000",
+        "2-wire current(4…20mA)or Modbus RTU output"
+      ],
+      [
+        "HMW112",
+        "Wall type",
+        "2-wire current output(4…20mA)"
+      ],
+      [
+        "HMD110",
+        "HMD110",
+        "Duct type",
+        "2-wire current(4…20mA)or Modbus RTU output"
+      ],
+      [
+        "HMD112",
+        "Duct type",
+        "2-wire current output(4…20mA)"
+      ],
+      [
+        "HMS110",
+        "HMS110",
+        "Outdoor type(RH +T)",
+        "2-wire current(4…20mA)or Modbus RTU output"
+      ],
+      [
+        "HMS112",
+        "Outdoor type(RH +T)",
+        "2-wire current output(4…20mA)"
+      ]
+    ]
+  ],
+  "gmp343": [
+    [
+      [
+        "MODEL",
+        "TYPE",
+        "APPLICATION",
+        "FEATURES",
+        "TECHNICAL\n  DATA"
+      ],
+      [
+        "SPEC"
+      ],
+      [
+        "GMP343",
+        "Diffusion",
+        "CO2 soil respiration, ambient CO2 monitoring, plant growth chamners and OEM applications",
+        "▪ Excellent accuracy and stability▪ Silicon-based non-dispersive infrared (NDIR) sensor▪ Dual wavelength▪ Temperature, Pressure, Humidity, Oxygen Correction Options▪ Available outdoors",
+        "Measurement range▪0...1000/2000/3000/4000/5000ppm, 0…2%Accuracy▪±(3ppm+1% of reading) at 1000ppmIP rating▪IP67(Housing)IP65(Diffusion filter_weather\n  protection)IP66(Diffusion filter_sintered\n  PTFE)Outputs▪4…20mA▪0….2.5V,\n  0...5V▪RS-485, RS232"
+      ],
+      [
+        "Flow through"
+      ]
+    ],
+    [
+      [
+        "MODEL",
+        "TYPE",
+        "APPLICATION",
+        "FEATURES",
+        "TECHNICAL DATA"
+      ],
+      [
+        "SPEC"
+      ],
+      [
+        "GMP343",
+        "Diffusion",
+        "CO2 soil respiration, ambient CO2 monitoring, plant growth chamners and OEM applications",
+        "▪ Excellent accuracy and stability▪ Silicon-based non-dispersive infrared (NDIR) sensor▪ Dual wavelength▪ Temperature, Pressure, Humidity, Oxygen Correction Options▪ Available outdoors",
+        "Measurement range▪ 0...1000/2000/3000/4000/5000ppm, 0…2%Accuracy▪  ±(3ppm+1% of reading) at 1000ppmIP rating▪ IP67(Housing)IP65(Diffusion filter_weather protection)IP66(Diffusion filter_sintered PTFE)Outputs▪ 4…20mA▪ 0….2.5V, 0...5V▪ RS-485, RS232"
+      ]
+    ]
+  ],
+  "gmp251": [
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "FEATURES",
+        "SPEC"
+      ],
+      [
+        "GMP251&GMP252",
+        "GMP251",
+        "life science incubators,cold storages,fruit and vegetabletransportation",
+        "▪ Measurement Range: 0…20%(Accuracy: ±0.1%CO2 @ 5% CO2)▪ IP65 classified housing▪ Sensor head heated to prevent condensation▪ Compatible with Indigo200 transmitters and VAISALA Insight",
+        "Operating Environment: Temperature -40…60℃:\n  Humidity 0…100%: Pressure 500…1100hPaOutputs: Digital outputModbus / Vaisala industrial\n  Protocol: Analog output 0…5/10V, 0/4…20mA"
+      ],
+      [
+        "GMP",
+        "agriculture, refrigeration,greenhouses anddemanding HVACapplications",
+        "▪ Measurement range: 0…10,000ppmCO2(Accuracy: ±40%CO2 @ 0…3000ppmCO2)▪ IP65 classified housing▪ Sensor head heated to prevent condensation▪ Compatible with Indigo200 transmitters and VAISALA Insight"
+      ],
+      [
+        "Indigo200SeriesTransmitter",
+        "INDIGO201",
+        "Plug & Play Transmitter",
+        "▪ CH3, Analog output (V&mA)▪2 relays▪ Display options available",
+        "• Temperature of use : -40...+60°C /Display Model: -20...+60℃• IP Rating: IP65• 24V Input Power• Connecting to a mobile phone via Wi-fi withoutanyprograms, check the measured values andchangesettings immediately.• VAISALA compatible probe- CO2 probes: GMP251 and GMP252- H2O2 probe: HPP271,HPP272- RH & T probes: HMP4, HMP5, HMP7\n  and HMP8- Temperature probe: TMP1"
+      ],
+      [
+        "INDIGO202",
+        "Plug & Play Transmitter",
+        "▪RS485, isolated w/ Modbus\n  RTU▪2 relays▪ Display version only"
+      ]
+    ],
+    [
+      [
+        "CATEGORY",
+        "MODEL",
+        "APPLICATION",
+        "FEATURES",
+        "SPEC"
+      ],
+      [
+        "GMP251&GMP252",
+        "GMP251",
+        "life science incubators,cold storages,fruit and vegetabletransportation",
+        "▪ Measurement Range: 0…20%(Accuracy: ±0.1%CO2 @ 5% CO2)▪ IP65 classified housing▪ Sensor head heated to prevent condensation▪ Compatible with Indigo200 transmitters and VAISALA Insight",
+        "Operating Environment : Temperature -40…60℃: Humidity 0…100%: Pressure 500…1100hPaOutputs : Digital outputModbus / Vaisala industrial Protocol: Analog output 0…5/10V, 0/4…20mA"
+      ],
+      [
+        "GMP",
+        "agriculture, refrigeration, greenhouses and demanding HVACapplications",
+        "▪ Measurement range: 0…10,000ppmCO2(Accuracy: ±40%CO2 @ 0…3000ppmCO2)▪ IP65 classified housing▪ Sensor head heated to prevent condensation▪ Compatible with Indigo200 transmitters and VAISALA Insight"
+      ],
+      [
+        "Indigo200SeriesTransmitter",
+        "INDIGO201",
+        "Plug & Play Transmitter",
+        "▪ CH3, Analog output (V&mA)▪2 relays▪ Display options available",
+        "• Temperature of use : -40...+60°C /Display Model: -20...+60℃• IP Rating: IP65• 24V Input Power• Connecting to a mobile phone via Wi-fi withoutany  programs, check the measured values andchange settings immediately.• VAISALA compatible probe- CO2 probes: GMP251 and GMP252- H2O2 probe: HPP271,HPP272- RH & T probes: HMP4, HMP5, HMP7 and HMP8- Temperature probe: TMP1"
+      ],
+      [
+        "INDIGO202",
+        "Plug & Play Transmitter",
+        "▪RS485, isolated w/ Modbus RTU▪2 relays▪ Display version only"
+      ]
+    ]
+  ]
+}

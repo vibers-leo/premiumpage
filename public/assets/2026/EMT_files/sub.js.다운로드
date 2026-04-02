@@ -1,0 +1,382 @@
+document.addEventListener("DOMContentLoaded", function () {
+  safeRun(sub_company, "sub_company");
+  safeRun(sub_products, "sub_products");
+  safeRun(sub_esg, "sub_esg");
+  safeRun(sub_ring_highlight, "sub_ring_highlight");
+  safeRun(sub_fade_up, "sub_fade_up");
+  safeRun(sub_faq, "sub_faq");
+  safeRun(sub_table_rspn, "sub_table_rspn");
+});
+
+function sub_table_rspn() {
+  const table = document.querySelector('.table-board-list');
+  if (!table) return;
+
+  const tbody = table.querySelector('tbody');
+  if (!tbody) return;
+
+  const mobileList = document.createElement('ul');
+  mobileList.className = 'mobile-board-list';
+
+  const rows = tbody.querySelectorAll('tr');
+
+  rows.forEach((tr) => {
+
+    const empty = tr.querySelector('td.empty');
+    if(empty) {
+      const li = document.createElement('li');
+      li.className = 'empty';
+      li.innerHTML = `<div class="no-data">등록된 게시물이 없습니다.</div>`;
+      mobileList.appendChild(li)
+
+      
+    }else{
+
+      const titleEl = tr.querySelector('.title a');
+      const title = titleEl ? titleEl.textContent.trim() || '-' : '-';
+      const onclick = titleEl ? titleEl.getAttribute('onclick') || '' : '';
+  
+      // 답변 배지 or 상태 배지
+      const badgeEl = tr.querySelector('.answr .badge') || tr.querySelector('.status .badge');
+      const badge = badgeEl ? badgeEl.outerHTML : '';
+  
+      // 메타 정보 추출 (.num, .title, .answr, .status 제외)
+      const tds = Array.from(tr.children);
+      const metas = tds
+        .filter(
+          (td) =>
+            !td.classList.contains('num') &&
+            !td.classList.contains('title') &&
+            !td.classList.contains('answr') &&
+            !td.classList.contains('status')
+        )
+        .map((td) => {
+          const text = td.textContent.trim();
+          if (!text) return '';
+  
+          const headerIndex = Array.from(tr.children).indexOf(td);
+          const header = table.querySelector(`thead th:nth-child(${headerIndex + 1})`);
+          const headerText = header ? header.textContent.trim() : '';
+  
+          return `
+            <li>
+              <span class="tit">${headerText}</span>
+              <span>${text}</span>
+            </li>
+          `;
+        })
+        .join('');
+  
+      const li = document.createElement('li');
+      li.className = 'board-item';
+      li.innerHTML = `
+        <a href="#none" ${onclick ? `onclick="${onclick}"` : ''}>
+          ${badge}
+          <div class="item-title">${title}</div>
+          <ul class="meta">${metas}</ul>
+        </a>
+      `;
+      mobileList.appendChild(li);
+    }
+
+
+  });
+
+  table.insertAdjacentElement('afterend', mobileList);
+}
+
+function sub_fade_up() {
+  const fadeElements = document.querySelectorAll("[data-fade-up]");
+  fadeElements.forEach((el) => {
+    gsap.fromTo(el, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, scrollTrigger: { trigger: el, start: "top 90%" } });
+  });
+}
+
+function sub_ring_highlight() {
+  const TIMING = 1500;
+  const list = document.querySelectorAll(".ring-list");
+  if (!list.length) return;
+
+  list.forEach((container) => {	
+    const items = container.querySelectorAll(".ring-item");
+    if(container.classList.contains("pause")){
+		items.forEach(item => item.classList.add("active"))
+		return;
+	};
+	
+    let currentIndex = 0;
+    
+    setInterval(() => {
+      items.forEach((item) => item.classList.remove("active"));
+      currentIndex = (currentIndex + 1) % items.length;
+      items[currentIndex].classList.add("active");
+    }, TIMING);
+  });
+}
+
+function sub_products() {
+  const flag = document.querySelector(".sub-products");
+  if (!flag) return;
+
+  function zoomImage() {
+    const zoomBtn = document.querySelector(".sub-products .zoom-btn");
+    const img = document.querySelector(".sub-products .product-img .img");
+
+    if (!zoomBtn || !img) return;
+
+    zoomBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const overlay = document.createElement("div");
+      overlay.classList.add("fullscreen");
+      overlay.innerHTML = `
+        <div class="img-frame">
+          <img src="${img.src}" alt="Zoomed Image">
+        </div>
+      `;
+
+      document.body.appendChild(overlay);
+    });
+
+    document.body.addEventListener("click", (e) => {
+      if (e.target.closest(".fullscreen")) {
+        const overlay = document.querySelector(".fullscreen");
+        if (overlay) {
+          document.body.removeChild(overlay);
+        }
+      }
+    });
+
+    document.body.addEventListener(
+      "wheel",
+      (e) => {
+        if (e.target.closest(".fullscreen")) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      },
+      { passive: false }
+    );
+  }
+
+  function init() {
+    zoomImage();
+  }
+
+  init();
+}
+
+function sub_company() {
+  const flag = document.querySelector(".sub-company");
+  if (!flag) return;
+
+  function headerAnimation() {
+    const header = document.querySelector(".sub-company");
+    if (!header) return;
+
+    const img = document.querySelector(".sub-company .header-bg img");
+
+    if (img.complete) {
+      gsap.to(img, { opacity: 1, scale: 1, duration: 1 });
+    } else {
+      img.addEventListener("load", () => {
+        gsap.to(img, { opacity: 1, scale: 1, duration: 1 });
+      });
+    }
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".sub-company .section-header",
+          start: "top top",
+          end: () => {
+            const content = document.querySelector(
+              ".sub-company .header-content .inner"
+            );
+            return "+=" + ((content?.offsetHeight || 0) + 200);
+          },
+          // pin: ".sub-company .header-bg img",
+          // pinSpacing: true,
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      })
+      .to(".sub-company .header-bg", {
+        opacity: 0.2,
+        duration: 1,
+        ease: "power3.out",
+      });
+  }
+
+  function countUpAnimation() {
+    const countElements = document.querySelectorAll(
+      ".sub-company .count-number .number"
+    );
+
+    countElements.forEach((el) => {
+      const endVal = parseInt(el.dataset.number, 10) || 0;
+      const count = new countUp.CountUp(el, endVal, {
+        duration: 2,
+        separator: ",",
+      });
+
+      ScrollTrigger.create({
+        trigger: ".company-count",
+        start: "top 80%",
+        once: true,
+        onEnter: () => {
+          if (!count.error) {
+            count.start();
+          } else {
+            console.error(count.error);
+          }
+        },
+      });
+    });
+  }
+
+  function marqueeAnimation() {
+    const marqueeContainers = document.querySelectorAll(
+      ".sub-company .marquee .swiper"
+    );
+
+    marqueeContainers.forEach((container, index) => {
+      const swiper = new Swiper(container, {
+        slidesPerView: "auto",
+        spaceBetween: 12,
+        autoplay: {
+          delay: 0,
+          reverseDirection: index === 1 ? true : false,
+        },
+        speed: 10000,
+        allowTouchMove: false,
+        loop: true,
+        grabCursor: false,
+        mousewheelControl: false,
+        keyboardControl: false,
+        disableOnInteraction: false,
+      });
+    });
+  }
+
+  function industrySlide() {
+    const container = document.querySelector(
+      ".sub-company .company-industry .swiper"
+    );
+    if (!container) return;
+
+    const swiper = new Swiper(container, {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      loop: true,
+      effect: "fade",
+      fadeEffect: { crossFade: true },
+      allowTouchMove: false,
+      grabCursor: false,
+      mousewheelControl: false,
+      keyboardControl: false,
+      disableOnInteraction: false,
+    });
+
+    const tabBtns = document.querySelectorAll(
+      ".sub-company .company-industry .tab-btn"
+    );
+
+    tabBtns.forEach((btn, index) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        if(window.innerWidth < 1024) return;
+
+        tabBtns.forEach((b) => (b.dataset.open = false));
+
+        btn.dataset.open = true;
+        swiper.slideToLoop(index);
+        tabBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
+    });
+  }
+
+  function init() {
+    headerAnimation();
+    countUpAnimation();
+    marqueeAnimation();
+    industrySlide();
+  }
+
+  init();
+}
+
+function sub_esg() {
+  const flag = document.querySelector(".sub-esg");
+  if (!flag) return;
+
+  function slide() {
+    const container = document.querySelectorAll(".infograph-slide");
+
+    container.forEach((cont) => {
+      const swiper = new Swiper(cont, {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          }
+        }
+      });
+    });
+  }
+  
+  function riveAnimation(){
+	const canvas = document.querySelector('.esg-canvas');
+	if(!canvas) return;
+	
+	const r = new rive.Rive({
+        src: "/share/portal/img/sub/about/emt.riv",
+        canvas: canvas,
+        autoplay: true,
+        stateMachines: "bumpy",
+        onLoad: () => {
+          r.resizeDrawingSurfaceToCanvas();
+        },
+    });
+	
+  }
+
+  function init() {
+    //slide();
+    //riveAnimation();
+  }
+
+  init();
+}
+
+function sub_faq() {
+  const flag = document.querySelector(".faq-list");
+
+  if (!flag) return;
+
+  function faqToggle() {
+    const $items = $('.faq-list .item-q');
+    
+    $items.on('click', function(e) {
+      e.preventDefault();
+
+      $('.faq-list .item-a').stop().slideUp();
+      $(this).siblings('.item-a').stop().slideDown();
+
+    })
+  }
+
+  function init() {
+    faqToggle();
+  }
+
+  init();
+}

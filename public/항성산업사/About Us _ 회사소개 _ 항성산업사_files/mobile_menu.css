@@ -1,0 +1,63 @@
+@media screen and (max-width:1200px) {
+
+.mobile_menu > ul > li:nth-child(1) > div {display: inline-block;}
+
+    .footer_text{margin-top: 30px; text-align: center;}
+    .wrap_header{display: none;}
+    .header_block{display: none;}
+    #hd_wrapper{display:block!important;}
+.header_bottom_boder{display: none;}
+.header_wrapper{display: none;}
+#aside{display: block!important;}
+
+#tnb ul { width: 100%; }
+#hd_wrapper { width: 100%; height:80px; background:#fff;margin: auto;  }
+
+#logo {width: calc(100% - 20px); margin-left: 10px; float:left;padding:20px 0 0; text-align: center; }
+#logo > span { display: block; float: left; cursor: pointer; font-size: 25px; }
+.hd_sch_wr{position:absolute;top:80px;left:10px;width:430px;margin-left:0px;  }
+#hd_qnb{float:right;margin-top:30px}
+#gnb { display: none; }
+
+#container_wr {width:100%; }
+#aside { position: fixed; left: -305px; top: 0px; margin: 0px; z-index: 1000; overflow-y: auto; }
+.close_menu { position: fixed; display: block; height: 0px; z-index: 1100; top: 12px; left: -30px }
+.close_menu > i { font-size: 20px; cursor: pointer; }
+.mobile_menu { display: block; }
+
+#container {width: calc(100% - 20px); margin:10px 10px;}
+
+#ft_wr {width:100%;}
+
+.gnb_1da{color: #264379;  font-size: 14; font-weight: 0;}
+.mobile_menu { margin: 0px; }
+.mobile_menu > ul { background: #fff; padding-bottom: 0px;  }
+.mobile_menu > ul > li { 
+    position: relative; width: 100%; padding: 15px 10px 15px 10px;
+border-bottom: 1px solid #ededed;
+}
+.mobile_menu > ul > li > i { position: absolute; right: 10px; color: #333; font-size: 20px; cursor: pointer;}
+.mobile_menu > ul > li > ul { display: none; margin-top: 15px; background: #fff;  }
+.mobile_menu > ul > li > ul > li { width: 100%;  padding: 10px 15px 0px 10px;  height: 30px;}
+.mobile_menu > ul > li > ul > li > a:hover { font-weight: 700; }
+.mobile_menu > ul > li > ul > li > a{font-size: 12px; height: 30px;}
+
+}
+
+@media screen and (max-width:700px) {
+
+#tnb ul { width: 100%; }
+#hd_wrapper { height: 80px; }
+
+.hd_sch_wr{top:80px;width: calc(100% - 20px); z-index: 0; }
+#hd_qnb{ display: none; float:right;margin-top:30px}
+#hd_sch #sch_stx {width:calc(100% - 50px);}
+
+}
+
+
+@media screen and (max-width:600px) {
+.lt_wr{width:100% !important; margin-left: 0px !important; }
+}
+
+

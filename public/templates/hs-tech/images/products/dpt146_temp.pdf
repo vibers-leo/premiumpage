@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+	<head>
+          
+      
+              
+        
+    		<meta charset="utf-8" />
+<meta name="description" content="404 - PAGE NOT FOUND. If it&#039;s in here somewhere, try the search or start again on the front page." />
+
+<!-- be_ixf, sdk, gho-->
+<meta name="be:sdk" content="php_sdk_1.5.12" />
+<meta name="be:timer" content="64ms" />
+<meta name="be:orig_url" content="https%3A%2F%2Fwww.vaisala.com%2Fsites%2Fdefault%2Ffiles%2Fdocuments%2FDPT146-Datasheet-B211159EN.pdf" />
+<meta name="be:norm_url" content="https%3A%2F%2Fwww.vaisala.com%2Fsites%2Fdefault%2Ffiles%2Fdocuments%2FDPT146-Datasheet-B211159EN.pdf" />
+<meta name="be:capsule_url" content="https%3A%2F%2Fixfd-api.bc0a.com%2Fapi%2Fixf%2F1.0.0%2Fget_capsule%2Ff00000000271306%2F1706778969" />
+<meta name="be:api_dt" content="+03:00y_2025;+03:00m_04;+03:00d_02;+03:00h_14;+03:00mh_52;p_epoch:1743594755874" />
+<meta name="be:mod_dt" content="+03:00y_2025;+03:00m_04;+03:00d_02;+03:00h_14;+03:00mh_52;p_epoch:1743594755874" />
+<meta name="be:diag" content="E5zZlJdjxXvq5CzL02ia1jvtclj581/P/RALD4cSwCqjsQ44SOWsA1rHJ8VkYLQ7gLcmTezndkXT8mBfhoxM0aAuWg/FS5IjImxIu0PXrMHAhGgRY1067hJGC3Mxk4LSy/SWvwn5qd5QWOo3o8RDbAJG1fjlx7V/RsI4ROScjH6esb5aiO0lZz9SYuEkc08T/eJ3zo5RMvAxQH+bNfjpQK6X6pFgcrkfibxoPkXAKUbk2dEKN/CPmpC6mznBVVFa7kRf/T8RX7ukUd2PbTsC5f/1rkwsyJ7IskS4rC1Ke1xv0ea8FGJZr71uvTcCtti9MV+n7rKUMUgQEAV4kOKxmD/vUbIV2XZ7OLhO+5mUyofHnpMbP8Qg4+FtCNp84tG+EVeaFHrEZZYd+8Uh7WrcWAWn5gHdrvR7MH9iBhJoUDt1w+DYcaf9cJx+FZz++4XJIm+JPMpfNVm8uIa4+rcCPonDeGIk1g0zkmrz16WM2g5iI7s/+8FG4s+TCqMRxSijuV2u/sPxcnAvOmr8v1HoZS6AG5oT5HRz0FtZ8nFUTK4cqKRESNNxjtODplidiEYTcp7E10t5kESzPc8N1WWx14FQ6fSKMcHbEY19ma0Dl7ODmnJQUITr5VC9tHxMAsc+fsfHyav3RXDfAB4BcLNYD992QF8DNxY1H8VsnJnCtlyE/7Q4RE+KPQGomH2f/58bebiQ2NK1bp0X7tWulfLqtp7ynzCxLr39ThdetgS3r+xfz8uFsMqQMAT9rhZib3iq7+Lgqg8MOK/pMGULoXzvbTULWgrgTqxDz4mOqn3J/JxNPjigw6FEIkHNTFFCYCzD/nGLr28M+jt5TnzHhIClRwioZfNA2a+0ELs/y/nAIRNGdri/kNEUAhzW3hTpf3I8fV4PV4K2V+C/qh8kfMNpqS5vtKXt3f+5AOtwZPlIfyH+3s0SGLcmyvRllbgJfGl41o8QKVU1XHvK0kSkGREXra40OZpU20nOtl5jxaXT0kfMucABrX4LqMYrtB9shwxBFDJgnrB7+FfVCPUhFR3/qQb4f4ZCN6Nvjrr//gxDfR2/GXvFFG1yXSYGxb3I6p/7SKf18COoegIUtiMEZd5LoXOr4Q3826lk50Bukdo7uvEFI5xlfMdwyxClestmUzkJa2pCFaNo1E27/ayOhVqAQCuI0t798IDzFfFjLGVLXwNecn1YaIuRJSQvGLzv+2m1t1e936tqwQxhZvUCERF3e5j3qVrfdEQpN4xf18SGZqnwzZjyHwT1gtbJfCYEi97lNa3ZC47jYkEIZIZNErY7dA8OXc26N26PDLqwZHsYH1Yh+JOjHU7bWeh8fUdN5bJRbHreXDyKR2/pvrhkXldeI3sculM9Q95vrPodqUGDPR2NP7ukDkGufvcsZ0F2YSynVYJe+UUcRBsPkORGeeI+Zuqkl55D+4H/QG6JpQyWJUhwXP1LDrHkfXCd7vzBmzPwLj1fqudPXplHDhlK31z8Mr9tuhkuo1LV2CDglA3/eL2X5GQDtAC3SI2hATZjeiJllli2kdtHQvEALmjN4B+vZLoDLtlPbOSXS5bQZw3m+E0f0S7PpU2hl3g4jHtAjY9+8qI1ybMdwArp1HCAK0lFJ2snMC0bMdiEv0XkWNHmRyjKOa6Z2DmWG8CTnj+6C/+2GRXTVGa1TSpzNB4QPk4pNSPGQX8rRxOFx48mnmx8e1QobHTgDEFd9ujTGC0PnJXwxQTtOwT9G0xW+iE/RuReRncPJo4GRXw8fgxlhJIukWDyDfoGc5T8qgDf6HH3yIq2QxuDAhxFOlaNcwPgPU76ETBwSyeNgSy+NRvlPKt//izdF9At2RFwVWYJNDzOgwwz4c3KI17RGDqVvLq/S/OqZqK7xrYU52Iy2f+Dj76iQ3fDqxZC5lWDs9+NiLuSHZrKbLZoHuGP9nKS6yCG3CmGW93lTG9kkhp9y1O55Vp3WHiSFB55p9nqjft0/N35nXm1ZPlKst35Do2qX7O+Mz+E7NwQNPwDnZV85Pl9eB9xEc4Zm/BoO4xyNQglLKhwQEe71JEZDeyL+UEyU1dU4CWpE/MeqWRQPrNxFuVcERzzSWe4TIyOClujjT38/MxHlbCvg9J6j/75fJevqCYETvoO6d3DXHN6L4SYf5tLc/sjGV6CTiEFSI5toBqa2eBF0H2Z2zqQQvh+cro2QEh/9oCryYi+lArewS+VanTtnZzevwUMljTFpTMxT0+ydRqPdz+Zu22THko153MF8yxzN52a//p5eIFTAppg6tuBq69Bvo4H+L2AZWnS8Az7W0iSBQbyRHJtF5yOCK6VngjQQIpJJCXc52Sg4ZcmfQklDOMBNbGhbiyfhV2gHE4NpOSjLmt1NxqdJizBGWyEcOUEmleJBZaZgRenoJCXHmQc+jSK0iD+fyp1DnxQVSaoZy4Ju8c6qo6loL3cbXQMjFAOHoVhfHWV7Yjk5UKuOh5ZBH6Tsv67oP847O9qv4wVkvIl9QGId7p1FMnGKco3QvbjcsRtfLUm+q481EnXEuHVe5js1Bk=" />
+<meta name="be:messages" content="false" />
+<script type='text/javascript'>
+if (window.BEJSSDKObserver === undefined) {
+  (function(BEJSSDKObserver, $, undefined) {
+    var observer = void 0;
+    var listeners = [];
+    var readySet = [];
+    var doc = window.document;
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+    function checkSelector(selector, fn, indexList) {
+      var elements = doc.querySelectorAll(selector);
+  /**
+    issues on IE @see https://www.codesd.com/item/javascript-es6-not-a-function-error.html
+    elements = Array.from(elements);
+
+    */
+    for (var i = 0, len = elements.length; i < len; i++) {
+      /* -1 means all instances */
+      if (indexList != -1 && !(i in indexList)) {
+        continue;
+      }
+      var element = elements[i];
+      for (var j = 0; j < readySet.length; j++) {
+        if (readySet[j] == element.className || readySet[j] == element.id) {
+          return;
+        }
+      }
+      if (element.className) {
+        readySet.push(element.className);
+      }
+      if (element.id) {
+        readySet.push(element.id);
+      }
+
+      if (!element.ready || MutationObserver==null) {
+        element.ready = true;
+        fn.call(element, element);
+      }
+    }
+  }
+
+  function checkListeners() {
+    listeners.forEach(function (listener) {
+      return checkSelector(listener.selector, listener.fn, listener.indexList);
+    });
+  }
+
+  function removeListener(selector, fn) {
+    var i = listeners.length;
+    while (i--) {
+      var listener = listeners[i];
+      if (listener.selector === selector && listener.fn === fn) {
+        listeners.splice(i, 1);
+        if (!listeners.length && observer) {
+          observer.disconnect();
+          observer = null;
+        }
+      }
+    }
+  }
+
+/**
+ * Fire event on first js selector
+ * @param selector string to watch on
+ * @param fn       callback function
+ * @param index_list can be undefined which means only first one
+ *                   or -1 which means all
+ *                   or a list of allowable indexes
+ */
+ BEJSSDKObserver.jsElementReady = function(selector, fn, index_list) {
+  if (index_list === undefined) {
+    index_list = [];
+    index_list.push(0);
+  }
+
+  if (MutationObserver != null) {
+    if (!observer) {
+      observer = new MutationObserver(checkListeners);
+      observer.observe(doc.documentElement, {
+        childList: true,
+        subtree: true
+      });
+    }
+    listeners.push({ selector: selector, fn: fn, indexList: index_list });
+  } else {
+    /* <= IE8 */
+    if (!document.addEventListener) {
+      /* log("<=IE8 attachEvent assignment"); */
+      document.addEventListener = document.attachEvent;
+    }
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var elements = doc.querySelectorAll(selector);
+      for (var i = 0, len = elements.length; i < len; i++) {
+        /* -1 means all instances */
+        if (index_list != -1 && !(i in index_list)) {
+          continue;
+        }
+        var element = elements[i];
+        element.ready = true;
+        fn.call(element, element);
+      }
+    });
+  }
+
+  checkSelector(selector, fn, index_list);
+  return function () {
+    return removeListener(selector, fn);
+  };
+};
+}(window.BEJSSDKObserver = window.BEJSSDKObserver || {}));
+}
+var jsElementReady = window.BEJSSDKObserver.jsElementReady;
+
+if (window.BELinkBlockGenerator === undefined) {
+  (function(BELinkBlockGenerator, $, undefined) {
+    BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH = 100;
+    BELinkBlockGenerator.MAXIMUM_DESC_LENGTH = 200;
+
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_URL_TYPE = 0;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_HEADLINE_TYPE = 1;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_DESCRIPTION_TYPE = 2;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_IMAGE_TYPE = 3;
+
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_OVERWRITE = 0;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_POST_APPEND_ELEMENT = 1;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_ELEMENT = 2;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_PARENT = 3;
+
+    BELinkBlockGenerator.setMaximumHeadlineLength = function(length) {
+      BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH = length;
+    };
+
+    BELinkBlockGenerator.setMaximumDescriptionLength = function(length) {
+      BELinkBlockGenerator.MAXIMUM_DESC_LENGTH = length;
+    };
+
+    BELinkBlockGenerator.generateIndividualLinks = function(parentElement, linkStructure, link) {
+      var link_level_element_tag = linkStructure[0];
+      var link_level_element = document.createElement(link_level_element_tag);
+      var link_attribute_dictionary = linkStructure[1];
+      var allowable_elements = linkStructure[2];
+      var children_link_structures = linkStructure[3];
+      for (var link_attribute_key in link_attribute_dictionary) {
+        link_level_element.setAttribute(link_attribute_key, link_attribute_dictionary[link_attribute_key]);
+      }
+
+      var added_something = false;
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_URL_TYPE)>=0) {
+        link_level_element.setAttribute('href', link.url);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_HEADLINE_TYPE)>=0 && link.h1) {
+        var headline_text = link.h1;
+        if (headline_text.length > BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH) {
+          headline_text = headline_text.substring(0, BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH) + '...';
+        }
+        var text_node = document.createTextNode(headline_text);
+        link_level_element.appendChild(text_node);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_DESCRIPTION_TYPE)>=0 && link.desc) {
+        var desc_text = link.desc;
+        if (desc_text.length > BELinkBlockGenerator.MAXIMUM_DESC_LENGTH) {
+          desc_text = desc_text.substring(0, BELinkBlockGenerator.MAXIMUM_DESC_LENGTH) + '...';
+        }
+        var text_node = document.createTextNode(desc_text);
+        link_level_element.appendChild(text_node);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_IMAGE_TYPE)>=0 && link.image) {
+        link_level_element.setAttribute('src', link.image);
+        added_something = true;
+      }
+/**
+    don't emit for empty links, desc, headline, image
+    except for parent structures where allowable_length=0
+    */
+    if (!added_something && allowable_elements.length != 0) {
+
+      return;
+    }
+    /* go depth first */
+    for (var childrenIndex=0; childrenIndex<children_link_structures.length; childrenIndex++) {
+      var childLinkStructure = children_link_structures[childrenIndex];
+      BELinkBlockGenerator.generateIndividualLinks(link_level_element, childLinkStructure, link);
+    }
+    parentElement.appendChild(link_level_element);
+  };
+
+  BELinkBlockGenerator.insertLinkBlocks = function(targetElement, replacementStrategy, overallStructure, linkStructure, links,
+                                                   titleStructure) {
+    if (targetElement == null) {
+      return;
+    }
+
+    if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_OVERWRITE) {
+      while (targetElement.firstChild) {
+        targetElement.removeChild(targetElement.firstChild);
+      }
+    }
+
+    var previousElement = targetElement;
+    for (var i=0;i<overallStructure.length;i++) {
+      var level_definition = overallStructure[i];
+      var level_element_tag = level_definition[0];
+      var level_element = document.createElement(level_element_tag);
+      var attribute_dictionary = level_definition[1];
+      for (var attribute_key in attribute_dictionary) {
+        level_element.setAttribute(attribute_key, attribute_dictionary[attribute_key]);
+      }
+
+      /* need to place title structure */
+      if (titleStructure && titleStructure[0] == i) {
+        var title_element_tag = titleStructure[1];
+        var title_element = document.createElement(title_element_tag);
+        var title_attribute_dictionary = titleStructure[2];
+        var title_text_content = titleStructure[3];
+        for (var title_attribute_key in title_attribute_dictionary) {
+          title_element.setAttribute(title_attribute_key, title_attribute_dictionary[title_attribute_key]);
+        }
+
+        var title_text_node = document.createTextNode(title_text_content);
+        title_element.appendChild(title_text_node);
+
+
+        level_element.appendChild(title_element);
+      }
+
+      /* last level place links */
+      if (i == overallStructure.length-1) {
+        for (var link_i=0; link_i < links.length; link_i++) {
+          var link = links[link_i];
+          for (var linkStructureIndex=0;linkStructureIndex < linkStructure.length; linkStructureIndex++) {
+            BELinkBlockGenerator.generateIndividualLinks(level_element, linkStructure[linkStructureIndex], link)
+          }
+        }
+      }
+
+      /* first level child we need to check placement */
+      if (previousElement == targetElement) {
+        if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_ELEMENT) {
+          /* 2 means insert right before */
+          previousElement.insertBefore(level_element, targetElement.firstChild);
+        } else if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_PARENT) {
+          /* 3 means insert right before at parent level */
+          var parentElement = previousElement.parentElement;
+          parentElement.insertBefore(level_element, previousElement);
+        } else {
+          previousElement.appendChild(level_element);
+        }
+      } else {
+        previousElement.appendChild(level_element);
+      }
+      previousElement = level_element;
+    }
+  };
+}(window.BELinkBlockGenerator = window.BELinkBlockGenerator || {}))
+};
+</script>
+
+<style>
+.be-ix-link-block .be-related-link-container {padding: 0 3rem;}
+.be-ix-link-block .be-related-link-container .be-label {margin: 0;color: white;line-height: 1em;font-variant-numeric: lining-nums;    font-size: 1.000em;color: #fb6432;line-height: 140%;}
+.be-ix-link-block .be-related-link-container .be-list { display: inline-block; list-style: none;margin: 0; padding: 0;}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item {display: inline-block;margin-right: 20px;margin-bottom: 6px;}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item .be-related-link {}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item .be-related-link:hover {}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item:last-child { margin-right: 0;}
+
+@media (max-width: 767px) {
+  .be-ix-link-block .be-related-link-container .be-label {width: 100%;margin-bottom: 10px;}
+  .be-ix-link-block .be-related-link-container .be-list { display: block;width: 100%;}
+  .be-ix-link-block .be-related-link-container .be-list .be-list-item {display: block;margin-right: 0;}
+}
+@media (min-width: 768px) {
+  .be-ix-link-block .be-related-link-container {display: flex;align-items: baseline;justify-content: center;}
+  .be-ix-link-block .be-related-link-container .be-label {display: inline-block;margin-right: 20px;flex-grow: 0;flex-shrink: 0;}
+}
+</style>
+
+<meta name="robots" content="noindex, nofollow, noarchive" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta name="EloquaLeadScoring" content="," />
+<meta property="og:site_name" content="Vaisala" />
+<meta property="og:url" content="https://www.vaisala.com/sites/default/files/documents/DPT146-Datasheet-B211159EN.pdf" />
+<meta property="og:title" content="Page not found - 404" />
+<meta property="og:description" content="404 - PAGE NOT FOUND. If it&#039;s in here somewhere, try the search or start again on the front page." />
+<meta property="og:image" content="https://www.vaisala.com/sites/default/files/styles/16_9_medium/public/2023-03/HERO-404-Mars-Earth-Indigo200-1920x525.jpg?itok=ny2js5_a" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2017-02-28T09:35:22+02:00" />
+<meta property="article:modified_time" content="2026-01-30T13:54:02+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="404 - PAGE NOT FOUND. If it&#039;s in here somewhere, try the search or start again on the front page." />
+<meta name="twitter:title" content="Page not found - 404" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>window.digitalData = window.digitalData || {};
+window.digitalData.user = {"profileInfo":{"isLoggedIn":0}}
+window.digitalData.page = {"pageInfo":{"pageId":"40x","pageName":"www:en:40x","destinationURL":"https:\/\/www.vaisala.com\/sites\/default\/files\/documents\/DPT146-Datasheet-B211159EN.pdf","language":"en","pageError":1}}</script>
+<link rel="canonical" href="https://www.vaisala.com/en/page-not-found-404" />
+
+
+            <title>Page not found - 404 | Vaisala</title>
+        <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJx9UtGWqzAI_CE1n8QhkSptEtyAdv37jdtab-vZ-5KEmUEZAK_4DVGwp-LweHc2FvGeSoOqZMD5SsGkuKDq7iMbgZ_NJAOGQKrsObKtcOHvz4yrOslkZVaDQhOhQZIe4x_aBVkxIkSccxhrAV7E1ApObpJJljfERKLx1IRRlLJ7XJ2ny470ZZ4wdo_oCUJkv0urneYi2fBOKoncP-9Ol-F_XKcjp2YQGSKB4eCGenzG3dbTdzA1CcuNTCChez7bhI1K4NqVRD1X95xv6s5QnQslanRVo-Q8KjWWhmQQanFU65vYpbX1UcKtVVtr0tA8W7q3tsWMcTUOemIy3QtFDq0vctfa6k_B1v_CPZ1TH4Xt0_PI_ex-z_PvINyqozpvoDxiDjUxW3W7bZXa3LNApAHDCpsDUriUX3f98QEp5AphMMDcg45Y6J3cy9qCv5l2G8eLrRsqaWG66yE6sJeOonzNh_FH-GI5q1XH7nm3RrH6s7K-FBkXHtBYsjtD23IWLOsPEvtqKg","theme":"vaisala","theme_token":null},"ajaxTrustedUrl":[],"gtag":{"tagId":"","consentMode":false,"otherIds":[],"events":[],"additionalConfigInfo":[]},"gtm":{"tagId":null,"settings":{"data_layer":"dataLayer","include_environment":false},"tagIds":["GTM-NJJSMSP"]},"ajaxLoader":{"markup":"\u003Cdiv class=\u0022ajax-throbber sk-flow\u0022\u003E\n              \u003Cdiv class=\u0022sk-flow-dot\u0022\u003E\u003C\/div\u003E\n              \u003Cdiv class=\u0022sk-flow-dot\u0022\u003E\u003C\/div\u003E\n              \u003Cdiv class=\u0022sk-flow-dot\u0022\u003E\u003C\/div\u003E\n            \u003C\/div\u003E","hideAjaxMessage":false,"alwaysFullscreen":false,"throbberPosition":".main-container .region-content"},"marketo_ma":{"track":true,"key":"498-JBJ-885","initParams":[],"library":"\/\/munchkin.marketo.net\/munchkin.js"},"vaisalaCookieConsent":{"enabled":1},"vaisalaNavigation":{"languageLinks":{"en":{"url":"\/en\/page-not-found-404","fullUrl":"https:\/\/www.vaisala.com\/en\/page-not-found-404","title":"English","langcode":"en"},"fi":{"url":"\/fi\/page-not-found-404","fullUrl":"https:\/\/www.vaisala.com\/fi\/page-not-found-404","title":"Suomi","langcode":"fi"},"es":{"url":"\/es","fullUrl":"https:\/\/www.vaisala.com\/es","title":"Espa\u00f1ol","langcode":"es"},"de":{"url":"\/de\/page-not-found-404","fullUrl":"https:\/\/www.vaisala.com\/de\/page-not-found-404","title":"Deutsch","langcode":"de"},"fr":{"url":"\/fr\/page-not-found-404","fullUrl":"https:\/\/www.vaisala.com\/fr\/page-not-found-404","title":"Fran\u00e7ais","langcode":"fr"},"ja":{"url":"\/ja\/page-not-found-404","fullUrl":"https:\/\/www.vaisala.com\/ja\/page-not-found-404","title":"\u65e5\u672c\u8a9e","langcode":"ja"},"ko":{"url":"\/ko\/page-not-found-404","fullUrl":"https:\/\/www.vaisala.com\/ko\/page-not-found-404","title":"\ud55c\uad6d\uc5b4","langcode":"ko"},"ru":{"url":"\/ru","fullUrl":"https:\/\/www.vaisala.com\/ru","title":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","langcode":"ru"},"zh":{"url":"\/zh\/page-not-found-404","fullUrl":"https:\/\/www.vaisala.com\/zh\/page-not-found-404","title":"\u4e2d\u6587","langcode":"zh"},"pt":{"url":"\/pt","fullUrl":"https:\/\/www.vaisala.com\/pt","title":"Portugu\u00eas","langcode":"pt"},"tr":{"url":"\/tr","fullUrl":"https:\/\/www.vaisala.com\/tr","title":"T\u00fcrk\u00e7e","langcode":"tr"},"sv":{"url":"\/sv\/page-not-found-404","fullUrl":"https:\/\/www.vaisala.com\/sv\/page-not-found-404","title":"Svenska","langcode":"sv"},"nl":{"url":"\/nl","fullUrl":"https:\/\/www.vaisala.com\/nl","title":"Nederlands","langcode":"nl"},"pl":{"url":"\/pl","fullUrl":"https:\/\/www.vaisala.com\/pl","title":"Polski","langcode":"pl"},"it":{"url":"\/it\/page-not-found-404","fullUrl":"https:\/\/www.vaisala.com\/it\/page-not-found-404","title":"Italiano","langcode":"it"}},"currentLanguage":"en","menuData":[{"key":"a2de44ab-64e6-4140-9598-307a3c4105da","title":"Products","description":null,"uri":"search","external":false,"relative":"\/en\/search","weight":"-50","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"query":{"k":"","content_group":"products and services"}},"field_markup_styling":[{"value":"left_side_menu"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"5b684bd6-e06d-44c3-b285-444100973bf2","title":"Latest","description":null,"external":false,"weight":"-59","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"d9a29db5-3d66-4132-8eb3-9fddb0eb2401","title":"RowWrapper - Latest - 1st row","description":null,"external":false,"weight":"-50","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"row_wrapper"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"aedad10c-3351-4701-9aa6-a597501f9a33","title":"Application areas","description":null,"uri":"node\/120131","external":false,"relative":"\/en\/industries-applications","weight":"-58","expanded":false,"enabled":true,"uuid":"284f3606-c6cb-4c95-960d-0e33c653fb33","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"bc021b30-acb4-4a62-b3b2-3fa018a6c6c6","title":"Application area - sorted row","description":null,"external":false,"weight":"0","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"row_wrapper"},{"value":"is_alphabetically_sorted_row"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"26bc1500-a0fa-4030-bab9-90b0833b9f3f","title":"Measurements","description":null,"external":false,"weight":"-57","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"375550c3-2e80-44cd-aaeb-0abcb07f6853","title":"Measurements - wrapper","description":null,"external":false,"weight":"2","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"row_wrapper"},{"value":"is_alphabetically_sorted_row"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"a1f62ca5-0062-49b9-9f4b-04489f96effc","title":"Product types","description":null,"external":false,"weight":"-56","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"5439e26b-bd53-4046-95de-6016c4deab6e","title":"Column wrapper - 1 st column product types","description":null,"external":false,"weight":"0","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"},{"value":"hide_label"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"c9f93bf4-091b-472e-be6f-74bfa93dfcb3","title":"Column wrapper - 2nd column product types","description":null,"external":false,"weight":"0","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"},{"value":"hide_label"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"271f39c2-7053-415d-8b74-69f902a00fea","title":"Column wrapper - 3rd column product types","description":null,"external":false,"weight":"0","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"},{"value":"hide_label"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"5991177b-32be-45df-b70a-1b70a6a847c0","title":"Product families","description":null,"external":false,"weight":"-55","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"c640a25e-d349-48fa-a363-f1ac162ccf42","title":"Column wrapper - Product families - 1st","description":null,"external":false,"weight":"-57","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"},{"value":"hide_label"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"ac0a1018-a882-46c1-8d58-4cad9b059bb1","title":"Column wrapper - Product families - 2nd","description":null,"external":false,"weight":"-56","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"},{"value":"hide_label"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"bc7b70ad-fa69-461c-86e8-8444d6f6822e","title":"Column wrapper - Product families - 3rd","description":null,"external":false,"weight":"-55","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"},{"value":"hide_label"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"2878fcc1-05a7-488c-840b-86f0199665f7","title":"Explore all products","description":null,"uri":"base:explore-all-products","external":false,"relative":"\/explore-all-products","weight":"-54","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"c02c6491-df1f-4599-b58d-5075451396e8","title":"Services","description":null,"uri":"node\/114541","external":false,"relative":"\/en\/services","weight":"-49","expanded":false,"enabled":true,"uuid":"39774c66-6f4f-4cc8-8f32-4e3ca9dc37cc","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"cc5a5cbe-0206-4eab-832c-1b7a7d58ba4b","title":"Row wrapper - Services - 1st row","description":null,"external":false,"weight":"-50","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"hide_label"},{"value":"row_wrapper"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"a9579643-2560-4a4c-b8e4-1b1154677929","title":"Support services","description":null,"external":false,"weight":"-50","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"861d1f68-1005-4ce5-ab00-31ad7b370fd3","title":"Product line services","description":null,"external":false,"weight":"-49","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"05a581b5-ee52-4e9e-83f1-3f6bdc301867","title":"Data subscription services","description":null,"external":false,"weight":"-48","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"4a7774ea-1b28-46d0-b14e-1934f5dedb1b","title":"Row wrapper","description":null,"external":false,"weight":"-49","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"row_wrapper"},{"value":"has_accessory_links"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"7e2ef986-8fcc-4209-a229-7857a3b8bb86","title":"Order services online","description":null,"uri":"https:\/\/store.vaisala.com\/en\/services","external":true,"relative":"https:\/\/store.vaisala.com\/en\/services","weight":"-50","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"external":true},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"d19c7b89-383e-4c2e-bab5-4efe123619e5","title":"MyVaisala","description":null,"uri":"https:\/\/vaisala.my.site.com\/myvaisala","external":true,"relative":"https:\/\/vaisala.my.site.com\/myvaisala","weight":"-49","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"external":true},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]}]},{"key":"a004c7aa-bb57-4932-a034-428c725235ba","title":"Resources","description":null,"external":false,"weight":"-47","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"173fa8c5-7117-4598-b485-fd248f670daf","title":"News \u0026 updates","description":null,"external":false,"weight":"-50","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"9951328a-a638-43e8-a5ca-b72bb311462a","title":"Newsroom","description":null,"uri":"node\/123541","external":false,"relative":"\/en\/newsroom","weight":"-50","expanded":false,"enabled":true,"uuid":"575e6baf-fe7f-4b0a-9898-9ec83bd29fcf","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"d9ada25b-f472-4419-9fdf-0c07403e976d","title":"Events and webinars","description":null,"uri":"node\/17271","external":false,"relative":"\/en\/events\/upcoming-events","weight":"-48","expanded":false,"enabled":true,"uuid":"c48d3b4f-f46e-46b9-b6b3-046568628098","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"b1360bbb-4e36-45cc-b4d0-ac1e5e5fa347","title":"Blogs and cases","description":null,"uri":"node\/24381","external":false,"relative":"\/en\/news-and-insights\/news-and-events\/blogs-and-reference-cases","weight":"0","expanded":false,"enabled":true,"uuid":"aae4bdda-9ff0-44aa-84c6-66bd10e6af58","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"9143fe00-c1c7-4ce0-b0ec-5983a9b04923","title":"Expert articles","description":null,"uri":"node\/97661","external":false,"relative":"\/en\/expert-article","weight":"0","expanded":false,"enabled":true,"uuid":"d4543611-b322-4a85-93a3-7b9bc4f666a1","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"f5bbeca5-fe32-4e83-bdf8-1ab850115513","title":"Materials","description":null,"external":false,"weight":"0","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"d3a88206-7442-4a02-be9a-6d07023dd681","title":"Product documentation","description":null,"uri":"https:\/\/docs.vaisala.com","external":true,"relative":"https:\/\/docs.vaisala.com","weight":"0","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"external":true},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"22b97036-0710-4636-9997-ee21c186e7a3","title":"Catalogs","description":null,"uri":"node\/105606","external":false,"relative":"\/en\/industrial-product-catalog","weight":"1","expanded":false,"enabled":true,"uuid":"a7809582-f46e-40a6-8b07-64279283e511","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"7e04234e-be45-4b68-a36a-242f82ac7428","title":"Educational resources","description":null,"uri":"node\/116411","external":false,"relative":"\/en\/resources\/educational-resources","weight":"2","expanded":false,"enabled":true,"uuid":"3629fcfc-62b6-4646-a133-632ecd7602bd","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"cfc923e0-a6db-4615-99c9-6c2c2a26c049","title":"Recommended webinars","description":null,"uri":"node\/95946","external":false,"relative":"\/en\/events\/webinars\/webinar-recommendations","weight":"3","expanded":false,"enabled":true,"uuid":"d2c4934e-3c7d-4224-a1c9-d508837b48c8","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"35f2f664-f220-44ec-81e3-ee051e9fd911","title":"eBook collection","description":null,"uri":"node\/95961","external":false,"relative":"\/en\/ebook","weight":"4","expanded":false,"enabled":true,"uuid":"6252b121-8868-4a9f-8300-28a8fd97d426","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"03085d55-2e86-41b9-b598-d2f99c25c304","title":"Application notes","description":null,"uri":"node\/125597","external":false,"relative":"\/en\/application-note","weight":"5","expanded":false,"enabled":true,"uuid":"2afa5495-8628-48a4-a90a-8c46751eb2ca","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"982e3f75-793a-4197-ba2a-d9154d16bc01","title":"Vaisala logo","description":null,"uri":"base:newsroom","external":false,"relative":"\/newsroom#logo#logo","weight":"6","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"fragment":"logo"},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"08c446b5-3080-4b44-a904-6096d1b2318a","title":"Tools","description":null,"external":false,"weight":"0","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"bf81722e-ada6-4bd5-817b-b652eb8408ca","title":"Calculators","description":null,"uri":"node\/117841","external":false,"relative":"\/en\/calculators","weight":"0","expanded":false,"enabled":true,"uuid":"bd26746f-a8ec-4c3b-a1ba-9bf22eabe270","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"9ea55ee3-4112-4553-ac12-960925be8926","title":"Newsletter preferences","description":null,"uri":"https:\/\/pages.vaisala.com\/preference-center","external":true,"relative":"https:\/\/pages.vaisala.com\/preference-center","weight":"0","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"external":true},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"d334ce75-80c7-4972-8472-20e54d037801","title":"Subscribe to press releases","description":null,"uri":"https:\/\/cs.globenewswire.com\/NewsArchive\/View\/qx3dL_math5WP8NJbCcP-g==?iFrame=true","external":true,"relative":"https:\/\/cs.globenewswire.com\/NewsArchive\/View\/qx3dL_math5WP8NJbCcP-g==?iFrame=true","weight":"0","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"external":true},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"c6c1d03d-8938-488e-861d-f71222f14274","title":"Vaisala on social media","description":null,"external":false,"weight":"0","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"fe68bced-2c41-438e-9311-f5078cc07aba","title":"YouTube","description":null,"uri":"https:\/\/www.youtube.com\/channel\/UCScRatNnyyOhdushbQ01MwQ","external":true,"relative":"https:\/\/www.youtube.com\/channel\/UCScRatNnyyOhdushbQ01MwQ","weight":"1","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"external":true},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"07e77ee0-29cc-46ae-ae83-9d59a176b74f","title":"LinkedIn","description":null,"uri":"https:\/\/www.linkedin.com\/company\/vaisala","external":true,"relative":"https:\/\/www.linkedin.com\/company\/vaisala","weight":"2","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"external":true},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"359e831c-20b6-4530-8381-53ac778ab5bd","title":"Facebook","description":null,"uri":"https:\/\/www.facebook.com\/Vaisala","external":true,"relative":"https:\/\/www.facebook.com\/Vaisala","weight":"3","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"external":true},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"e4e5c2e8-6709-41f4-b6d0-e9935867a2af","title":"Instagram","description":null,"uri":"https:\/\/www.instagram.com\/vaisalagroup\/","external":true,"relative":"https:\/\/www.instagram.com\/vaisalagroup\/","weight":"4","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"external":true},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"6bc086b3-29a1-46d7-b6af-bd042304201e","title":"X (Twitter)","description":null,"uri":"https:\/\/www.twitter.com\/vaisalagroup","external":true,"relative":"https:\/\/www.twitter.com\/vaisalagroup","weight":"5","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"external":true},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]}]},{"key":"9ef45c87-c976-4e3f-8f1b-ae0e9677951e","title":"Company","description":null,"uri":"node\/110811","external":false,"relative":"\/en\/vaisala-company","weight":"-46","expanded":false,"enabled":true,"uuid":"bc9b91a3-241a-4771-8205-8e05b58f6900","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"1bd4c79f-d961-4bbc-a0b6-c96250d21eb5","title":"About ","description":null,"uri":"node\/110811","external":false,"relative":"\/en\/vaisala-company","weight":"1","expanded":false,"enabled":true,"uuid":"bc9b91a3-241a-4771-8205-8e05b58f6900","options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"9a45a60f-2325-49ae-82a9-b4f982ae92a5","title":"Our story","description":null,"uri":"node\/111211","external":false,"relative":"\/en\/vaisala-company\/our-story","weight":"1","expanded":false,"enabled":true,"uuid":"f0d2ca4f-7d43-4f7e-9740-8a4869be9867","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"bceaeb0b-4363-44a5-adba-f8b5029c71b0","title":"Strategy","description":null,"uri":"node\/112991","external":false,"relative":"\/en\/investors\/vaisala-investment\/strategy-and-long-term-financial-targets","weight":"2","expanded":false,"enabled":true,"uuid":"959dfd84-87a9-400f-a3c6-627770930150","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"2428cdd9-de83-4d11-8186-3feadef5c6fb","title":"Management","description":null,"uri":"node\/114786","external":false,"relative":"\/en\/vaisala-company\/organization-and-management","weight":"3","expanded":false,"enabled":true,"uuid":"aecf79c8-a22c-4607-8835-e396252aa9af","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"1646b5c3-61fc-461e-b344-c525611945dc","title":"Sustainability","description":null,"uri":"node\/111131","external":false,"relative":"\/en\/vaisala-company\/sustainability","weight":"4","expanded":false,"enabled":true,"uuid":"75f9bac2-be5e-46cb-aec9-bc3a166be260","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"ec5c329f-c8bc-4d70-a187-12966ad3d2d0","title":"Values and purpose","description":null,"uri":"node\/114791","external":false,"relative":"\/en\/vaisala-company\/values","weight":"5","expanded":false,"enabled":true,"uuid":"bd4f7cb4-bb5c-42ad-82ae-57993f0b58af","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"ebdbf2e4-d051-4ba4-af7b-94b74c0b3abb","title":"Innovation and R\u0026D","description":null,"uri":"node\/111366","external":false,"relative":"\/en\/vaisala-company\/innovation-and-rd","weight":"6","expanded":false,"enabled":true,"uuid":"a47a7099-2fff-4775-871e-c76d7e592ab1","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"58f75b2a-8eae-43c1-8806-41dc18fd1384","title":"Sensor technologies","description":null,"uri":"node\/120041","external":false,"relative":"\/en\/vaisala-sensor-technologies","weight":"7","expanded":false,"enabled":true,"uuid":"f162854e-1fd9-4c0c-b3e7-63fff3a947cd","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"95a41e24-a0fd-4805-b8dc-77b3fa822a96","title":"Careers \u0026 Partners","description":null,"external":false,"weight":"2","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"},{"value":"hide_label"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"c203a145-c346-4c99-83a2-e0c25d93feff","title":"Careers","description":null,"uri":"node\/111156","external":false,"relative":"\/en\/careers","weight":"2","expanded":false,"enabled":true,"uuid":"7b66827f-b705-4ea1-9cce-f3af60c729e7","options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"6d77a5c7-a7de-4040-a9ed-a2a300b10fea","title":"Partners","description":null,"uri":"node\/86331","external":false,"relative":"\/en\/partners","weight":"3","expanded":false,"enabled":true,"uuid":"dc13a4c7-1c5d-4be3-ba54-dcfbbeacc61c","options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"a3388494-f507-4153-9f66-ec88e76b638a","title":"Investors","description":null,"uri":"node\/1051","external":false,"relative":"\/en\/investors","weight":"3","expanded":false,"enabled":true,"uuid":"e0ef1f10-0ed4-42f0-91fa-a4a7cc710eea","options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"8baa2041-8429-4ccd-bb10-d6a4e4a61cd7","title":"Vaisala as an investment","description":null,"uri":"node\/2781","external":false,"relative":"\/en\/investors\/vaisala-investment","weight":"0","expanded":false,"enabled":true,"uuid":"fd27014b-a492-43eb-8b8c-1f2705222930","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"d1b6f370-5d42-4b83-a75f-e2aedc5a047d","title":"IR Calendar","description":null,"uri":"node\/122476","external":false,"relative":"\/en\/investors\/ir-calendar","weight":"1","expanded":false,"enabled":true,"uuid":"ddeed23c-be74-42e6-a0c3-7ba7f52b651c","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"9565a2a7-bde1-4d88-9262-990296757531","title":"Financial information","description":null,"uri":"node\/119911","external":false,"relative":"\/en\/investors\/financial-information","weight":"2","expanded":false,"enabled":true,"uuid":"eb94e94b-d63b-485a-b53e-528aeec67a3c","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"a812e9fb-0696-4035-93f2-75e5a4bbac6f","title":"Reports and presentations","description":null,"uri":"node\/3196","external":false,"relative":"\/en\/investors\/reports-and-presentations","weight":"3","expanded":false,"enabled":true,"uuid":"853a3fd1-6e3b-40ad-ba53-4f59c95c0bef","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"d315bb80-8d3b-485b-b60d-d21a33c5cae4","title":"Press and stock exchange releases","description":null,"uri":"base:en\/newsroom","external":false,"relative":"\/en\/newsroom","weight":"4","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"218cc734-ee41-4aff-8dd0-e069b0721ce3","title":"Corporate Governance","description":null,"uri":"node\/113996","external":false,"relative":"\/en\/investors\/corporate-governance","weight":"5","expanded":false,"enabled":true,"uuid":"7d9b84ee-b693-4b4f-be86-3a638713dd71","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"6b5e9e5f-a68e-4319-90ea-8f0e01143a5c","title":"Annual General Meeting","description":null,"uri":"base:fi\/investors\/corporate-governance\/general-meetings","external":false,"relative":"\/fi\/investors\/corporate-governance\/general-meetings","weight":"6","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"3ace77e5-a9f4-4570-8f55-789768980f9d","title":"Shares and shareholders","description":null,"uri":"node\/112851","external":false,"relative":"\/en\/investors\/shares-and-shareholders","weight":"7","expanded":false,"enabled":true,"uuid":"03d92fe8-660f-44b7-b5bf-31b9f31f2654","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"1f87e423-c0c1-4cb4-94ca-49adf35e2614","title":"Consensus estimates and analysts","description":null,"uri":"node\/125826","external":false,"relative":"\/en\/investors\/consensus-estimates","weight":"8","expanded":false,"enabled":true,"uuid":"f550dff4-e8fb-4534-bd3a-611dfbf631af","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"fb14305f-4aed-49b9-8f32-abc3cfe2273b","title":"Investor relations","description":null,"uri":"node\/32696","external":false,"relative":"\/en\/investor-relations-0","weight":"9","expanded":false,"enabled":true,"uuid":"c7b6b4d3-773f-44f0-8062-853b380b5cb4","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"a3366ee5-a03b-4b13-887c-71666a0a9875","title":"Sustainability","description":null,"uri":"node\/111131","external":false,"relative":"\/en\/vaisala-company\/sustainability","weight":"4","expanded":false,"enabled":true,"uuid":"75f9bac2-be5e-46cb-aec9-bc3a166be260","options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"4494d74e-33c9-44ef-a8d3-20edc78362dd","title":"Resource efficiency","description":null,"uri":"node\/111471","external":false,"relative":"\/en\/vaisala-company\/sustainability\/resource-efficiency","weight":"0","expanded":false,"enabled":true,"uuid":"2a8a83b6-af84-41ac-a1a8-304ef70fc1eb","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"444888ca-52c4-47f7-aa86-a367cbdc1fc0","title":"Energy transition","description":null,"uri":"node\/111476","external":false,"relative":"\/en\/vaisala-company\/sustainability\/energy-transition","weight":"1","expanded":false,"enabled":true,"uuid":"14b937c8-8424-4e22-8561-b7bb940707cd","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"2a914846-6c53-49f8-9a5d-291a90a28f32","title":"Safety and wellbeing","description":null,"uri":"node\/111481","external":false,"relative":"\/en\/vaisala-company\/sustainability\/safety-and-wellbeing","weight":"2","expanded":false,"enabled":true,"uuid":"991df9dc-1efd-41c7-8cc0-a09c3a3ec322","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"958b56e0-a4bd-4bf9-a2a0-d341958f0806","title":"Sustainable business practice","description":null,"uri":"node\/111341","external":false,"relative":"\/en\/vaisala-company\/sustainability\/sustainable-business-practices","weight":"3","expanded":false,"enabled":true,"uuid":"e0984640-b7bb-4976-b3a5-4655cafa7537","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"10279d31-f83b-4d87-891d-e6503adbd31d","title":"Code of conduct","description":null,"uri":"base:vaisala-company\/sustainability\/standards-and-policies","external":false,"relative":"\/vaisala-company\/sustainability\/standards-and-policies#codeconduct#codeconduct","weight":"4","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"fragment":"codeconduct"},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"2c37402e-a538-4930-b3e2-941400a5b732","title":"Report a concern","description":null,"uri":"node\/105656","external":false,"relative":"\/en\/code-conduct\/vaisala-whistleblowing-channel","weight":"5","expanded":false,"enabled":true,"uuid":"391dcad6-66be-4b93-a48d-ae53d75b556b","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]}]},{"key":"ccf183c6-72a4-42ac-a936-99df289677c1","title":"Contact","description":null,"external":false,"weight":"-45","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"95620a7b-f4f1-4c4d-bb7d-0ae7afdfbc78","title":"Column wrapper - contacts 1st column","description":null,"external":false,"weight":"0","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"},{"value":"hide_label"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"1f8470bf-4cf7-410d-a6a1-79fa16d4e895","title":"Vaisala Sales","description":null,"uri":"node\/25231","external":false,"relative":"\/en\/lp\/contact-form\/contact-us","weight":"0","expanded":false,"enabled":true,"uuid":"efa26f02-00c8-4cdc-9c9e-56bc280ae683","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"c154d141-87c8-40da-84cf-e7311111b7fb","title":"Services \u0026 Support ","description":null,"uri":"node\/110486","external":false,"relative":"\/en\/support-portal","weight":"1","expanded":false,"enabled":true,"uuid":"48c8ba53-e921-4f26-8d9f-6315a740ed2e","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"b5822b21-9d4b-4469-981b-71620d941dc4","title":"Contact Form","description":null,"uri":"node\/21291","external":false,"relative":"\/en\/lp\/contact-form","weight":"2","expanded":false,"enabled":true,"uuid":"56732e69-ca10-421d-b2a8-98a710109147","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"00b99898-e153-4997-b84c-26d42edd91b8","title":"Local distributors and service partners","description":null,"uri":"node\/86331","external":false,"relative":"\/en\/partners","weight":"3","expanded":false,"enabled":true,"uuid":"dc13a4c7-1c5d-4be3-ba54-dcfbbeacc61c","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"33069470-958f-4920-86dc-d838e963983d","title":"Column wrapper - contacts 2nd column","description":null,"external":false,"weight":"0","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"},{"value":"hide_label"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"09322854-e8ae-457d-82bd-74ccd885bf7b","title":"Media contacts","description":null,"uri":"base:newsroom","external":false,"relative":"\/newsroom#media-contact#media-contact","weight":"0","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"fragment":"media-contact"},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"1c4017ca-1577-404e-bc51-8710c452a235","title":"Investor relations","description":null,"uri":"node\/32696","external":false,"relative":"\/en\/investor-relations-0","weight":"1","expanded":false,"enabled":true,"uuid":"c7b6b4d3-773f-44f0-8062-853b380b5cb4","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"d3a161f0-91aa-44e6-9754-5243e3782f97","title":"Careers","description":null,"uri":"node\/111156","external":false,"relative":"\/en\/careers","weight":"2","expanded":false,"enabled":true,"uuid":"7b66827f-b705-4ea1-9cce-f3af60c729e7","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},{"key":"f9f4d9a1-0262-4758-834d-17adad539f65","title":"Column wrapper - contacts 3rd column","description":null,"external":false,"weight":"0","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[]},"field_markup_styling":[{"value":"column_wrapper"},{"value":"hide_label"}],"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null,"below":[{"key":"4503b182-a8a6-400e-a3b1-41b3f2f34a41","title":"Office locations","description":null,"uri":"node\/11721","external":false,"relative":"\/en\/contact-us\/office-locations","weight":"0","expanded":false,"enabled":true,"uuid":"ddb79fd5-723b-4e7d-998c-e443dd1f5f17","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null},{"key":"2a44c656-0ff5-4c58-b762-24110ca42d87","title":"Invoicing","description":null,"uri":"node\/26491","external":false,"relative":"\/en\/lp\/contact-form\/invoicing-billing","weight":"1","expanded":false,"enabled":true,"uuid":"f7889de6-a1d8-43ac-aab3-a7df34432952","options":{"attributes":[]},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]}]},{"key":"f5f1d4a5-2fa2-4a03-bf69-2003ada53e2b","title":"Online store","description":null,"uri":"https:\/\/store.vaisala.com\/","external":true,"relative":"https:\/\/store.vaisala.com\/","weight":"-44","expanded":false,"enabled":true,"uuid":null,"options":{"attributes":[],"external":true},"field_markup_styling":null,"field_menu_alternative_title":null,"field_menu_description":null,"field_menu_media":null}]},"vaisala_instana":{"reportingUrl":"https:\/\/eum-blue-saas.instana.io","key":"r_95a646SZiCcGtDS7mFTA"},"cfIpCountry":"KR","bootstrap":{"forms_has_error_value_toggle":1,"modal_animation":1,"modal_backdrop":"true","modal_focus_input":1,"modal_keyboard":1,"modal_select_text":1,"modal_show":1,"modal_size":"","popover_enabled":1,"popover_animation":1,"popover_auto_close":1,"popover_container":"body","popover_content":"","popover_delay":"0","popover_html":0,"popover_placement":"right","popover_selector":"","popover_title":"","popover_trigger":"click","tooltip_enabled":1,"tooltip_animation":1,"tooltip_container":"body","tooltip_delay":"0","tooltip_html":0,"tooltip_placement":"auto left","tooltip_selector":"","tooltip_trigger":"hover"},"dataLayerVariables":"{\u0022event\u0022:\u0022editorialCategories\u0022,\u0022type\u0022:\u0022lander_page\u0022}","chosen":{"selector":"select","minimum_single":0,"minimum_multiple":10,"minimum_width":200,"use_relative_width":false,"options":{"disable_search":false,"disable_search_threshold":10,"allow_single_deselect":false,"add_helper_buttons":false,"search_contains":false,"placeholder_text_multiple":"Choose some options","placeholder_text_single":"Choose an option","no_results_text":"No results match","max_shown_results":null,"inherit_select_classes":true}},"vaisala":{"env":"production"},"user":{"uid":0,"permissionsHash":"354112a2050e5f9184b29d23fe6e235e987028d6e1fff3bc44c40c8d0a720d68"}}</script>
+<script src="/sites/default/files/js/js_a3-rhGXF3UKK1JijoWGzVZ6JzqnnYB9-jsyMyxwMdbI.js?scope=header&amp;delta=0&amp;language=en&amp;theme=vaisala&amp;include=eJx9Ue12gzAIfSE1j8S5KtV0SXCAdn372bXqum77A9wPOJDgjA9Kgp414KgbH1XalrWCGTvFcubORcPZghR2nc1JeWI4ZemR6BQ_fvEuiIYESphLN67jWhE3V0xhkkmWJ8ZFksep6kYxLuGempZPG9PrPCE1d1SdpDgubJI5fKsbW4b_tMbGmKtBZEhMjiEMa_iJm9tbPJO5ytA3dqGM8CjrjOpx4nZqjYJ09djZi-IjZ95YahH7OXzF1x7qRDkoo3NC6clGKD-L29Qb-Fupb4vv6vprkpfIFztMB7f7OMn7fOx9h7sai_m6cHjk2jmtd7led0fBEgd4lBJeKUqxVej1Ezyu-Kc"></script>
+<script src="https://use.fontawesome.com/releases/v6.4.2/js/all.js" defer crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/releases/v6.4.0/js/v4-shims.js" defer crossorigin="anonymous"></script>
+<script src="/modules/contrib/google_tag/js/gtag.js?tacm4k"></script>
+<script src="/modules/contrib/google_tag/js/gtm.js?tacm4k"></script>
+
+		<link rel="stylesheet" media="all" href="/modules/custom/vaisala_navigation/../../../apps/vaisala-navigation/dist/assets/nav-index.css?tacm4k" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_BX4Tns3iglP5nq5QL0sGwNfi14vxw0_F6_bcFvtBAis.css?delta=1&amp;language=en&amp;theme=vaisala&amp;include=eJxlj9GywyAIRH_IxE9iUGlCo9gR0lv__pom0z70SXZ3PLB4xxfkiomax-8829pqCNQcqpIBy52i1eajqv9b2QjCblYFMEZS5cCZrcONXy6uVUl8avsD83yqy4TMwZ_jPEhOa2TMUCgxjkw29b_WuIUKOe1qVHxAJWdlKQaxipEYPtiXPoVc4zap9fFpcU9kxYz-eqeTcSmI28CPOkCyosQRiY3VRy21PXGFTAvGDgeOFG7tvSp9AbXRh32ITyL45AWNq_hf6-jfsPV_G5uUJQ" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_bzyu1yAdRHb6CBd6jCtJ7AhPCLdlI26cYLHWr7FyDBw.css?delta=2&amp;language=en&amp;theme=vaisala&amp;include=eJxlj9GywyAIRH_IxE9iUGlCo9gR0lv__pom0z70SXZ3PLB4xxfkiomax-8829pqCNQcqpIBy52i1eajqv9b2QjCblYFMEZS5cCZrcONXy6uVUl8avsD83yqy4TMwZ_jPEhOa2TMUCgxjkw29b_WuIUKOe1qVHxAJWdlKQaxipEYPtiXPoVc4zap9fFpcU9kxYz-eqeTcSmI28CPOkCyosQRiY3VRy21PXGFTAvGDgeOFG7tvSp9AbXRh32ITyL45AWNq_hf6-jfsPV_G5uUJQ" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_0s5AZ-c1Lb5Arqthx1pcuHbh2cFA1euqBjhehecHA4A.css?delta=3&amp;language=en&amp;theme=vaisala&amp;include=eJxlj9GywyAIRH_IxE9iUGlCo9gR0lv__pom0z70SXZ3PLB4xxfkiomax-8829pqCNQcqpIBy52i1eajqv9b2QjCblYFMEZS5cCZrcONXy6uVUl8avsD83yqy4TMwZ_jPEhOa2TMUCgxjkw29b_WuIUKOe1qVHxAJWdlKQaxipEYPtiXPoVc4zap9fFpcU9kxYz-eqeTcSmI28CPOkCyosQRiY3VRy21PXGFTAvGDgeOFG7tvSp9AbXRh32ITyL45AWNq_hf6-jfsPV_G5uUJQ" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_HR1uGJQZbF7M5iJdLV5M-BnuRgSia-Dg7fG3mcF_j7k.css?delta=4&amp;language=en&amp;theme=vaisala&amp;include=eJxlj9GywyAIRH_IxE9iUGlCo9gR0lv__pom0z70SXZ3PLB4xxfkiomax-8829pqCNQcqpIBy52i1eajqv9b2QjCblYFMEZS5cCZrcONXy6uVUl8avsD83yqy4TMwZ_jPEhOa2TMUCgxjkw29b_WuIUKOe1qVHxAJWdlKQaxipEYPtiXPoVc4zap9fFpcU9kxYz-eqeTcSmI28CPOkCyosQRiY3VRy21PXGFTAvGDgeOFG7tvSp9AbXRh32ITyL45AWNq_hf6-jfsPV_G5uUJQ" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_njNs5sQwIAcXQBGtQTXV8sTnu1unfE36aAvMhIeKbn0.css?delta=5&amp;language=en&amp;theme=vaisala&amp;include=eJxlj9GywyAIRH_IxE9iUGlCo9gR0lv__pom0z70SXZ3PLB4xxfkiomax-8829pqCNQcqpIBy52i1eajqv9b2QjCblYFMEZS5cCZrcONXy6uVUl8avsD83yqy4TMwZ_jPEhOa2TMUCgxjkw29b_WuIUKOe1qVHxAJWdlKQaxipEYPtiXPoVc4zap9fFpcU9kxYz-eqeTcSmI28CPOkCyosQRiY3VRy21PXGFTAvGDgeOFG7tvSp9AbXRh32ITyL45AWNq_hf6-jfsPV_G5uUJQ" />
+
+    
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/themes/custom/vaisala/favicons/apple-touch-icon.png?v=4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/themes/custom/vaisala/favicons/favicon-32x32.png?v=4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/themes/custom/vaisala/favicons/favicon-16x16.png?v=4">
+  <link rel="manifest" href="/themes/custom/vaisala/favicons/site.webmanifest?v=4">
+  <link rel="mask-icon" href="/themes/custom/vaisala/favicons/safari-pinned-tab.svg?v=4" color="#5bbad5">
+  <link rel="shortcut icon" href="/themes/custom/vaisala/favicons/favicon.ico?v=4">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/themes/custom/vaisala/favicons/browserconfig.xml?v=4">
+  <meta name="theme-color" content="#0a2a3d">
+		<cohesion-placeholder></cohesion-placeholder>
+	</head>
+	<body class="path-sites page-node-type-lander-page has-glyphicons">
+
+		<a href="#main-content" class="visually-hidden focusable skip-link">
+			Skip to main content
+		</a>
+
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJJSMSP"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+		  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+  
+
+  <div role="main" class="main-container container-fluid js-quickedit-main-content">
+    <div class="row">
+
+                              <div class="header col-sm-12">
+              <div class="region region-header">
+    <section id="block-vaisala-vaisalanavigationblock" class="settings-tray-editable block block-vaisala-navigation block-vaisala-navigation-block clearfix" data-drupal-settingstray="editable">
+  
+    
+
+      <div id="vaisala-navigation" style="min-height: 80px; background-color: #0a2a3d;"><div id="vaisala-navigation-root"></div></div>
+  </section>
+
+    <nav role='navigation' aria-label="breadcrumb">
+    <ol class="breadcrumb">
+              <li >
+                      <a href="/en">Home</a>
+                  </li>
+              <li  class="active">
+                      Page not found - 404
+                  </li>
+          </ol>
+      </nav>
+
+<div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+          </div>
+              
+            
+                  <section class="col-xs-12">
+
+                
+                
+                
+                                      
+                  
+                          <a id="main-content"></a>
+            <div class="region region-content">
+      <article class="node node--type-lander_page node--view-mode-full clearfix default-title node--type-lander-page">
+    
+      
+        
+  
+  
+  <div class="content">
+    
+            <div class="field field--name-field-hero field--type-entity-reference field--label-hidden single field--item"><article class="bg_dark default-title node--type-hero node--view-mode-hero module-background high">
+			<div class="background background-color lazybg" data-style="background-image: url(&#039;/sites/default/files/styles/hero_image_tall/public/2023-03/HERO-404-Mars-Earth-Indigo200-1920x525.jpg?itok=92UcEdSt&#039;)"></div>
+	
+	<div class="section__content">
+					
+							<h1 class="hero-title">
+											
+<span>Missed landing?</span>
+
+									</h1>
+						
+		
+			
+	<div class="section__buttons">
+													
+																	
+				
+								
+				<div class="section__button">
+					<a href="/en/search"  class="button button--default">Relaunch search</a>
+				</div>
+						</div>
+
+	</div>
+
+	
+</article>
+</div>
+      
+      <div class="field field--name-field-module field--type-entity-reference field--label-hidden single field--items">
+              
+
+<article  class="node node--type-single_liftup node--view-mode-module clearfix no-media clearfix title-hidden node--type-single-liftup single_liftup" style="">
+
+	<div class="module-wrapper">
+						
+				
+
+	<div class="content">	
+		
+			
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden single field--item"><h2 class="editor-h2">404 - PAGE NOT FOUND</h2><p>If it's in here somewhere, try the<strong>&nbsp;</strong><a href="/search"><ins><strong>search</strong></ins></a><strong>&nbsp;</strong>or start again on the<a href="/en">&nbsp;<strong>front page</strong></a>.</p><h4>Popular content:&nbsp;</h4><p><a href="/en/news-and-insights/news-and-events/blogs-and-reference-cases" target="_blank"><ins>blogs</ins></a><br><a href="/en/demand-webinars">webinars</a><br><a href="/en/lp/contact-form/contact-us" target="_blank"><ins>contacts</ins></a></p><h4>In the wrong place after all?</h4><p>try <a href="https://store.vaisala.com"><strong>Vaisala Online Store</strong></a></p><p>or <a href="https://docs.vaisala.com"><strong>docs.vaisala.com</strong></a> for product documentation</p><p>or login to <a href="https://vaisala.my.site.com/myvaisala/MV_Login"><strong>MyVaisala</strong></a></p></div>
+      
+
+					</div>
+	</div>
+
+</article>
+
+          </div>
+  
+  </div>
+
+</article>
+
+<section id="block-vaisala-reactandshareblock" class="settings-tray-editable block block-vaisala-core block-react-and-share-block clearfix" data-drupal-settingstray="editable">
+  
+    
+
+      <div id="react-and-share"></div>
+  </section>
+
+
+  </div>
+
+        
+      </section>
+
+                </div>
+  </div>
+
+      <footer class="footer footer-top container-fluid" role="contentinfo">
+        <div class="region region-footer-top">
+    <section id="block-vaisalalogowhite" class="settings-tray-editable block block-block-content block-block-content09b08893-adb2-4a5e-9b82-e74c3b27bc5e clearfix" data-drupal-settingstray="editable">
+  
+    
+
+      
+  </section>
+
+
+  </div>
+
+    </footer>
+  
+      <footer class="footer container-fluid" role="contentinfo">
+        <div class="region region-footer">
+    <section id="block-socialmedialinks" class="settings-tray-editable block-social-media-links block block-social-media-links-block clearfix" data-drupal-settingstray="editable">
+  
+    
+
+      
+
+<ul class="social-media-links--platforms platforms inline horizontal">
+      <li>
+      <a class="social-media-link-icon--facebook" href="https://www.facebook.com/Vaisala"  target="_blank" aria-label="Follow us on Facebook" title="Follow us on Facebook" >
+        <span class='fab fa-facebook fa-lg'></span>
+      </a>
+
+          </li>
+      <li>
+      <a class="social-media-link-icon--instagram" href="https://www.instagram.com/vaisalagroup/"  target="_blank" aria-label="Follow us on Instagram" title="Follow us on Instagram" >
+        <span class='fab fa-instagram fa-lg'></span>
+      </a>
+
+          </li>
+      <li>
+      <a class="social-media-link-icon--linkedin" href="https://www.linkedin.com/company/vaisala"  target="_blank" aria-label="Follow us on LinkedIn" title="Follow us on LinkedIn" >
+        <span class='fab fa-linkedin fa-lg'></span>
+      </a>
+
+          </li>
+      <li>
+      <a class="social-media-link-icon--twitter" href="https://www.x.com/vaisalagroup"  target="_blank" aria-label="Follow us on Twitter" title="Follow us on Twitter" >
+        <span class='fab fa-x-twitter fa-lg'></span>
+      </a>
+
+          </li>
+      <li>
+      <a class="social-media-link-icon--youtube_channel" href="https://www.youtube.com/channel/UCScRatNnyyOhdushbQ01MwQ"  target="_blank" aria-label="Follow us on Youtube" title="Follow us on Youtube" >
+        <span class='fab fa-youtube fa-lg'></span>
+      </a>
+
+          </li>
+  </ul>
+
+  </section>
+
+<nav role="navigation" aria-labelledby="block-footernavigation-menu" id="block-footernavigation" class="settings-tray-editable" data-drupal-settingstray="editable">
+            
+  <h2 class="visually-hidden" id="block-footernavigation-menu">Footer Navigation</h2>
+  
+
+        
+              <ul class="menu nav">
+                                  <li class="expanded col-md-4 col-xs-12">
+        <a href="/en/lp/contact-form" data-target="#">Contact</a>
+                                  <ul class="sub-menu">
+                                  <li class="col-xs-12">
+        <a href="/en/lp/contact-form" data-drupal-link-system-path="node/21291">Contact us form</a>
+                  </li>
+                              <li class="col-xs-12">
+        <a href="/en/lp/contact-form/contact-us" data-drupal-link-system-path="node/25231">Sales and service contacts</a>
+                  </li>
+                              <li class="col-xs-12">
+        <a href="/en/contact-us/office-locations" data-drupal-link-system-path="node/11721">Office locations</a>
+                  </li>
+                              <li class="col-xs-12">
+        <a href="/en/investor-relations-0" data-drupal-link-system-path="node/32696">Investor relations</a>
+                  </li>
+                              <li class="col-xs-12">
+        <a href="https://pages.vaisala.com/preference-center">Newsletter preferences</a>
+                  </li>
+                              <li class="col-xs-12">
+        <a href="/en/newsroom#logo" data-drupal-link-system-path="node/123541">Media and PR</a>
+                  </li>
+                              <li class="col-xs-12">
+        <a href="/en/lp/contact-form/invoicing-billing" data-drupal-link-system-path="node/26491">Invoicing</a>
+                  </li>
+                              <li class="col-xs-12">
+        <a href="/en/lp/feedback" data-drupal-link-system-path="node/41451">Feedback</a>
+                  </li>
+        </ul>
+  
+            </li>
+                              <li class="expanded col-md-4 col-xs-12">
+        <a href="/en/support-portal" data-target="#">Get support</a>
+                                  <ul class="sub-menu">
+                                  <li class="col-xs-12">
+        <a href="/en/search?k=&amp;content_group=documents" data-drupal-link-query="{&quot;content_group&quot;:&quot;documents&quot;,&quot;k&quot;:&quot;&quot;}" data-drupal-link-system-path="search">Downloads</a>
+                  </li>
+                              <li class="col-xs-12">
+        <a href="/en/support-portal" data-drupal-link-system-path="node/110486">Contact Helpdesk</a>
+                  </li>
+                              <li class="col-xs-12">
+        <a href="/en/warranty" data-drupal-link-system-path="node/119111">Warranty</a>
+                  </li>
+        </ul>
+  
+            </li>
+                              <li class="expanded col-md-4 col-xs-12">
+        <a href="/en/events/upcoming-events" data-target="#">Meet</a>
+                                  <ul class="sub-menu">
+                                  <li class="col-xs-12">
+        <a href="/en/upcoming-webinars" data-drupal-link-system-path="node/19871">Webinars</a>
+                  </li>
+                              <li class="col-xs-12">
+        <a href="/en/events/upcoming-events" data-drupal-link-system-path="node/17271">Events</a>
+                  </li>
+                              <li class="col-xs-12">
+        <a href="/en/investors/ir-calendar" data-drupal-link-system-path="node/122476">Investor calendar</a>
+                  </li>
+        </ul>
+  
+            </li>
+                              <li class="expanded col-md-4 col-xs-12">
+        <a href="https://store.vaisala.com" data-target="#">Buy online</a>
+                                  <ul class="sub-menu">
+                                  <li class="col-xs-12">
+        <a href="https://store.vaisala.com">Online shop</a>
+                  </li>
+        </ul>
+  
+            </li>
+                              <li class="expanded col-md-4 col-xs-12">
+        <a href="/en/careers" data-target="#">Join us</a>
+                                  <ul class="sub-menu">
+                                  <li class="col-xs-12">
+        <a href="/en/careers" data-drupal-link-system-path="node/111156">Careers</a>
+                  </li>
+        </ul>
+  
+            </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+    </footer>
+  
+      <footer class="footer footer-bottom container-fluid" role="contentinfo">
+        <div class="region region-footer-bottom">
+    <section id="block-vaisala-brightedgefoundationcontentblock" class="be-related-links settings-tray-editable block block-be-ixf-drupal block-ixf-content-block clearfix" data-drupal-settingstray="editable">
+  
+    
+
+      <div class="link-block-main-container">
+  <div class="be-ix-link-block"></div>
+</div>
+
+  </section>
+
+<nav role="navigation" aria-labelledby="block-vaisala-footer-menu" id="block-vaisala-footer" class="settings-tray-editable clearfix" data-drupal-settingstray="editable">
+  <div class="copyright col-md-3 col-xs-12">Copyright Vaisala 2026</div>
+      
+              <ul class="menu nav col-md-9 col-xs-12">
+                            <li>
+        <a href="/en/vaisala-policies#terms-of-use" data-drupal-link-system-path="node/1126">Terms of Use</a>
+                  </li>
+                        <li>
+        <a href="/en/vaisala-policies#privacy-policy" data-drupal-link-system-path="node/1126">Privacy Policy</a>
+                  </li>
+                        <li>
+        <a href="/en/vaisala-policies#terms-and-conditions" data-drupal-link-system-path="node/1126">Terms and Conditions</a>
+                  </li>
+              <li>
+        <a href="#" aria-label="Print" onclick="window.print();return false;" class="footer-menu--print-link">Print <i class="fa-solid fa-print"></i></a>
+      </li>
+        </ul>
+  
+
+
+      
+</nav>
+
+  </div>
+
+    </footer>
+  
+<span class="scroll-top-wrapper">
+  <span class="icon-up"></span>
+</span>
+
+  </div>
+
+		
+
+		<div id="overlay"><div class="ol-content"><span class="close"></span></div></div>
+		<script src="/modules/custom/vaisala_navigation/../../../apps/vaisala-navigation/dist/assets/nav-index.js?tacm4k"></script>
+<script src="/sites/default/files/js/js_rMIneM_ayGLE6uWZ40kDDoh2Beb2Y0JwHgN-gHpHoro.js?scope=footer&amp;delta=1&amp;language=en&amp;theme=vaisala&amp;include=eJx9Ue12gzAIfSE1j8S5KtV0SXCAdn372bXqum77A9wPOJDgjA9Kgp414KgbH1XalrWCGTvFcubORcPZghR2nc1JeWI4ZemR6BQ_fvEuiIYESphLN67jWhE3V0xhkkmWJ8ZFksep6kYxLuGempZPG9PrPCE1d1SdpDgubJI5fKsbW4b_tMbGmKtBZEhMjiEMa_iJm9tbPJO5ytA3dqGM8CjrjOpx4nZqjYJ09djZi-IjZ95YahH7OXzF1x7qRDkoo3NC6clGKD-L29Qb-Fupb4vv6vprkpfIFztMB7f7OMn7fOx9h7sai_m6cHjk2jmtd7led0fBEgd4lBJeKUqxVej1Ezyu-Kc"></script>
+<script src="https://tools.euroland.com/tools/common/eurolandiframeautoheight/eurolandtoolsintegrationobject.js"></script>
+<script src="/sites/default/files/js/js_Qz6OnsvIH8MPiQXH31TCDE6MMHM5LwpLVMmwKSdLSu8.js?scope=footer&amp;delta=3&amp;language=en&amp;theme=vaisala&amp;include=eJx9Ue12gzAIfSE1j8S5KtV0SXCAdn372bXqum77A9wPOJDgjA9Kgp414KgbH1XalrWCGTvFcubORcPZghR2nc1JeWI4ZemR6BQ_fvEuiIYESphLN67jWhE3V0xhkkmWJ8ZFksep6kYxLuGempZPG9PrPCE1d1SdpDgubJI5fKsbW4b_tMbGmKtBZEhMjiEMa_iJm9tbPJO5ytA3dqGM8CjrjOpx4nZqjYJ09djZi-IjZ95YahH7OXzF1x7qRDkoo3NC6clGKD-L29Qb-Fupb4vv6vprkpfIFztMB7f7OMn7fOx9h7sai_m6cHjk2jmtd7led0fBEgd4lBJeKUqxVej1Ezyu-Kc"></script>
+<script src="/modules/custom/vaisala_eloqua/js/vaisala_eloqua_prepopulate.js?v=1.2" defer></script>
+<script src="/modules/custom/vaisala_instana/js/instana-init.js?v=1.8.1"></script>
+<script src="https://eum.instana.io/1.8.1/eum.min.js" defer crossorigin="anonymous" integrity="sha384-qFzHZ5BC7HOPEBSYkbYSv+DBWrG34P1QW9mIaCR41db6yOJNYmH4antW6KLkc6v1"></script>
+
+
+	</body>
+</html>

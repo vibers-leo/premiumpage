@@ -1,0 +1,31 @@
+{
+  "hs-tech": {
+    "id": "hs-tech",
+    "image": "/hstech/HS-TECH_files/e6992977dde8b.png",
+    "desc": "Vaisala's reliable and accurate HVAC meters and sensors are designed with energy efficiency in mind, whether you are optimizing cooling towers or demand-controlled ventilation. Our large selection includes ±3% and ±2% humidity and temperature measurement HVAC meters, CO2 measurement sensors and also handheld meters. They can be used indoors and outdoors, and installed on walls or in ventilation ducts. ■ Easy installation method ■ Easy maintenance ■ CO2 Sensor of Innovative New Technology ■ Relia...",
+    "specs": []
+  },
+  "hvac": {
+    "id": "hvac",
+    "image": "/hstech/HVAC_files/e6992977dde8b.png",
+    "desc": "This is a high performance temperature and humidity sensor from VAISALA that aims to efficiently manage energy in industrial air conditioning systems and combines excellent long-term stability and accuracy.\n\nThis is a high performance temperature and humidity sensor from VAISALA that aims to efficiently manage energy in industrial air conditioning systems and combines excellent long-term stability and accuracy.\n\nHMD60 ▶ ±1.5%RH DUCT Transmitter ▶ SUS Probe, Aluminum Housing\n\nHMW90 Series ▶ ±1.7%...",
+    "specs": []
+  },
+  "hs tech": {
+    "id": "hs tech",
+    "image": "/hstech/HS TECH_files/e6992977dde8b.png",
+    "desc": "13494 경기도 성남시 분당구 대왕판교로 670 판교테크노밸리 유스페이스2 B동 4층 410호 사업자등록번호 : 144-81-08640ㅣFAX: 031-8016-3510 견적문의: 070-4346-1844ㅣ 기술문의: hs-tech@hs-tech.co .kr COPYRIGHT 2016 ALL RIGHT RESERVED. 이용약관 개인정보처리방침\n\n13494 경기도 성남시 분당구 대왕판교로 670 판교테크노밸리 유스페이스2 B동 4층 410호 사업자등록번호 : 144-81-08640 FAX: 031-8016-3510 견적문의: 070-4346-1844 기술문의: hs-tech@hs-tech.co.kr COPYRIGHT 2016 ALL RIGHT RESERVED.",
+    "specs": []
+  },
+  "hmw90": {
+    "id": "hmw90",
+    "image": "/hstech/HMW90_files/e6992977dde8b.png",
+    "desc": "HMW90 Series The HMW90 series measures relative humidity and temperature in indoor environments, where high accuracy, stability, and reliable operation are required.\n\nThe HMW90 series measures relative humidity and temperature in indoor environments, where high accuracy, stability, and reliable operation are required.\n\n#410, U-Space2 B, 670 Daewangpangyo-ro, Bundang-Gu, Seongnam-Si, Gyeonggi-Do, Korea Company Registration Number : 144-81-08640ㅣFAX: 031-8016-3510 Inquiry: 070-4346-1844ㅣ Technical...",
+    "specs": [
+      {
+        "label": "Temperature",
+        "value": "range"
+      }
+    ]
+  }
+}
