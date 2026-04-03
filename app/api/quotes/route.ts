@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
 import { prisma } from '@/lib/prisma'
-import { writeFile, mkdir } from 'fs/promises'
-import { join } from 'path'
-import { existsSync } from 'fs'
+import { uploadBuffer } from '@/lib/ncp-storage'
 import { sendQuoteConfirmationEmail, sendAdminNotificationEmail } from '@/lib/email'
 import { templates } from '@/lib/data'
 
@@ -29,32 +27,22 @@ export async function POST(request: NextRequest) {
             )
         }
 
-        // 파일 처리
+        // 파일 처리 — NCP Object Storage 업로드
         const files: string[] = []
-        // Only join with public/uploads to avoid tracing the entire public directory
-        const uploadDir = join(process.cwd(), 'public/uploads/quotes')
 
-        // 업로드 디렉토리 생성
-        if (!existsSync(uploadDir)) {
-            await mkdir(uploadDir, { recursive: true })
-        }
-
-        // 파일 저장
         for (let i = 0; i < 10; i++) {
             const file = formData.get(`file${i}`) as File | null
             if (file) {
                 const bytes = await file.arrayBuffer()
                 const buffer = Buffer.from(bytes)
 
-                // 고유한 파일명 생성
                 const timestamp = Date.now()
                 const randomStr = Math.random().toString(36).substring(7)
                 const ext = file.name.split('.').pop()
-                const filename = `${timestamp}-${randomStr}.${ext}`
-                const filepath = join(uploadDir, filename)
+                const key = `premiumpage/quotes/${timestamp}-${randomStr}.${ext}`
 
-                await writeFile(filepath, buffer)
-                files.push(`/uploads/quotes/${filename}`)
+                const url = await uploadBuffer(buffer, key, file.type || 'application/octet-stream')
+                files.push(url)
             }
         }
 

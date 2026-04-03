@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
 import { prisma } from '@/lib/prisma'
-import { unlink } from 'fs/promises'
-import { join } from 'path'
+import { deleteObject, extractKeyFromUrl } from '@/lib/ncp-storage'
 
 export async function DELETE(
     request: NextRequest,
@@ -41,16 +40,12 @@ export async function DELETE(
             )
         }
 
-        // 파일 삭제 (선택 사항 리스크가 있을 수 있으므로 신중히)
+        // NCP Object Storage 파일 삭제
         try {
             const components = JSON.parse(project.components)
             if (components.fileUrl) {
-                // Only join with public/uploads to avoid tracing the entire public directory
-                const relativePath = components.fileUrl.startsWith('/uploads/')
-                    ? components.fileUrl.replace('/uploads/', '')
-                    : components.fileUrl;
-                const filePath = join(process.cwd(), 'public', 'uploads', relativePath)
-                await unlink(filePath).catch(e => console.warn('File deletion failed:', e))
+                const key = extractKeyFromUrl(components.fileUrl)
+                if (key) await deleteObject(key).catch(e => console.warn('NCP delete failed:', e))
             }
         } catch (e) {
             console.warn('Could not parse components for file deletion:', e)
