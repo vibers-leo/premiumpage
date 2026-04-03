@@ -3,7 +3,6 @@
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 
@@ -50,10 +49,10 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
     return (
         <>
             {!isIndividualTemplate && (
-                <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${isScrolled ? 'border-border/50 bg-background/90 backdrop-blur-2xl shadow-sm' : 'border-white/5 bg-background/70 backdrop-blur-2xl'}`}>
+                <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${isScrolled ? 'border-neutral-200 bg-white/95 backdrop-blur-2xl shadow-sm' : 'border-neutral-100 bg-white/80 backdrop-blur-2xl'}`}>
                     <div className="flex items-center justify-between h-20 px-6 mx-auto max-w-screen-2xl">
                         <div className="flex items-center gap-12">
-                            <Link href="/" className="text-2xl font-black gradient-text tracking-tighter">
+                            <Link href="/" className="text-2xl font-black tracking-tighter bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
                                 Premium Page
                             </Link>
                             <div className="items-center hidden gap-8 lg:flex">
@@ -61,26 +60,23 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                                     <Link
                                         key={link.href}
                                         href={link.href}
-                                        className={`text-sm font-black uppercase tracking-widest transition-all hover:text-primary ${pathname === link.href ? 'text-primary' : 'text-muted-foreground'}`}
+                                        className={`text-sm font-semibold transition-all hover:text-neutral-900 ${pathname === link.href ? 'text-neutral-900' : 'text-neutral-500'}`}
                                     >
                                         {link.label}
                                     </Link>
                                 ))}
                             </div>
                         </div>
-                        <div className="flex items-center gap-6">
-                            <div className="hidden sm:block">
-                                <ThemeToggle />
-                            </div>
+                        <div className="flex items-center gap-4">
                             <Link
                                 href="/login"
-                                className="hidden sm:block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                                className="hidden sm:block text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors"
                             >
                                 로그인
                             </Link>
                             <Button
                                 asChild
-                                className="hidden sm:flex h-10 px-6 text-sm font-bold transition-all rounded-full bg-foreground text-background hover:scale-105"
+                                className="hidden sm:flex h-10 px-6 text-sm font-bold transition-all rounded-full bg-neutral-900 text-white hover:bg-neutral-700 hover:scale-105"
                             >
                                 <Link href="/quote">무료 상담</Link>
                             </Button>
@@ -96,20 +92,19 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
 
                     {/* Mobile Menu */}
                     {isMobileMenuOpen && (
-                        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-2xl">
+                        <div className="lg:hidden border-t border-neutral-100 bg-white/95 backdrop-blur-2xl">
                             <div className="px-6 py-6 space-y-4">
                                 {navLinks.map((link) => (
                                     <Link
                                         key={link.href}
                                         href={link.href}
-                                        className={`block text-lg font-bold py-2 transition-colors hover:text-primary ${pathname === link.href ? 'text-primary' : 'text-foreground'}`}
+                                        className={`block text-lg font-bold py-2 transition-colors hover:text-neutral-900 ${pathname === link.href ? 'text-neutral-900' : 'text-neutral-500'}`}
                                     >
                                         {link.label}
                                     </Link>
                                 ))}
-                                <div className="pt-4 border-t border-border flex items-center gap-4">
-                                    <ThemeToggle />
-                                    <Link href="/login" className="text-sm font-medium text-muted-foreground hover:text-foreground">
+                                <div className="pt-4 border-t border-neutral-100 flex items-center gap-4">
+                                    <Link href="/login" className="text-sm font-medium text-neutral-500 hover:text-neutral-900">
                                         로그인
                                     </Link>
                                 </div>
