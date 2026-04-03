@@ -1,17 +1,6 @@
-'use client'
-
-import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
 export function GlobalHeader() {
-    const pathname = usePathname()
-
-    // 납품 카탈로그 페이지에서는 공통 헤더 숨김
-    const catalogPaths = ['/templates', '/gentop', '/vibers', '/emt']
-    if (pathname && catalogPaths.some(p => pathname.startsWith(p))) {
-        return null
-    }
-
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-neutral-200/80 bg-white/80 backdrop-blur-xl">
             <div className="flex items-center justify-between h-16 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">

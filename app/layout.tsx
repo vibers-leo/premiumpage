@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { GlobalHeader } from "@/components/GlobalHeader";
 
 export const metadata: Metadata = {
   title: "Premium Page — 전자카탈로그 에이전시",
@@ -20,10 +18,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css" />
       </head>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <GlobalHeader />
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   )
