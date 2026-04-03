@@ -19,19 +19,19 @@
 
 */
 -- DropIndex
-DROP INDEX "Category_slug_key";
+DROP INDEX IF EXISTS "Category_slug_key";
 
 -- DropIndex
-DROP INDEX "Category_name_key";
+DROP INDEX IF EXISTS "Category_name_key";
 
 -- DropIndex
-DROP INDEX "PricingPlan_slug_key";
+DROP INDEX IF EXISTS "PricingPlan_slug_key";
 
 -- DropIndex
-DROP INDEX "Subscription_projectId_key";
+DROP INDEX IF EXISTS "Subscription_projectId_key";
 
 -- DropIndex
-DROP INDEX "Template_slug_key";
+DROP INDEX IF EXISTS "Template_slug_key";
 
 -- DropTable
 PRAGMA foreign_keys=off;
