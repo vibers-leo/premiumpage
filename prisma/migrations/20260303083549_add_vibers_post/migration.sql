@@ -35,27 +35,27 @@ DROP INDEX IF EXISTS "Template_slug_key";
 
 -- DropTable
 PRAGMA foreign_keys=off;
-DROP TABLE "Category";
+DROP TABLE IF EXISTS "Category";
 PRAGMA foreign_keys=on;
 
 -- DropTable
 PRAGMA foreign_keys=off;
-DROP TABLE "Payment";
+DROP TABLE IF EXISTS "Payment";
 PRAGMA foreign_keys=on;
 
 -- DropTable
 PRAGMA foreign_keys=off;
-DROP TABLE "PricingPlan";
+DROP TABLE IF EXISTS "PricingPlan";
 PRAGMA foreign_keys=on;
 
 -- DropTable
 PRAGMA foreign_keys=off;
-DROP TABLE "Subscription";
+DROP TABLE IF EXISTS "Subscription";
 PRAGMA foreign_keys=on;
 
 -- DropTable
 PRAGMA foreign_keys=off;
-DROP TABLE "Template";
+DROP TABLE IF EXISTS "Template";
 PRAGMA foreign_keys=on;
 
 -- CreateTable
