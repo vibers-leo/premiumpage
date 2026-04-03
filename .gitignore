@@ -62,3 +62,8 @@ public/report/*.pdf
 # Air HS-TECH raw crawled source files (HTML + _files/ folders)
 public/air_hstech/*.html
 public/air_hstech/*_files/
+
+# Expo mobile app
+mobile/node_modules/
+mobile/dist/
+mobile/.expo/
