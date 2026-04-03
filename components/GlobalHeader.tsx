@@ -6,8 +6,9 @@ import Link from 'next/link'
 export function GlobalHeader() {
     const pathname = usePathname()
 
-    // 템플릿/카탈로그 페이지에서는 공통 헤더 숨김
-    if (pathname && (pathname.startsWith('/templates') || pathname.startsWith('/gentop'))) {
+    // 납품 카탈로그 페이지에서는 공통 헤더 숨김
+    const catalogPaths = ['/templates', '/gentop', '/vibers', '/emt']
+    if (pathname && catalogPaths.some(p => pathname.startsWith(p))) {
         return null
     }
 
