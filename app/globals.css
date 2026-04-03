@@ -4,7 +4,7 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Inter", "Pretendard", system-ui, -apple-system, sans-serif;
+  --font-sans: "PretendardVariable", "Pretendard", system-ui, -apple-system, sans-serif;
 
   --color-primary-500: #a855f7;
   --color-primary-600: #9333ea;
@@ -92,7 +92,11 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    background-image: linear-gradient(to right, #a855f7, #ec4899, #06b6d4);
+    background-image: linear-gradient(to right, #171717, #525252, #737373);
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
   }
 
   .glass-card {

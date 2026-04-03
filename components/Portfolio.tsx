@@ -4,9 +4,6 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ExternalLink, Sparkles } from 'lucide-react'
-import { Card } from './ui/card'
-import { Badge } from './ui/badge'
-import { Button } from './ui/button'
 
 const portfolioItems = [
     {
@@ -17,10 +14,9 @@ const portfolioItems = [
         image: '/portfolio/emt-masterpiece.jpg',
         tags: ['Three.js', 'High-end', 'Global Standard'],
         links: [
-            { label: '국문 한글 버전', url: 'https://emt-ko.vercel.app' },
-            { label: 'Global English Version', url: 'https://emt-en.vercel.app' }
+            { label: '국문 한글 버전', url: 'https://emt-ko.premiumpage.kr' },
+            { label: 'Global English Version', url: 'https://emt-en.premiumpage.kr' }
         ],
-        link: '#'
     }
 ]
 
@@ -28,7 +24,7 @@ const categories = ['All', 'Basic Viewer', 'Standard Interactive', 'Masterpiece 
 
 export function Portfolio() {
     const [selectedCategory, setSelectedCategory] = useState('All')
-    const [selectedItem, setSelectedItem] = useState<any | null>(null)
+    const [selectedItem, setSelectedItem] = useState<typeof portfolioItems[0] | null>(null)
 
     const filteredItems = selectedCategory === 'All'
         ? portfolioItems
@@ -45,10 +41,10 @@ export function Portfolio() {
                     className="text-center mb-16"
                 >
                     <div className="flex items-center justify-center gap-3 mb-6">
-                        <Sparkles className="w-12 h-12 text-purple-400" />
-                        <h2 className="text-6xl md:text-8xl font-black gradient-text">포트폴리오</h2>
+                        <Sparkles className="w-10 h-10 text-neutral-400" />
+                        <h2 className="text-5xl md:text-7xl font-black gradient-text">포트폴리오</h2>
                     </div>
-                    <p className="text-2xl text-gray-400 font-light max-w-3xl mx-auto">
+                    <p className="text-xl text-neutral-500 font-light max-w-3xl mx-auto">
                         프리미엄페이지가 구축한 하이엔드 전자 카탈로그 사례입니다.
                     </p>
                 </motion.div>
@@ -58,15 +54,15 @@ export function Portfolio() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="flex flex-wrap justify-center gap-4 mb-16"
+                    className="flex flex-wrap justify-center gap-3 mb-16"
                 >
                     {categories.map((category) => (
                         <button
                             key={category}
                             onClick={() => setSelectedCategory(category)}
-                            className={`px-6 py-3 rounded-full font-bold transition-all ${selectedCategory === category
-                                ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/50'
-                                : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                            className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all ${selectedCategory === category
+                                ? 'bg-neutral-900 text-white shadow-sm'
+                                : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
                                 }`}
                         >
                             {category}
@@ -77,93 +73,142 @@ export function Portfolio() {
                 {/* 포트폴리오 그리드 */}
                 <motion.div
                     layout
-                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
                 >
                     <AnimatePresence mode="popLayout">
                         {filteredItems.map((item, index) => (
                             <motion.div
                                 key={item.id}
                                 layout
-                                initial={{ opacity: 0, scale: 0.8 }}
+                                initial={{ opacity: 0, scale: 0.95 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.8 }}
+                                exit={{ opacity: 0, scale: 0.95 }}
                                 transition={{ duration: 0.3, delay: index * 0.05 }}
+                                onClick={() => setSelectedItem(item)}
+                                className="group bg-white border border-neutral-200 hover:border-neutral-400 hover:-translate-y-1 transition-all duration-300 rounded-2xl shadow-sm hover:shadow-md cursor-pointer overflow-hidden"
                             >
-                                <Card
-                                    className="group bg-card/30 backdrop-blur-xl border-2 border-white/10 hover:border-purple-500/50 transition-all overflow-hidden flex flex-col h-full"
-                                >
-                                    {/* 이미지 섹션 */}
-                                    <div className="aspect-video relative overflow-hidden">
-                                        <Image
-                                            src={item.image}
-                                            alt={item.title}
-                                            fill
-                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                        <div className="absolute top-4 right-4 z-10">
-                                            <Badge className="bg-purple-500/80 text-white border-0 font-bold backdrop-blur-sm">
-                                                {item.category}
-                                            </Badge>
-                                        </div>
+                                {/* 이미지 섹션 */}
+                                <div className="aspect-video relative overflow-hidden bg-neutral-100">
+                                    <Image
+                                        src={item.image}
+                                        alt={item.title}
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute top-3 right-3 z-10">
+                                        <span className="px-3 py-1 rounded-full text-xs font-bold bg-neutral-900/80 text-white backdrop-blur-sm">
+                                            {item.category}
+                                        </span>
                                     </div>
+                                </div>
 
-                                    {/* 콘텐츠 섹션 */}
-                                    <div className="p-8 flex flex-col flex-1">
-                                        <h3 className="text-2xl font-black text-white mb-3 transition-all">
-                                            {item.title}
-                                        </h3>
-                                        <p className="text-gray-400 mb-6 line-clamp-2 text-base leading-relaxed">
-                                            {item.description}
-                                        </p>
-
-                                        <div className="flex flex-wrap gap-2 mb-8">
-                                            {item.tags.map((tag: string, i: number) => (
-                                                <Badge
-                                                    key={i}
-                                                    variant="secondary"
-                                                    className="bg-gray-800/50 text-gray-400 text-xs border border-white/5"
-                                                >
-                                                    {tag}
-                                                </Badge>
-                                            ))}
-                                        </div>
-
-                                        {/* 🔗 링크 버튼 (카드 하단 고정) */}
-                                        <div className="mt-auto flex flex-col gap-3">
-                                            {item.links ? (
-                                                <div className="grid grid-cols-2 gap-3">
-                                                    {item.links.map((link: any, i: number) => (
-                                                        <Button
-                                                            key={i}
-                                                            asChild
-                                                            variant="outline"
-                                                            className="h-12 text-sm font-bold bg-white/5 hover:bg-white/10 border-white/10 hover:border-purple-500/50 transition-all"
-                                                        >
-                                                            <a href={link.url} target="_blank" rel="noopener noreferrer">
-                                                                {link.label.includes('한글') ? '한글 버전' : 'English'}
-                                                            </a>
-                                                        </Button>
-                                                    ))}
-                                                </div>
-                                            ) : (
-                                                <Button
-                                                    asChild
-                                                    className="h-12 text-sm font-bold bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 shadow-lg shadow-purple-500/20"
-                                                >
-                                                    <a href={item.link} target="_blank" rel="noopener noreferrer">
-                                                        <ExternalLink className="w-4 h-4 mr-2" />
-                                                        프로젝트 보기
-                                                    </a>
-                                                </Button>
-                                            )}
-                                        </div>
+                                {/* 콘텐츠 */}
+                                <div className="p-6">
+                                    <h3 className="text-lg font-black text-neutral-900 mb-2">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-neutral-500 text-sm leading-relaxed line-clamp-2 mb-4">
+                                        {item.description}
+                                    </p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {item.tags.map((tag, i) => (
+                                            <span
+                                                key={i}
+                                                className="px-2.5 py-1 rounded-full text-xs font-medium bg-neutral-100 text-neutral-600"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
                                     </div>
-                                </Card>
+                                </div>
                             </motion.div>
                         ))}
                     </AnimatePresence>
                 </motion.div>
             </div>
+
+            {/* 모달 */}
+            <AnimatePresence>
+                {selectedItem && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+                        onClick={() => setSelectedItem(null)}
+                    >
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: 16 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: 16 }}
+                            transition={{ duration: 0.2 }}
+                            onClick={(e) => e.stopPropagation()}
+                            className="bg-white rounded-3xl p-8 max-w-2xl w-full shadow-2xl"
+                        >
+                            {/* 모달 헤더 */}
+                            <div className="flex items-start justify-between mb-6">
+                                <div>
+                                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-neutral-100 text-neutral-600 mb-3 inline-block">
+                                        {selectedItem.category}
+                                    </span>
+                                    <h3 className="text-2xl font-black text-neutral-900">{selectedItem.title}</h3>
+                                </div>
+                                <button
+                                    onClick={() => setSelectedItem(null)}
+                                    className="p-2 rounded-full text-neutral-400 hover:text-neutral-900 hover:bg-neutral-100 transition-colors"
+                                >
+                                    <X className="w-5 h-5" />
+                                </button>
+                            </div>
+
+                            {/* 이미지 */}
+                            <div className="aspect-video relative overflow-hidden rounded-2xl bg-neutral-100 mb-6">
+                                <Image
+                                    src={selectedItem.image}
+                                    alt={selectedItem.title}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+
+                            {/* 설명 */}
+                            <p className="text-neutral-600 leading-relaxed mb-5">
+                                {selectedItem.description}
+                            </p>
+
+                            {/* 태그 */}
+                            <div className="flex flex-wrap gap-2 mb-8">
+                                {selectedItem.tags.map((tag, i) => (
+                                    <span
+                                        key={i}
+                                        className="px-3 py-1.5 rounded-full text-xs font-medium bg-neutral-100 text-neutral-600"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+
+                            {/* 링크 버튼 */}
+                            {selectedItem.links && (
+                                <div className="grid grid-cols-2 gap-3">
+                                    {selectedItem.links.map((link, i) => (
+                                        <a
+                                            key={i}
+                                            href={link.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center justify-center gap-2 h-12 px-4 rounded-xl text-sm font-bold border border-neutral-200 text-neutral-700 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition-all duration-200"
+                                        >
+                                            <ExternalLink className="w-4 h-4" />
+                                            {link.label.includes('한글') || link.label.includes('국문') ? '한글 버전' : 'English'}
+                                        </a>
+                                    ))}
+                                </div>
+                            )}
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     )
 }
