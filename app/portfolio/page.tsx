@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export default function PortfolioPage() {
     return (
-        <div className="min-h-screen bg-white pt-24">
+        <div className="min-h-screen bg-white">
             <Portfolio />
         </div>
     )

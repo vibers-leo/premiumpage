@@ -22,28 +22,29 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
         setIsMobileMenuOpen(false)
     }, [pathname])
 
-    // 개별 템플릿 페이지 감지
+    // 납품 카탈로그 도메인/경로에서는 헤더 숨김
+    const catalogHostnames = [
+        'hangseong.premiumpage.kr',
+        'hstech.premiumpage.kr',
+        'hstech-kr.premiumpage.kr',
+        'gentop.premiumpage.kr',
+        'hstechco.premiumpage.kr',
+        'emt.premiumpage.kr',
+        'emt-ko.premiumpage.kr',
+        'magazine.vibers.co.kr',
+        'vibers.premiumpage.kr',
+    ]
+    const catalogPaths = ['/templates/', '/gentop/', '/vibers/', '/emt/']
     const isIndividualTemplate =
-        pathname?.startsWith('/templates/hangseong') ||
-        pathname?.startsWith('/templates/hs-tech') ||
-        pathname?.startsWith('/templates/gentop') ||
-        pathname?.startsWith('/templates/emt') ||
-        pathname?.startsWith('/templates/air-hstech') ||
-        (typeof window !== 'undefined' && (
-            window.location.hostname.includes('hangseong.premiumpage.kr') ||
-            window.location.hostname.includes('hstech.premiumpage.kr') ||
-            window.location.hostname.includes('hstech-kr.premiumpage.kr') ||
-            window.location.hostname.includes('gentop.premiumpage.kr') ||
-            window.location.hostname.includes('hstechco.premiumpage.kr') ||
-            window.location.hostname.includes('emt.premiumpage.kr') ||
-            window.location.hostname.includes('emt-ko.premiumpage.kr')
-        ))
+        catalogPaths.some(p => pathname?.startsWith(p)) ||
+        (typeof window !== 'undefined' &&
+            catalogHostnames.some(h => window.location.hostname.includes(h)))
 
     const navLinks = [
-        { href: '/templates', label: 'Portfolios' },
-        { href: '/pricing', label: 'Pricing' },
-        { href: '/about', label: 'About' },
-        { href: '/quote', label: 'Contact' },
+        { href: '/portfolio', label: '포트폴리오' },
+        { href: '/pricing', label: '요금제' },
+        { href: '/about', label: '소개' },
+        { href: '/quote', label: '제작 의뢰' },
     ]
 
     return (
@@ -73,15 +74,15 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                             </div>
                             <Link
                                 href="/login"
-                                className="hidden sm:block text-sm font-black uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors"
+                                className="hidden sm:block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                             >
-                                Member
+                                로그인
                             </Link>
                             <Button
                                 asChild
-                                className="hidden sm:flex h-10 px-8 text-xs font-black uppercase tracking-widest transition-all rounded-full bg-foreground text-background hover:scale-105"
+                                className="hidden sm:flex h-10 px-6 text-sm font-bold transition-all rounded-full bg-foreground text-background hover:scale-105"
                             >
-                                <Link href="/quote">Consulting</Link>
+                                <Link href="/quote">무료 상담</Link>
                             </Button>
                             {/* Mobile Menu Toggle */}
                             <button
@@ -108,12 +109,12 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                                 ))}
                                 <div className="pt-4 border-t border-border flex items-center gap-4">
                                     <ThemeToggle />
-                                    <Link href="/login" className="text-sm font-bold text-muted-foreground hover:text-foreground">
-                                        Member
+                                    <Link href="/login" className="text-sm font-medium text-muted-foreground hover:text-foreground">
+                                        로그인
                                     </Link>
                                 </div>
                                 <Button asChild className="w-full h-12 rounded-full font-bold">
-                                    <Link href="/quote">무료 컨설팅 신청하기</Link>
+                                    <Link href="/quote">무료 상담 신청하기</Link>
                                 </Button>
                             </div>
                         </div>
