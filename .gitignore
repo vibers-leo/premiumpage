@@ -67,3 +67,12 @@ public/air_hstech/*_files/
 mobile/node_modules/
 mobile/dist/
 mobile/.expo/
+mobile/app.app/
+mobile/build-*.tar.gz
+
+# Database
+prisma/*.db
+prisma/*.db-journal
+
+# Build logs
+.turbo/
