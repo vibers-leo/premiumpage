@@ -81,10 +81,10 @@ export function proxy(request: NextRequest) {
         }
     }
 
-    // 8. EMT (한글) 도메인 처리 - Next.js 한글 카탈로그
+    // 8. EMT (한글) 도메인 처리 - 정적 HTML 전자카탈로그
     if (hostname.includes('emt-ko.premiumpage.kr')) {
-        if (url.pathname === '/') {
-            const response = NextResponse.rewrite(new URL('/templates/emt-ko', request.url))
+        if (!url.pathname.startsWith('/emt/')) {
+            const response = NextResponse.rewrite(new URL('/emt/index-ko.html', request.url))
             response.headers.set('x-template-page', 'true')
             return response
         }
