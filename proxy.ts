@@ -74,7 +74,7 @@ export function proxy(request: NextRequest) {
 
     // 7. EMT (영문) 도메인 처리 - 원본 정적 HTML 서빙
     if (hostname.includes('emt.premiumpage.kr') || hostname.includes('emt-en.premiumpage.kr')) {
-        if (url.pathname === '/') {
+        if (!url.pathname.startsWith('/emt/')) {
             const response = NextResponse.rewrite(new URL('/emt/index.html', request.url))
             response.headers.set('x-template-page', 'true')
             return response
@@ -83,7 +83,7 @@ export function proxy(request: NextRequest) {
 
     // 8. EMT (한글) 도메인 처리 - 한글 전용 정적 HTML 서빙
     if (hostname.includes('emt-ko.premiumpage.kr')) {
-        if (url.pathname === '/') {
+        if (!url.pathname.startsWith('/emt/')) {
             const response = NextResponse.rewrite(new URL('/emt/index-ko.html', request.url))
             response.headers.set('x-template-page', 'true')
             return response
