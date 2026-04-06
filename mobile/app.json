@@ -32,7 +32,15 @@
       "expo-router",
       "expo-secure-store",
       "expo-font",
-      "expo-asset"
-    ]
+      "expo-asset",
+      "./plugins/withXcode26Fix"
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "f80059a9-b35d-4840-87c9-522eb9d9c14b"
+      }
+    },
+    "owner": "juuuno1116"
   }
 }
