@@ -2,11 +2,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getArticleBySlug, getArticlesByIssue, getDBPostBySlug, getDBPosts, CATEGORY_LABELS, CURRENT_ISSUE } from '../lib/data'
 
-// ─── Static Params ────────────────────────────────────────────────────────────
-export async function generateStaticParams() {
-    const articles = getArticlesByIssue(CURRENT_ISSUE.id)
-    return articles.map(a => ({ slug: a.slug }))
-}
+export const dynamic = 'force-dynamic'
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {

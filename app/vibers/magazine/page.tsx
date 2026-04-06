@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import Link from 'next/link'
 import { CURRENT_ISSUE, ARTICLES, CATEGORY_LABELS, getDBPosts } from './lib/data'
 import type { Article } from './lib/types'
