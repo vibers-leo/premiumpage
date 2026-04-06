@@ -81,18 +81,33 @@ export async function GET(request: Request) {
       }),
     ]);
 
-    const projects = await prisma.project.findMany({
-      take: 5,
-      orderBy: { createdAt: "desc" },
-      select: { id: true, name: true, createdAt: true },
-    });
+    const [recentProjects, recentQuotes] = await Promise.all([
+      prisma.project.findMany({
+        take: 3,
+        orderBy: { createdAt: "desc" },
+        select: { id: true, name: true, createdAt: true },
+      }),
+      prisma.quoteRequest.findMany({
+        take: 3,
+        orderBy: { createdAt: "desc" },
+        select: { id: true, contactName: true, templateId: true, status: true, createdAt: true },
+      }),
+    ]);
 
-    const recentActivity = projects.map((p) => ({
-      id: p.id,
-      type: "project_created" as const,
-      label: p.name,
-      timestamp: p.createdAt.toISOString(),
-    }));
+    const recentActivity = [
+      ...recentProjects.map((p) => ({
+        id: `proj-${p.id}`,
+        type: "project_created",
+        label: `카탈로그 생성: ${p.name}`,
+        timestamp: p.createdAt.toISOString(),
+      })),
+      ...recentQuotes.map((q) => ({
+        id: `quote-${q.id}`,
+        type: "inquiry",
+        label: `견적 요청: ${q.contactName ?? "고객"} (${q.templateId ?? ""}) — ${q.status}`,
+        timestamp: q.createdAt.toISOString(),
+      })),
+    ].sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()).slice(0, 5);
 
     return Response.json({
       projectId: "premiumpage",
