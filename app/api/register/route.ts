@@ -37,6 +37,13 @@ export async function POST(req: Request) {
 
         const { password: _, ...userWithoutPassword } = user
 
+        // vibers-sync: premiumpage 신규 가입자를 vibers.brand_members에 등록
+        fetch(`${process.env.VIBERS_SITE_URL ?? 'https://vibers.co.kr'}/api/vibers/connect`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-vibers-secret': process.env.VIBERS_CONNECT_SECRET ?? '' },
+          body: JSON.stringify({ type: 'join', brandSlug: 'premiumpage', userEmail: email, userName: name ?? null }),
+        }).catch(() => {});
+
         return NextResponse.json(userWithoutPassword)
     } catch (error) {
         if (error instanceof z.ZodError) {

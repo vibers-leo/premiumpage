@@ -378,12 +378,82 @@ async function generateHangseongPDF(timestamp) {
 // ──────────────────────────────────────
 // 실행
 // ──────────────────────────────────────
+// EMT PDF (EN / KO 각각 풀스크롤 + A4가로)
+// ──────────────────────────────────────
+
+const EMT_EN_URL = 'https://emt-en.premiumpage.kr/'
+const EMT_KO_URL = 'https://emt-ko.premiumpage.kr/'
+
+// 슬라이드 기반 EMT 전체 페이지 캡처 (go(n) 함수로 이동)
+async function captureEMTAllSlides(page, url, viewport) {
+    await page.setViewportSize(viewport)
+    await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 })
+    await page.waitForTimeout(3000)
+
+    // 슬라이드 총 개수 확인
+    const slideCount = await page.evaluate(() => document.querySelectorAll('.slide').length)
+    console.log(`     슬라이드 ${slideCount}장 감지`)
+
+    // 첫 슬라이드로 이동 (< 버튼을 slideCount번 클릭해서 처음으로)
+    const prevBtn = await page.$('.nav-btn')
+    for (let i = 0; i < slideCount; i++) { if (prevBtn) await prevBtn.click() }
+    await page.waitForTimeout(500)
+
+    const screenshots = []
+    for (let i = 0; i < slideCount; i++) {
+        await page.waitForTimeout(600)
+        const data = await page.screenshot({ type: 'png' })
+        screenshots.push({ data, label: `Slide ${String(i + 1).padStart(2, '0')}` })
+        process.stdout.write(`\r     ${i + 1}/${slideCount} 캡처 완료`)
+        // NEXT 버튼 클릭 (마지막 슬라이드는 클릭 불필요)
+        if (i < slideCount - 1) {
+            const nextBtn = await page.$$('.nav-btn')
+            if (nextBtn[1]) await nextBtn[1].click()
+        }
+    }
+    console.log()
+    return screenshots
+}
+
+async function generateEMTPDF(lang, timestamp) {
+    const outDir = path.join(__dirname, '..', 'public', 'report')
+    fs.mkdirSync(outDir, { recursive: true })
+
+    const url = lang === 'en' ? EMT_EN_URL : EMT_KO_URL
+    const label = lang === 'en' ? 'EMT_EN' : 'EMT_KO'
+
+    console.log(`\n🚀 ${label} 카탈로그 PDF 생성 시작`)
+
+    const browser = await chromium.launch({ headless: true, args: ['--disable-cache'] })
+
+    // ── 풀스크롤 버전: 1440×900 (브라우저 기본)
+    console.log(`  📸 전체 슬라이드 캡처 (1440×900)...`)
+    const page1 = await browser.newPage()
+    const scrollShots = await captureEMTAllSlides(page1, url, { width: 1440, height: 900 })
+    await page1.close()
+    const scrollPath = path.join(outDir, `${label}_Catalog_FullScroll_${timestamp}.pdf`)
+    const scrollCount = await screenshotsToPDF(scrollShots, scrollPath)
+    console.log(`  ✅ ${path.basename(scrollPath)} (${scrollCount}페이지, ${Math.round(fs.statSync(scrollPath).size / 1024)}KB)`)
+
+    // ── A4가로 버전: 1123×794
+    console.log(`  📸 전체 슬라이드 캡처 (A4가로 1123×794)...`)
+    const page2 = await browser.newPage()
+    const a4Shots = await captureEMTAllSlides(page2, url, { width: 1123, height: 794 })
+    await page2.close()
+    const a4Path = path.join(outDir, `${label}_Catalog_A4_${timestamp}.pdf`)
+    const a4Count = await screenshotsToPDF(a4Shots, a4Path)
+    console.log(`  ✅ ${path.basename(a4Path)} (${a4Count}페이지, ${Math.round(fs.statSync(a4Path).size / 1024)}KB)`)
+
+    await browser.close()
+}
+
+// ──────────────────────────────────────
 
 async function main() {
     const target = process.argv[2] || 'all'
 
-    if (!['hstech', 'hangseong', 'gentop', 'air-hstech', 'all'].includes(target)) {
-        console.error('사용법: node scripts/generate-pdf.js [hstech|hangseong|gentop|air-hstech|all]')
+    if (!['hstech', 'hangseong', 'gentop', 'air-hstech', 'emt', 'all'].includes(target)) {
+        console.error('사용법: node scripts/generate-pdf.js [hstech|hangseong|gentop|air-hstech|emt|all]')
         process.exit(1)
     }
 
@@ -402,6 +472,10 @@ async function main() {
     }
     if (target === 'air-hstech' || target === 'all') {
         await generateAirHSTechPDF(timestamp)
+    }
+    if (target === 'emt' || target === 'all') {
+        await generateEMTPDF('en', timestamp)
+        await generateEMTPDF('ko', timestamp)
     }
 
     const elapsed = Math.round((Date.now() - start) / 1000)
