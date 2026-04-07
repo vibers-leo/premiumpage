@@ -983,9 +983,9 @@
         
         <!-- Mobile Language Switch -->
         <div class="m-lang-switch">
-            <a href="/ko" class="m-lang-link">KR</a>
+            <a href="https://emt-ko.premiumpage.kr" class="m-lang-link" id="m-lang-kr">KR</a>
             <span style="color:#333">|</span>
-            <a href="/" class="m-lang-link active">EN</a>
+            <a href="https://emt.premiumpage.kr" class="m-lang-link" id="m-lang-en">EN</a>
         </div>
     </div>
 
@@ -1023,9 +1023,9 @@
         
         <!-- Desktop Language Switch -->
         <div class="lang-switch mobile-hide">
-            <a href="/ko" class="lang-link">KR</a>
+            <a href="https://emt-ko.premiumpage.kr" class="lang-link" id="lang-kr">KR</a>
             <span style="color:rgba(255,255,255,0.2)">|</span>
-            <a href="/" class="lang-link active">EN</a>
+            <a href="https://emt.premiumpage.kr" class="lang-link" id="lang-en">EN</a>
         </div>
         <!-- Mobile Menu Button -->
         <div class="mobile-menu-btn" onclick="toggleMobile()">☰</div>
@@ -2632,12 +2632,11 @@
             curEl.innerText = (current + 1).toString().padStart(2, '0');
 
             // === LANGUAGE SWITCHER SYNC ===
-            // Dynamically update hrefs to include current slide
-            document.querySelectorAll('.lang-link, .m-lang-link').forEach(link => {
-                // Get base path from href (clean query params if any)
-                let base = link.getAttribute('href').split('?')[0];
-                link.setAttribute('href', base + '?slide=' + current);
-            });
+            var isKo = window.location.hostname.includes('emt-ko');
+            var koBase = 'https://emt-ko.premiumpage.kr';
+            var enBase = 'https://emt.premiumpage.kr';
+            ['lang-kr','m-lang-kr'].forEach(function(id){var a=document.getElementById(id);if(a)a.setAttribute('href', koBase+'?slide='+current);});
+            ['lang-en','m-lang-en'].forEach(function(id){var a=document.getElementById(id);if(a)a.setAttribute('href', enBase+'?slide='+current);});
         }
 
         function go(idx) {
@@ -3450,13 +3449,18 @@ Fan modes: Strong medium weak and natural wind mode built in`
         <div class="toggle-ball"></div>
     </div>
 
-    <!-- Phone number localization: Korean domain → 055 format -->
+    <!-- Language switch active state + phone localization -->
     <script>
     (function() {
         var isKo = window.location.hostname.includes('emt-ko');
         if (isKo) {
             var el = document.getElementById('emt-phone');
             if (el) el.textContent = '055-339-6661';
+            ['lang-kr','m-lang-kr'].forEach(function(id){var a=document.getElementById(id);if(a)a.classList.add('active');});
+            ['lang-en','m-lang-en'].forEach(function(id){var a=document.getElementById(id);if(a)a.classList.remove('active');});
+        } else {
+            ['lang-en','m-lang-en'].forEach(function(id){var a=document.getElementById(id);if(a)a.classList.add('active');});
+            ['lang-kr','m-lang-kr'].forEach(function(id){var a=document.getElementById(id);if(a)a.classList.remove('active');});
         }
     })();
     </script>
