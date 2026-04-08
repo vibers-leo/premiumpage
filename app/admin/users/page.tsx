@@ -89,7 +89,7 @@ export default function UsersManagementPage() {
                 <div className="relative flex-1 max-w-md">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
                     <Input
-                        placeholder="이름 또는 이메일로 검색"
+                        placeholder="이름 또는 이메일로 찾기"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="pl-10 bg-white/5 border-white/10"
@@ -125,7 +125,7 @@ export default function UsersManagementPage() {
                                 {loading ? (
                                     <tr><td colSpan={6} className="py-20 text-center text-gray-500">로딩 중...</td></tr>
                                 ) : filteredUsers.length === 0 ? (
-                                    <tr><td colSpan={6} className="py-20 text-center text-gray-500">검색 결과가 없습니다.</td></tr>
+                                    <tr><td colSpan={6} className="py-20 text-center text-gray-500">찾기 결과가 없습니다.</td></tr>
                                 ) : (
                                     filteredUsers.map((user) => (
                                         <tr key={user.id} className="group hover:bg-white/[0.02] transition">

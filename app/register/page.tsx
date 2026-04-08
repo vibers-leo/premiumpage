@@ -32,7 +32,7 @@ export default function RegisterPage() {
         }
 
         try {
-            // 1. Firebase Auth에 사용자 생성
+            // 1. Firebase Auth에 사용자 만들기
             const { auth } = await import('@/lib/firebase')
             const { createUserWithEmailAndPassword } = await import('firebase/auth')
 
@@ -87,7 +87,7 @@ export default function RegisterPage() {
                         회원가입
                     </h2>
                     <p className="mt-2 text-center text-sm text-gray-600">
-                        새로운 계정을 생성하세요
+                        새로운 계정을 만들어요
                     </p>
                 </div>
                 <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -124,7 +124,7 @@ export default function RegisterPage() {
                             type="password"
                             required
                             className="imweb-input"
-                            placeholder="비밀번호 확인"
+                            placeholder="비밀번호 확인해요"
                             value={formData.confirmPassword}
                             onChange={handleChange}
                         />

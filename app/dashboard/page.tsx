@@ -40,7 +40,7 @@ export default function CustomerDashboard() {
     }
 
     const deleteProject = async (id: string) => {
-        if (!confirm('정말로 이 프로젝트를 삭제하시겠습니까?')) return
+        if (!confirm('정말로 이 프로젝트를 없애기하시겠습니까?')) return
 
         try {
             const response = await fetch(`/api/projects/${id}`, {
@@ -49,7 +49,7 @@ export default function CustomerDashboard() {
             if (response.ok) {
                 setProjects(projects.filter(p => p.id !== id))
             } else {
-                alert('삭제에 실패했습니다.')
+                alert('없애기에 실패했습니다.')
             }
         } catch (error) {
             console.error('Delete failed:', error)
@@ -98,7 +98,7 @@ export default function CustomerDashboard() {
             <div className="container mx-auto px-4 py-12">
                 <div className="mb-8">
                     <h1 className="text-4xl font-bold mb-2 gradient-text">내 프로젝트</h1>
-                    <p className="text-gray-400">진행 중인 프로젝트를 관리하고 진행 상황을 확인하세요</p>
+                    <p className="text-gray-400">진행 중인 프로젝트를 관리하고 진행 상황을 확인해요해봐요</p>
                 </div>
 
                 {loading ? (
@@ -134,8 +134,7 @@ export default function CustomerDashboard() {
                                                 </div>
                                             </div>
                                             <Badge className="bg-green-500/20 text-green-300 border-green-500/30">
-                                                완료
-                                            </Badge>
+                                                완료했어요                                             </Badge>
                                         </div>
                                     </CardHeader>
 
@@ -146,7 +145,7 @@ export default function CustomerDashboard() {
                                                     <Calendar className="w-5 h-5 text-blue-400" />
                                                 </div>
                                                 <div>
-                                                    <p className="text-sm text-gray-400">생성일</p>
+                                                    <p className="text-sm text-gray-400">만들기일</p>
                                                     <p className="text-white font-bold">
                                                         {new Date(project.createdAt).toLocaleDateString('ko-KR', {
                                                             year: 'numeric',
@@ -183,7 +182,7 @@ export default function CustomerDashboard() {
                                                 className="border-red-500/50 text-red-400 hover:bg-red-500/10"
                                                 onClick={() => deleteProject(project.id)}
                                             >
-                                                삭제하기
+                                                없애기
                                             </Button>
                                         </div>
                                     </CardContent>

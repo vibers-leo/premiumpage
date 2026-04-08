@@ -255,7 +255,7 @@ async function generateHSTechPDF(timestamp) {
 
     const browser = await chromium.launch({ headless: true, args: ['--disable-cache'] })
     const page = await browser.newPage()
-    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.setViewportSize({ width: 1920, height: 1080 })
 
     // 다크모드 비활성화 (라이트 모드로 캡처)
     await page.emulateMedia({ colorScheme: 'light' })
@@ -288,7 +288,7 @@ async function generateGentopPDF(timestamp) {
 
     const browser = await chromium.launch({ headless: true, args: ['--disable-cache'] })
     const page = await browser.newPage()
-    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.setViewportSize({ width: 1920, height: 1080 })
     await page.emulateMedia({ colorScheme: 'dark' })
 
     const screenshots = []
@@ -319,7 +319,7 @@ async function generateAirHSTechPDF(timestamp) {
 
     const browser = await chromium.launch({ headless: true, args: ['--disable-cache'] })
     const page = await browser.newPage()
-    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.setViewportSize({ width: 1920, height: 1080 })
     await page.emulateMedia({ colorScheme: 'light' })
 
     const screenshots = []
@@ -350,7 +350,7 @@ async function generateHangseongPDF(timestamp) {
 
     const browser = await chromium.launch({ headless: true, args: ['--disable-cache'] })
     const page = await browser.newPage()
-    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.setViewportSize({ width: 1920, height: 1080 })
     await page.emulateMedia({ colorScheme: 'dark' })
 
     const screenshots = []
@@ -394,22 +394,24 @@ async function captureEMTAllSlides(page, url, viewport) {
     const slideCount = await page.evaluate(() => document.querySelectorAll('.slide').length)
     console.log(`     슬라이드 ${slideCount}장 감지`)
 
-    // 첫 슬라이드로 이동 (< 버튼을 slideCount번 클릭해서 처음으로)
-    const prevBtn = await page.$('.nav-btn')
-    for (let i = 0; i < slideCount; i++) { if (prevBtn) await prevBtn.click() }
-    await page.waitForTimeout(500)
+    // DOM 직접 조작으로 슬라이드 이동 (go() 함수 TDZ 우회)
+    const gotoSlide = (idx) => page.evaluate((i) => {
+        const slides = document.querySelectorAll('.slide')
+        slides.forEach((s, si) => s.classList.toggle('active', si === i))
+        // 카운터 업데이트 (cur/tot ID 기반)
+        const curEl = document.getElementById('cur')
+        const totEl = document.getElementById('tot')
+        if (curEl) curEl.innerText = String(i + 1).padStart(2, '0')
+        if (totEl) totEl.innerText = String(slides.length).padStart(2, '0')
+    }, idx)
 
     const screenshots = []
     for (let i = 0; i < slideCount; i++) {
+        await gotoSlide(i)
         await page.waitForTimeout(600)
         const data = await page.screenshot({ type: 'png' })
         screenshots.push({ data, label: `Slide ${String(i + 1).padStart(2, '0')}` })
         process.stdout.write(`\r     ${i + 1}/${slideCount} 캡처 완료`)
-        // NEXT 버튼 클릭 (마지막 슬라이드는 클릭 불필요)
-        if (i < slideCount - 1) {
-            const nextBtn = await page.$$('.nav-btn')
-            if (nextBtn[1]) await nextBtn[1].click()
-        }
     }
     console.log()
     return screenshots
@@ -429,7 +431,7 @@ async function generateEMTPDF(lang, timestamp) {
     // ── 풀스크롤 버전: 1440×900 (브라우저 기본)
     console.log(`  📸 전체 슬라이드 캡처 (1440×900)...`)
     const page1 = await browser.newPage()
-    const scrollShots = await captureEMTAllSlides(page1, url, { width: 1440, height: 900 })
+    const scrollShots = await captureEMTAllSlides(page1, url, { width: 1920, height: 1080 })
     await page1.close()
     const scrollPath = path.join(outDir, `${label}_Catalog_FullScroll_${timestamp}.pdf`)
     const scrollCount = await screenshotsToPDF(scrollShots, scrollPath)

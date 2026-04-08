@@ -90,7 +90,7 @@ function QuoteSuccessContent() {
                                 transition={{ delay: 0.3 }}
                             >
                                 <CardTitle className="text-5xl font-black mb-4 gradient-text">
-                                    견적 요청 완료!
+                                    견적 요청 완료했어요!
                                 </CardTitle>
                                 <CardDescription className="text-xl text-gray-300">
                                     견적 요청이 성공적으로 접수되었습니다
@@ -126,9 +126,9 @@ function QuoteSuccessContent() {
                                             <Mail className="w-6 h-6 text-purple-400" />
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-white mb-1">이메일 확인</h4>
+                                            <h4 className="font-bold text-white mb-1">이메일 확인해요</h4>
                                             <p className="text-sm text-gray-400">
-                                                입력하신 이메일로 견적 요청 확인 메일을 발송했습니다.
+                                                입력하신 이메일로 견적 요청 확인해요 메일을 발송했습니다.
                                             </p>
                                         </div>
                                     </div>

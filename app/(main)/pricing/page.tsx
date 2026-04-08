@@ -34,7 +34,7 @@ const featureComparison = [
   { feature: '맞춤형 UI/UX 디자인', lite: false, standard: true, master: true },
   { feature: '인터랙티브 애니메이션', lite: false, standard: true, master: true },
   { feature: '다국어 지원', lite: false, standard: '최대 3개국어', master: '무제한' },
-  { feature: '제품 검색/필터링', lite: false, standard: true, master: true },
+  { feature: '제품 찾기/필터링', lite: false, standard: true, master: true },
   { feature: '문의 폼 연동', lite: false, standard: true, master: true },
   { feature: 'SEO 최적화', lite: false, standard: true, master: true },
   { feature: '3D 모델링 지원', lite: false, standard: false, master: true },

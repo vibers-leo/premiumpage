@@ -78,7 +78,7 @@ export default function AdminDashboard() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
                     <h1 className="text-3xl font-bold tracking-tight mb-2">대시보드</h1>
-                    <p className="text-gray-400">비즈니스 요약 및 시스템 활성도를 확인하세요.</p>
+                    <p className="text-gray-400">비즈니스 요약 및 시스템 활성도를 확인해요해봐요.</p>
                 </div>
                 <div className="flex gap-2">
                     <Button className="bg-white text-black hover:bg-gray-200">
@@ -126,7 +126,7 @@ export default function AdminDashboard() {
                         <MessageSquare className="w-12 h-12" />
                     </div>
                     <CardHeader className="pb-2">
-                        <CardDescription className="text-xs uppercase tracking-wider text-gray-500 font-semibold">미확인 견적</CardDescription>
+                        <CardDescription className="text-xs uppercase tracking-wider text-gray-500 font-semibold">미확인해요 견적</CardDescription>
                         <CardTitle className="text-3xl font-bold text-yellow-400">{loading ? '...' : stats.pendingQuotes}</CardTitle>
                     </CardHeader>
                     <CardContent>

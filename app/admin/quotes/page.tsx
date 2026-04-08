@@ -111,7 +111,7 @@ export default function AdminQuotesPage() {
                 <div className="relative flex-1 max-w-md">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
                     <Input
-                        placeholder="이름, 이메일, 회사명 검색"
+                        placeholder="이름, 이메일, 회사명 찾기"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="pl-10 bg-white/5 border-white/10 text-white"
@@ -209,7 +209,7 @@ export default function AdminQuotesPage() {
                                                     첨부파일 포함됨
                                                 </div>
                                                 <Button variant="ghost" size="sm" className="h-8 text-xs text-indigo-400 hover:text-indigo-300">
-                                                    <Download className="w-3.5 h-3.5 mr-1" /> 파일 다운로드
+                                                    <Download className="w-3.5 h-3.5 mr-1" /> 파일 담아받기
                                                 </Button>
                                             </div>
                                         )}

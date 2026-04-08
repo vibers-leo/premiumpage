@@ -48,7 +48,7 @@ export default function PDFConverterPage() {
                 setFile(droppedFile)
                 setError(null)
             } else {
-                setError('PDF 파일만 업로드 가능합니다.')
+                setError('PDF 파일만 올리기 가능합니다.')
             }
         }
     }
@@ -60,7 +60,7 @@ export default function PDFConverterPage() {
                 setFile(selectedFile)
                 setError(null)
             } else {
-                setError('PDF 파일만 업로드 가능합니다.')
+                setError('PDF 파일만 올리기 가능합니다.')
             }
         }
     }
@@ -72,7 +72,7 @@ export default function PDFConverterPage() {
         setError(null)
 
         try {
-            // 1. Firebase Storage에 업로드 준비
+            // 1. Firebase Storage에 올리기 준비
             const { storage } = await import('@/lib/firebase')
             const { ref, uploadBytes, getDownloadURL } = await import('firebase/storage')
 
@@ -80,7 +80,7 @@ export default function PDFConverterPage() {
             const fileName = `${timestamp}_${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`
             const storageRef = ref(storage, `pdfs/${fileName}`)
 
-            // 2. 파일 업로드
+            // 2. 파일 올리기
             const snapshot = await uploadBytes(storageRef, file)
             const downloadUrl = await getDownloadURL(snapshot.ref)
 
@@ -99,7 +99,7 @@ export default function PDFConverterPage() {
             })
 
         } catch (err: any) {
-            setError(err.message || '업로드 중 오류가 발생했습니다.')
+            setError(err.message || '올리기 중 오류가 발생했습니다.')
             console.error(err)
         } finally {
             setUploading(false)
@@ -131,9 +131,9 @@ export default function PDFConverterPage() {
                     >
                         <Card className="glass-card shadow-2xl">
                             <CardHeader>
-                                <CardTitle className="text-2xl font-black gradient-text">PDF 업로드</CardTitle>
+                                <CardTitle className="text-2xl font-black gradient-text">PDF 올리기</CardTitle>
                                 <CardDescription className="text-muted-foreground">
-                                    PDF 파일을 드래그하거나 선택하여 업로드하세요 (최대 10MB)
+                                    PDF 파일을 드래그하거나 선택하여 올려요 (최대 10MB)
                                 </CardDescription>
                             </CardHeader>
                             <CardContent className="space-y-6">
@@ -161,7 +161,7 @@ export default function PDFConverterPage() {
                                         </div>
                                         <div>
                                             <p className="text-lg font-semibold text-foreground mb-2">
-                                                PDF 파일을 드래그하거나 클릭하여 업로드
+                                                PDF 파일을 드래그하거나 클릭하여 올리기
                                             </p>
                                             <p className="text-sm text-muted-foreground">
                                                 최대 10MB, PDF 형식만 지원
@@ -200,7 +200,7 @@ export default function PDFConverterPage() {
                                     </motion.div>
                                 )}
 
-                                {/* 업로드 버튼 */}
+                                {/* 올리기 버튼 */}
                                 <Button
                                     onClick={handleUpload}
                                     disabled={!file || uploading}
@@ -232,7 +232,7 @@ export default function PDFConverterPage() {
                                 variant="outline"
                                 className="border-border hover:bg-muted"
                             >
-                                새 파일 업로드
+                                새 파일 올리기
                             </Button>
                         </div>
 

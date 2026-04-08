@@ -62,7 +62,7 @@ export default function ProjectsManagementPage() {
             <div className="flex items-end justify-between">
                 <div>
                     <h1 className="text-3xl font-bold tracking-tight mb-2">포트폴리오 관리</h1>
-                    <p className="text-gray-400">사용자들이 생성한 모든 전자 카탈로그 프로젝트를 관리합니다.</p>
+                    <p className="text-gray-400">사용자들이 만들기한 모든 전자 카탈로그 프로젝트를 관리합니다.</p>
                 </div>
                 <div className="flex gap-2">
                     <Button variant="outline" className="border-white/10 hover:bg-white/5">
@@ -75,7 +75,7 @@ export default function ProjectsManagementPage() {
             <div className="relative max-w-md">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
                 <Input
-                    placeholder="프로젝트명 또는 사용자 검색"
+                    placeholder="프로젝트명 또는 사용자 찾기"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="pl-10 bg-white/5 border-white/10 text-white"
@@ -113,7 +113,7 @@ export default function ProjectsManagementPage() {
                                             </Link>
                                         </Button>
                                         <Button size="sm" variant="destructive" className="flex-1">
-                                            <Trash2 className="w-3 h-3 mr-1" /> 삭제
+                                            <Trash2 className="w-3 h-3 mr-1" /> 없애기
                                         </Button>
                                     </div>
                                 </div>

@@ -1707,3 +1707,40 @@ export function validateImagePaths() {
 ---
 
 **이 문서를 준수하여 일관성 있고 품질 높은 전자카탈로그를 개발합시다!** 🚀
+
+---
+
+## 🔗 Vibers 공통 스킬 연동
+
+### PDF 생성 — `/web-to-pdf` 사용 (공통 스킬)
+
+이 프로젝트의 `scripts/generate-pdf.js`는 공통 스킬의 **원본(레퍼런스)** 이다.
+새 카탈로그에 PDF 스크립트를 추가하거나 기존 스크립트를 수정할 때는 **반드시 공통 스킬을 먼저 참조**한다.
+
+```
+공통 스킬 위치: ~/.claude/skills/web-to-pdf/web-to-pdf.md
+호출 방법: /web-to-pdf
+```
+
+**언제 공통 스킬을 참조해야 하나:**
+- 새 카탈로그(클라이언트)에 PDF 스크립트 추가할 때
+- 캡처 로직에 버그가 있을 때 (overflow:hidden, 높이 잘림 등)
+- 슬라이드 기반 / 탭 기반 페이지 캡처 방식 구현할 때
+- Rails 프로젝트에 PDF 기능 이식할 때
+
+**이 프로젝트의 기존 스크립트를 개선하면 공통 스킬도 함께 업데이트한다.**
+
+### 디자인 — Vibers Design Skill 참조
+
+랜딩·소개 페이지 디자인 작업 시:
+```
+공통 스킬 위치: ~/.claude/skills/vibers-design/theme-guide.md
+```
+
+### 서버 점검 — `/vibers-admin` 사용
+
+배포 이슈, NCP 서버 상태 확인:
+```
+공통 스킬 위치: ~/.claude/skills/vibers-admin/vibers-admin.md
+호출 방법: /vibers-admin
+```

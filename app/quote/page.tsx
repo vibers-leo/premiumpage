@@ -260,7 +260,7 @@ export default function QuotePageEnhanced() {
                                                 <ul className="space-y-2 text-sm text-muted-foreground">
                                                     <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-purple-500" /> 맞춤형 디자인</li>
                                                     <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-purple-500" /> 고급 인터랙션 & 3D</li>
-                                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-purple-500" /> 검색/다국어 기능</li>
+                                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-purple-500" /> 찾기/다국어 기능</li>
                                                 </ul>
                                             </CardContent>
                                         </Card>
@@ -471,7 +471,7 @@ export default function QuotePageEnhanced() {
                                             </div>
 
                                             <div className="space-y-2">
-                                                <label className="text-sm font-medium">참고 자료 / PDF 파일 업로드</label>
+                                                <label className="text-sm font-medium">참고 자료 / PDF 파일 올리기</label>
                                                 <FileUpload
                                                     onFilesChange={(files) => updateFormData('files', [...formData.files, ...files])}
                                                     maxFiles={5}
@@ -537,8 +537,7 @@ export default function QuotePageEnhanced() {
                                         </>
                                     ) : (
                                         <>
-                                            견적 요청 완료
-                                            <Rocket className="w-4 h-4 ml-2" />
+                                            견적 요청 완료했어요                                             <Rocket className="w-4 h-4 ml-2" />
                                         </>
                                     )}
                                 </Button>

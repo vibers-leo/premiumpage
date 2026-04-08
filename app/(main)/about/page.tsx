@@ -35,7 +35,7 @@ const capabilities = [
   { icon: <Code2 className="w-6 h-6" />, title: 'Frontend Engineering', desc: 'Next.js, React, TypeScript, Three.js' },
   { icon: <Palette className="w-6 h-6" />, title: 'UI/UX Design', desc: '하이엔드 인터랙티브 디자인, 모션 그래픽' },
   { icon: <Globe className="w-6 h-6" />, title: 'Global Optimization', desc: '다국어 지원, CDN 배포, SEO 최적화' },
-  { icon: <BarChart3 className="w-6 h-6" />, title: 'Strategy Consulting', desc: '해외 시장 분석, 브랜드 스토리텔링' },
+  { icon: <BarChart3 className="w-6 h-6" />, title: 'Strategy Consulting', desc: '해외 시장 살펴보기, 브랜드 스토리텔링' },
 ]
 
 const milestones = [

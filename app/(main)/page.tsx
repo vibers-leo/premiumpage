@@ -299,7 +299,7 @@ export default function PremiumLandingPage() {
               </h2>
               <p className="text-muted-foreground text-xl md:text-2xl font-medium leading-relaxed">
                 글로벌 챔피언을 위한 가장 진보된 3D 엔진과 인터랙티브 스토리텔링. <br />
-                해외 바이어를 매료시키는 압도적인 퀄리티를 확인하세요.
+                해외 바이어를 매료시키는 압도적인 퀄리티를 확인해요해봐요.
               </p>
             </div>
             <Button asChild variant="outline" className="rounded-full border-2 h-16 px-10 text-lg font-bold hover:bg-primary hover:text-white transition-all">
@@ -364,7 +364,7 @@ export default function PremiumLandingPage() {
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-transparent" />
 
             {[
-              { number: '01', title: 'Strategy', desc: '해외 시장 분석 및 기업의 핵심 경쟁력을 도출하여 맞춤형 스토리텔링 전략을 수립합니다.', icon: <TrendingUp className="w-6 h-6" /> },
+              { number: '01', title: 'Strategy', desc: '해외 시장 살펴보기 및 기업의 핵심 경쟁력을 도출하여 맞춤형 스토리텔링 전략을 수립합니다.', icon: <TrendingUp className="w-6 h-6" /> },
               { number: '02', title: 'Creative', desc: '브랜드 아이덴티티를 극대화하는 하이엔드 UI/UX 디자인과 독보적인 그래픽을 설계합니다.', icon: <Layers className="w-6 h-6" /> },
               { number: '03', title: 'Interaction', desc: 'Three.js와 스크롤 애니메이션 등 최신 기술을 활용해 바이어의 몰입감을 극대화합니다.', icon: <MousePointer2 className="w-6 h-6" /> },
               { number: '04', title: 'Global', desc: '초고속 글로벌 CDN과 다국어 최적화를 통해 전 세계 어디서든 완벽한 경험을 제공합니다.', icon: <Globe className="w-6 h-6" /> },
@@ -541,7 +541,7 @@ export default function PremiumLandingPage() {
               자주 묻는 <span className="gradient-text">질문</span>
             </h2>
             <p className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto font-medium">
-              궁금한 점이 있으시면 먼저 확인해보세요
+              궁금한 점이 있으시면 먼저 확인해요해보세요
             </p>
           </div>
 

@@ -36,7 +36,7 @@ export default function ProjectsPage() {
     }
 
     const handleDelete = async (id: string) => {
-        if (!confirm('정말 삭제하시겠습니까?')) return
+        if (!confirm('정말 없애기하시겠습니까?')) return
 
         try {
             const res = await fetch(`/api/projects/${id}`, {
@@ -46,7 +46,7 @@ export default function ProjectsPage() {
                 fetchProjects()
             }
         } catch (error) {
-            alert('삭제 실패')
+            alert('없애기 실패')
         }
     }
 
