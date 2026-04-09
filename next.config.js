@@ -86,6 +86,10 @@ const nextConfig = {
                     {
                         key: 'Referrer-Policy',
                         value: 'origin-when-cross-origin'
+                    },
+                    {
+                        key: 'Cache-Control',
+                        value: 'no-store, must-revalidate'
                     }
                 ]
             },
