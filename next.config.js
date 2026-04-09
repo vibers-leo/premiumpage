@@ -56,18 +56,6 @@ const nextConfig = {
         optimizePackageImports: ['lucide-react', 'framer-motion'],
     },
 
-    // www → apex 301 리다이렉트
-    async redirects() {
-        return [
-            {
-                source: '/:path*',
-                destination: 'https://premiumpage.kr/:path*',
-                permanent: true,
-                has: [{ type: 'host', value: 'www.premiumpage.kr' }],
-            },
-        ];
-    },
-
     // 헤더 설정
     async headers() {
         return [
