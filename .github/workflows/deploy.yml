@@ -33,7 +33,7 @@ jobs:
 
             echo "=== docker compose up ==="
             cd /root/projects/premiumpage
-            docker compose up -d --force-recreate
+            docker compose up -d --wait
 
             echo "=== nginx reload (502 방지) ==="
             docker exec npm-app-1 nginx -s reload || true
