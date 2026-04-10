@@ -21,6 +21,7 @@ jobs:
           username: ${{ secrets.NCP_USER }}
           key: ${{ secrets.NCP_SSH_KEY }}
           timeout: 25m
+          command_timeout: 20m
           script: |
             set -e
             cd /root/projects/premiumpage/repo
