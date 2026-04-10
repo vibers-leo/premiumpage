@@ -82,7 +82,7 @@ const portfolioItems = [
     category: 'Industrial Sensor / Product Hierarchy',
     color: 'emerald',
     bg: 'bg-[#0a1628]',
-    image: '/templates/hs-tech/images/vaisala/HMT330_v1.png',
+    image: '',
     links: [
       { label: '영문 버전', href: 'https://hstech.premiumpage.kr', primary: true },
       { label: '한글 버전', href: 'https://hstech-kr.premiumpage.kr', primary: false },
