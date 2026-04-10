@@ -70,7 +70,7 @@ const portfolioItems = [
     category: 'Smart Sensor / 3D HUD Interface',
     color: 'cyan',
     bg: 'bg-black',
-    image: '/emt/assets/19.png',
+    image: '/og/emt.png',
     links: [
       { label: '영문 버전', href: 'https://emt.premiumpage.kr', primary: true },
       { label: '한글 버전', href: 'https://emt-ko.premiumpage.kr', primary: false },
@@ -82,30 +82,29 @@ const portfolioItems = [
     category: 'Industrial Sensor / Product Hierarchy',
     color: 'emerald',
     bg: 'bg-[#0a1628]',
-    image: '',
+    image: '/og/hstech.png',
     links: [
       { label: '영문 버전', href: 'https://hstech.premiumpage.kr', primary: true },
-      { label: '한글 버전', href: 'https://hstech-kr.premiumpage.kr', primary: false },
     ],
   },
   {
     id: 'gentop',
     title: 'GENTOP IND.',
-    category: 'Security Solution / Grid System',
+    category: 'Construction & Facilities Management',
     color: 'blue',
     bg: 'bg-[#0f172a]',
-    image: '/templates/hangseong/images/logo.png',
+    image: '/og/gentop.png',
     links: [
       { label: '브랜드 쇼케이스', href: 'https://gentop.premiumpage.kr', primary: true },
     ],
   },
   {
     id: 'genwish',
-    title: 'GENWISH',
+    title: 'HSTECH',
     category: 'DC Engine-Off Air Conditioning',
     color: 'orange',
     bg: 'bg-[#1a1006]',
-    image: '',
+    image: '/og/genwish.png',
     links: [
       { label: '브랜드 쇼케이스', href: 'https://hstechco.premiumpage.kr', primary: true },
     ],
@@ -317,8 +316,8 @@ export default function PremiumLandingPage() {
                   className={`group relative h-[600px] rounded-[3rem] overflow-hidden border border-border ${item.bg}`}
                 >
                   {item.image && (
-                    <div className="absolute inset-0 opacity-30 group-hover:opacity-50 transition-all group-hover:scale-105">
-                      <Image src={item.image} alt={item.title} fill className="object-contain p-20" />
+                    <div className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-all duration-500 group-hover:scale-105">
+                      <Image src={item.image} alt={item.title} fill className="object-cover" />
                     </div>
                   )}
                   {!item.image && (
