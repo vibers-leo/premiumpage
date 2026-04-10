@@ -4,3 +4,9 @@ node_modules
 *.md
 session-logs
 dev.db
+legacy
+assets
+mobile
+.claude
+.env.local
+.env
