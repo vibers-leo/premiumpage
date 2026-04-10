@@ -44,7 +44,7 @@ export default function PayPage() {
 
     try {
       const { loadTossPayments } = await import('@tosspayments/tosspayments-sdk')
-      const clientKey = process.env.NEXT_PUBLIC_TOSS_CLIENT_KEY || 'test_ck_D4yKeq5bgrpKX9GeDBn3GbR5ozO0'
+      const clientKey = process.env.NEXT_PUBLIC_TOSS_CLIENT_KEY!;
       const tossPayments = await loadTossPayments(clientKey)
 
       const customerKey = link.customerEmail

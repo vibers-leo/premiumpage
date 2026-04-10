@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
-const SECRET_KEY = process.env.TOSS_SECRET_KEY || 'test_sk_D4yKeq5bgrpKX9GeDBn3GbR5ozO0';
+const SECRET_KEY = process.env.TOSS_SECRET_KEY!;
 
 export async function POST(req: Request) {
   try {
