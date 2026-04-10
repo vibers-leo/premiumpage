@@ -224,12 +224,12 @@ export default function PremiumLandingPage() {
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/20 blur-[80px] rounded-full animate-pulse" />
               <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-cyan-500/10 blur-[100px] rounded-full animate-pulse" />
               <div className="relative h-full w-full rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl glass-card p-2">
-                <Image
-                  src="/premium_agency_hero_1770798018285.png"
-                  alt="Premium Agency Concept"
-                  fill
-                  className="object-cover rounded-[2.5rem]"
-                />
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/30 via-indigo-500/20 to-cyan-400/30 rounded-[2.5rem]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(168,85,247,0.4),transparent_60%)] rounded-[2.5rem]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(34,211,238,0.3),transparent_60%)] rounded-[2.5rem]" />
+                <div className="absolute inset-0 backdrop-blur-[1px] rounded-[2.5rem]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-white/20 rounded-full animate-[spin_20s_linear_infinite]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-white/10 rounded-full animate-[spin_30s_linear_infinite_reverse]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-10 left-10 right-10">
                   <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
