@@ -435,9 +435,9 @@ export default function PremiumLandingPage() {
                     <div className="mb-6">
                       <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
                       <div className="text-4xl font-black">
-                        {formatPrice(plan.price)}
+                        {plan.priceRange}
                       </div>
-                      <p className="text-sm text-muted-foreground mt-1">일회성 제작비</p>
+                      <p className="text-sm text-muted-foreground mt-1">견적 후 확정 · 일회성 제작비</p>
                     </div>
 
                     <div className="border-t border-border pt-6 mb-8">
@@ -626,11 +626,17 @@ export default function PremiumLandingPage() {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-border/50 text-center md:text-left flex flex-col md:flex-row justify-between gap-6">
-            <p className="text-muted-foreground text-sm font-medium">&copy; 2026 Premium Page Inc. All rights reserved.</p>
-            <div className="flex justify-center gap-8 text-muted-foreground text-xs font-bold uppercase tracking-widest">
-              <Link href="/about" className="hover:text-foreground transition-colors">Terms</Link>
-              <Link href="/about" className="hover:text-foreground transition-colors">Privacy</Link>
+          <div className="pt-8 border-t border-border/50 flex flex-col gap-3">
+            <div className="text-muted-foreground text-xs leading-relaxed">
+              상호명: 위로 &nbsp;|&nbsp; 대표: 김성원 &nbsp;|&nbsp; 사업자등록번호: 545-16-01046 &nbsp;|&nbsp; 주소: 경남 양산시 고향의봄12길 10, 뉴그린빌 301호
+            </div>
+            <div className="flex flex-col md:flex-row justify-between gap-3">
+              <p className="text-muted-foreground text-sm font-medium">&copy; 2026 Premium Page by 위로. All rights reserved.</p>
+              <div className="flex gap-6 text-muted-foreground text-xs font-bold uppercase tracking-widest">
+                <Link href="/terms" className="hover:text-foreground transition-colors">이용약관</Link>
+                <Link href="/privacy" className="hover:text-foreground transition-colors">개인정보처리방침</Link>
+                <Link href="/refund" className="hover:text-foreground transition-colors">환불정책</Link>
+              </div>
             </div>
           </div>
         </div>

@@ -26,6 +26,8 @@ export type DevelopmentPlan = {
     name: string
     type: string
     price: number
+    priceRange: string     // 표시용 범위 (예: "50~100만원")
+    priceFrom: string      // 간략 표시 (예: "50만원~")
     features: string[]
     popular?: boolean
 }
@@ -103,44 +105,56 @@ export const templates: Template[] = [
 export const developmentPlans: DevelopmentPlan[] = [
     {
         id: '1',
-        name: 'Lite (PDF 변환)',
-        type: 'Lite',
+        name: 'Basic',
+        type: 'Basic',
         price: 500000,
+        priceRange: '50~100만원',
+        priceFrom: '50만원~',
         features: [
-            '기존 PDF 1건 웹 변환',
-            '페이지 넘김(Flip) 효과 적용',
-            '모바일 최적화 뷰어',
-            '전용 QR 코드 제공',
-            '1개월 무료 유지보수'
+            '[일반 디자인] 표준 레이아웃 적용',
+            '최대 10페이지 구성',
+            '반응형 모바일 최적화',
+            '페이지 넘김(Flip) 효과',
+            '전용 서브도메인 + QR코드 제공',
+            'SSL 보안 인증서',
+            '납기: 약 1주일'
         ]
     },
     {
         id: '2',
-        name: 'Standard (전문 제작)',
+        name: 'Pro',
         type: 'Pro',
-        price: 3000000,
+        price: 1000000,
+        priceRange: '100~200만원',
+        priceFrom: '100만원~',
         features: [
-            '맞춤형 인터랙티브 디자인',
+            '[고급 디자인] 브랜드 맞춤형 UI/UX',
+            '최대 25페이지 구성',
+            '인터랙티브 애니메이션 적용',
             '다국어 지원 (최대 3개국어)',
-            '제품 검색 및 필터링 기능',
-            '문의하기 폼 연동',
-            'SEO 검색 엔진 최적화',
-            'SNS 공유 기능 최적화'
+            '제품 검색 및 필터링',
+            '문의 폼 연동 + SEO 최적화',
+            '전용 서브도메인 + QR코드 제공',
+            '납기: 2~4주'
         ],
         popular: true
     },
     {
         id: '3',
-        name: 'Master (3D 하이엔드)',
+        name: 'Master',
         type: 'Master',
-        price: 15000000,
+        price: 2000000,
+        priceRange: '200만원~',
+        priceFrom: '200만원~',
         features: [
-            'EMT 스타일 3D 모델링 지원',
+            '[프리미엄 디자인] 하이엔드 풀커스텀',
+            '페이지 수 무제한',
+            '3D 모델링 지원 (Three.js)',
             '스크롤 기반 인터랙티브 UX',
             '다국어 무제한 지원',
             '실시간 제품 시뮬레이션',
-            '고급 애니메이션 효과',
-            '글로벌 전용 CDN 배포'
+            '글로벌 CDN 배포',
+            '납기: 4~8주'
         ]
     }
 ]

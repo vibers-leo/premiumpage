@@ -17,8 +17,8 @@ const planIcons = [
 ]
 
 const planDescriptions = [
-  '기존 PDF를 빠르게 웹 뷰어로 변환하고 싶은 기업',
-  '맞춤형 디자인과 다국어를 지원하는 전문 카탈로그가 필요한 기업',
+  '표준 디자인으로 빠르게 전자카탈로그를 만들고 싶은 기업',
+  '브랜드 맞춤형 고급 디자인과 다국어를 지원하는 전문 카탈로그가 필요한 기업',
   '3D 모델링과 최고급 인터랙션으로 글로벌 시장을 선도할 기업',
 ]
 
@@ -88,8 +88,9 @@ export default function PricingPage() {
                     <p className="text-sm text-muted-foreground mb-4">{planDescriptions[i]}</p>
 
                     <div className="mb-2">
-                      <span className="text-4xl font-black">{formatPrice(plan.price)}</span>
+                      <span className="text-4xl font-black">{plan.priceRange}</span>
                     </div>
+                    <p className="text-xs text-muted-foreground mb-1">견적 확정 후 결제 · 일회성 제작비</p>
                     <p className="text-sm text-muted-foreground mb-6">납기: {planDelivery[i]}</p>
 
                     <div className="border-t border-border pt-6 mb-8">
@@ -108,7 +109,7 @@ export default function PricingPage() {
                       className={`w-full h-12 rounded-full font-bold ${plan.popular ? 'bg-primary hover:bg-primary/90 text-primary-foreground' : 'bg-secondary hover:bg-secondary/80'}`}
                     >
                       <Link href={`/quote?plan=${plan.id}`}>
-                        견적 요청하기 <ArrowRight className="w-4 h-4 ml-2" />
+                        무료 견적 받기 <ArrowRight className="w-4 h-4 ml-2" />
                       </Link>
                     </Button>
                   </CardContent>
@@ -134,9 +135,9 @@ export default function PricingPage() {
               <thead>
                 <tr className="border-b border-border">
                   <th className="text-left py-4 px-4 font-bold text-sm min-w-[200px]">기능</th>
-                  <th className="text-center py-4 px-4 font-bold text-sm min-w-[120px]">Lite</th>
+                  <th className="text-center py-4 px-4 font-bold text-sm min-w-[120px]">Basic</th>
                   <th className="text-center py-4 px-4 font-bold text-sm min-w-[120px]">
-                    <span className="text-primary">Standard</span>
+                    <span className="text-primary">Pro</span>
                   </th>
                   <th className="text-center py-4 px-4 font-bold text-sm min-w-[120px]">Master</th>
                 </tr>

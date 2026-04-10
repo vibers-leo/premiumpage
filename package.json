@@ -29,6 +29,7 @@
     "@radix-ui/react-progress": "^1.1.8",
     "@radix-ui/react-slot": "^1.2.4",
     "@tabler/icons-react": "^3.36.1",
+    "@tosspayments/tosspayments-sdk": "^2.6.0",
     "@types/better-sqlite3": "^7.6.13",
     "@types/nodemailer": "^7.0.4",
     "@types/three": "^0.182.0",
