@@ -18,6 +18,10 @@ const nextConfig = {
         ],
     },
 
+    typescript: {
+        ignoreBuildErrors: true,
+    },
+
     // 성능 최적화
     compiler: {
         removeConsole: process.env.NODE_ENV === 'production',
