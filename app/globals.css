@@ -4,7 +4,7 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "PretendardVariable", "Pretendard", system-ui, -apple-system, sans-serif;
+  --font-sans: "Paperlogy", "PretendardVariable", "Pretendard", system-ui, -apple-system, sans-serif;
 
   --color-primary-500: #a855f7;
   --color-primary-600: #9333ea;
@@ -41,8 +41,8 @@
     --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
     --ring: 0 0% 3.9%;
     --radius: 0.5rem;
 
@@ -137,7 +137,7 @@
 
   * {
     box-sizing: border-box;
-    border-color: hsl(var(--border) / 0.1);
+    border-color: hsl(var(--border));
   }
 
   /* Typography */
@@ -283,18 +283,17 @@
     transform: translateY(-2px);
   }
 
-  /* Cards & Containers */
+  /* Cards & Containers — Line Design System */
   .card {
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
-    border-radius: var(--radius);
+    border-radius: 0;
     padding: var(--spacing-lg);
     transition: all var(--transition-base) var(--ease-in-out);
   }
 
   .card:hover {
-    border-color: hsl(var(--foreground) / 0.2);
-    box-shadow: 0 4px 12px hsl(0 0% 0% / 0.08);
+    border-color: hsl(var(--foreground));
   }
 
   /* Sections */
