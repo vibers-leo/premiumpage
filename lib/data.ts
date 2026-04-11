@@ -59,6 +59,12 @@ export const categories: Category[] = [
         name: 'Masterpiece 3D',
         slug: 'masterpiece',
         description: 'Three.js 기술이 집약된 압도적 비주얼의 3D 전자 카탈로그'
+    },
+    {
+        id: '4',
+        name: 'IR & Proposal',
+        slug: 'ir-proposal',
+        description: 'IR 덱, 회사소개서, 입찰제안서 등 전문 PPT 제안서 디자인'
     }
 ]
 
@@ -155,6 +161,73 @@ export const developmentPlans: DevelopmentPlan[] = [
             '실시간 제품 시뮬레이션',
             '글로벌 CDN 배포',
             '납기: 4~8주'
+        ]
+    }
+]
+
+// PPT 제안서 플랜
+export type ProposalPlan = {
+    id: string
+    name: string
+    type: string
+    price: number
+    priceRange: string
+    priceFrom: string
+    features: string[]
+    popular?: boolean
+}
+
+export const proposalPlans: ProposalPlan[] = [
+    {
+        id: 'p1',
+        name: '회사소개서',
+        type: 'company-intro',
+        price: 500000,
+        priceRange: '50~100만원',
+        priceFrom: '50만원~',
+        features: [
+            '기업 맞춤형 디자인 (10~20p)',
+            '국문/영문 선택 가능',
+            '브랜드 컬러 & 톤앤매너 적용',
+            '인포그래픽 & 다이어그램 포함',
+            'PPT + PDF 납품',
+            '1회 수정 포함',
+            '납기: 약 1~2주'
+        ]
+    },
+    {
+        id: 'p2',
+        name: 'IR Deck',
+        type: 'ir-deck',
+        price: 800000,
+        priceRange: '80~150만원',
+        priceFrom: '80만원~',
+        features: [
+            '투자 유치 전문 구성 (15~25p)',
+            '시장 분석 & 재무 데이터 시각화',
+            '브랜드 스토리텔링 설계',
+            '국/영문 동시 제작',
+            '발표용 + 배포용 2벌 납품',
+            '2회 수정 포함',
+            '납기: 약 2~3주'
+        ],
+        popular: true
+    },
+    {
+        id: 'p3',
+        name: '입찰제안서',
+        type: 'bid-proposal',
+        price: 1500000,
+        priceRange: '150~300만원',
+        priceFrom: '150만원~',
+        features: [
+            'RFP 분석 기반 전략 설계',
+            '공공/민간 평가 기준 최적화',
+            '페이지 수 무제한',
+            '기술점수 극대화 구성',
+            '디자인 + 콘텐츠 작성 포함',
+            '3회 수정 포함',
+            '납기: 약 2~4주'
         ]
     }
 ]

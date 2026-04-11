@@ -334,6 +334,76 @@ export default function PremiumLandingPage() {
         </div>
       </section>
 
+      {/* ═══════════════ SERVICE LINEUP ═══════════════ */}
+      <section className="py-32 border-b border-neutral-200 bg-neutral-50">
+        <div className="container mx-auto px-8 max-w-screen-xl">
+          <div className="mb-20">
+            <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
+              <div className="w-8 h-px bg-neutral-300" />
+              Services
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+              두 가지 전문 서비스
+            </h2>
+            <p className="text-neutral-500 text-lg leading-relaxed max-w-2xl">
+              인터랙티브 전자카탈로그부터 PPT 제안서까지, 기업의 핵심 콘텐츠를 전문가가 설계합니다.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-200">
+            {/* 전자카탈로그 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white p-10"
+            >
+              <div className="text-[11px] font-bold text-neutral-300 mb-6">01</div>
+              <h3 className="text-2xl font-extrabold mb-4 tracking-tight">전자카탈로그</h3>
+              <p className="text-neutral-500 text-sm leading-relaxed mb-8">
+                PDF를 넘어선 인터랙티브 디지털 경험. 3D 모델링, 다국어, 스크롤 애니메이션으로
+                해외 바이어의 몰입감을 극대화합니다.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {['Basic', 'Pro', 'Master'].map(t => (
+                  <span key={t} className="text-[11px] font-bold border border-neutral-200 px-3 py-1">{t}</span>
+                ))}
+              </div>
+              <Link href="/pricing" className="text-sm font-bold text-neutral-900 border-b border-neutral-900 pb-0.5 hover:text-neutral-500 transition-colors inline-flex items-center gap-1">
+                요금제 보기 <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </motion.div>
+
+            {/* PPT 제안서 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white p-10"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="text-[11px] font-bold text-neutral-300">02</div>
+                <span className="text-[10px] font-bold tracking-wider uppercase border border-neutral-900 px-2 py-0.5">NEW</span>
+              </div>
+              <h3 className="text-2xl font-extrabold mb-4 tracking-tight">PPT 제안서</h3>
+              <p className="text-neutral-500 text-sm leading-relaxed mb-8">
+                IR 덱, 회사소개서, 입찰제안서를 전문 디자이너와 전략 컨설턴트가 함께 제작합니다.
+                RFP 분석부터 평가 기준 최적화까지.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {['회사소개서', 'IR Deck', '입찰제안서'].map(t => (
+                  <span key={t} className="text-[11px] font-bold border border-neutral-200 px-3 py-1">{t}</span>
+                ))}
+              </div>
+              <Link href="/pricing" className="text-sm font-bold text-neutral-900 border-b border-neutral-900 pb-0.5 hover:text-neutral-500 transition-colors inline-flex items-center gap-1">
+                요금제 보기 <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════════ PRICING SECTION ═══════════════ */}
       <section className="py-32 border-b border-neutral-200">
         <div className="container mx-auto px-8 max-w-screen-xl">

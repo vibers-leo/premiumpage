@@ -17,10 +17,28 @@ const portfolioItems = [
             { label: '국문 한글 버전', url: 'https://emt-ko.premiumpage.kr' },
             { label: 'Global English Version', url: 'https://emt-en.premiumpage.kr' }
         ],
-    }
+    },
+    {
+        id: 2,
+        title: 'IR Deck — 투자유치 제안서',
+        category: 'IR & Proposal',
+        description: '시리즈 A 투자 유치를 위한 전문 IR 덱. 시장 분석, 재무 전망, 팀 소개를 전략적 스토리텔링으로 구성합니다.',
+        image: '/portfolio/ir-deck-sample.jpg',
+        tags: ['IR Deck', 'Investment', 'Data Visualization'],
+        links: [],
+    },
+    {
+        id: 3,
+        title: '입찰제안서 — 공공조달',
+        category: 'IR & Proposal',
+        description: '공공입찰 평가 기준에 최적화된 제안서. 기술점수 극대화를 위한 구조적 설계와 전문 디자인을 제공합니다.',
+        image: '/portfolio/bid-proposal-sample.jpg',
+        tags: ['RFP Analysis', 'Public Procurement', 'Strategy'],
+        links: [],
+    },
 ]
 
-const categories = ['All', 'Basic Viewer', 'Standard Interactive', 'Masterpiece 3D']
+const categories = ['All', 'Basic Viewer', 'Standard Interactive', 'Masterpiece 3D', 'IR & Proposal']
 
 export function Portfolio() {
     const [selectedCategory, setSelectedCategory] = useState('All')

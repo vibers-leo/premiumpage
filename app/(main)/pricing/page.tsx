@@ -3,11 +3,11 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Check, X, ArrowRight, Zap, Crown, Rocket } from 'lucide-react'
+import { Check, X, ArrowRight, Zap, Crown, Rocket, Presentation, FileText, Target } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { developmentPlans, maintenancePlans } from '@/lib/data'
+import { developmentPlans, maintenancePlans, proposalPlans } from '@/lib/data'
 import { formatPrice } from '@/lib/data-utils'
 
 const planIcons = [
@@ -116,6 +116,73 @@ export default function PricingPage() {
                 </Card>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PPT Proposal Plans */}
+      <section className="py-32 border-t border-neutral-200">
+        <div className="container mx-auto px-8 max-w-screen-xl">
+          <div className="mb-16">
+            <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
+              <div className="w-8 h-px bg-neutral-300" />
+              Proposal & IR Deck
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+              PPT 제안서 제작
+            </h2>
+            <p className="text-neutral-500 text-lg max-w-2xl leading-relaxed">
+              IR 덱, 회사소개서, 입찰제안서까지. 전문 디자인과 전략적 콘텐츠로 설득력을 극대화합니다.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200 max-w-5xl">
+            {proposalPlans.map((plan, i) => {
+              const icons = [<FileText key="ft" className="w-5 h-5" />, <Presentation key="pr" className="w-5 h-5" />, <Target key="tg" className="w-5 h-5" />]
+              return (
+                <motion.div
+                  key={plan.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`relative bg-white p-8 ${plan.popular ? 'ring-1 ring-neutral-900' : ''}`}
+                >
+                  {plan.popular && (
+                    <div className="absolute -top-px left-0 right-0 h-0.5 bg-neutral-900" />
+                  )}
+                  <div className="w-10 h-10 border border-neutral-200 flex items-center justify-center text-neutral-400 mb-6">
+                    {icons[i]}
+                  </div>
+                  <div className="mb-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <h3 className="text-base font-extrabold">{plan.name}</h3>
+                      {plan.popular && (
+                        <span className="text-[10px] font-bold tracking-wider uppercase border border-neutral-900 px-2 py-0.5">POPULAR</span>
+                      )}
+                    </div>
+                    <div className="text-2xl font-extrabold tracking-tight">{plan.priceRange}</div>
+                    <p className="text-xs text-neutral-400 mt-1">견적 후 확정 · 일회성 제작비</p>
+                  </div>
+                  <div className="border-t border-neutral-200 pt-6 mb-8">
+                    <ul className="space-y-3">
+                      {plan.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-sm">
+                          <Check className="w-3.5 h-3.5 text-neutral-400 mt-0.5 flex-shrink-0" />
+                          <span className="text-neutral-500 text-xs">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <Button
+                    asChild
+                    className={`w-full h-10 rounded-none font-bold text-sm ${plan.popular ? 'bg-neutral-900 text-white border border-neutral-900 hover:bg-neutral-700' : 'bg-white text-neutral-900 border border-neutral-300 hover:border-neutral-900'}`}
+                  >
+                    <Link href={`/quote?service=proposal&plan=${plan.id}`}>견적 요청하기</Link>
+                  </Button>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>

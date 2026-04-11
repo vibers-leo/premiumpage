@@ -3,9 +3,9 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { templates, developmentPlans, maintenancePlans } from '@/lib/data'
+import { templates, developmentPlans, maintenancePlans, proposalPlans } from '@/lib/data'
 import { formatPrice } from '@/lib/data-utils'
-import { ArrowLeft, ArrowRight, Check, Sparkles, Rocket, Mail, Phone, Building2, FileText, Loader2, Zap, Layers } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Check, Sparkles, Rocket, Mail, Phone, Building2, FileText, Loader2, Zap, Layers, Presentation } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -13,7 +13,7 @@ import { Progress } from '@/components/ui/progress'
 import { FileUpload } from '@/components/FileUpload'
 
 interface FormData {
-    serviceType: 'pdf' | 'custom' | null
+    serviceType: 'pdf' | 'custom' | 'proposal' | null
     templateId: string
     developmentPlanId: string
     maintenancePlanId: string
@@ -21,6 +21,7 @@ interface FormData {
     contactName: string
     contactEmail: string
     contactPhone: string
+    proposalPlanId: string
     projectDetails: string
     files: File[]
 }
@@ -35,6 +36,7 @@ export default function QuotePageEnhanced() {
         templateId: '',
         developmentPlanId: '',
         maintenancePlanId: '',
+        proposalPlanId: '',
         companyName: '',
         contactName: '',
         contactEmail: '',
@@ -46,7 +48,23 @@ export default function QuotePageEnhanced() {
     // URL 쿼리 파라미터로 플랜 자동 선택
     useEffect(() => {
         const params = new URLSearchParams(window.location.search)
+        const service = params.get('service')
         const planId = params.get('plan')
+
+        // PPT 제안서 서비스로 진입
+        if (service === 'proposal' && planId) {
+            const plan = proposalPlans.find(p => p.id === planId)
+            if (plan) {
+                setFormData(prev => ({
+                    ...prev,
+                    serviceType: 'proposal',
+                    proposalPlanId: planId,
+                }))
+                setStep(4) // 바로 정보 입력으로
+                return
+            }
+        }
+
         if (planId) {
             const plan = developmentPlans.find(p => p.id === planId)
             if (plan) {
@@ -94,12 +112,13 @@ export default function QuotePageEnhanced() {
     const nextStep = () => {
         if (step === 0) {
             if (formData.serviceType === 'pdf') {
-                // PDF 변환 선택 시 -> 템플릿 스킵, 개발 플랜은 Lite(ID: 1) 자동 선택 후 유지보수 단계(3)로 이동
-                updateFormData('templateId', '1') // Basic Viewer Template
-                updateFormData('developmentPlanId', '1') // Lite Plan
+                updateFormData('templateId', '1')
+                updateFormData('developmentPlanId', '1')
                 setStep(3)
+            } else if (formData.serviceType === 'proposal') {
+                // PPT 제안서 -> 플랜 선택(step 5)으로 이동
+                setStep(5)
             } else {
-                // 커스텀 제작 선택 시 -> 템플릿 선택(1)으로 이동
                 setStep(1)
             }
         } else if (step === 1) {
@@ -110,12 +129,19 @@ export default function QuotePageEnhanced() {
             setStep(3)
         } else if (step === 3) {
             setStep(4)
+        } else if (step === 5) {
+            // PPT 플랜 선택 후 → 정보 입력(4)으로 이동
+            setStep(4)
         }
     }
 
     const prevStep = () => {
         if (step === 3 && formData.serviceType === 'pdf') {
-            setStep(0) // PDF인 경우 유지보수에서 서비스 선택으로 바로 복귀
+            setStep(0)
+        } else if (step === 5 && formData.serviceType === 'proposal') {
+            setStep(0)
+        } else if (step === 4 && formData.serviceType === 'proposal') {
+            setStep(5)
         } else {
             setStep(step - 1)
         }
@@ -125,10 +151,12 @@ export default function QuotePageEnhanced() {
     const selectedDevPlan = developmentPlans.find(p => p.id === formData.developmentPlanId)
     const selectedMaintPlan = maintenancePlans.find(p => p.id === formData.maintenancePlanId)
 
-    // 총 단계 수 계산 (PDF: 3단계, Custom: 5단계)
-    const totalSteps = formData.serviceType === 'pdf' ? 3 : 5
+    // 총 단계 수 계산 (PDF: 3단계, Custom: 5단계, Proposal: 3단계)
+    const totalSteps = formData.serviceType === 'pdf' ? 3 : formData.serviceType === 'proposal' ? 3 : 5
     const currentProgress = formData.serviceType === 'pdf'
         ? (step === 0 ? 33 : step === 3 ? 66 : 100)
+        : formData.serviceType === 'proposal'
+        ? (step === 0 ? 33 : step === 5 ? 66 : 100)
         : ((step + 1) / 5) * 100
 
     const validateForm = (): boolean => {
@@ -146,6 +174,12 @@ export default function QuotePageEnhanced() {
     // 예상 납기일 계산
     const getEstimatedDelivery = (): string => {
         if (formData.serviceType === 'pdf') return '약 1주일'
+        if (formData.serviceType === 'proposal') {
+            if (formData.proposalPlanId === 'p1') return '1~2주'
+            if (formData.proposalPlanId === 'p2') return '2~3주'
+            if (formData.proposalPlanId === 'p3') return '2~4주'
+            return '1~4주'
+        }
         if (formData.developmentPlanId === '2') return '2~4주'
         if (formData.developmentPlanId === '3') return '4~8주'
         return '-'
@@ -161,6 +195,8 @@ export default function QuotePageEnhanced() {
             submitData.append('templateId', formData.templateId)
             submitData.append('developmentPlanId', formData.developmentPlanId)
             submitData.append('maintenancePlanId', formData.maintenancePlanId)
+            submitData.append('proposalPlanId', formData.proposalPlanId)
+            submitData.append('serviceType', formData.serviceType || '')
             submitData.append('companyName', formData.companyName)
             submitData.append('contactName', formData.contactName)
             submitData.append('contactEmail', formData.contactEmail)
@@ -224,7 +260,7 @@ export default function QuotePageEnhanced() {
                                     className="space-y-6"
                                 >
                                     <h2 className="text-2xl font-bold mb-4">어떤 서비스가 필요하신가요?</h2>
-                                    <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="grid md:grid-cols-3 gap-6">
                                         <Card
                                             className={`cursor-pointer transition-all hover:border-blue-500 glass-card ${formData.serviceType === 'pdf' ? 'border-2 border-blue-500 ring-2 ring-blue-500/20' : ''}`}
                                             onClick={() => updateFormData('serviceType', 'pdf')}
@@ -261,6 +297,26 @@ export default function QuotePageEnhanced() {
                                                     <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-purple-500" /> 맞춤형 디자인</li>
                                                     <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-purple-500" /> 고급 인터랙션 & 3D</li>
                                                     <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-purple-500" /> 찾기/다국어 기능</li>
+                                                </ul>
+                                            </CardContent>
+                                        </Card>
+
+                                        <Card
+                                            className={`cursor-pointer transition-all hover:border-amber-500 glass-card ${formData.serviceType === 'proposal' ? 'border-2 border-amber-500 ring-2 ring-amber-500/20' : ''}`}
+                                            onClick={() => updateFormData('serviceType', 'proposal')}
+                                        >
+                                            <CardHeader>
+                                                <div className="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center mb-4">
+                                                    <Presentation className="w-6 h-6 text-amber-500" />
+                                                </div>
+                                                <CardTitle>PPT 제안서 제작</CardTitle>
+                                                <CardDescription className="text-muted-foreground">IR 덱, 회사소개서, 입찰제안서 전문 디자인</CardDescription>
+                                            </CardHeader>
+                                            <CardContent>
+                                                <ul className="space-y-2 text-sm text-muted-foreground">
+                                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-amber-500" /> 전문 디자인 & 레이아웃</li>
+                                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-amber-500" /> RFP 분석 & 전략 설계</li>
+                                                    <li className="flex items-center"><Check className="w-4 h-4 mr-2 text-amber-500" /> PPT + PDF 납품</li>
                                                 </ul>
                                             </CardContent>
                                         </Card>
@@ -382,6 +438,46 @@ export default function QuotePageEnhanced() {
                                                             <li key={idx} className="flex items-center text-sm text-gray-600">
                                                                 <Check className="w-4 h-4 mr-2 text-green-500" />
                                                                 {feature}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </CardContent>
+                                            </Card>
+                                        ))}
+                                    </div>
+                                </motion.div>
+                            )}
+
+                            {/* Step 5: PPT 제안서 플랜 선택 (Proposal Only) */}
+                            {step === 5 && (
+                                <motion.div
+                                    key="step5"
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -20 }}
+                                    className="space-y-6"
+                                >
+                                    <h2 className="text-2xl font-bold mb-4">제안서 유형 선택</h2>
+                                    <div className="grid md:grid-cols-3 gap-6">
+                                        {proposalPlans.map((plan) => (
+                                            <Card
+                                                key={plan.id}
+                                                className={`cursor-pointer transition-all hover:border-amber-500 ${formData.proposalPlanId === plan.id ? 'border-2 border-amber-500 ring-2 ring-amber-500/20' : ''}`}
+                                                onClick={() => updateFormData('proposalPlanId', plan.id)}
+                                            >
+                                                <CardHeader>
+                                                    <div className="flex justify-between items-start">
+                                                        <CardTitle className="text-lg">{plan.name}</CardTitle>
+                                                        {plan.popular && <Badge className="bg-amber-500 text-white">인기</Badge>}
+                                                    </div>
+                                                    <div className="text-2xl font-black mt-2">{plan.priceRange}</div>
+                                                </CardHeader>
+                                                <CardContent>
+                                                    <ul className="space-y-2 text-sm text-muted-foreground">
+                                                        {plan.features.slice(0, 4).map((feature, idx) => (
+                                                            <li key={idx} className="flex items-start gap-2">
+                                                                <Check className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                                                                <span>{feature}</span>
                                                             </li>
                                                         ))}
                                                     </ul>
