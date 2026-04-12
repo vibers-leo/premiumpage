@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: 'PDF 파일만 업로드 가능합니다.' }, { status: 400 })
         }
 
-        const maxSize = 10 * 1024 * 1024
+        const maxSize = 50 * 1024 * 1024
         if (file.size > maxSize) {
             return NextResponse.json({ error: '파일 크기는 10MB 이하여야 합니다.' }, { status: 400 })
         }

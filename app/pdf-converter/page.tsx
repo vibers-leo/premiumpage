@@ -149,7 +149,7 @@ export default function PDFConverterPage() {
                         <div className="border border-neutral-200 p-8">
                             <h2 className="text-lg font-extrabold mb-1">PDF 업로드</h2>
                             <p className="text-neutral-400 text-sm mb-6">
-                                PDF 파일을 드래그하거나 선택하여 업로드 (최대 10MB)
+                                PDF 파일을 드래그하거나 선택하여 업로드 (최대 50MB)
                             </p>
 
                             {/* 드래그 앤 드롭 */}
@@ -179,7 +179,7 @@ export default function PDFConverterPage() {
                                             PDF 파일을 드래그하거나 클릭
                                         </p>
                                         <p className="text-xs text-neutral-400">
-                                            최대 10MB · PDF 형식만 지원
+                                            최대 50MB · PDF 형식만 지원
                                         </p>
                                     </div>
                                 </div>
