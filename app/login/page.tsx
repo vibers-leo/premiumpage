@@ -19,7 +19,6 @@ export default function LoginPage() {
         setError('')
 
         try {
-            // 1. NextAuth 로그인 (세션 관리용)
             const result = await signIn('credentials', {
                 email,
                 password,
@@ -29,14 +28,12 @@ export default function LoginPage() {
             if (result?.error) {
                 setError('이메일 또는 비밀번호가 올바르지 않습니다.')
             } else {
-                // 2. Firebase Auth 로그인 (클라이언트 사이드 Storage/Firestore 권한용)
                 try {
                     const { auth } = await import('@/lib/firebase')
                     const { signInWithEmailAndPassword } = await import('firebase/auth')
                     await signInWithEmailAndPassword(auth, email, password)
                 } catch (fbErr) {
                     console.warn('Firebase sync login failed:', fbErr)
-                    // 계정 동기화 전의 구사용자인 경우 등... 여기서는 무시하거나 세션 유지
                 }
 
                 router.push('/')
@@ -50,68 +47,55 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-background py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
-            <div className="max-w-md w-full space-y-8 glass-card p-8 rounded-xl shadow-2xl">
-                <div>
-                    <div className="mx-auto w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-xl mb-6 shadow-lg shadow-blue-500/30">
+        <div className="min-h-screen flex items-center justify-center bg-white px-6">
+            <div className="w-full max-w-sm">
+                <div className="mb-10 text-center">
+                    <div className="mx-auto w-10 h-10 border border-neutral-900 flex items-center justify-center text-neutral-900 font-extrabold text-sm mb-6">
                         P
                     </div>
-                    <h2 className="mt-6 text-center text-3xl font-extrabold text-foreground">
-                        로그인
-                    </h2>
-                    <p className="mt-2 text-center text-sm text-muted-foreground">
-                        Premium Page에 오신 것을 환영합니다
-                    </p>
+                    <h1 className="text-2xl font-extrabold tracking-tight">로그인</h1>
+                    <p className="text-neutral-400 text-sm mt-2">Premium Page에 오신 것을 환영합니다</p>
                 </div>
-                <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-                    <div className="rounded-md shadow-sm space-y-4">
-                        <div>
-                            <input
-                                type="email"
-                                required
-                                className="imweb-input w-full"
-                                placeholder="이메일 주소"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <input
-                                type="password"
-                                required
-                                className="imweb-input w-full"
-                                placeholder="비밀번호"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </div>
-                    </div>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    <input
+                        type="email"
+                        required
+                        className="w-full h-11 px-4 border border-neutral-200 text-sm focus:outline-none focus:border-neutral-900 transition-colors"
+                        placeholder="이메일 주소"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <input
+                        type="password"
+                        required
+                        className="w-full h-11 px-4 border border-neutral-200 text-sm focus:outline-none focus:border-neutral-900 transition-colors"
+                        placeholder="비밀번호"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
 
                     {error && (
-                        <div className="text-destructive text-sm text-center bg-destructive/10 p-2 rounded border border-destructive/20">
+                        <div className="text-sm text-red-600 border border-red-200 bg-red-50 px-4 py-2">
                             {error}
                         </div>
                     )}
 
-                    <div>
-                        <button
-                            type="submit"
-                            disabled={isLoading}
-                            className="w-full imweb-btn imweb-btn-primary flex justify-center py-3 shadow-lg hover:shadow-xl transition-all active:scale-[0.98]"
-                        >
-                            {isLoading ? <LoadingSpinner size="sm" /> : '로그인'}
-                        </button>
-                    </div>
+                    <button
+                        type="submit"
+                        disabled={isLoading}
+                        className="w-full h-11 bg-neutral-900 text-white font-bold text-sm border border-neutral-900 hover:bg-neutral-700 disabled:opacity-40 transition-all flex items-center justify-center"
+                    >
+                        {isLoading ? <LoadingSpinner size="sm" /> : '로그인'}
+                    </button>
                 </form>
 
-                <div className="text-center text-sm">
-                    <p className="text-muted-foreground">
-                        계정이 없으신가요?{' '}
-                        <Link href="/register" className="font-medium text-primary hover:text-primary/80 transition-colors">
-                            회원가입
-                        </Link>
-                    </p>
-                </div>
+                <p className="text-center text-sm text-neutral-400 mt-8">
+                    계정이 없으신가요?{' '}
+                    <Link href="/register" className="font-bold text-neutral-900 border-b border-neutral-900 pb-px hover:text-neutral-500 transition-colors">
+                        회원가입
+                    </Link>
+                </p>
             </div>
         </div>
     )

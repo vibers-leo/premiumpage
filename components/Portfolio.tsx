@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, ExternalLink, Sparkles } from 'lucide-react'
+import { X, ExternalLink } from 'lucide-react'
 
 const portfolioItems = [
     {
@@ -93,30 +93,26 @@ export function Portfolio() {
         : portfolioItems.filter(item => item.category === selectedCategory)
 
     return (
-        <section className="py-32 relative">
-            <div className="container mx-auto px-4">
+        <section className="py-24 md:py-32 relative">
+            <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
                 {/* 헤더 */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <div className="flex items-center justify-center gap-3 mb-6">
-                        <Sparkles className="w-10 h-10 text-neutral-400" />
-                        <h2 className="text-5xl md:text-7xl font-black gradient-text">포트폴리오</h2>
+                <div className="mb-16">
+                    <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
+                        <div className="w-8 h-px bg-neutral-300" />
+                        Portfolio
                     </div>
-                    <p className="text-xl text-neutral-500 font-light max-w-3xl mx-auto">
-                        프리미엄페이지가 구축한 하이엔드 전자 카탈로그 사례입니다.
+                    <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">포트폴리오</h1>
+                    <p className="text-neutral-500 text-sm md:text-base max-w-2xl">
+                        프리미엄페이지가 구축한 하이엔드 전자 카탈로그와 제안서 사례입니다.
                     </p>
-                </motion.div>
+                </div>
 
                 {/* 카테고리 필터 */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="flex flex-wrap justify-center gap-3 mb-16"
+                    className="flex flex-wrap gap-2 mb-12"
                 >
                     {categories.map((category) => (
                         <button
@@ -135,7 +131,7 @@ export function Portfolio() {
                 {/* 포트폴리오 그리드 */}
                 <motion.div
                     layout
-                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
                 >
                     <AnimatePresence mode="popLayout">
                         {filteredItems.map((item, index) => (

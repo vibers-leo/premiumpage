@@ -32,17 +32,12 @@ export default function RegisterPage() {
         }
 
         try {
-            // 1. Firebase Auth에 사용자 만들기
             const { auth } = await import('@/lib/firebase')
             const { createUserWithEmailAndPassword } = await import('firebase/auth')
 
             let firebaseUser;
             try {
-                const userCredential = await createUserWithEmailAndPassword(
-                    auth,
-                    formData.email,
-                    formData.password
-                )
+                const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password)
                 firebaseUser = userCredential.user
             } catch (fbErr: any) {
                 if (fbErr.code === 'auth/email-already-in-use') {
@@ -51,7 +46,6 @@ export default function RegisterPage() {
                 throw fbErr
             }
 
-            // 2. 우리 DB에 정보 저장 및 Firebase UID 연동
             const res = await fetch('/api/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -59,13 +53,13 @@ export default function RegisterPage() {
                     name: formData.name,
                     email: formData.email,
                     password: formData.password,
-                    firebaseUid: firebaseUser.uid // 연동을 위해 UID 전달
+                    firebaseUid: firebaseUser.uid
                 })
             })
 
             if (!res.ok) {
                 const data = await res.json()
-                throw new Error(data.error || '내부 데이터베이스 저장 실패')
+                throw new Error(data.error || '회원가입에 실패했습니다.')
             }
 
             router.push('/login')
@@ -77,84 +71,75 @@ export default function RegisterPage() {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
-                <div>
-                    <div className="mx-auto w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-xl mb-6">
+        <div className="min-h-screen flex items-center justify-center bg-white px-6">
+            <div className="w-full max-w-sm">
+                <div className="mb-10 text-center">
+                    <div className="mx-auto w-10 h-10 border border-neutral-900 flex items-center justify-center text-neutral-900 font-extrabold text-sm mb-6">
                         P
                     </div>
-                    <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-                        회원가입
-                    </h2>
-                    <p className="mt-2 text-center text-sm text-gray-600">
-                        새로운 계정을 만들어요
-                    </p>
+                    <h1 className="text-2xl font-extrabold tracking-tight">회원가입</h1>
+                    <p className="text-neutral-400 text-sm mt-2">새로운 계정을 만들어보세요</p>
                 </div>
-                <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-                    <div className="space-y-4">
-                        <input
-                            name="name"
-                            type="text"
-                            required
-                            className="imweb-input"
-                            placeholder="이름"
-                            value={formData.name}
-                            onChange={handleChange}
-                        />
-                        <input
-                            name="email"
-                            type="email"
-                            required
-                            className="imweb-input"
-                            placeholder="이메일 주소"
-                            value={formData.email}
-                            onChange={handleChange}
-                        />
-                        <input
-                            name="password"
-                            type="password"
-                            required
-                            className="imweb-input"
-                            placeholder="비밀번호"
-                            value={formData.password}
-                            onChange={handleChange}
-                        />
-                        <input
-                            name="confirmPassword"
-                            type="password"
-                            required
-                            className="imweb-input"
-                            placeholder="비밀번호 확인해요"
-                            value={formData.confirmPassword}
-                            onChange={handleChange}
-                        />
-                    </div>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    <input
+                        name="name"
+                        type="text"
+                        required
+                        className="w-full h-11 px-4 border border-neutral-200 text-sm focus:outline-none focus:border-neutral-900 transition-colors"
+                        placeholder="이름"
+                        value={formData.name}
+                        onChange={handleChange}
+                    />
+                    <input
+                        name="email"
+                        type="email"
+                        required
+                        className="w-full h-11 px-4 border border-neutral-200 text-sm focus:outline-none focus:border-neutral-900 transition-colors"
+                        placeholder="이메일 주소"
+                        value={formData.email}
+                        onChange={handleChange}
+                    />
+                    <input
+                        name="password"
+                        type="password"
+                        required
+                        className="w-full h-11 px-4 border border-neutral-200 text-sm focus:outline-none focus:border-neutral-900 transition-colors"
+                        placeholder="비밀번호"
+                        value={formData.password}
+                        onChange={handleChange}
+                    />
+                    <input
+                        name="confirmPassword"
+                        type="password"
+                        required
+                        className="w-full h-11 px-4 border border-neutral-200 text-sm focus:outline-none focus:border-neutral-900 transition-colors"
+                        placeholder="비밀번호 확인"
+                        value={formData.confirmPassword}
+                        onChange={handleChange}
+                    />
 
                     {error && (
-                        <div className="text-red-500 text-sm text-center bg-red-50 p-2 rounded">
+                        <div className="text-sm text-red-600 border border-red-200 bg-red-50 px-4 py-2">
                             {error}
                         </div>
                     )}
 
-                    <div>
-                        <button
-                            type="submit"
-                            disabled={isLoading}
-                            className="w-full imweb-btn imweb-btn-primary flex justify-center py-3"
-                        >
-                            {isLoading ? <LoadingSpinner size="sm" /> : '회원가입'}
-                        </button>
-                    </div>
+                    <button
+                        type="submit"
+                        disabled={isLoading}
+                        className="w-full h-11 bg-neutral-900 text-white font-bold text-sm border border-neutral-900 hover:bg-neutral-700 disabled:opacity-40 transition-all flex items-center justify-center"
+                    >
+                        {isLoading ? <LoadingSpinner size="sm" /> : '회원가입'}
+                    </button>
                 </form>
 
-                <div className="text-center text-sm">
-                    <p className="text-gray-600">
-                        이미 계정이 있으신가요?{' '}
-                        <Link href="/login" className="font-medium text-blue-600 hover:text-blue-500">
-                            로그인
-                        </Link>
-                    </p>
-                </div>
+                <p className="text-center text-sm text-neutral-400 mt-8">
+                    이미 계정이 있으신가요?{' '}
+                    <Link href="/login" className="font-bold text-neutral-900 border-b border-neutral-900 pb-px hover:text-neutral-500 transition-colors">
+                        로그인
+                    </Link>
+                </p>
             </div>
         </div>
     )
