@@ -71,27 +71,21 @@ export default function PDFConverterPage() {
         setError(null)
 
         try {
-            const { storage } = await import('@/lib/firebase')
-            const { ref, uploadBytes, getDownloadURL } = await import('firebase/storage')
+            const formData = new FormData()
+            formData.append('file', file)
 
-            const timestamp = Date.now()
-            const fileName = `${timestamp}_${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`
-            const storageRef = ref(storage, `pdfs/${fileName}`)
-
-            const snapshot = await uploadBytes(storageRef, file)
-            const downloadUrl = await getDownloadURL(snapshot.ref)
-
-            setUploadedFileUrl(downloadUrl)
-
-            await fetch('/api/upload/pdf-metadata', {
+            const res = await fetch('/api/upload/pdf', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    fileUrl: downloadUrl,
-                    fileName: file.name,
-                    fileSize: file.size
-                })
+                body: formData,
             })
+
+            const data = await res.json()
+
+            if (!res.ok) {
+                throw new Error(data.error || '업로드 실패')
+            }
+
+            setUploadedFileUrl(data.fileUrl)
         } catch (err: any) {
             setError(err.message || '업로드 중 오류가 발생했습니다.')
             console.error(err)
