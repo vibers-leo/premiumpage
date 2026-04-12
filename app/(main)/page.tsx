@@ -143,7 +143,7 @@ export default function PremiumLandingPage() {
 
       {/* ═══════════════ HERO SECTION ═══════════════ */}
       <section className="relative w-full min-h-[80vh] flex items-center border-b border-neutral-200">
-        <div className="container mx-auto px-6 md:px-8 max-w-screen-xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 md:py-24">
+        <div className="container mx-auto px-6 md:px-8 max-w-screen-xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-6 pb-16 md:pt-10 md:pb-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
