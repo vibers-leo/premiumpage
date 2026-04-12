@@ -32,7 +32,8 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ uploadUrl, publicUrl, key });
   } catch (error) {
-    console.error('Presign error:', error);
-    return NextResponse.json({ error: 'URL 생성 실패' }, { status: 500 });
+    const msg = error instanceof Error ? error.message : String(error);
+    console.error('Presign error:', msg);
+    return NextResponse.json({ error: 'URL 생성 실패', detail: msg }, { status: 500 });
   }
 }

@@ -23,15 +23,31 @@ const BUCKET = process.env.NCP_BUCKET_NAME || 'wero-bucket';
  * 유효시간: 15분
  */
 export async function getPresignedUploadUrl(key: string, contentType: string) {
-  const client = getClient();
+  const accessKey = process.env.NCP_ACCESS_KEY;
+  const secretKey = process.env.NCP_SECRET_KEY;
+  const bucket = process.env.NCP_BUCKET_NAME || 'wero-bucket';
+
+  if (!accessKey || !secretKey) {
+    throw new Error(`NCP credentials missing: accessKey=${!!accessKey}, secretKey=${!!secretKey}`);
+  }
+
+  const client = new S3Client({
+    region: NCP_REGION,
+    endpoint: NCP_ENDPOINT,
+    credentials: {
+      accessKeyId: accessKey,
+      secretAccessKey: secretKey,
+    },
+    forcePathStyle: true,
+  });
+
   const command = new PutObjectCommand({
-    Bucket: BUCKET,
+    Bucket: bucket,
     Key: key,
     ContentType: contentType,
-    ACL: 'public-read',
   });
   const url = await getSignedUrl(client, command, { expiresIn: 900 });
-  const publicUrl = `${NCP_ENDPOINT}/${BUCKET}/${key}`;
+  const publicUrl = `${NCP_ENDPOINT}/${bucket}/${key}`;
   return { uploadUrl: url, publicUrl };
 }
 
