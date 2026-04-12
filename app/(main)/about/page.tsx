@@ -32,12 +32,12 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white text-neutral-900">
 
       {/* Hero */}
-      <section className="py-24 md:py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
           <div className="max-w-3xl">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
               <div className="w-8 h-px bg-neutral-300" />
-              About Premium Page
+              회사 소개
             </div>
             <h1 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight leading-[1.1]">
               수출 기업의 가치를<br />
@@ -52,15 +52,15 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-24 md:py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
             <div>
               <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
                 <div className="w-8 h-px bg-neutral-300" />
-                Mission
+                미션
               </div>
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight">Our Mission</h2>
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight">우리의 미션</h2>
               <p className="text-neutral-500 text-sm leading-relaxed mb-4">
                 대한민국의 우수한 기술력을 가진 기업들이 해외 시장에서 제대로 된 가치를 인정받지 못하는 현실을 바꾸고 싶었습니다.
               </p>
@@ -90,12 +90,12 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-24 md:py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
           <div className="mb-16">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
               <div className="w-8 h-px bg-neutral-300" />
-              Core Values
+              핵심 가치
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">핵심 가치</h2>
           </div>
@@ -122,12 +122,12 @@ export default function AboutPage() {
       </section>
 
       {/* Capabilities */}
-      <section className="py-24 md:py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
           <div className="mb-16">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
               <div className="w-8 h-px bg-neutral-300" />
-              Capabilities
+              역량
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">역량</h2>
           </div>
@@ -155,12 +155,12 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-24 md:py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
           <div className="mb-16">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
               <div className="w-8 h-px bg-neutral-300" />
-              Journey
+              연혁
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">연혁</h2>
           </div>
@@ -184,7 +184,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl text-center">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">
             함께 글로벌 시장을 개척하세요

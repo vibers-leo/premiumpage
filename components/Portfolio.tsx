@@ -93,13 +93,13 @@ export function Portfolio() {
         : portfolioItems.filter(item => item.category === selectedCategory)
 
     return (
-        <section className="py-24 md:py-32 relative">
+        <section className="py-16 md:py-20 relative">
             <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
                 {/* 헤더 */}
                 <div className="mb-16">
                     <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
                         <div className="w-8 h-px bg-neutral-300" />
-                        Portfolio
+                        작업 사례
                     </div>
                     <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">포트폴리오</h1>
                     <p className="text-neutral-500 text-sm md:text-base max-w-2xl">

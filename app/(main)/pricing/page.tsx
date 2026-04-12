@@ -46,12 +46,12 @@ export default function PricingPage() {
     <div className="min-h-screen bg-white text-neutral-900">
 
       {/* Hero */}
-      <section className="py-24 md:py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
           <div className="max-w-2xl">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
               <div className="w-8 h-px bg-neutral-300" />
-              Transparent Pricing
+              요금 안내
             </div>
             <h1 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">
               합리적인 가격 정책
@@ -65,12 +65,12 @@ export default function PricingPage() {
       </section>
 
       {/* Development Plans */}
-      <section className="py-24 md:py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
           <div className="mb-16">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
               <div className="w-8 h-px bg-neutral-300" />
-              E-Catalog Plans
+              전자카탈로그
             </div>
             <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">전자카탈로그 플랜</h2>
           </div>
@@ -130,9 +130,9 @@ export default function PricingPage() {
           <div className="mb-16">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
               <div className="w-8 h-px bg-neutral-300" />
-              Proposal & IR Deck
+              제안서 제작
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-6 tracking-tight">
               PPT 제안서 제작
             </h2>
             <p className="text-neutral-500 text-lg max-w-2xl leading-relaxed">
@@ -192,12 +192,12 @@ export default function PricingPage() {
       </section>
 
       {/* Feature Comparison Table */}
-      <section className="py-24 md:py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
           <div className="mb-16">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
               <div className="w-8 h-px bg-neutral-300" />
-              Feature Comparison
+              기능 비교
             </div>
             <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">상세 기능 비교</h2>
           </div>
@@ -228,12 +228,12 @@ export default function PricingPage() {
       </section>
 
       {/* Maintenance Plans */}
-      <section className="py-24 md:py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
           <div className="mb-16">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
               <div className="w-8 h-px bg-neutral-300" />
-              Maintenance
+              유지보수
             </div>
             <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">유지보수 플랜</h2>
             <p className="text-neutral-500 text-sm mt-2">안정적인 서비스 운영과 지속적인 콘텐츠 관리를 위한 월간 플랜입니다.</p>
@@ -283,7 +283,7 @@ export default function PricingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl text-center">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">
             맞춤 견적이 필요하신가요?

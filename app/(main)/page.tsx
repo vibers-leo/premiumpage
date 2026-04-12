@@ -142,16 +142,16 @@ export default function PremiumLandingPage() {
     <div className="flex flex-col w-full bg-white text-neutral-900">
 
       {/* ═══════════════ HERO SECTION ═══════════════ */}
-      <section className="relative w-full min-h-[90vh] flex items-center border-b border-neutral-200">
-        <div className="container mx-auto px-8 max-w-screen-xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-32">
+      <section className="relative w-full min-h-[80vh] flex items-center border-b border-neutral-200">
+        <div className="container mx-auto px-6 md:px-8 max-w-screen-xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 md:py-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="text-left"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-neutral-300 mb-10">
-              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-neutral-500">Global Growth Partner</span>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-neutral-300 mb-8">
+              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-neutral-500">글로벌 성장 파트너</span>
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-[4.5rem] font-extrabold tracking-tight leading-[1.05] mb-8">
@@ -209,7 +209,7 @@ export default function PremiumLandingPage() {
         <div className="container mx-auto px-8 max-w-screen-xl">
           <div className="flex items-center justify-between gap-12">
             <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-neutral-400 whitespace-nowrap">
-              Trusted by
+              파트너사
             </p>
             <div className="flex items-center gap-12 overflow-hidden">
               {clientLogos.map((logo, i) => (
@@ -235,13 +235,13 @@ export default function PremiumLandingPage() {
       </section>
 
       {/* ═══════════════ PORTFOLIO SHOWCASE ═══════════════ */}
-      <section className="py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-8 max-w-screen-xl">
           <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
             <div className="max-w-2xl">
               <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
                 <div className="w-8 h-px bg-neutral-300" />
-                Curated Masterpieces
+                주요 작품
               </div>
               <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-[1.1] tracking-tight">
                 우리는 단순한 웹사이트를<br />
@@ -297,14 +297,14 @@ export default function PremiumLandingPage() {
       </section>
 
       {/* ═══════════════ STRATEGIC PROCESS ═══════════════ */}
-      <section className="py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-8 max-w-screen-xl">
           <div className="mb-20">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
               <div className="w-8 h-px bg-neutral-300" />
-              The Process
+              제작 과정
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">THE STRATEGIC PROCESS</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">전략적 제작 프로세스</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-px bg-neutral-200">
@@ -335,12 +335,12 @@ export default function PremiumLandingPage() {
       </section>
 
       {/* ═══════════════ SERVICE LINEUP ═══════════════ */}
-      <section className="py-32 border-b border-neutral-200 bg-neutral-50">
+      <section className="py-16 md:py-20 border-b border-neutral-200 bg-neutral-50">
         <div className="container mx-auto px-8 max-w-screen-xl">
           <div className="mb-20">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
               <div className="w-8 h-px bg-neutral-300" />
-              Services
+              서비스
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               두 가지 전문 서비스
@@ -405,12 +405,12 @@ export default function PremiumLandingPage() {
       </section>
 
       {/* ═══════════════ PRICING SECTION ═══════════════ */}
-      <section className="py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-8 max-w-screen-xl">
           <div className="mb-20">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
               <div className="w-8 h-px bg-neutral-300" />
-              Transparent Pricing
+              요금 안내
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               합리적인 가격 정책
@@ -476,12 +476,12 @@ export default function PremiumLandingPage() {
       </section>
 
       {/* ═══════════════ TESTIMONIALS ═══════════════ */}
-      <section className="py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-8 max-w-screen-xl">
           <div className="mb-20">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
               <div className="w-8 h-px bg-neutral-300" />
-              Client Stories
+              고객 후기
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               고객이 증명하는 성과
@@ -536,7 +536,7 @@ export default function PremiumLandingPage() {
       </section>
 
       {/* ═══════════════ FAQ SECTION ═══════════════ */}
-      <section className="py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-8 max-w-screen-xl">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-16">
             <div>
@@ -564,7 +564,7 @@ export default function PremiumLandingPage() {
       </section>
 
       {/* ═══════════════ BOTTOM CTA ═══════════════ */}
-      <section className="py-32 border-b border-neutral-200">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
         <div className="container mx-auto px-8 max-w-screen-xl text-center">
           <h2 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-none">
             READY TO<br />
