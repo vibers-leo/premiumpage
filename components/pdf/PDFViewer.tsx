@@ -1,14 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { Document, Page, pdfjs } from 'react-pdf'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Download, Maximize2 } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Download, Minus } from 'lucide-react'
 import 'react-pdf/dist/Page/AnnotationLayer.css'
 import 'react-pdf/dist/Page/TextLayer.css'
 
-// PDF.js worker 설정
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
 
 interface PDFViewerProps {
@@ -22,89 +20,64 @@ export function PDFViewer({ fileUrl, fileName = 'document.pdf' }: PDFViewerProps
     const [scale, setScale] = useState<number>(1.0)
     const [isFlipping, setIsFlipping] = useState<boolean>(false)
 
-    function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
+    const onDocumentLoadSuccess = useCallback(({ numPages }: { numPages: number }) => {
         setNumPages(numPages)
-    }
+    }, [])
 
-    const goToNextPage = () => {
-        if (currentPage < numPages && !isFlipping) {
-            setIsFlipping(true)
-            setTimeout(() => {
-                setCurrentPage(currentPage + 1)
-                setIsFlipping(false)
-            }, 300)
-        }
-    }
+    const flipTo = useCallback((page: number) => {
+        if (page < 1 || page > numPages || isFlipping) return
+        setIsFlipping(true)
+        setTimeout(() => {
+            setCurrentPage(page)
+            setIsFlipping(false)
+        }, 250)
+    }, [numPages, isFlipping])
 
-    const goToPreviousPage = () => {
-        if (currentPage > 1 && !isFlipping) {
-            setIsFlipping(true)
-            setTimeout(() => {
-                setCurrentPage(currentPage - 1)
-                setIsFlipping(false)
-            }, 300)
-        }
-    }
-
-    const zoomIn = () => {
-        if (scale < 2.0) setScale(scale + 0.2)
-    }
-
-    const zoomOut = () => {
-        if (scale > 0.6) setScale(scale - 0.2)
-    }
+    const zoomIn = () => { if (scale < 2.0) setScale(s => Math.round((s + 0.2) * 10) / 10) }
+    const zoomOut = () => { if (scale > 0.6) setScale(s => Math.round((s - 0.2) * 10) / 10) }
 
     return (
-        <div className="flex flex-col h-full bg-gray-900 rounded-xl overflow-hidden border border-gray-700">
+        <div className="flex flex-col h-full bg-white">
             {/* 상단 툴바 */}
-            <div className="flex items-center justify-between px-6 py-4 bg-gray-800 border-b border-gray-700">
+            <div className="flex items-center justify-between px-6 py-3 border-b border-neutral-200">
                 <div className="flex items-center gap-4">
-                    <h3 className="text-white font-semibold truncate max-w-xs">{fileName}</h3>
-                    <span className="text-sm text-gray-400">
+                    <h3 className="text-sm font-bold text-neutral-900 truncate max-w-xs">{fileName}</h3>
+                    <span className="text-[11px] font-bold text-neutral-400 tabular-nums">
                         {currentPage} / {numPages}
                     </span>
                 </div>
 
-                <div className="flex items-center gap-2">
-                    {/* 줌 컨트롤 */}
-                    <Button
-                        variant="ghost"
-                        size="sm"
+                <div className="flex items-center gap-1">
+                    <button
                         onClick={zoomOut}
                         disabled={scale <= 0.6}
-                        className="text-gray-300 hover:text-white"
+                        className="w-8 h-8 flex items-center justify-center text-neutral-400 hover:text-neutral-900 disabled:opacity-30 transition-colors"
                     >
                         <ZoomOut className="w-4 h-4" />
-                    </Button>
-                    <span className="text-sm text-gray-400 min-w-[60px] text-center">
+                    </button>
+                    <span className="text-[11px] font-bold text-neutral-400 min-w-[48px] text-center tabular-nums">
                         {Math.round(scale * 100)}%
                     </span>
-                    <Button
-                        variant="ghost"
-                        size="sm"
+                    <button
                         onClick={zoomIn}
                         disabled={scale >= 2.0}
-                        className="text-gray-300 hover:text-white"
+                        className="w-8 h-8 flex items-center justify-center text-neutral-400 hover:text-neutral-900 disabled:opacity-30 transition-colors"
                     >
                         <ZoomIn className="w-4 h-4" />
-                    </Button>
-
-                    {/* 다운로드 */}
-                    <Button
-                        variant="ghost"
-                        size="sm"
-                        asChild
-                        className="text-gray-300 hover:text-white"
+                    </button>
+                    <div className="w-px h-4 bg-neutral-200 mx-1" />
+                    <a
+                        href={fileUrl}
+                        download={fileName}
+                        className="w-8 h-8 flex items-center justify-center text-neutral-400 hover:text-neutral-900 transition-colors"
                     >
-                        <a href={fileUrl} download={fileName}>
-                            <Download className="w-4 h-4" />
-                        </a>
-                    </Button>
+                        <Download className="w-4 h-4" />
+                    </a>
                 </div>
             </div>
 
             {/* PDF 뷰어 영역 */}
-            <div className="flex-1 overflow-auto bg-gray-950 flex items-center justify-center p-8">
+            <div className="flex-1 overflow-auto bg-neutral-100 flex items-center justify-center p-8">
                 <div className="relative">
                     <AnimatePresence mode="wait">
                         <motion.div
@@ -112,21 +85,21 @@ export function PDFViewer({ fileUrl, fileName = 'document.pdf' }: PDFViewerProps
                             initial={{ rotateY: isFlipping ? 90 : 0, opacity: 0 }}
                             animate={{ rotateY: 0, opacity: 1 }}
                             exit={{ rotateY: isFlipping ? -90 : 0, opacity: 0 }}
-                            transition={{ duration: 0.3 }}
+                            transition={{ duration: 0.25 }}
                             style={{ transformStyle: 'preserve-3d' }}
-                            className="shadow-2xl"
+                            className="border border-neutral-200"
                         >
                             <Document
                                 file={fileUrl}
                                 onLoadSuccess={onDocumentLoadSuccess}
                                 loading={
-                                    <div className="flex items-center justify-center h-96 w-96 bg-gray-800 rounded-lg">
-                                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
+                                    <div className="flex items-center justify-center h-[600px] w-[450px] bg-white">
+                                        <div className="w-6 h-6 border-2 border-neutral-300 border-t-neutral-900 rounded-full animate-spin" />
                                     </div>
                                 }
                                 error={
-                                    <div className="flex items-center justify-center h-96 w-96 bg-gray-800 rounded-lg">
-                                        <p className="text-red-400">PDF 로드 실패</p>
+                                    <div className="flex items-center justify-center h-[600px] w-[450px] bg-white">
+                                        <p className="text-neutral-400 text-sm">PDF 로드 실패</p>
                                     </div>
                                 }
                             >
@@ -135,7 +108,6 @@ export function PDFViewer({ fileUrl, fileName = 'document.pdf' }: PDFViewerProps
                                     scale={scale}
                                     renderTextLayer={true}
                                     renderAnnotationLayer={true}
-                                    className="rounded-lg overflow-hidden"
                                 />
                             </Document>
                         </motion.div>
@@ -144,46 +116,37 @@ export function PDFViewer({ fileUrl, fileName = 'document.pdf' }: PDFViewerProps
             </div>
 
             {/* 하단 네비게이션 */}
-            <div className="flex items-center justify-center gap-4 px-6 py-4 bg-gray-800 border-t border-gray-700">
-                <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={goToPreviousPage}
+            <div className="flex items-center justify-center gap-3 px-6 py-3 border-t border-neutral-200">
+                <button
+                    onClick={() => flipTo(currentPage - 1)}
                     disabled={currentPage <= 1 || isFlipping}
-                    className="border-gray-600 hover:bg-gray-700"
+                    className="flex items-center gap-1 px-3 py-1.5 text-[12px] font-bold text-neutral-500 border border-neutral-200 hover:border-neutral-900 hover:text-neutral-900 disabled:opacity-30 transition-all"
                 >
-                    <ChevronLeft className="w-4 h-4 mr-1" />
-                    이전
-                </Button>
+                    <ChevronLeft className="w-3.5 h-3.5" />
+                </button>
 
-                {/* 페이지 번호 표시 */}
-                <div className="flex items-center gap-2">
-                    {Array.from({ length: Math.min(numPages, 5) }, (_, i) => {
-                        let pageNum
-                        if (numPages <= 5) {
+                <div className="flex items-center gap-1">
+                    {Array.from({ length: Math.min(numPages, 7) }, (_, i) => {
+                        let pageNum: number
+                        if (numPages <= 7) {
                             pageNum = i + 1
-                        } else if (currentPage <= 3) {
+                        } else if (currentPage <= 4) {
                             pageNum = i + 1
-                        } else if (currentPage >= numPages - 2) {
-                            pageNum = numPages - 4 + i
+                        } else if (currentPage >= numPages - 3) {
+                            pageNum = numPages - 6 + i
                         } else {
-                            pageNum = currentPage - 2 + i
+                            pageNum = currentPage - 3 + i
                         }
 
                         return (
                             <button
                                 key={pageNum}
-                                onClick={() => {
-                                    setIsFlipping(true)
-                                    setTimeout(() => {
-                                        setCurrentPage(pageNum)
-                                        setIsFlipping(false)
-                                    }, 300)
-                                }}
-                                className={`w-8 h-8 rounded flex items-center justify-center text-sm font-medium transition-all ${currentPage === pageNum
-                                        ? 'bg-purple-500 text-white'
-                                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                                    }`}
+                                onClick={() => flipTo(pageNum)}
+                                className={`w-7 h-7 flex items-center justify-center text-[11px] font-bold transition-all ${
+                                    currentPage === pageNum
+                                        ? 'bg-neutral-900 text-white'
+                                        : 'text-neutral-400 hover:text-neutral-900 hover:bg-neutral-100'
+                                }`}
                             >
                                 {pageNum}
                             </button>
@@ -191,16 +154,13 @@ export function PDFViewer({ fileUrl, fileName = 'document.pdf' }: PDFViewerProps
                     })}
                 </div>
 
-                <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={goToNextPage}
+                <button
+                    onClick={() => flipTo(currentPage + 1)}
                     disabled={currentPage >= numPages || isFlipping}
-                    className="border-gray-600 hover:bg-gray-700"
+                    className="flex items-center gap-1 px-3 py-1.5 text-[12px] font-bold text-neutral-500 border border-neutral-200 hover:border-neutral-900 hover:text-neutral-900 disabled:opacity-30 transition-all"
                 >
-                    다음
-                    <ChevronRight className="w-4 h-4 ml-1" />
-                </Button>
+                    <ChevronRight className="w-3.5 h-3.5" />
+                </button>
             </div>
         </div>
     )

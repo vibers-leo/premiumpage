@@ -42,6 +42,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
     const navLinks = [
         { href: '/portfolio', label: '포트폴리오' },
         { href: '/pricing', label: '요금제' },
+        { href: '/pdf-converter', label: 'PDF 변환' },
         { href: '/about', label: '소개' },
         { href: '/quote', label: '제작 의뢰' },
     ]

@@ -3,18 +3,16 @@
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
-import { Upload, FileText, CheckCircle2, AlertCircle } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Upload, FileText, CheckCircle2, AlertCircle, Copy, Check, ArrowLeft } from 'lucide-react'
+import Link from 'next/link'
 
-// PDF 뷰어를 동적으로 import (SSR 비활성화)
 const PDFViewer = dynamic(
     () => import('@/components/pdf/PDFViewer').then(mod => ({ default: mod.PDFViewer })),
     {
         ssr: false,
         loading: () => (
-            <div className="h-full flex items-center justify-center bg-gray-900 rounded-xl">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
+            <div className="h-full flex items-center justify-center bg-neutral-100">
+                <div className="w-6 h-6 border-2 border-neutral-300 border-t-neutral-900 rounded-full animate-spin" />
             </div>
         )
     }
@@ -26,6 +24,7 @@ export default function PDFConverterPage() {
     const [uploadedFileUrl, setUploadedFileUrl] = useState<string | null>(null)
     const [error, setError] = useState<string | null>(null)
     const [dragActive, setDragActive] = useState(false)
+    const [copied, setCopied] = useState(false)
 
     const handleDrag = (e: React.DragEvent) => {
         e.preventDefault()
@@ -48,7 +47,7 @@ export default function PDFConverterPage() {
                 setFile(droppedFile)
                 setError(null)
             } else {
-                setError('PDF 파일만 올리기 가능합니다.')
+                setError('PDF 파일만 업로드할 수 있습니다.')
             }
         }
     }
@@ -60,7 +59,7 @@ export default function PDFConverterPage() {
                 setFile(selectedFile)
                 setError(null)
             } else {
-                setError('PDF 파일만 올리기 가능합니다.')
+                setError('PDF 파일만 업로드할 수 있습니다.')
             }
         }
     }
@@ -72,7 +71,6 @@ export default function PDFConverterPage() {
         setError(null)
 
         try {
-            // 1. Firebase Storage에 올리기 준비
             const { storage } = await import('@/lib/firebase')
             const { ref, uploadBytes, getDownloadURL } = await import('firebase/storage')
 
@@ -80,14 +78,11 @@ export default function PDFConverterPage() {
             const fileName = `${timestamp}_${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`
             const storageRef = ref(storage, `pdfs/${fileName}`)
 
-            // 2. 파일 올리기
             const snapshot = await uploadBytes(storageRef, file)
             const downloadUrl = await getDownloadURL(snapshot.ref)
 
             setUploadedFileUrl(downloadUrl)
 
-            // 3. 데이터베이스에 프로젝트 정보 저장 (로그인한 경우)
-            // 브라우저에서 직접 DB를 건드리는 대신, 기존 API를 활용하거나 정보를 전달
             await fetch('/api/upload/pdf-metadata', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -97,13 +92,19 @@ export default function PDFConverterPage() {
                     fileSize: file.size
                 })
             })
-
         } catch (err: any) {
-            setError(err.message || '올리기 중 오류가 발생했습니다.')
+            setError(err.message || '업로드 중 오류가 발생했습니다.')
             console.error(err)
         } finally {
             setUploading(false)
         }
+    }
+
+    const handleCopy = () => {
+        if (!uploadedFileUrl) return
+        navigator.clipboard.writeText(uploadedFileUrl)
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
     }
 
     const resetUpload = () => {
@@ -113,110 +114,113 @@ export default function PDFConverterPage() {
     }
 
     return (
-        <div className="min-h-screen bg-background transition-colors duration-300">
+        <div className="min-h-screen bg-white">
             {/* 헤더 */}
-            <header className="border-b border-border bg-background/50 backdrop-blur-xl">
-                <div className="container mx-auto px-4 py-6">
-                    <h1 className="text-3xl font-black gradient-text">PDF to Web Converter</h1>
-                    <p className="text-muted-foreground mt-2">PDF 파일을 인터랙티브 웹 뷰어로 변환하세요</p>
+            <header className="border-b border-neutral-200">
+                <div className="container mx-auto px-8 max-w-screen-xl py-6">
+                    <Link href="/" className="inline-flex items-center gap-1 text-neutral-400 hover:text-neutral-900 text-sm font-bold mb-4 transition-colors">
+                        <ArrowLeft className="w-3.5 h-3.5" /> 메인으로
+                    </Link>
+                    <div className="flex items-center gap-3">
+                        <h1 className="text-2xl font-extrabold tracking-tight">PDF to Web Converter</h1>
+                        <span className="text-[10px] font-bold tracking-wider uppercase border border-neutral-900 px-2 py-0.5">BETA</span>
+                    </div>
+                    <p className="text-neutral-500 text-sm mt-1">PDF 파일을 인터랙티브 웹 뷰어로 변환합니다</p>
                 </div>
             </header>
 
-            <div className="container mx-auto px-4 py-12">
+            <div className="container mx-auto px-8 max-w-screen-xl py-12">
                 {!uploadedFileUrl ? (
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="max-w-2xl mx-auto"
+                        className="max-w-xl mx-auto"
                     >
-                        <Card className="glass-card shadow-2xl">
-                            <CardHeader>
-                                <CardTitle className="text-2xl font-black gradient-text">PDF 올리기</CardTitle>
-                                <CardDescription className="text-muted-foreground">
-                                    PDF 파일을 드래그하거나 선택하여 올려요 (최대 10MB)
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent className="space-y-6">
-                                {/* 드래그 앤 드롭 영역 */}
-                                <div
-                                    onDragEnter={handleDrag}
-                                    onDragLeave={handleDrag}
-                                    onDragOver={handleDrag}
-                                    onDrop={handleDrop}
-                                    className={`relative border-2 border-dashed rounded-xl p-12 text-center transition-all ${dragActive
-                                        ? 'border-primary bg-primary/10'
-                                        : 'border-border hover:border-primary/50 bg-muted/30'
-                                        }`}
-                                >
-                                    <input
-                                        type="file"
-                                        accept="application/pdf"
-                                        onChange={handleFileChange}
-                                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                                    />
+                        <div className="border border-neutral-200 p-8">
+                            <h2 className="text-lg font-extrabold mb-1">PDF 업로드</h2>
+                            <p className="text-neutral-400 text-sm mb-6">
+                                PDF 파일을 드래그하거나 선택하여 업로드 (최대 10MB)
+                            </p>
 
-                                    <div className="flex flex-col items-center gap-4">
-                                        <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
-                                            <Upload className="w-10 h-10 text-primary" />
-                                        </div>
-                                        <div>
-                                            <p className="text-lg font-semibold text-foreground mb-2">
-                                                PDF 파일을 드래그하거나 클릭하여 올리기
-                                            </p>
-                                            <p className="text-sm text-muted-foreground">
-                                                최대 10MB, PDF 형식만 지원
-                                            </p>
-                                        </div>
+                            {/* 드래그 앤 드롭 */}
+                            <div
+                                onDragEnter={handleDrag}
+                                onDragLeave={handleDrag}
+                                onDragOver={handleDrag}
+                                onDrop={handleDrop}
+                                className={`relative border border-dashed p-16 text-center transition-all ${
+                                    dragActive
+                                        ? 'border-neutral-900 bg-neutral-50'
+                                        : 'border-neutral-300 hover:border-neutral-500'
+                                }`}
+                            >
+                                <input
+                                    type="file"
+                                    accept="application/pdf"
+                                    onChange={handleFileChange}
+                                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                                />
+                                <div className="flex flex-col items-center gap-4">
+                                    <div className="w-12 h-12 border border-neutral-200 flex items-center justify-center">
+                                        <Upload className="w-5 h-5 text-neutral-400" />
+                                    </div>
+                                    <div>
+                                        <p className="text-sm font-bold text-neutral-900 mb-1">
+                                            PDF 파일을 드래그하거나 클릭
+                                        </p>
+                                        <p className="text-xs text-neutral-400">
+                                            최대 10MB · PDF 형식만 지원
+                                        </p>
                                     </div>
                                 </div>
+                            </div>
 
-                                {/* 선택된 파일 정보 */}
-                                {file && (
-                                    <motion.div
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        className="p-4 bg-muted/50 rounded-lg border border-border flex items-center gap-4"
-                                    >
-                                        <FileText className="w-8 h-8 text-primary" />
-                                        <div className="flex-1">
-                                            <p className="font-semibold text-foreground">{file.name}</p>
-                                            <p className="text-sm text-muted-foreground">
-                                                {(file.size / 1024 / 1024).toFixed(2)} MB
-                                            </p>
-                                        </div>
-                                        <CheckCircle2 className="w-6 h-6 text-green-500" />
-                                    </motion.div>
-                                )}
-
-                                {/* 에러 메시지 */}
-                                {error && (
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        className="p-4 bg-destructive/10 border border-destructive/50 rounded-lg flex items-center gap-3"
-                                    >
-                                        <AlertCircle className="w-5 h-5 text-destructive" />
-                                        <p className="text-sm text-destructive">{error}</p>
-                                    </motion.div>
-                                )}
-
-                                {/* 올리기 버튼 */}
-                                <Button
-                                    onClick={handleUpload}
-                                    disabled={!file || uploading}
-                                    className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 hover:opacity-90 py-6 font-bold text-lg text-white"
+                            {/* 선택된 파일 */}
+                            {file && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    className="mt-4 p-4 border border-neutral-200 flex items-center gap-4"
                                 >
-                                    {uploading ? (
-                                        <>
-                                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2" />
-                                            변환 중...
-                                        </>
-                                    ) : (
-                                        '웹 뷰어로 변환'
-                                    )}
-                                </Button>
-                            </CardContent>
-                        </Card>
+                                    <FileText className="w-5 h-5 text-neutral-400" />
+                                    <div className="flex-1 min-w-0">
+                                        <p className="font-bold text-sm truncate">{file.name}</p>
+                                        <p className="text-xs text-neutral-400">
+                                            {(file.size / 1024 / 1024).toFixed(2)} MB
+                                        </p>
+                                    </div>
+                                    <CheckCircle2 className="w-5 h-5 text-neutral-900 flex-shrink-0" />
+                                </motion.div>
+                            )}
+
+                            {/* 에러 */}
+                            {error && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    className="mt-4 p-4 border border-red-200 bg-red-50 flex items-center gap-3"
+                                >
+                                    <AlertCircle className="w-4 h-4 text-red-500 flex-shrink-0" />
+                                    <p className="text-sm text-red-600">{error}</p>
+                                </motion.div>
+                            )}
+
+                            {/* 업로드 버튼 */}
+                            <button
+                                onClick={handleUpload}
+                                disabled={!file || uploading}
+                                className="w-full mt-6 h-12 bg-neutral-900 text-white font-bold text-sm border border-neutral-900 hover:bg-neutral-700 disabled:opacity-30 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
+                            >
+                                {uploading ? (
+                                    <>
+                                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                        변환 중...
+                                    </>
+                                ) : (
+                                    '웹 뷰어로 변환'
+                                )}
+                            </button>
+                        </div>
                     </motion.div>
                 ) : (
                     <motion.div
@@ -226,49 +230,40 @@ export default function PDFConverterPage() {
                     >
                         {/* 뷰어 헤더 */}
                         <div className="flex items-center justify-between">
-                            <h2 className="text-2xl font-bold text-foreground">PDF 뷰어</h2>
-                            <Button
+                            <h2 className="text-lg font-extrabold">PDF 뷰어</h2>
+                            <button
                                 onClick={resetUpload}
-                                variant="outline"
-                                className="border-border hover:bg-muted"
+                                className="text-sm font-bold text-neutral-500 border border-neutral-200 px-4 py-2 hover:border-neutral-900 hover:text-neutral-900 transition-all"
                             >
-                                새 파일 올리기
-                            </Button>
+                                새 파일 업로드
+                            </button>
                         </div>
 
                         {/* PDF 뷰어 */}
-                        <div className="h-[800px] bg-card border border-border rounded-xl overflow-hidden shadow-lg">
+                        <div className="h-[800px] border border-neutral-200 overflow-hidden">
                             <PDFViewer fileUrl={uploadedFileUrl} fileName={file?.name} />
                         </div>
 
-                        {/* 공유 정보 */}
-                        <Card className="glass-card shadow-lg">
-                            <CardHeader>
-                                <CardTitle className="text-xl font-bold text-foreground">공유 링크</CardTitle>
-                                <CardDescription className="text-muted-foreground">
-                                    아래 링크를 복사하여 다른 사람과 공유하세요
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <div className="flex items-center gap-2">
-                                    <input
-                                        type="text"
-                                        readOnly
-                                        value={`${typeof window !== 'undefined' ? window.location.origin : ''}${uploadedFileUrl}`}
-                                        className="flex-1 px-4 py-3 bg-muted border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                                    />
-                                    <Button
-                                        onClick={() => {
-                                            navigator.clipboard.writeText(`${window.location.origin}${uploadedFileUrl}`)
-                                            alert('링크가 복사되었습니다!')
-                                        }}
-                                        className="bg-primary text-primary-foreground hover:bg-primary/90"
-                                    >
-                                        복사
-                                    </Button>
-                                </div>
-                            </CardContent>
-                        </Card>
+                        {/* 공유 링크 */}
+                        <div className="border border-neutral-200 p-6">
+                            <h3 className="text-sm font-extrabold mb-1">공유 링크</h3>
+                            <p className="text-xs text-neutral-400 mb-4">아래 링크를 복사하여 공유하세요</p>
+                            <div className="flex items-center gap-2">
+                                <input
+                                    type="text"
+                                    readOnly
+                                    value={uploadedFileUrl}
+                                    className="flex-1 px-4 py-2.5 border border-neutral-200 text-sm text-neutral-700 bg-neutral-50 focus:outline-none"
+                                />
+                                <button
+                                    onClick={handleCopy}
+                                    className="h-10 px-4 border border-neutral-900 bg-neutral-900 text-white text-sm font-bold hover:bg-neutral-700 transition-all flex items-center gap-2"
+                                >
+                                    {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                                    {copied ? '복사됨' : '복사'}
+                                </button>
+                            </div>
+                        </div>
                     </motion.div>
                 )}
             </div>
