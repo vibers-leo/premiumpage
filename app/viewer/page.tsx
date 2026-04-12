@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'
 import dynamic from 'next/dynamic'
@@ -8,20 +9,28 @@ import { ArrowLeft } from 'lucide-react'
 
 const PDFViewer = dynamic(
     () => import('@/components/pdf/PDFViewer').then(mod => ({ default: mod.PDFViewer })),
-    {
-        ssr: false,
-        loading: () => (
-            <div className="h-full flex items-center justify-center bg-neutral-100">
-                <div className="w-6 h-6 border-2 border-neutral-300 border-t-neutral-900 rounded-full animate-spin" />
-            </div>
-        )
-    }
+    { ssr: false, loading: () => <ViewerLoading /> }
 )
+
+const FlipViewer = dynamic(
+    () => import('@/components/pdf/FlipViewer').then(mod => ({ default: mod.FlipViewer })),
+    { ssr: false, loading: () => <ViewerLoading /> }
+)
+
+function ViewerLoading() {
+    return (
+        <div className="h-full flex items-center justify-center bg-neutral-100">
+            <div className="w-6 h-6 border-2 border-neutral-300 border-t-neutral-900 rounded-full animate-spin" />
+        </div>
+    )
+}
 
 function ViewerContent() {
     const searchParams = useSearchParams()
     const url = searchParams.get('url')
     const title = searchParams.get('title') || 'Document'
+    const mode = searchParams.get('mode') // flip or standard
+    const [viewMode, setViewMode] = useState<'standard' | 'flip'>(mode === 'standard' ? 'standard' : 'flip')
 
     if (!url) {
         return (
@@ -50,15 +59,35 @@ function ViewerContent() {
                             <p className="text-[11px] text-neutral-400">Premium Page Viewer</p>
                         </div>
                     </div>
-                    <Link href="/pdf-converter" className="text-[11px] font-bold text-neutral-400 border border-neutral-200 px-3 py-1.5 hover:border-neutral-900 hover:text-neutral-900 transition-all">
-                        PDF 변환기
-                    </Link>
+                    <div className="flex items-center gap-3">
+                        <div className="flex items-center border border-neutral-200">
+                            <button
+                                onClick={() => setViewMode('flip')}
+                                className={`px-3 py-1.5 text-[11px] font-bold transition-all ${viewMode === 'flip' ? 'bg-neutral-900 text-white' : 'text-neutral-400 hover:text-neutral-900'}`}
+                            >
+                                페이지 넘김
+                            </button>
+                            <button
+                                onClick={() => setViewMode('standard')}
+                                className={`px-3 py-1.5 text-[11px] font-bold transition-all ${viewMode === 'standard' ? 'bg-neutral-900 text-white' : 'text-neutral-400 hover:text-neutral-900'}`}
+                            >
+                                표준
+                            </button>
+                        </div>
+                        <Link href="/pdf-converter" className="text-[11px] font-bold text-neutral-400 border border-neutral-200 px-3 py-1.5 hover:border-neutral-900 hover:text-neutral-900 transition-all">
+                            PDF 변환기
+                        </Link>
+                    </div>
                 </div>
             </header>
 
             {/* 뷰어 */}
             <div className="flex-1">
-                <PDFViewer fileUrl={url} fileName={title} />
+                {viewMode === 'flip' ? (
+                    <FlipViewer fileUrl={url} fileName={title} />
+                ) : (
+                    <PDFViewer fileUrl={url} fileName={title} />
+                )}
             </div>
         </div>
     )

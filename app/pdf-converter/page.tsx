@@ -8,15 +8,21 @@ import Link from 'next/link'
 
 const PDFViewer = dynamic(
     () => import('@/components/pdf/PDFViewer').then(mod => ({ default: mod.PDFViewer })),
-    {
-        ssr: false,
-        loading: () => (
-            <div className="h-full flex items-center justify-center bg-neutral-100">
-                <div className="w-6 h-6 border-2 border-neutral-300 border-t-neutral-900 rounded-full animate-spin" />
-            </div>
-        )
-    }
+    { ssr: false, loading: () => <ViewerLoading /> }
 )
+
+const FlipViewer = dynamic(
+    () => import('@/components/pdf/FlipViewer').then(mod => ({ default: mod.FlipViewer })),
+    { ssr: false, loading: () => <ViewerLoading /> }
+)
+
+function ViewerLoading() {
+    return (
+        <div className="h-full flex items-center justify-center bg-neutral-100">
+            <div className="w-6 h-6 border-2 border-neutral-300 border-t-neutral-900 rounded-full animate-spin" />
+        </div>
+    )
+}
 
 export default function PDFConverterPage() {
     const [file, setFile] = useState<File | null>(null)
@@ -25,6 +31,7 @@ export default function PDFConverterPage() {
     const [error, setError] = useState<string | null>(null)
     const [dragActive, setDragActive] = useState(false)
     const [copied, setCopied] = useState(false)
+    const [viewMode, setViewMode] = useState<'standard' | 'flip'>('flip')
 
     const handleDrag = (e: React.DragEvent) => {
         e.preventDefault()
@@ -224,7 +231,23 @@ export default function PDFConverterPage() {
                     >
                         {/* 뷰어 헤더 */}
                         <div className="flex items-center justify-between">
-                            <h2 className="text-lg font-extrabold">PDF 뷰어</h2>
+                            <div className="flex items-center gap-4">
+                                <h2 className="text-lg font-extrabold">PDF 뷰어</h2>
+                                <div className="flex items-center border border-neutral-200">
+                                    <button
+                                        onClick={() => setViewMode('flip')}
+                                        className={`px-3 py-1.5 text-[11px] font-bold transition-all ${viewMode === 'flip' ? 'bg-neutral-900 text-white' : 'text-neutral-400 hover:text-neutral-900'}`}
+                                    >
+                                        페이지 넘김
+                                    </button>
+                                    <button
+                                        onClick={() => setViewMode('standard')}
+                                        className={`px-3 py-1.5 text-[11px] font-bold transition-all ${viewMode === 'standard' ? 'bg-neutral-900 text-white' : 'text-neutral-400 hover:text-neutral-900'}`}
+                                    >
+                                        표준 뷰어
+                                    </button>
+                                </div>
+                            </div>
                             <button
                                 onClick={resetUpload}
                                 className="text-sm font-bold text-neutral-500 border border-neutral-200 px-4 py-2 hover:border-neutral-900 hover:text-neutral-900 transition-all"
@@ -235,7 +258,11 @@ export default function PDFConverterPage() {
 
                         {/* PDF 뷰어 */}
                         <div className="h-[800px] border border-neutral-200 overflow-hidden">
-                            <PDFViewer fileUrl={uploadedFileUrl} fileName={file?.name} />
+                            {viewMode === 'flip' ? (
+                                <FlipViewer fileUrl={uploadedFileUrl} fileName={file?.name} />
+                            ) : (
+                                <PDFViewer fileUrl={uploadedFileUrl} fileName={file?.name} />
+                            )}
                         </div>
 
                         {/* 공유 링크 */}
