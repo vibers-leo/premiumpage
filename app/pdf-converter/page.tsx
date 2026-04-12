@@ -78,21 +78,30 @@ export default function PDFConverterPage() {
         setError(null)
 
         try {
-            const formData = new FormData()
-            formData.append('file', file)
-
-            const res = await fetch('/api/upload/pdf', {
+            // 1. presigned URL 발급
+            const presignRes = await fetch('/api/storage/presign', {
                 method: 'POST',
-                body: formData,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    filename: file.name,
+                    contentType: 'application/pdf',
+                    folder: 'premiumpage/pdfs',
+                }),
             })
 
-            const data = await res.json()
+            const presignData = await presignRes.json()
+            if (!presignRes.ok) throw new Error(presignData.error || 'URL 생성 실패')
 
-            if (!res.ok) {
-                throw new Error(data.error || '업로드 실패')
-            }
+            // 2. NCP에 직접 업로드
+            const uploadRes = await fetch(presignData.uploadUrl, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/pdf' },
+                body: file,
+            })
 
-            setUploadedFileUrl(data.fileUrl)
+            if (!uploadRes.ok) throw new Error('파일 업로드 실패')
+
+            setUploadedFileUrl(presignData.publicUrl)
         } catch (err: any) {
             setError(err.message || '업로드 중 오류가 발생했습니다.')
             console.error(err)
