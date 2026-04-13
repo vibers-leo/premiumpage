@@ -10,6 +10,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname()
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const [hostname, setHostname] = useState('')
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 50)
@@ -20,6 +21,10 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         setIsMobileMenuOpen(false)
     }, [pathname])
+
+    useEffect(() => {
+        setHostname(window.location.hostname)
+    }, [])
 
     const catalogHostnames = [
         'hangseong.premiumpage.kr',
@@ -35,8 +40,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
     const catalogPaths = ['/templates/', '/gentop/', '/vibers/', '/emt/']
     const isIndividualTemplate =
         catalogPaths.some(p => pathname?.startsWith(p)) ||
-        (typeof window !== 'undefined' &&
-            catalogHostnames.some(h => window.location.hostname.includes(h)))
+        catalogHostnames.some(h => hostname.includes(h))
 
     const navLinks = [
         { href: '/portfolio', label: '포트폴리오' },
