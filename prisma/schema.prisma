@@ -132,3 +132,25 @@ model PmRequest {
   @@map("requests")
   @@schema("premiumpage")
 }
+
+model QuoteRequest {
+  id               String   @id @default(uuid())
+  templateId       String?  @map("template_id")
+  developmentPlanId String? @map("development_plan_id")
+  maintenancePlanId String? @map("maintenance_plan_id")
+  proposalPlanId   String?  @map("proposal_plan_id")
+  serviceType      String?  @map("service_type")
+  companyName      String?  @map("company_name")
+  contactName      String   @map("contact_name")
+  contactEmail     String   @map("contact_email")
+  contactPhone     String   @map("contact_phone")
+  projectDetails   String?  @map("project_details")
+  attachments      String?
+  status           String   @default("pending")
+  adminNote        String?  @map("admin_note")
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @default(now()) @updatedAt @map("updated_at")
+
+  @@map("quote_requests")
+  @@schema("premiumpage")
+}

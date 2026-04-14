@@ -93,9 +93,10 @@ export async function POST(request: NextRequest) {
         })
 
     } catch (error) {
-        console.error('Quote request error:', error)
+        const msg = error instanceof Error ? error.message : String(error)
+        console.error('Quote request error:', msg)
         return NextResponse.json(
-            { error: '견적 요청 처리 중 오류가 발생했습니다.' },
+            { error: '견적 요청 처리 중 오류가 발생했습니다.', detail: msg },
             { status: 500 }
         )
     }
