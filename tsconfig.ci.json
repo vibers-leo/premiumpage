@@ -1,0 +1,44 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "lib/ai-recipe-client.ts",
+    "lib/builder-store.ts",
+    "lib/catalog-core/**/*.ts",
+    "lib/constants/**/*.ts",
+    "lib/data-utils.ts",
+    "lib/data.ts",
+    "lib/email.ts",
+    "lib/nav-data.ts",
+    "lib/ncp-storage.ts",
+    "lib/payment.ts",
+    "lib/seo.ts",
+    "lib/super-admins.ts",
+    "lib/translations.ts",
+    "lib/utils.ts",
+    "hooks/**/*.ts",
+    "hooks/**/*.tsx",
+    "types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "mobile",
+    // ── Prisma 스키마 불일치 (schema.prisma에 없는 모델 사용 — 순차 해소 예정)
+    "app/admin",
+    "app/api/admin",
+    "app/api/projects",
+    "app/api/auth",
+    "app/api/register",
+    "app/api/upload",
+    "app/api/vibers-admin",
+    "app/api/vibers",
+    "app/api/quotes",
+    "app/vibers",
+    "lib/auth.ts",
+    "lib/prisma.ts"
+  ]
+}
