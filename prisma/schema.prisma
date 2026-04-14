@@ -134,7 +134,8 @@ model PmRequest {
 }
 
 model QuoteRequest {
-  id               String   @id @default(uuid())
+  id               String   @id
+  quoteNumber      String   @unique @map("quote_number")
   templateId       String?  @map("template_id")
   developmentPlanId String? @map("development_plan_id")
   maintenancePlanId String? @map("maintenance_plan_id")

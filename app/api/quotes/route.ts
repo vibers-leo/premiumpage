@@ -46,9 +46,19 @@ export async function POST(request: NextRequest) {
             }
         }
 
+        // 견적 번호 생성 — PP-YYYYMMDD-NNN
+        const today = new Date().toISOString().slice(0, 10).replace(/-/g, '')
+        const todayCount = await prisma.quoteRequest.count({
+            where: { quoteNumber: { startsWith: `PP-${today}-` } }
+        })
+        const seq = String(todayCount + 1).padStart(3, '0')
+        const quoteNumber = `PP-${today}-${seq}`
+
         // 견적 요청 저장
         const quoteRequest = await prisma.quoteRequest.create({
             data: {
+                id: crypto.randomUUID(),
+                quoteNumber,
                 templateId,
                 developmentPlanId,
                 maintenancePlanId,
@@ -71,11 +81,11 @@ export async function POST(request: NextRequest) {
                 sendQuoteConfirmationEmail({
                     email: contactEmail,
                     name: contactName,
-                    quoteId: quoteRequest.id,
+                    quoteId: quoteRequest.quoteNumber,
                     templateName: template?.name
                 }),
                 sendAdminNotificationEmail({
-                    quoteId: quoteRequest.id,
+                    quoteId: quoteRequest.quoteNumber,
                     customerName: contactName,
                     customerEmail: contactEmail,
                     templateName: template?.name
@@ -89,7 +99,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({
             success: true,
             message: '견적 요청이 성공적으로 제출되었습니다!',
-            quoteId: quoteRequest.id
+            quoteId: quoteRequest.quoteNumber
         })
 
     } catch (error) {
