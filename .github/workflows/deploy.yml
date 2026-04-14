@@ -27,7 +27,7 @@ jobs:
       - name: TypeScript type check
         run: npx tsc --noEmit --project tsconfig.ci.json
       - name: ESLint
-        run: npx eslint . --ext .ts,.tsx --max-warnings -1
+        run: npx eslint .
 
   build-and-deploy:
     needs: quality-check
