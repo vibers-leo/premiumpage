@@ -87,8 +87,8 @@ export async function sendQuoteConfirmationEmail(data: {
               
               <p style="margin: 30px 0 0; color: rgba(255, 255, 255, 0.7); font-size: 14px; line-height: 1.6;">
                 문의사항이 있으시면 언제든지 연락주세요.<br>
-                이메일: <a href="mailto:info@premiumpage.com" style="color: #a855f7; text-decoration: none;">info@premiumpage.com</a><br>
-                전화: <a href="tel:02-1234-5678" style="color: #a855f7; text-decoration: none;">02-1234-5678</a>
+                이메일: <a href="mailto:vibers.leo@gmail.com" style="color: #a855f7; text-decoration: none;">vibers.leo@gmail.com</a><br>
+                전화: <a href="tel:010-4866-5805" style="color: #a855f7; text-decoration: none;">010-4866-5805</a>
               </p>
             </td>
           </tr>
@@ -137,8 +137,8 @@ ${templateName ? `선택 템플릿: ${templateName}\n` : ''}접수 일시: ${new
 4. 계약 후 프로젝트 시작
 
 문의사항이 있으시면 언제든지 연락주세요.
-이메일: info@premiumpage.com
-전화: 02-1234-5678
+이메일: vibers.leo@gmail.com
+전화: 010-4866-5805
 
 감사합니다.
 Premium Page 팀

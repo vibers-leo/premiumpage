@@ -590,10 +590,10 @@ export default function PremiumLandingPage() {
                 Global Interactive Digital Catalog Agency for Export-Champion Companies.
               </p>
               <div className="flex items-center gap-3">
-                <a href="mailto:info@premiumpage.kr" className="w-9 h-9 border border-neutral-200 flex items-center justify-center text-neutral-400 hover:border-neutral-900 hover:text-neutral-900 transition-all">
+                <a href="mailto:vibers.leo@gmail.com" className="w-9 h-9 border border-neutral-200 flex items-center justify-center text-neutral-400 hover:border-neutral-900 hover:text-neutral-900 transition-all">
                   <Mail className="w-4 h-4" />
                 </a>
-                <a href="tel:+82-10-0000-0000" className="w-9 h-9 border border-neutral-200 flex items-center justify-center text-neutral-400 hover:border-neutral-900 hover:text-neutral-900 transition-all">
+                <a href="tel:+82-10-4866-5805" className="w-9 h-9 border border-neutral-200 flex items-center justify-center text-neutral-400 hover:border-neutral-900 hover:text-neutral-900 transition-all">
                   <Phone className="w-4 h-4" />
                 </a>
               </div>

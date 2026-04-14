@@ -70,9 +70,9 @@ export default function PrivacyPage() {
           <h2 className="text-2xl font-bold mb-4">제7조 (개인정보 보호책임자)</h2>
           <div className="p-6 bg-muted/30 rounded-xl space-y-2 text-sm text-muted-foreground border border-border">
             <p className="font-bold text-base text-foreground mb-3">개인정보 보호책임자</p>
-            <p>• 성명: 김성원</p>
+            <p>• 성명: 김정원</p>
             <p>• 직책: 대표</p>
-            <p>• 연락처: 010-9249-3872</p>
+            <p>• 연락처: 010-4866-5805</p>
             <p>• 이메일: juuuno@naver.com</p>
           </div>
         </section>
@@ -95,7 +95,7 @@ export default function PrivacyPage() {
           <h3 className="text-lg font-bold mb-3">개인정보 처리방침 관련 문의</h3>
           <div className="text-sm text-muted-foreground space-y-1">
             <p>상호명: 위로 | 사업자등록번호: 545-16-01046</p>
-            <p>대표: 김성원 | 연락처: 010-9249-3872</p>
+            <p>대표: 김정원 | 연락처: 010-4866-5805</p>
             <p>이메일: juuuno@naver.com</p>
             <p>주소: 경남 양산시 고향의봄12길 10, 뉴그린빌 301호</p>
           </div>

@@ -69,7 +69,7 @@ export default function RefundPage() {
           <h3 className="text-lg font-bold mb-3">취소·환불 문의</h3>
           <div className="text-sm text-muted-foreground space-y-1">
             <p>상호명: 위로 | 사업자등록번호: 545-16-01046</p>
-            <p>대표: 김성원 | 연락처: 010-9249-3872</p>
+            <p>대표: 김정원 | 연락처: 010-4866-5805</p>
             <p>이메일: juuuno@naver.com</p>
             <p>운영시간: 평일 10:00 - 18:00</p>
           </div>
