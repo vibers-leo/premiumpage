@@ -12,9 +12,12 @@ const eslintConfig = defineConfig([
   {
     rules: {
       "@next/next/no-img-element": "warn",
+      "@next/next/no-html-link-for-pages": "warn",
       "react-hooks/exhaustive-deps": "warn",
-      "react/no-unescaped-entities": "warn",
       "react-hooks/rules-of-hooks": "warn",
+      "react-hooks/set-state-in-effect": "warn",
+      "react-hooks/preserve-manual-memoization": "warn",
+      "react/no-unescaped-entities": "warn",
     },
   },
 ]);
