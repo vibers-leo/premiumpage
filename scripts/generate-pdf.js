@@ -255,7 +255,7 @@ async function generateHSTechPDF(timestamp) {
 
     const browser = await chromium.launch({ headless: true, args: ['--disable-cache'] })
     const page = await browser.newPage()
-    await page.setViewportSize({ width: 1920, height: 1080 })
+    await page.setViewportSize({ width: 1440, height: 900 })
 
     // 다크모드 비활성화 (라이트 모드로 캡처)
     await page.emulateMedia({ colorScheme: 'light' })
@@ -288,7 +288,7 @@ async function generateGentopPDF(timestamp) {
 
     const browser = await chromium.launch({ headless: true, args: ['--disable-cache'] })
     const page = await browser.newPage()
-    await page.setViewportSize({ width: 1920, height: 1080 })
+    await page.setViewportSize({ width: 1440, height: 900 })
     await page.emulateMedia({ colorScheme: 'dark' })
 
     const screenshots = []
@@ -319,7 +319,7 @@ async function generateAirHSTechPDF(timestamp) {
 
     const browser = await chromium.launch({ headless: true, args: ['--disable-cache'] })
     const page = await browser.newPage()
-    await page.setViewportSize({ width: 1920, height: 1080 })
+    await page.setViewportSize({ width: 1440, height: 900 })
     await page.emulateMedia({ colorScheme: 'light' })
 
     const screenshots = []
@@ -350,7 +350,7 @@ async function generateHangseongPDF(timestamp) {
 
     const browser = await chromium.launch({ headless: true, args: ['--disable-cache'] })
     const page = await browser.newPage()
-    await page.setViewportSize({ width: 1920, height: 1080 })
+    await page.setViewportSize({ width: 1440, height: 900 })
     await page.emulateMedia({ colorScheme: 'dark' })
 
     const screenshots = []
@@ -378,84 +378,12 @@ async function generateHangseongPDF(timestamp) {
 // ──────────────────────────────────────
 // 실행
 // ──────────────────────────────────────
-// EMT PDF (EN / KO 각각 풀스크롤 + A4가로)
-// ──────────────────────────────────────
-
-const EMT_EN_URL = 'https://emt-en.premiumpage.kr/'
-const EMT_KO_URL = 'https://emt-ko.premiumpage.kr/'
-
-// 슬라이드 기반 EMT 전체 페이지 캡처 (go(n) 함수로 이동)
-async function captureEMTAllSlides(page, url, viewport) {
-    await page.setViewportSize(viewport)
-    await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 })
-    await page.waitForTimeout(3000)
-
-    // 슬라이드 총 개수 확인
-    const slideCount = await page.evaluate(() => document.querySelectorAll('.slide').length)
-    console.log(`     슬라이드 ${slideCount}장 감지`)
-
-    // DOM 직접 조작으로 슬라이드 이동 (go() 함수 TDZ 우회)
-    const gotoSlide = (idx) => page.evaluate((i) => {
-        const slides = document.querySelectorAll('.slide')
-        slides.forEach((s, si) => s.classList.toggle('active', si === i))
-        // 카운터 업데이트 (cur/tot ID 기반)
-        const curEl = document.getElementById('cur')
-        const totEl = document.getElementById('tot')
-        if (curEl) curEl.innerText = String(i + 1).padStart(2, '0')
-        if (totEl) totEl.innerText = String(slides.length).padStart(2, '0')
-    }, idx)
-
-    const screenshots = []
-    for (let i = 0; i < slideCount; i++) {
-        await gotoSlide(i)
-        await page.waitForTimeout(600)
-        const data = await page.screenshot({ type: 'png' })
-        screenshots.push({ data, label: `Slide ${String(i + 1).padStart(2, '0')}` })
-        process.stdout.write(`\r     ${i + 1}/${slideCount} 캡처 완료`)
-    }
-    console.log()
-    return screenshots
-}
-
-async function generateEMTPDF(lang, timestamp) {
-    const outDir = path.join(__dirname, '..', 'public', 'report')
-    fs.mkdirSync(outDir, { recursive: true })
-
-    const url = lang === 'en' ? EMT_EN_URL : EMT_KO_URL
-    const label = lang === 'en' ? 'EMT_EN' : 'EMT_KO'
-
-    console.log(`\n🚀 ${label} 카탈로그 PDF 생성 시작`)
-
-    const browser = await chromium.launch({ headless: true, args: ['--disable-cache'] })
-
-    // ── 풀스크롤 버전: 1440×900 (브라우저 기본)
-    console.log(`  📸 전체 슬라이드 캡처 (1440×900)...`)
-    const page1 = await browser.newPage()
-    const scrollShots = await captureEMTAllSlides(page1, url, { width: 1920, height: 1080 })
-    await page1.close()
-    const scrollPath = path.join(outDir, `${label}_Catalog_FullScroll_${timestamp}.pdf`)
-    const scrollCount = await screenshotsToPDF(scrollShots, scrollPath)
-    console.log(`  ✅ ${path.basename(scrollPath)} (${scrollCount}페이지, ${Math.round(fs.statSync(scrollPath).size / 1024)}KB)`)
-
-    // ── A4가로 버전: 1123×794
-    console.log(`  📸 전체 슬라이드 캡처 (A4가로 1123×794)...`)
-    const page2 = await browser.newPage()
-    const a4Shots = await captureEMTAllSlides(page2, url, { width: 1123, height: 794 })
-    await page2.close()
-    const a4Path = path.join(outDir, `${label}_Catalog_A4_${timestamp}.pdf`)
-    const a4Count = await screenshotsToPDF(a4Shots, a4Path)
-    console.log(`  ✅ ${path.basename(a4Path)} (${a4Count}페이지, ${Math.round(fs.statSync(a4Path).size / 1024)}KB)`)
-
-    await browser.close()
-}
-
-// ──────────────────────────────────────
 
 async function main() {
     const target = process.argv[2] || 'all'
 
-    if (!['hstech', 'hangseong', 'gentop', 'air-hstech', 'emt', 'all'].includes(target)) {
-        console.error('사용법: node scripts/generate-pdf.js [hstech|hangseong|gentop|air-hstech|emt|all]')
+    if (!['hstech', 'hangseong', 'gentop', 'air-hstech', 'all'].includes(target)) {
+        console.error('사용법: node scripts/generate-pdf.js [hstech|hangseong|gentop|air-hstech|all]')
         process.exit(1)
     }
 
@@ -474,10 +402,6 @@ async function main() {
     }
     if (target === 'air-hstech' || target === 'all') {
         await generateAirHSTechPDF(timestamp)
-    }
-    if (target === 'emt' || target === 'all') {
-        await generateEMTPDF('en', timestamp)
-        await generateEMTPDF('ko', timestamp)
     }
 
     const elapsed = Math.round((Date.now() - start) / 1000)
