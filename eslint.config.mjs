@@ -1,8 +1,20 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 
+// react-compiler 플러그인이 미설치된 환경에서 crash 방지
+const safeNextVitals = nextVitals.map(config => {
+  if (config.plugins?.['react-compiler']) {
+    const { 'react-compiler': _, ...restPlugins } = config.plugins;
+    const restRules = Object.fromEntries(
+      Object.entries(config.rules || {}).filter(([k]) => !k.startsWith('react-compiler/'))
+    );
+    return { ...config, plugins: restPlugins, rules: restRules };
+  }
+  return config;
+});
+
 const eslintConfig = defineConfig([
-  ...nextVitals,
+  ...safeNextVitals,
   globalIgnores([
     ".next/**",
     "out/**",
