@@ -28,7 +28,7 @@ jobs:
       - name: TypeScript type check
         run: npx tsc --noEmit --project tsconfig.ci.json
       - name: ESLint
-        run: npx next lint
+        run: npm run lint
 
   build-and-deploy:
     needs: quality-check
