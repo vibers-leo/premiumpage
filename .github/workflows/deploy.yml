@@ -20,14 +20,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm ci --legacy-peer-deps
       - name: Generate Prisma client
         run: npx prisma generate
       - name: TypeScript type check
         run: npx tsc --noEmit --project tsconfig.ci.json
       - name: ESLint
-        run: npx eslint .
+        run: npx next lint
 
   build-and-deploy:
     needs: quality-check
