@@ -32,7 +32,6 @@ const eslintConfig = defineConfig([
       "react-hooks/preserve-manual-memoization": "warn",
       "react/no-unescaped-entities": "warn",
       "react/display-name": "warn",
-      "react-compiler/react-compiler": "warn",
     },
   },
 ]);
