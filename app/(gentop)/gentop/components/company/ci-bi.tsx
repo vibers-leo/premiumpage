@@ -132,11 +132,11 @@ export const CompanyCiBi = () => {
                             </div>
                         </div>
 
-                        {/* Logos */}
+                        {/* LISCON Logos */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-end pt-8">
                             {/* Symbol */}
                             <div className="flex flex-col items-center group">
-                                <div className="relative w-full aspect-square md:aspect-[4/3]  rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500">
+                                <div className="relative w-full aspect-square md:aspect-[4/3] rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500">
                                     <Image
                                         src="/images/company/ci_bi/bi_logo01.jpg"
                                         alt="LISCON Symbol"
@@ -148,7 +148,7 @@ export const CompanyCiBi = () => {
                             </div>
                             {/* Signature */}
                             <div className="flex flex-col items-center group">
-                                <div className="relative w-full aspect-square md:aspect-[4/3]  rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500">
+                                <div className="relative w-full aspect-square md:aspect-[4/3] rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500">
                                     <Image
                                         src="/images/company/ci_bi/bi_logo02.jpg"
                                         alt="LISCON Signature"
@@ -160,15 +160,28 @@ export const CompanyCiBi = () => {
                             </div>
                             {/* Grid */}
                             <div className="flex flex-col items-center group">
-                                <div className="relative w-full aspect-square md:aspect-[4/3]  rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500">
+                                <div className="relative w-full aspect-square md:aspect-[4/3] rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500">
                                     <Image
                                         src="/images/company/ci_bi/bi_logo03.jpg"
-                                        alt="LISCON Grid System"
+                                        alt="LISCON Application"
                                         fill
                                         className="object-contain"
                                     />
                                 </div>
-                                <span className="mt-6 text-xs font-bold text-gray-400 uppercase tracking-widest">Grid System</span>
+                                <span className="mt-6 text-xs font-bold text-gray-400 uppercase tracking-widest">Application</span>
+                            </div>
+                        </div>
+
+                        {/* Group Affiliates */}
+                        <div className="pt-8 border-t border-gray-200 dark:border-gray-700">
+                            <h3 className="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">Group Affiliates</h3>
+                            <div className="relative w-full max-w-2xl mx-auto aspect-[4/1]">
+                                <Image
+                                    src="/images/company/ci_bi/bi_logo04.jpg"
+                                    alt="Group Affiliates — GENTOP, parathrone, LISCON, TOPXUS"
+                                    fill
+                                    className="object-contain"
+                                />
                             </div>
                         </div>
                     </motion.div>

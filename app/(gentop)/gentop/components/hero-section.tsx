@@ -63,7 +63,7 @@ export function HeroSection({ lang, nextPage }: { lang: string; nextPage: string
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                         <Link
-                            href={`/${lang}/company/introduction`}
+                            href={`/gentop/${lang}/company/introduction`}
                             className="group relative w-full sm:w-auto px-12 py-5 bg-gentop-green text-black font-black text-base rounded-2xl overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(173,232,19,0.6)] active:scale-95"
                         >
                             <span className="relative z-10 flex items-center justify-center gap-3">
@@ -73,7 +73,7 @@ export function HeroSection({ lang, nextPage }: { lang: string; nextPage: string
                         </Link>
 
                         <Link
-                            href={`/${lang}/business`}
+                            href={`/gentop/${lang}/business`}
                             className="w-full sm:w-auto px-12 py-5 bg-white/5 border border-white/20 text-white font-black text-base rounded-2xl backdrop-blur-xl hover:bg-white/10 transition-all active:scale-95 text-center"
                         >
                             {t.hero.cta_business}

@@ -67,15 +67,19 @@ export default function CoverView({ onStart }: CoverViewProps) {
                     <span className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#00d4ff]/70" />
 
                     {/* Logo */}
-                    <div className="flex justify-center mb-8">
+                    <div className="flex justify-center items-center gap-3 mb-8">
                         <Image
-                            src="/templates/air-hstech/images/logo-top.png"
+                            src="/templates/air-hstech/images/logo-genwish.png"
                             alt="HS TECH"
-                            width={160}
-                            height={41}
-                            className="object-contain brightness-0 invert opacity-90"
+                            width={44}
+                            height={44}
+                            className="object-contain"
                             priority
                         />
+                        <div className="text-left">
+                            <div className="text-2xl font-black text-white tracking-[0.15em] leading-none">HSTECH</div>
+                            <div className="text-[10px] text-white/50 tracking-[0.2em] uppercase mt-0.5">CO., LTD.</div>
+                        </div>
                     </div>
 
                     <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-4">

@@ -153,37 +153,73 @@ function GreetingPage() {
 
 function HistoryPage() {
     return (
-        <div className="min-h-screen bg-white p-8 md:p-16">
+        <div className="min-h-screen bg-white py-16 px-4">
             <div className="max-w-4xl mx-auto">
                 <SectionHeader label="HISTORY" title="Company History" subtitle="From founding to becoming a leader in DC engine-off air conditioning." />
-                <div className="relative">
-                    <div className="absolute left-16 top-0 bottom-0 w-px bg-neutral-200" />
+
+                {/* Timeline — one card per year, alternating left/right */}
+                <div className="relative mt-12">
+                    {/* Center vertical line */}
+                    <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-neutral-200" />
+
                     <div className="space-y-8">
-                        {HISTORY.map(yr => (
-                            <div key={yr.year}>
-                                <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-32 text-right">
-                                        <span className="text-cyan-600 font-black text-2xl">20<strong className="text-slate-900">{yr.year.slice(2)}</strong></span>
-                                    </div>
-                                    <div className="w-3 h-3 rounded-full bg-cyan-500 border-2 border-white shadow-sm relative z-10 flex-shrink-0" />
-                                </div>
-                                <div className="ml-36 space-y-3">
-                                    {yr.events.map((ev, i) => (
-                                        <div key={i} className="flex items-start gap-4">
-                                            <span className="text-cyan-500 font-bold text-xs w-6 flex-shrink-0 mt-0.5">{ev.month}</span>
-                                            <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-3 flex-1">
-                                                <p className="text-slate-700 text-sm">{ev.desc}</p>
-                                                {ev.img && (
-                                                    <div className="mt-2 h-20 relative overflow-hidden rounded">
-                                                        <Image src={ev.img} alt={ev.desc} fill className="object-cover" />
-                                                    </div>
-                                                )}
-                                            </div>
+                        {HISTORY.map((yr, i) => {
+                            const isRight = i % 2 === 0
+                            const image = yr.events.find(ev => ev.img)
+
+                            const card = (
+                                <div className="bg-white border border-neutral-200 rounded-xl p-5 shadow-sm w-full">
+                                    {/* Month·Event list */}
+                                    <ul className="space-y-2 mb-0">
+                                        {yr.events.map((ev, j) => (
+                                            <li key={j} className="flex items-start gap-3">
+                                                <span className="text-cyan-500 font-black text-xs w-5 flex-shrink-0 mt-0.5">{ev.month}</span>
+                                                <p className="text-slate-700 text-sm leading-snug">{ev.desc}</p>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    {/* Image — natural aspect ratio, no crop */}
+                                    {image?.img && (
+                                        <div className="mt-4 rounded-lg overflow-hidden border border-neutral-100 bg-neutral-50">
+                                            <img src={image.img} alt={image.desc} className="w-full h-auto object-contain" />
                                         </div>
-                                    ))}
+                                    )}
                                 </div>
-                            </div>
-                        ))}
+                            )
+
+                            return (
+                                <div key={yr.year} className="relative flex items-start">
+                                    {/* Center dot */}
+                                    <div className="absolute left-1/2 -translate-x-1/2 top-6 z-10 w-3 h-3 rounded-full bg-cyan-500 border-2 border-white shadow-sm" />
+
+                                    {/* Year badge — centered above the card row */}
+                                    <div className="absolute left-1/2 -translate-x-1/2 -top-5 z-10">
+                                        <div className="bg-white border-2 border-cyan-500 rounded-full px-4 py-1 text-sm font-bold whitespace-nowrap">
+                                            <span className="text-slate-400">20</span>
+                                            <strong className="text-cyan-600">{yr.year.slice(2)}</strong>
+                                        </div>
+                                    </div>
+
+                                    {/* Left half */}
+                                    <div className="w-1/2 pr-8 flex justify-end">
+                                        {!isRight && card}
+                                    </div>
+
+                                    {/* Right half */}
+                                    <div className="w-1/2 pl-8 flex justify-start">
+                                        {isRight && card}
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+
+                    {/* Bottom GENWISH symbol */}
+                    <div className="relative flex flex-col items-center pt-12 pb-4">
+                        <div className="w-px h-8 bg-neutral-200 mb-4" />
+                        <div className="relative w-16 h-16 opacity-25">
+                            <Image src="/templates/air-hstech/images/logo-symbol.png" alt="GENWISH" fill className="object-contain" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -198,8 +234,8 @@ function BrandPage() {
                 <SectionHeader label="BRAND" title="GENWISH Brand" subtitle={BRAND.origin} />
                 <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                        <div className="relative h-64 overflow-hidden rounded-xl mb-5 border border-neutral-200">
-                            <Image src="/templates/air-hstech/images/brand-main.jpg" alt="GENWISH Brand" fill className="object-cover" />
+                        <div className="rounded-xl mb-5 border border-neutral-200 bg-white p-6 flex items-center justify-center">
+                            <img src="/templates/air-hstech/images/brand-main.jpg" alt="GENWISH Brand" className="w-full h-auto object-contain max-h-64" />
                         </div>
                         <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-5">
                             <h3 className="text-cyan-600 font-black text-xs tracking-wider uppercase mb-3">Symbol Mark</h3>
@@ -216,8 +252,8 @@ function BrandPage() {
                                 { src: '/templates/air-hstech/images/brand-symbol-1.jpg', label: 'Symbol A' },
                                 { src: '/templates/air-hstech/images/brand-symbol-2.jpg', label: 'Symbol B' },
                             ].map(img => (
-                                <div key={img.label} className="relative h-32 overflow-hidden rounded-lg border border-neutral-200">
-                                    <Image src={img.src} alt={img.label} fill className="object-cover" />
+                                <div key={img.label} className="rounded-lg border border-neutral-200 bg-white overflow-hidden">
+                                    <img src={img.src} alt={img.label} className="w-full h-auto object-contain" />
                                 </div>
                             ))}
                         </div>

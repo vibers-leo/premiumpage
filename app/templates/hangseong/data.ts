@@ -359,6 +359,20 @@ export const DB: Record<string, any[]> = {
 
 // Company History Timeline Data
 export const HISTORY_DATA = [
+    { year: '2024', month: '12', event: 'GMB KOREA EOP Motor Housing Mass Production' },
+    { year: '2024', month: '10', event: 'Patent (No. 10-2872305) "Adhesive Application Device and Method for Fixing Magnets to Motor Case" Registration' },
+    { year: '2023', month: '07', event: 'Smart Factory Completion' },
+    { year: '2023', month: '07', event: 'T50 Automated Assembly Line Construction' },
+    { year: '2023', month: '01', event: 'GMB KOREA EOP Motor Cover Proto Development' },
+    { year: '2023', month: '01', event: 'GMB KOREA EOP HEATSINK Proto Development (2023–2024)' },
+    { year: '2022', month: '10', event: 'GMB KOREA Partner Company Registration' },
+    { year: '2022', month: '07', event: 'Smart Factory Initiative' },
+    { year: '2022', month: '04', event: 'Jinyoung Korea Partner Company Registration' },
+    { year: '2022', month: '03', event: 'GMB KOREA EOP Motor Housing Proto Sample Development' },
+    { year: '2021', month: '11', event: 'IATF16949:2016 Certification Renewal' },
+    { year: '2021', month: '11', event: 'Kaeyang Electric EPB Yoke Assembly Proto Sample (3 types) Development (2021.11–2023.07)' },
+    { year: '2021', month: '03', event: 'T55 Automated Assembly Line Construction' },
+    { year: '2021', month: '03', event: 'Industry-Academia Cooperation (DIT) Project Participation (Work-Learning Dual System / Unitech)' },
     { year: '2018', month: '11', event: 'IATF16949:2016 Acquired Certification' },
     { year: '2015', month: '05', event: 'Designated as a root technology specialized enterprise (Small and Medium Business Administration)' },
     { year: '2013', month: '07', event: 'Innovative SME (INNO-BIZ)' },

@@ -63,10 +63,10 @@ export function getCatalogPageByIndex(index: number, lang: string): string | nul
 
     // Handle root page
     if (page === '.') {
-        return `/${lang}`;
+        return `/gentop/${lang}`;
     }
 
-    return `/${lang}/${page}`;
+    return `/gentop/${lang}/${page}`;
 }
 
 export function getPrevNextPages(section: string, slug: string | undefined, lang: string) {
