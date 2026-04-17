@@ -1,8 +1,9 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
+import reactCompilerPlugin from "eslint-plugin-react-compiler";
 
-// react-compiler 플러그인이 미설치된 환경에서 crash 방지
-const safeNextVitals = nextVitals.map(config => {
+// nextVitals에서 react-compiler 제거 (우리 config 객체에서 직접 정의)
+const baseVitals = nextVitals.map(config => {
   if (config.plugins?.['react-compiler']) {
     const { 'react-compiler': _, ...restPlugins } = config.plugins;
     const restRules = Object.fromEntries(
@@ -14,7 +15,7 @@ const safeNextVitals = nextVitals.map(config => {
 });
 
 const eslintConfig = defineConfig([
-  ...safeNextVitals,
+  ...baseVitals,
   globalIgnores([
     ".next/**",
     "out/**",
@@ -22,6 +23,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
   ]),
   {
+    // 플러그인을 같은 config 객체에 정의해야 규칙 참조 가능 (ESLint 9 flat config 규칙)
+    plugins: { 'react-compiler': reactCompilerPlugin },
     // 기존 에러 규칙들을 모두 warn으로 완화 (순차 해소 예정)
     rules: {
       "@next/next/no-img-element": "warn",
@@ -32,6 +35,7 @@ const eslintConfig = defineConfig([
       "react-hooks/preserve-manual-memoization": "warn",
       "react/no-unescaped-entities": "warn",
       "react/display-name": "warn",
+      "react-compiler/react-compiler": "warn",
     },
   },
 ]);
