@@ -143,7 +143,7 @@ export default function PremiumLandingPage() {
 
       {/* ═══════════════ HERO SECTION ═══════════════ */}
       <section className="relative w-full border-b border-neutral-200">
-        <div className="container mx-auto px-6 md:px-8 max-w-screen-xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-8 pb-16 md:pt-12 md:pb-20">
+        <div className="container mx-auto px-6 md:px-8 max-w-screen-xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-12 pb-16 md:pt-16 md:pb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -223,8 +223,8 @@ export default function PremiumLandingPage() {
       </section>
 
       {/* ═══════════════ STATS SECTION ═══════════════ */}
-      <section className="py-24 border-b border-neutral-200">
-        <div className="container mx-auto px-8 max-w-screen-xl">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
+        <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-neutral-200">
             <StatItem end={50} suffix="+" label="글로벌 기업 파트너" icon={<Building2 className="w-5 h-5" />} />
             <StatItem end={200} suffix="+" label="제작된 카탈로그 페이지" icon={<FileText className="w-5 h-5" />} />

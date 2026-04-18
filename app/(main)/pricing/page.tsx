@@ -46,7 +46,7 @@ export default function PricingPage() {
     <div className="min-h-screen bg-white text-neutral-900">
 
       {/* Hero */}
-      <section className="pt-6 pb-16 md:pt-10 md:pb-20 border-b border-neutral-200">
+      <section className="pt-12 pb-16 md:pt-16 md:pb-20 border-b border-neutral-200">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
           <div className="max-w-2xl">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
@@ -125,8 +125,8 @@ export default function PricingPage() {
       </section>
 
       {/* PPT Proposal Plans */}
-      <section className="py-32 border-t border-neutral-200">
-        <div className="container mx-auto px-8 max-w-screen-xl">
+      <section className="py-16 md:py-20 border-b border-neutral-200">
+        <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
           <div className="mb-16">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
               <div className="w-8 h-px bg-neutral-300" />
@@ -283,7 +283,7 @@ export default function PricingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl text-center">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">
             맞춤 견적이 필요하신가요?
