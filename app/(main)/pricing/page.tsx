@@ -46,7 +46,7 @@ export default function PricingPage() {
     <div className="min-h-screen bg-white text-neutral-900">
 
       {/* Hero */}
-      <section className="pt-12 pb-16 md:pt-16 md:pb-20 border-b border-neutral-200">
+      <section className="pt-4 pb-16 md:pt-8 md:pb-20 border-b border-neutral-200">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
           <div className="max-w-2xl">
             <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
