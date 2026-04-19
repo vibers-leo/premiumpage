@@ -1,0 +1,103 @@
+'use client'
+
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { PortalAuthProvider, usePortalAuth } from '@/components/portal-auth-context'
+import { LayoutDashboard, ShoppingCart, Plus, LogOut, Shield, Loader2, User } from 'lucide-react'
+
+function PortalShell({ children }: { children: React.ReactNode }) {
+  const { user, loading, isAdmin, logout } = usePortalAuth()
+  const pathname = usePathname()
+
+  // 로그인/회원가입 페이지는 셸 없이 렌더
+  if (pathname?.startsWith('/portal/login') || pathname?.startsWith('/portal/register')) {
+    return <>{children}</>
+  }
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-neutral-50">
+        <Loader2 className="w-6 h-6 animate-spin text-neutral-400" />
+      </div>
+    )
+  }
+
+  if (!user) {
+    if (typeof window !== 'undefined') window.location.href = '/portal/login'
+    return null
+  }
+
+  const navItems = [
+    { href: '/portal', label: '대시보드', icon: LayoutDashboard },
+    { href: '/portal/orders', label: '내 프로젝트', icon: ShoppingCart },
+    { href: '/portal/orders/new', label: '새 의뢰', icon: Plus },
+  ]
+
+  return (
+    <div className="min-h-screen bg-neutral-50">
+      {/* 상단 바 */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-200 h-14">
+        <div className="flex items-center justify-between h-full px-6 max-w-screen-xl mx-auto">
+          <Link href="/portal" className="text-base font-extrabold tracking-tight text-neutral-900 uppercase">
+            Premium Page
+          </Link>
+          <div className="hidden md:flex items-center gap-1">
+            {navItems.map(item => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-[13px] font-semibold px-4 py-1.5 flex items-center gap-2 transition-all ${
+                  pathname === item.href
+                    ? 'text-neutral-900 border border-neutral-900'
+                    : 'text-neutral-500 border border-transparent hover:text-neutral-900 hover:border-neutral-300'
+                }`}
+              >
+                <item.icon className="w-3.5 h-3.5" />
+                {item.label}
+              </Link>
+            ))}
+            {isAdmin && (
+              <Link
+                href="/portal/admin"
+                className={`text-[13px] font-semibold px-4 py-1.5 flex items-center gap-2 transition-all ${
+                  pathname?.startsWith('/portal/admin')
+                    ? 'text-neutral-900 border border-neutral-900'
+                    : 'text-neutral-500 border border-transparent hover:text-neutral-900 hover:border-neutral-300'
+                }`}
+              >
+                <Shield className="w-3.5 h-3.5" />
+                관리자
+              </Link>
+            )}
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 text-sm text-neutral-600">
+              <User className="w-4 h-4" />
+              <span className="hidden sm:inline font-medium">{user.name || user.email}</span>
+            </div>
+            <button
+              onClick={logout}
+              className="text-neutral-400 hover:text-neutral-900 transition-colors p-1.5"
+              title="로그아웃"
+            >
+              <LogOut className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      </nav>
+      <main className="pt-14 min-h-screen">
+        <div className="max-w-screen-xl mx-auto px-6 md:px-8 py-8">
+          {children}
+        </div>
+      </main>
+    </div>
+  )
+}
+
+export default function PortalLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <PortalAuthProvider>
+      <PortalShell>{children}</PortalShell>
+    </PortalAuthProvider>
+  )
+}

@@ -37,7 +37,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
         'magazine.vibers.co.kr',
         'vibers.premiumpage.kr',
     ]
-    const catalogPaths = ['/templates/', '/gentop/', '/vibers/', '/emt/']
+    const catalogPaths = ['/templates/', '/gentop/', '/vibers/', '/emt/', '/portal/']
     const isIndividualTemplate =
         catalogPaths.some(p => pathname?.startsWith(p)) ||
         catalogHostnames.some(h => hostname.includes(h))
