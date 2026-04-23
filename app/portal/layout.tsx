@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Script from 'next/script'
 import { usePathname } from 'next/navigation'
 import { PortalAuthProvider, usePortalAuth } from '@/components/portal-auth-context'
 import { LayoutDashboard, ShoppingCart, Plus, LogOut, Shield, Loader2, User } from 'lucide-react'
@@ -97,6 +98,7 @@ function PortalShell({ children }: { children: React.ReactNode }) {
 export default function PortalLayout({ children }: { children: React.ReactNode }) {
   return (
     <PortalAuthProvider>
+      <Script src="https://js.tosspayments.com/v2/standard" strategy="afterInteractive" />
       <PortalShell>{children}</PortalShell>
     </PortalAuthProvider>
   )

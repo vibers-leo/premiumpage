@@ -76,10 +76,10 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                         {/* 우측 */}
                         <div className="flex items-center gap-3 flex-shrink-0">
                             <Link
-                                href="/login"
+                                href="/portal"
                                 className="hidden sm:block text-[13px] font-semibold text-neutral-400 hover:text-neutral-900 transition-colors px-3 py-1.5"
                             >
-                                로그인
+                                마이페이지
                             </Link>
                             <Button
                                 asChild
@@ -109,8 +109,8 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                                     </Link>
                                 ))}
                                 <div className="pt-4 mt-3 border-t border-neutral-200 flex items-center gap-4">
-                                    <Link href="/login" className="text-sm font-medium text-neutral-500 hover:text-neutral-900">
-                                        로그인
+                                    <Link href="/portal" className="text-sm font-medium text-neutral-500 hover:text-neutral-900">
+                                        마이페이지
                                     </Link>
                                 </div>
                                 <Button asChild className="w-full h-11 rounded-none font-bold border border-neutral-900 bg-neutral-900 text-white">

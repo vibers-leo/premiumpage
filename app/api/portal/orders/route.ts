@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { requireSession } from '@/lib/portal-auth'
 import { prisma } from '@/lib/prisma'
 import { randomUUID } from 'crypto'
+import { sendOrderReceivedEmail, sendOrderAdminAlert } from '@/lib/email'
 
 // 내 주문 목록
 export async function GET() {
@@ -50,6 +51,22 @@ export async function POST(req: Request) {
       },
       include: { product: true },
     })
+
+    // 이메일 알림 (비동기 — 실패해도 주문은 성공)
+    sendOrderReceivedEmail({
+      email: session.email,
+      name: session.name || session.companyName || '고객',
+      orderNumber,
+      title,
+      productName: order.product?.name,
+    }).catch(() => {})
+    sendOrderAdminAlert({
+      orderNumber,
+      title,
+      customerName: session.name || session.companyName || '고객',
+      customerEmail: session.email,
+      productName: order.product?.name,
+    }).catch(() => {})
 
     return NextResponse.json({ order }, { status: 201 })
   } catch (e: any) {

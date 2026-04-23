@@ -160,6 +160,117 @@ Premium Page 팀
   }
 }
 
+// ── 포털 주문 접수 이메일 ──
+export async function sendOrderReceivedEmail(data: {
+  email: string
+  name: string
+  orderNumber: string
+  title: string
+  productName?: string
+}) {
+  const { email, name, orderNumber, title, productName } = data
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://premiumpage.kr'
+
+  try {
+    await transporter.sendMail({
+      from: `"Premium Page" <${process.env.SMTP_USER}>`,
+      to: email,
+      subject: `[Premium Page] 의뢰가 접수되었습니다 (${orderNumber})`,
+      html: `
+<div style="font-family: -apple-system, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 20px;">
+  <h1 style="font-size: 18px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 24px;">PREMIUM PAGE</h1>
+  <p style="color: #525252; font-size: 15px; line-height: 1.6; margin: 0 0 24px;">안녕하세요, ${name}님.<br>의뢰가 성공적으로 접수되었습니다.</p>
+  <div style="background: #fafafa; border: 1px solid #e5e5e5; padding: 20px; margin: 0 0 24px;">
+    <table style="width: 100%; font-size: 14px;">
+      <tr><td style="color: #a3a3a3; padding: 6px 0;">주문번호</td><td style="text-align: right; font-weight: 700;">${orderNumber}</td></tr>
+      <tr><td style="color: #a3a3a3; padding: 6px 0;">프로젝트</td><td style="text-align: right; font-weight: 700;">${title}</td></tr>
+      ${productName ? `<tr><td style="color:#a3a3a3; padding:6px 0;">서비스</td><td style="text-align:right;">${productName}</td></tr>` : ''}
+    </table>
+  </div>
+  <p style="color: #525252; font-size: 14px; line-height: 1.6;">영업일 기준 24시간 내에 담당자가 확인 후 진행 안내를 드리겠습니다.</p>
+  <a href="${appUrl}/portal" style="display: inline-block; margin-top: 20px; padding: 10px 24px; background: #171717; color: #fff; text-decoration: none; font-size: 13px; font-weight: 700;">포털에서 확인하기</a>
+  <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 32px 0 16px;">
+  <p style="color: #a3a3a3; font-size: 12px;">© Premium Page. vibers.leo@gmail.com</p>
+</div>`,
+    })
+    return { success: true }
+  } catch (error) {
+    console.error('Order email error:', error)
+    return { success: false }
+  }
+}
+
+// ── 포털 주문 상태 변경 이메일 ──
+export async function sendOrderStatusEmail(data: {
+  email: string
+  name: string
+  orderNumber: string
+  title: string
+  status: string
+  statusLabel: string
+}) {
+  const { email, name, orderNumber, title, status, statusLabel } = data
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://premiumpage.kr'
+
+  try {
+    await transporter.sendMail({
+      from: `"Premium Page" <${process.env.SMTP_USER}>`,
+      to: email,
+      subject: `[Premium Page] 프로젝트 상태 변경: ${statusLabel} (${orderNumber})`,
+      html: `
+<div style="font-family: -apple-system, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 20px;">
+  <h1 style="font-size: 18px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 24px;">PREMIUM PAGE</h1>
+  <p style="color: #525252; font-size: 15px; line-height: 1.6; margin: 0 0 24px;">안녕하세요, ${name}님.<br>프로젝트 진행 상태가 업데이트되었습니다.</p>
+  <div style="background: #fafafa; border: 1px solid #e5e5e5; padding: 20px; margin: 0 0 24px;">
+    <table style="width: 100%; font-size: 14px;">
+      <tr><td style="color: #a3a3a3; padding: 6px 0;">주문번호</td><td style="text-align: right; font-weight: 700;">${orderNumber}</td></tr>
+      <tr><td style="color: #a3a3a3; padding: 6px 0;">프로젝트</td><td style="text-align: right; font-weight: 700;">${title}</td></tr>
+      <tr><td style="color: #a3a3a3; padding: 6px 0;">상태</td><td style="text-align: right; font-weight: 700;">${statusLabel}</td></tr>
+    </table>
+  </div>
+  <a href="${appUrl}/portal" style="display: inline-block; margin-top: 20px; padding: 10px 24px; background: #171717; color: #fff; text-decoration: none; font-size: 13px; font-weight: 700;">포털에서 확인하기</a>
+  <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 32px 0 16px;">
+  <p style="color: #a3a3a3; font-size: 12px;">© Premium Page. vibers.leo@gmail.com</p>
+</div>`,
+    })
+    return { success: true }
+  } catch (error) {
+    console.error('Status email error:', error)
+    return { success: false }
+  }
+}
+
+// ── 포털 주문 접수 어드민 알림 ──
+export async function sendOrderAdminAlert(data: {
+  orderNumber: string
+  title: string
+  customerName: string
+  customerEmail: string
+  productName?: string
+}) {
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://premiumpage.kr'
+  try {
+    await transporter.sendMail({
+      from: `"Premium Page System" <${process.env.SMTP_USER}>`,
+      to: process.env.ADMIN_EMAIL || process.env.SMTP_USER,
+      subject: `[PP Admin] 새 의뢰 접수: ${data.title} (${data.orderNumber})`,
+      html: `
+<div style="font-family: sans-serif; max-width: 500px; padding: 20px;">
+  <h2>🔔 새 의뢰 접수</h2>
+  <table style="width:100%; font-size:14px;">
+    <tr><td style="padding:8px; background:#f5f5f5;"><b>주문번호</b></td><td style="padding:8px; background:#f5f5f5;">${data.orderNumber}</td></tr>
+    <tr><td style="padding:8px;"><b>프로젝트</b></td><td style="padding:8px;">${data.title}</td></tr>
+    <tr><td style="padding:8px; background:#f5f5f5;"><b>고객</b></td><td style="padding:8px; background:#f5f5f5;">${data.customerName} (${data.customerEmail})</td></tr>
+    ${data.productName ? `<tr><td style="padding:8px;"><b>서비스</b></td><td style="padding:8px;">${data.productName}</td></tr>` : ''}
+  </table>
+  <a href="${appUrl}/portal/admin/orders" style="display:inline-block; margin-top:16px; padding:10px 20px; background:#171717; color:#fff; text-decoration:none; font-size:13px;">어드민에서 확인</a>
+</div>`,
+    })
+  } catch (e) {
+    console.error('Admin alert error:', e)
+  }
+}
+
 // 관리자 알림 이메일
 export async function sendAdminNotificationEmail(data: {
   quoteId: string

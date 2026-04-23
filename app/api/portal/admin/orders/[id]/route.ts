@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { requireAdmin } from '@/lib/portal-auth'
 import { prisma } from '@/lib/prisma'
+import { sendOrderStatusEmail } from '@/lib/email'
 
 // 주문 상세 (어드민)
 export async function GET(_: Request, { params }: { params: Promise<{ id: string }> }) {
@@ -55,7 +56,7 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
       data: updateData,
     })
 
-    // 상태 변경 시 내부 코멘트 자동 추가
+    // 상태 변경 시 내부 코멘트 자동 추가 + 고객 이메일 발송
     if (body.status) {
       await prisma.pmOrderComment.create({
         data: {
@@ -65,6 +66,22 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
           isInternal: false,
         },
       })
+
+      // 고객에게 상태 변경 이메일 발송
+      const fullOrder = await prisma.pmOrder.findUnique({
+        where: { id },
+        include: { user: { select: { email: true, name: true, companyName: true } } },
+      })
+      if (fullOrder?.user) {
+        sendOrderStatusEmail({
+          email: fullOrder.user.email,
+          name: fullOrder.user.name || fullOrder.user.companyName || '고객',
+          orderNumber: fullOrder.orderNumber,
+          title: fullOrder.title,
+          status: body.status,
+          statusLabel: statusLabel(body.status),
+        }).catch(() => {})
+      }
     }
 
     return NextResponse.json({ order })

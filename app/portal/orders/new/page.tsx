@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, Loader2, Check } from 'lucide-react'
+import { PortalFileUpload, AttachmentList } from '@/components/portal-file-upload'
 
 export default function NewOrderPage() {
   const router = useRouter()
   const [products, setProducts] = useState<any[]>([])
   const [form, setForm] = useState({ productId: '', title: '', description: '', referenceUrl: '' })
+  const [attachments, setAttachments] = useState<string[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -26,7 +28,7 @@ export default function NewOrderPage() {
     const res = await fetch('/api/portal/orders', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
+      body: JSON.stringify({ ...form, attachments: attachments.length ? JSON.stringify(attachments) : undefined }),
     })
     const data = await res.json()
 
@@ -127,6 +129,13 @@ export default function NewOrderPage() {
             className="w-full h-11 px-4 border border-neutral-200 text-sm focus:border-neutral-900 focus:outline-none transition-colors"
             placeholder="기존 웹사이트 또는 참고할 URL"
           />
+        </div>
+
+        {/* 파일 첨부 */}
+        <div>
+          <label className="text-[11px] font-bold uppercase tracking-wider text-neutral-400 mb-1.5 block">파일 첨부</label>
+          <PortalFileUpload onUpload={(url) => setAttachments(prev => [...prev, url])} />
+          <AttachmentList urls={attachments} onRemove={(i) => setAttachments(prev => prev.filter((_, idx) => idx !== i))} />
         </div>
 
         <button

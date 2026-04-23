@@ -4,7 +4,9 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { usePortalAuth } from '@/components/portal-auth-context'
-import { ArrowLeft, Send, Loader2 } from 'lucide-react'
+import { ArrowLeft, Send, Loader2, CreditCard } from 'lucide-react'
+import Script from 'next/script'
+import { PortalFileUpload } from '@/components/portal-file-upload'
 
 const STATUS_LABELS: Record<string, string> = {
   pending: '대기중', accepted: '수락됨', in_progress: '진행중',
@@ -32,13 +34,33 @@ export default function OrderDetailPage() {
   }
   useEffect(loadOrder, [id])
 
-  const sendComment = async () => {
-    if (!comment.trim() || sending) return
+  // Toss 결제 성공 콜백 처리
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('payment') === 'success') {
+      const paymentKey = params.get('paymentKey')
+      const orderId = params.get('orderId')
+      const amount = params.get('amount')
+      if (paymentKey && orderId && amount) {
+        fetch('/api/portal/payment/confirm', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paymentKey, orderId, amount: Number(amount) }),
+        }).then(() => {
+          window.history.replaceState({}, '', window.location.pathname)
+          loadOrder()
+        })
+      }
+    }
+  }, [])
+
+  const sendComment = async (attachmentUrl?: string) => {
+    if ((!comment.trim() && !attachmentUrl) || sending) return
     setSending(true)
     await fetch(`/api/portal/orders/${id}/comments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ content: comment }),
+      body: JSON.stringify({ content: comment || '파일을 첨부했습니다.', attachmentUrl }),
     })
     setComment('')
     setSending(false)
@@ -94,6 +116,49 @@ export default function OrderDetailPage() {
         ))}
       </div>
 
+      {/* 결제 버튼 */}
+      {order.amount > 0 && !order.paidAt && order.status !== 'cancelled' && (
+        <div className="mb-8 p-4 border border-neutral-200 bg-neutral-50 flex items-center justify-between">
+          <div>
+            <div className="text-sm font-bold">결제 금액: {order.amount.toLocaleString()}원</div>
+            <div className="text-xs text-neutral-400 mt-0.5">결제 완료 시 프로젝트가 자동으로 시작됩니다.</div>
+          </div>
+          <button
+            onClick={async () => {
+              const res = await fetch('/api/portal/payment/order', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ orderId: order.id }),
+              })
+              const data = await res.json()
+              if (!res.ok) { alert(data.error); return }
+              const w = window as any
+              if (!w.TossPayments) { alert('결제 모듈 로딩 중입니다. 잠시 후 다시 시도해주세요.'); return }
+              const tp = w.TossPayments(process.env.NEXT_PUBLIC_TOSS_CLIENT_KEY)
+              const payment = tp.payment({ customerKey: user?.id || 'guest' })
+              payment.requestPayment({
+                method: 'CARD',
+                amount: { currency: 'KRW', value: data.amount },
+                orderId: data.orderId,
+                orderName: data.orderName,
+                customerName: data.customerName,
+                customerEmail: data.customerEmail,
+                successUrl: `${window.location.origin}/portal/orders/${order.id}?payment=success`,
+                failUrl: `${window.location.origin}/portal/orders/${order.id}?payment=fail`,
+              })
+            }}
+            className="h-10 px-6 bg-blue-600 text-white font-bold text-sm flex items-center gap-2 hover:bg-blue-500 transition-colors"
+          >
+            <CreditCard className="w-4 h-4" /> 결제하기
+          </button>
+        </div>
+      )}
+      {order.paidAt && (
+        <div className="mb-8 p-3 border border-green-200 bg-green-50 text-green-700 text-sm font-bold flex items-center gap-2">
+          <CreditCard className="w-4 h-4" /> 결제 완료 ({new Date(order.paidAt).toLocaleDateString('ko-KR')})
+        </div>
+      )}
+
       {order.description && (
         <div className="mb-8">
           <h3 className="text-[11px] font-bold uppercase tracking-wider text-neutral-400 mb-2">요청 사항</h3>
@@ -121,6 +186,11 @@ export default function OrderDetailPage() {
                   </span>
                 </div>
                 <p className="text-sm text-neutral-600 whitespace-pre-wrap">{c.content}</p>
+                {c.attachmentUrl && (
+                  <a href={c.attachmentUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-blue-600 hover:underline mt-1">
+                    📎 첨부파일 보기
+                  </a>
+                )}
               </div>
             ))
           )}
@@ -137,8 +207,9 @@ export default function OrderDetailPage() {
               placeholder="메시지를 입력하세요..."
               className="flex-1 h-10 px-4 border border-neutral-200 text-sm focus:border-neutral-900 focus:outline-none transition-colors"
             />
+            <PortalFileUpload compact onUpload={(url) => sendComment(url)} />
             <button
-              onClick={sendComment}
+              onClick={() => sendComment()}
               disabled={!comment.trim() || sending}
               className="h-10 px-4 bg-neutral-900 text-white flex items-center gap-2 text-sm font-bold hover:bg-neutral-700 disabled:opacity-50 transition-colors"
             >
