@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, Send, Loader2 } from 'lucide-react'
 import { usePortalAuth } from '@/components/portal-auth-context'
+import { PortalFileUpload } from '@/components/portal-file-upload'
 
 const STATUS_LABELS: Record<string, string> = {
   pending: '대기중', accepted: '수락됨', in_progress: '진행중',
@@ -36,13 +37,13 @@ export default function AdminOrderDetailPage() {
     loadOrder()
   }
 
-  const sendComment = async () => {
-    if (!comment.trim() || sending) return
+  const sendComment = async (attachmentUrl?: string) => {
+    if ((!comment.trim() && !attachmentUrl) || sending) return
     setSending(true)
     await fetch(`/api/portal/orders/${id}/comments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ content: comment }),
+      body: JSON.stringify({ content: comment || '파일을 첨부했습니다.', attachmentUrl }),
     })
     setComment('')
     setSending(false)
@@ -136,6 +137,11 @@ export default function AdminOrderDetailPage() {
               <span className="text-[10px] text-neutral-300">{new Date(c.createdAt).toLocaleString('ko-KR')}</span>
             </div>
             <p className="text-sm text-neutral-600 whitespace-pre-wrap">{c.content}</p>
+            {c.attachmentUrl && (
+              <a href={c.attachmentUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-blue-600 hover:underline mt-1">
+                📎 첨부파일 보기
+              </a>
+            )}
           </div>
         ))}
       </div>
@@ -149,8 +155,9 @@ export default function AdminOrderDetailPage() {
           placeholder="고객에게 전달할 메시지..."
           className="flex-1 h-10 px-4 border border-neutral-200 text-sm focus:border-neutral-900 focus:outline-none"
         />
+        <PortalFileUpload compact onUpload={(url) => sendComment(url)} />
         <button
-          onClick={sendComment}
+          onClick={() => sendComment()}
           disabled={!comment.trim() || sending}
           className="h-10 px-4 bg-neutral-900 text-white flex items-center gap-2 text-sm font-bold hover:bg-neutral-700 disabled:opacity-50"
         >

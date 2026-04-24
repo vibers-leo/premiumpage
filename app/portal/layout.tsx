@@ -1,14 +1,18 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Script from 'next/script'
 import { usePathname } from 'next/navigation'
 import { PortalAuthProvider, usePortalAuth } from '@/components/portal-auth-context'
-import { LayoutDashboard, ShoppingCart, Plus, LogOut, Shield, Loader2, User } from 'lucide-react'
+import { LayoutDashboard, ShoppingCart, Plus, LogOut, Shield, Loader2, User, Menu, X } from 'lucide-react'
 
 function PortalShell({ children }: { children: React.ReactNode }) {
   const { user, loading, isAdmin, logout } = usePortalAuth()
   const pathname = usePathname()
+  const [mobileOpen, setMobileOpen] = useState(false)
+
+  useEffect(() => { setMobileOpen(false) }, [pathname])
 
   // 로그인/회원가입 페이지는 셸 없이 렌더
   if (pathname?.startsWith('/portal/login') || pathname?.startsWith('/portal/register')) {
@@ -78,13 +82,63 @@ function PortalShell({ children }: { children: React.ReactNode }) {
             </div>
             <button
               onClick={logout}
-              className="text-neutral-400 hover:text-neutral-900 transition-colors p-1.5"
+              className="text-neutral-400 hover:text-neutral-900 transition-colors p-1.5 hidden md:block"
               title="로그아웃"
             >
               <LogOut className="w-4 h-4" />
             </button>
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="md:hidden p-1.5 border border-transparent hover:border-neutral-300 transition-colors"
+            >
+              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </div>
+
+        {/* 모바일 메뉴 */}
+        {mobileOpen && (
+          <div className="md:hidden border-t border-neutral-200 bg-white">
+            <div className="px-6 py-4 space-y-1">
+              {navItems.map(item => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`flex items-center gap-3 text-sm font-bold py-2.5 px-4 border-l-2 transition-all ${
+                    pathname === item.href
+                      ? 'text-neutral-900 border-neutral-900'
+                      : 'text-neutral-500 border-transparent hover:border-neutral-300 hover:text-neutral-900'
+                  }`}
+                >
+                  <item.icon className="w-4 h-4" />
+                  {item.label}
+                </Link>
+              ))}
+              {isAdmin && (
+                <Link
+                  href="/portal/admin"
+                  className={`flex items-center gap-3 text-sm font-bold py-2.5 px-4 border-l-2 transition-all ${
+                    pathname?.startsWith('/portal/admin')
+                      ? 'text-neutral-900 border-neutral-900'
+                      : 'text-neutral-500 border-transparent hover:border-neutral-300 hover:text-neutral-900'
+                  }`}
+                >
+                  <Shield className="w-4 h-4" />
+                  관리자
+                </Link>
+              )}
+              <div className="pt-3 mt-2 border-t border-neutral-200">
+                <button
+                  onClick={logout}
+                  className="flex items-center gap-3 text-sm font-medium text-neutral-500 hover:text-neutral-900 py-2.5 px-4 w-full"
+                >
+                  <LogOut className="w-4 h-4" />
+                  로그아웃
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
       <main className="pt-14 min-h-screen">
         <div className="max-w-screen-xl mx-auto px-6 md:px-8 py-8">

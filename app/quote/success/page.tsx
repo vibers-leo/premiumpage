@@ -179,8 +179,8 @@ function QuoteSuccessContent() {
                                 asChild
                                 className="flex-1 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 hover:opacity-90 py-6 font-bold"
                             >
-                                <Link href="/dashboard">
-                                    대시보드
+                                <Link href="/portal">
+                                    고객 포털에서 진행상황 확인
                                     <ArrowRight className="w-5 h-5 ml-2" />
                                 </Link>
                             </Button>
