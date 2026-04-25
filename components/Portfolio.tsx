@@ -93,7 +93,7 @@ export function Portfolio() {
         : portfolioItems.filter(item => item.category === selectedCategory)
 
     return (
-        <section className="pt-4 pb-16 md:pt-8 md:pb-20 relative">
+        <section className="pt-0 pb-16 md:pb-20 relative">
             <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
                 {/* 헤더 */}
                 <div className="mb-16">
