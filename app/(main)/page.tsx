@@ -143,7 +143,7 @@ export default function PremiumLandingPage() {
 
       {/* ═══════════════ HERO SECTION ═══════════════ */}
       <section className="relative w-full border-b border-neutral-200">
-        <div className="container mx-auto px-6 md:px-8 max-w-screen-xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-0 pb-16 md:pb-20">
+        <div className="container mx-auto px-6 md:px-8 max-w-screen-xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-start pt-0 pb-16 md:pb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -184,7 +184,7 @@ export default function PremiumLandingPage() {
             transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
             className="hidden lg:block relative"
           >
-            <div className="relative aspect-[4/5] w-full max-w-[480px] ml-auto border border-neutral-200 bg-neutral-50 overflow-hidden">
+            <div className="relative aspect-[4/3] w-full max-w-[480px] ml-auto border border-neutral-200 bg-neutral-50 overflow-hidden mt-4">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center px-12">
                   <div className="w-px h-16 bg-neutral-300 mx-auto mb-8" />
