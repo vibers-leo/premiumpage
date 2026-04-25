@@ -54,7 +54,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
         <>
             {!isIndividualTemplate && (
                 <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled ? 'border-neutral-300 bg-white/98 backdrop-blur-sm' : 'border-neutral-200 bg-white'}`}>
-                    <div className="flex items-center justify-between h-14 px-6 md:px-8 mx-auto max-w-screen-xl">
+                    <div className="flex items-center justify-between h-12 px-6 md:px-8 mx-auto max-w-screen-xl">
                         {/* 로고 — 좌측 */}
                         <Link href="/" className="text-base font-extrabold tracking-tight text-neutral-900 uppercase flex-shrink-0">
                             Premium Page
@@ -122,7 +122,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                 </nav>
             )}
 
-            <main className={isIndividualTemplate ? "min-h-screen" : "pt-14 min-h-screen"}>
+            <main className={isIndividualTemplate ? "min-h-screen" : "pt-12 min-h-screen"}>
                 {children}
             </main>
         </>
