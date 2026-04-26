@@ -7,6 +7,7 @@ import { Check, X, ArrowRight, Zap, Crown, Rocket, Presentation, FileText, Targe
 import { Button } from '@/components/ui/button'
 import { developmentPlans, maintenancePlans, proposalPlans } from '@/lib/data'
 import { formatPrice } from '@/lib/data-utils'
+import { SectionHeader } from '@/components/SectionHeader'
 
 const planIcons = [
   <Zap key="zap" className="w-8 h-8" />,
@@ -46,34 +47,20 @@ export default function PricingPage() {
     <div className="min-h-screen bg-white text-neutral-900">
 
       {/* Hero */}
-      <section className="pt-0 pb-16 md:pb-20 border-b border-neutral-200">
+      <section className="pt-12 pb-16 md:pt-16 md:pb-20">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
-          <div className="max-w-2xl">
-            <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
-              <div className="w-8 h-px bg-neutral-300" />
-              요금 안내
-            </div>
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">
-              합리적인 가격 정책
-            </h1>
-            <p className="text-neutral-500 text-base md:text-lg leading-relaxed">
-              기업 규모와 니즈에 맞는 최적의 플랜을 선택하세요.
-              모든 플랜에 전문 컨설팅이 포함됩니다.
-            </p>
-          </div>
+          <SectionHeader
+            label="요금 안내"
+            title="합리적인 가격 정책"
+            description="기업 규모와 니즈에 맞는 최적의 플랜을 선택하세요. 모든 플랜에 전문 컨설팅이 포함됩니다."
+          />
         </div>
       </section>
 
       {/* Development Plans */}
-      <section className="py-16 md:py-20 border-b border-neutral-200">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
-          <div className="mb-16">
-            <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
-              <div className="w-8 h-px bg-neutral-300" />
-              전자카탈로그
-            </div>
-            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">전자카탈로그 플랜</h2>
-          </div>
+          <SectionHeader label="전자카탈로그" title="전자카탈로그 플랜" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200 max-w-5xl">
             {developmentPlans.map((plan, i) => (
               <motion.div
@@ -125,20 +112,9 @@ export default function PricingPage() {
       </section>
 
       {/* PPT Proposal Plans */}
-      <section className="py-16 md:py-20 border-b border-neutral-200">
+      <section className="py-16 md:py-20 bg-neutral-50">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
-          <div className="mb-16">
-            <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
-              <div className="w-8 h-px bg-neutral-300" />
-              제안서 제작
-            </div>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-6 tracking-tight">
-              PPT 제안서 제작
-            </h2>
-            <p className="text-neutral-500 text-lg max-w-2xl leading-relaxed">
-              IR 덱, 회사소개서, 입찰제안서까지. 전문 디자인과 전략적 콘텐츠로 설득력을 극대화합니다.
-            </p>
-          </div>
+          <SectionHeader label="제안서 제작" title="PPT 제안서 제작" description="IR 덱, 회사소개서, 입찰제안서까지. 전문 디자인과 전략적 콘텐츠로 설득력을 극대화합니다." />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200 max-w-5xl">
             {proposalPlans.map((plan, i) => {
@@ -192,15 +168,9 @@ export default function PricingPage() {
       </section>
 
       {/* Feature Comparison Table */}
-      <section className="py-16 md:py-20 border-b border-neutral-200">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
-          <div className="mb-16">
-            <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
-              <div className="w-8 h-px bg-neutral-300" />
-              기능 비교
-            </div>
-            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">상세 기능 비교</h2>
-          </div>
+          <SectionHeader label="기능 비교" title="상세 기능 비교" />
 
           <div className="max-w-5xl overflow-x-auto">
             <table className="w-full">
@@ -228,16 +198,9 @@ export default function PricingPage() {
       </section>
 
       {/* Maintenance Plans */}
-      <section className="py-16 md:py-20 border-b border-neutral-200">
+      <section className="py-16 md:py-20 bg-neutral-50">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
-          <div className="mb-16">
-            <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
-              <div className="w-8 h-px bg-neutral-300" />
-              유지보수
-            </div>
-            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">유지보수 플랜</h2>
-            <p className="text-neutral-500 text-sm mt-2">안정적인 서비스 운영과 지속적인 콘텐츠 관리를 위한 월간 플랜입니다.</p>
-          </div>
+          <SectionHeader label="유지보수" title="유지보수 플랜" description="안정적인 서비스 운영과 지속적인 콘텐츠 관리를 위한 월간 플랜입니다." />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-200 max-w-3xl">
             {maintenancePlans.map((plan, i) => (
@@ -283,15 +246,15 @@ export default function PricingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20">
+      <section className="py-20 md:py-28 bg-neutral-950">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight text-white">
             맞춤 견적이 필요하신가요?
           </h2>
-          <p className="text-neutral-500 text-base mb-10 max-w-xl mx-auto">
+          <p className="text-neutral-400 text-base mb-10 max-w-xl mx-auto">
             프로젝트 규모와 요구사항에 맞는 최적의 견적을 무료로 받아보세요.
           </p>
-          <Link href="/quote" className="inline-flex items-center gap-2 h-12 px-8 bg-neutral-900 text-white font-bold text-sm border border-neutral-900 hover:bg-neutral-700 transition-all">
+          <Link href="/quote" className="inline-flex items-center gap-2 h-[52px] px-10 bg-white text-neutral-900 font-bold text-sm hover:bg-neutral-100 transition-all">
             무료 견적 받기 <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

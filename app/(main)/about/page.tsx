@@ -4,6 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight, Globe, Zap, Users, Target, Award, Code2, Palette, BarChart3 } from 'lucide-react'
+import { SectionHeader } from '@/components/SectionHeader'
 
 const values = [
   { icon: <Target className="w-5 h-5" />, title: '글로벌 시장 집중', desc: '수출 기업의 해외 시장 진출을 가속화하는 것이 우리의 핵심 미션입니다.' },
@@ -32,35 +33,22 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white text-neutral-900">
 
       {/* Hero */}
-      <section className="pt-0 pb-16 md:pb-20 border-b border-neutral-200">
+      <section className="pt-12 pb-16 md:pt-16 md:pb-20">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
-          <div className="max-w-3xl">
-            <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
-              <div className="w-8 h-px bg-neutral-300" />
-              회사 소개
-            </div>
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight leading-[1.1]">
-              수출 기업의 가치를<br />
-              세계에 각인시킵니다
-            </h1>
-            <p className="text-neutral-500 text-base md:text-lg leading-relaxed max-w-2xl">
-              Premium Page는 대한민국 수출 기업을 위한 하이엔드 인터랙티브 전자 카탈로그 에이전시입니다.
-              단순한 PDF 변환을 넘어, 해외 바이어를 매료시키는 몰입형 디지털 경험을 설계합니다.
-            </p>
-          </div>
+          <SectionHeader
+            label="회사 소개"
+            title="수출 기업의 가치를 세계에 각인시킵니다"
+            description="Premium Page는 대한민국 수출 기업을 위한 하이엔드 인터랙티브 전자 카탈로그 에이전시입니다. 단순한 PDF 변환을 넘어, 해외 바이어를 매료시키는 몰입형 디지털 경험을 설계합니다."
+          />
         </div>
       </section>
 
       {/* Mission */}
-      <section className="py-16 md:py-20 border-b border-neutral-200">
+      <section className="py-16 md:py-20 bg-neutral-50">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
             <div>
-              <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
-                <div className="w-8 h-px bg-neutral-300" />
-                미션
-              </div>
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight">우리의 미션</h2>
+              <SectionHeader label="미션" title="우리의 미션" />
               <p className="text-neutral-500 text-sm leading-relaxed mb-4">
                 대한민국의 우수한 기술력을 가진 기업들이 해외 시장에서 제대로 된 가치를 인정받지 못하는 현실을 바꾸고 싶었습니다.
               </p>
@@ -90,15 +78,9 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-16 md:py-20 border-b border-neutral-200">
+      <section className="py-16 md:py-20 ">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
-          <div className="mb-16">
-            <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
-              <div className="w-8 h-px bg-neutral-300" />
-              핵심 가치
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">핵심 가치</h2>
-          </div>
+          <SectionHeader label="핵심 가치" title="핵심 가치" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-200">
             {values.map((value, i) => (
@@ -122,15 +104,9 @@ export default function AboutPage() {
       </section>
 
       {/* Capabilities */}
-      <section className="py-16 md:py-20 border-b border-neutral-200">
+      <section className="py-16 md:py-20 bg-neutral-50">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
-          <div className="mb-16">
-            <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
-              <div className="w-8 h-px bg-neutral-300" />
-              역량
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">역량</h2>
-          </div>
+          <SectionHeader label="역량" title="역량" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-200 max-w-4xl">
             {capabilities.map((cap, i) => (
               <motion.div
@@ -155,15 +131,9 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-16 md:py-20 border-b border-neutral-200">
+      <section className="py-16 md:py-20 ">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
-          <div className="mb-16">
-            <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
-              <div className="w-8 h-px bg-neutral-300" />
-              연혁
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">연혁</h2>
-          </div>
+          <SectionHeader label="연혁" title="연혁" />
 
           <div className="max-w-2xl">
             {milestones.map((ms, i) => (
@@ -173,7 +143,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-start gap-6 py-6 border-b border-neutral-200 last:border-b-0"
+                className="flex items-start gap-6 py-6  last:border-b-0"
               >
                 <span className="text-sm font-extrabold text-neutral-300 w-12 flex-shrink-0 tabular-nums">{ms.year}</span>
                 <span className="text-sm font-bold">{ms.event}</span>
@@ -184,19 +154,19 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20">
+      <section className="py-20 md:py-28 bg-neutral-950">
         <div className="container mx-auto px-6 md:px-8 max-w-screen-xl text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight text-white">
             함께 글로벌 시장을 개척하세요
           </h2>
-          <p className="text-neutral-500 text-base mb-10 max-w-xl mx-auto">
+          <p className="text-neutral-400 text-base mb-10 max-w-xl mx-auto">
             귀사의 기술력을 세계에 알릴 준비가 되셨나요?
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/quote" className="h-12 px-8 bg-neutral-900 text-white font-bold text-sm border border-neutral-900 hover:bg-neutral-700 transition-all flex items-center gap-2">
+            <Link href="/quote" className="h-[52px] px-8 bg-white text-neutral-900 font-bold text-sm hover:bg-neutral-100 transition-all flex items-center gap-2">
               무료 컨설팅 신청하기 <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/portfolio" className="h-12 px-8 bg-white text-neutral-900 font-bold text-sm border border-neutral-300 hover:border-neutral-900 transition-all flex items-center">
+            <Link href="/portfolio" className="h-[52px] px-8 border border-neutral-700 text-white font-bold text-sm hover:border-white transition-all flex items-center">
               포트폴리오 보기
             </Link>
           </div>

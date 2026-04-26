@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from 'next/font/google'
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"], variable: '--font-inter' })
-const outfit = Outfit({ subsets: ["latin"], variable: '--font-outfit' })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://premiumpage.kr"),
@@ -49,7 +45,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${outfit.variable} font-sans min-h-screen bg-background text-foreground transition-colors duration-300`}>
+      <body className="font-sans min-h-screen">
         {children}
       </body>
     </html>

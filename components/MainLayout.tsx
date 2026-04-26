@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
+import { Footer } from '@/components/Footer'
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname()
@@ -83,7 +84,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                             </Link>
                             <Button
                                 asChild
-                                className="hidden sm:flex h-8 px-4 text-[12px] font-bold transition-all rounded-none bg-neutral-900 text-white hover:bg-neutral-700 border border-neutral-900"
+                                className="hidden sm:flex h-9 px-5 text-[12px] font-bold transition-all rounded-none bg-neutral-900 text-white hover:bg-neutral-700 border border-neutral-900"
                             >
                                 <Link href="/quote">무료 상담</Link>
                             </Button>
@@ -125,6 +126,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
             <main className={isIndividualTemplate ? "min-h-screen" : "pt-12 min-h-screen"}>
                 {children}
             </main>
+            {!isIndividualTemplate && <Footer />}
         </>
     )
 }

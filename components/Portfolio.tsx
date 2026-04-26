@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
+import { SectionHeader } from '@/components/SectionHeader'
 import { X, ExternalLink } from 'lucide-react'
 
 const portfolioItems = [
@@ -93,19 +94,13 @@ export function Portfolio() {
         : portfolioItems.filter(item => item.category === selectedCategory)
 
     return (
-        <section className="pt-0 pb-16 md:pb-20 relative">
+        <section className="pt-12 pb-16 md:pt-16 md:pb-20 relative">
             <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
-                {/* 헤더 */}
-                <div className="mb-16">
-                    <div className="text-[11px] font-bold tracking-[0.3em] uppercase text-neutral-400 mb-6 flex items-center gap-3">
-                        <div className="w-8 h-px bg-neutral-300" />
-                        작업 사례
-                    </div>
-                    <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">포트폴리오</h1>
-                    <p className="text-neutral-500 text-sm md:text-base max-w-2xl">
-                        프리미엄페이지가 구축한 하이엔드 전자 카탈로그와 제안서 사례입니다.
-                    </p>
-                </div>
+                <SectionHeader
+                    label="작업 사례"
+                    title="포트폴리오"
+                    description="프리미엄페이지가 구축한 하이엔드 전자 카탈로그와 제안서 사례입니다."
+                />
 
                 {/* 카테고리 필터 */}
                 <motion.div
