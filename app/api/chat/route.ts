@@ -39,19 +39,23 @@ export async function POST(req: Request) {
       body: JSON.stringify(payload),
     })
 
+    const text = await res.text()
+    console.log('Zeroclaw response:', res.status, text.slice(0, 200))
+
     if (!res.ok) {
-      console.error('Zeroclaw error:', res.status)
       return NextResponse.json({
         response: '죄송합니다. 잠시 후 다시 시도해주세요. 급한 문의는 vibers.leo@gmail.com으로 연락주세요.',
       })
     }
 
-    const data = await res.json()
+    const data = JSON.parse(text)
     return NextResponse.json({ response: data.response || data.reply || '답변을 생성하지 못했습니다.' })
-  } catch (e) {
-    console.error('Chat API error:', e)
+  } catch (e: any) {
+    console.error('Chat API error:', e?.message || e)
     return NextResponse.json({
       response: '연결에 문제가 있어요. vibers.leo@gmail.com 또는 010-4866-5805로 문의해주세요.',
+      _debug: e?.message,
+      _url: ZEROCLAW_URL,
     })
   }
 }
