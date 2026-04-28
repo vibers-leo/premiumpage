@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 
-const ZEROCLAW_URL = process.env.ZEROCLAW_URL || 'http://172.17.0.1:42621'
+const ZEROCLAW_URL = process.env.ZEROCLAW_URL || 'https://zeroclaw-pp.premiumpage.kr'
+const ZEROCLAW_TOKEN = process.env.ZEROCLAW_TOKEN || ''
 
 const SYSTEM_PROMPT = `당신은 Premium Page의 AI 비서입니다.
 - 프리미엄페이지는 수출 기업을 위한 인터랙티브 전자카탈로그 에이전시입니다.
@@ -31,7 +32,10 @@ export async function POST(req: Request) {
 
     const res = await fetch(`${ZEROCLAW_URL}/webhook`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        ...(ZEROCLAW_TOKEN ? { Authorization: `Bearer ${ZEROCLAW_TOKEN}` } : {}),
+      },
       body: JSON.stringify(payload),
     })
 
