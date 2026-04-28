@@ -45,6 +45,10 @@ export async function POST(req: Request) {
     if (!res.ok) {
       return NextResponse.json({
         response: '죄송합니다. 잠시 후 다시 시도해주세요. 급한 문의는 vibers.leo@gmail.com으로 연락주세요.',
+        _status: res.status,
+        _body: text.slice(0, 200),
+        _url: `${ZEROCLAW_URL}/webhook`,
+        _hasToken: !!ZEROCLAW_TOKEN,
       })
     }
 
