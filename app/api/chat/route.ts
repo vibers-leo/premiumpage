@@ -21,13 +21,9 @@ export async function POST(req: Request) {
     // 대화 컨텍스트 구성
     let context = ''
     if (history?.length) {
-      const recent = history.slice(-4) // 최근 4개 메시지
+      const recent = history.slice(-4)
       context = recent.map((m: any) => `[${m.role === 'user' ? '사용자' : 'AI'}] ${m.content}`).join('\n')
       context = `\n\n[이전 대화]\n${context}\n`
-    }
-
-    const payload = {
-      message: `[SYSTEM INSTRUCTION] ${SYSTEM_PROMPT}${context}\n\n[USER] ${message}`,
     }
 
     const res = await fetch(`${ZEROCLAW_URL}/webhook`, {
@@ -36,30 +32,24 @@ export async function POST(req: Request) {
         'Content-Type': 'application/json',
         ...(ZEROCLAW_TOKEN ? { Authorization: `Bearer ${ZEROCLAW_TOKEN}` } : {}),
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({
+        message: `[SYSTEM INSTRUCTION] ${SYSTEM_PROMPT}${context}\n\n[USER] ${message}`,
+      }),
     })
 
-    const text = await res.text()
-    console.log('Zeroclaw response:', res.status, text.slice(0, 200))
-
     if (!res.ok) {
+      console.error('Zeroclaw error:', res.status)
       return NextResponse.json({
         response: '죄송합니다. 잠시 후 다시 시도해주세요. 급한 문의는 vibers.leo@gmail.com으로 연락주세요.',
-        _status: res.status,
-        _body: text.slice(0, 200),
-        _url: `${ZEROCLAW_URL}/webhook`,
-        _hasToken: !!ZEROCLAW_TOKEN,
       })
     }
 
-    const data = JSON.parse(text)
+    const data = await res.json()
     return NextResponse.json({ response: data.response || data.reply || '답변을 생성하지 못했습니다.' })
-  } catch (e: any) {
-    console.error('Chat API error:', e?.message || e)
+  } catch (e) {
+    console.error('Chat API error:', e)
     return NextResponse.json({
       response: '연결에 문제가 있어요. vibers.leo@gmail.com 또는 010-4866-5805로 문의해주세요.',
-      _debug: e?.message,
-      _url: ZEROCLAW_URL,
     })
   }
 }
