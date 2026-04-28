@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 import { Footer } from '@/components/Footer'
+import { ChatWidget } from '@/components/ChatWidget'
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname()
@@ -127,6 +128,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                 {children}
             </main>
             {!isIndividualTemplate && <Footer />}
+            {!isIndividualTemplate && <ChatWidget />}
         </>
     )
 }
