@@ -3,20 +3,30 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://premiumpage.kr"),
-  title: "PremiumPage — 전자카탈로그 에이전시",
-  description: "기업 홈페이지를 인터랙티브 전자카탈로그로 변환하는 전문 에이전시. 브로슈어, 제품 카탈로그를 디지털 경험으로.",
+  title: {
+    default: "PremiumPage — 전자카탈로그 에이전시",
+    template: "%s | PremiumPage",
+  },
+  description: "수출 기업의 가치를 세계에 각인시키는 인터랙티브 전자카탈로그 에이전시. PDF를 넘어, 해외 바이어를 매료시키는 디지털 경험을 설계합니다.",
+  keywords: ["전자카탈로그", "인터랙티브 카탈로그", "수출 기업", "디지털 카탈로그", "브로슈어", "제안서", "PPT", "리플렛", "premiumpage"],
+  authors: [{ name: "위로 (Vibers)", url: "https://vibers.co.kr" }],
+  creator: "PremiumPage",
   openGraph: {
     title: "PremiumPage — 전자카탈로그 에이전시",
-    description: "기업 홈페이지를 인터랙티브 전자카탈로그로 변환하는 전문 에이전시.",
+    description: "수출 기업의 가치를 세계에 각인시키는 인터랙티브 전자카탈로그 에이전시.",
     url: "https://premiumpage.kr",
     siteName: "PremiumPage",
-    images: [{ url: "/images/og-image.png", width: 1200, height: 630, alt: "PremiumPage" }],
     locale: "ko_KR",
     type: "website",
   },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+  twitter: {
+    card: "summary_large_image",
+    title: "PremiumPage — 전자카탈로그 에이전시",
+    description: "수출 기업의 가치를 세계에 각인시키는 인터랙티브 전자카탈로그 에이전시.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -36,11 +46,18 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "WebSite",
+              "@type": "Organization",
               "name": "PremiumPage",
-              "description": "기업 홈페이지를 인터랙티브 전자카탈로그로 변환하는 전문 에이전시",
               "url": "https://premiumpage.kr",
-              "publisher": { "@type": "Organization", "name": "계발자들 (Vibers)", "url": "https://vibers.co.kr" }
+              "description": "수출 기업의 가치를 세계에 각인시키는 인터랙티브 전자카탈로그 에이전시",
+              "founder": { "@type": "Organization", "name": "위로 (Vibers)", "url": "https://vibers.co.kr" },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "vibers.leo@gmail.com",
+                "telephone": "+82-10-4866-5805",
+                "contactType": "sales",
+              },
+              "sameAs": ["https://vibers.co.kr"],
             }),
           }}
         />
