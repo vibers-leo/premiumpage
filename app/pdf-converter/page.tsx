@@ -3,8 +3,9 @@
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
-import { Upload, FileText, CheckCircle2, AlertCircle, Copy, Check, ArrowLeft } from 'lucide-react'
+import { Upload, FileText, CheckCircle2, AlertCircle, Copy, Check } from 'lucide-react'
 import Link from 'next/link'
+import { SectionHeader } from '@/components/SectionHeader'
 
 const PDFViewer = dynamic(
     () => import('@/components/pdf/PDFViewer').then(mod => ({ default: mod.PDFViewer })),
@@ -78,30 +79,18 @@ export default function PDFConverterPage() {
         setError(null)
 
         try {
-            // 1. presigned URL 발급
-            const presignRes = await fetch('/api/storage/presign', {
+            const formData = new FormData()
+            formData.append('file', file)
+
+            const res = await fetch('/api/storage/upload', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    filename: file.name,
-                    contentType: 'application/pdf',
-                    folder: 'premiumpage/pdfs',
-                }),
+                body: formData,
             })
 
-            const presignData = await presignRes.json()
-            if (!presignRes.ok) throw new Error(presignData.error || 'URL 생성 실패')
+            const data = await res.json()
+            if (!res.ok) throw new Error(data.error || '업로드 실패')
 
-            // 2. NCP에 직접 업로드
-            const uploadRes = await fetch(presignData.uploadUrl, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/pdf' },
-                body: file,
-            })
-
-            if (!uploadRes.ok) throw new Error('파일 업로드 실패')
-
-            setUploadedFileUrl(presignData.publicUrl)
+            setUploadedFileUrl(data.publicUrl)
         } catch (err: any) {
             setError(err.message || '업로드 중 오류가 발생했습니다.')
             console.error(err)
@@ -125,21 +114,17 @@ export default function PDFConverterPage() {
 
     return (
         <div className="min-h-screen bg-white">
-            {/* 헤더 */}
-            <header className="border-b border-neutral-200">
-                <div className="container mx-auto px-8 max-w-screen-xl py-6">
-                    <Link href="/" className="inline-flex items-center gap-1 text-neutral-400 hover:text-neutral-900 text-sm font-bold mb-4 transition-colors">
-                        <ArrowLeft className="w-3.5 h-3.5" /> 메인으로
-                    </Link>
-                    <div className="flex items-center gap-3">
-                        <h1 className="text-2xl font-extrabold tracking-tight">PDF to Web Converter</h1>
-                        <span className="text-[10px] font-bold tracking-wider uppercase border border-neutral-900 px-2 py-0.5">BETA</span>
-                    </div>
-                    <p className="text-neutral-500 text-sm mt-1">PDF 파일을 인터랙티브 웹 뷰어로 변환합니다</p>
+            <section className="pt-12 pb-8 md:pt-16">
+                <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
+                    <SectionHeader
+                        label="BETA · PDF Converter"
+                        title="PDF to Web Converter"
+                        description="PDF 파일을 인터랙티브 웹 뷰어로 변환합니다. 플립 뷰어로 카탈로그처럼 보여주세요."
+                    />
                 </div>
-            </header>
+            </section>
 
-            <div className="container mx-auto px-8 max-w-screen-xl py-12">
+            <div className="container mx-auto px-6 md:px-8 max-w-screen-xl py-8">
                 {!uploadedFileUrl ? (
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
