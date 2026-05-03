@@ -3,7 +3,7 @@
 import { useState, useRef, useCallback, useEffect, forwardRef } from 'react'
 import HTMLFlipBook from 'react-pageflip'
 import { pdfjs } from 'react-pdf'
-import { ChevronLeft, ChevronRight, Download, Maximize2, Minimize2, Loader2, Music, Volume2, VolumeX } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Download, Maximize2, Minimize2, Loader2, Music, Volume2, VolumeX, Plus, Minus } from 'lucide-react'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
 
@@ -41,6 +41,8 @@ export function FlipViewer({ fileUrl, fileName = 'document.pdf' }: FlipViewerPro
     const [dimensions, setDimensions] = useState({ width: 460, height: 650 })
     const [sfxEnabled, setSfxEnabled] = useState(true)
     const [musicEnabled, setMusicEnabled] = useState(false)
+    const ZOOM_LEVELS = [0.7, 0.85, 1.0, 1.18, 1.38]
+    const [zoomIdx, setZoomIdx] = useState(2)
     const flipBookRef = useRef<any>(null)
     const containerRef = useRef<HTMLDivElement>(null)
     const audioCtxRef = useRef<AudioContext | null>(null)
@@ -104,17 +106,18 @@ export function FlipViewer({ fileUrl, fileName = 'document.pdf' }: FlipViewerPro
             if (!containerRef.current) return
             const w = containerRef.current.clientWidth
             const h = containerRef.current.clientHeight - 96
-
+            const zoom = ZOOM_LEVELS[zoomIdx]
             const ratio = 0.707
-            const singleW = Math.min(w * 0.47, h * ratio, 560)
-            const singleH = singleW / ratio
-
-            setDimensions({ width: Math.floor(singleW), height: Math.floor(singleH) })
+            // 기본 크기: 컨테이너 49% or 높이 기준 중 작은 값, max 640
+            const base = Math.min(w * 0.49, h * ratio, 640)
+            const singleW = Math.max(180, Math.round(base * zoom))
+            const singleH = Math.round(singleW / ratio)
+            setDimensions({ width: singleW, height: singleH })
         }
         update()
         window.addEventListener('resize', update)
         return () => window.removeEventListener('resize', update)
-    }, [isFullscreen])
+    }, [isFullscreen, zoomIdx]) // eslint-disable-line react-hooks/exhaustive-deps
 
     // ── AudioContext 공유 헬퍼
     const getAudioCtx = useCallback(() => {
@@ -332,8 +335,9 @@ export function FlipViewer({ fileUrl, fileName = 'document.pdf' }: FlipViewerPro
                     <>
                         {/* 이전 버튼 */}
                         <button onClick={goPrev} disabled={currentPage <= 0}
-                            className="absolute left-3 z-10 w-10 h-10 flex items-center justify-center bg-white/90 border border-neutral-200 text-neutral-500 hover:text-neutral-900 hover:border-neutral-900 disabled:opacity-20 transition-all shadow-sm">
-                            <ChevronLeft className="w-5 h-5" />
+                            className="absolute left-3 z-10 w-13 h-13 flex items-center justify-center bg-white/60 backdrop-blur-sm border border-neutral-200/50 text-neutral-600 hover:text-neutral-900 hover:bg-white/85 disabled:opacity-20 transition-all shadow-lg"
+                            style={{ width: 52, height: 52 }}>
+                            <ChevronLeft className="w-6 h-6" />
                         </button>
 
                         <HTMLFlipBook
@@ -375,34 +379,61 @@ export function FlipViewer({ fileUrl, fileName = 'document.pdf' }: FlipViewerPro
 
                         {/* 다음 버튼 */}
                         <button onClick={goNext} disabled={currentPage >= numPages - 1}
-                            className="absolute right-3 z-10 w-10 h-10 flex items-center justify-center bg-white/90 border border-neutral-200 text-neutral-500 hover:text-neutral-900 hover:border-neutral-900 disabled:opacity-20 transition-all shadow-sm">
-                            <ChevronRight className="w-5 h-5" />
+                            className="absolute right-3 z-10 flex items-center justify-center bg-white/60 backdrop-blur-sm border border-neutral-200/50 text-neutral-600 hover:text-neutral-900 hover:bg-white/85 disabled:opacity-20 transition-all shadow-lg"
+                            style={{ width: 52, height: 52 }}>
+                            <ChevronRight className="w-6 h-6" />
                         </button>
                     </>
                 )}
             </div>
 
-            {/* 하단 페이지 점 네비게이터 */}
+            {/* 하단 바 — 페이지 점 + 줌 컨트롤 */}
             {!loading && !loadError && numPages > 0 && (
-                <div className="flex items-center justify-center gap-1.5 px-5 py-3 border-t border-neutral-200 bg-white flex-shrink-0">
-                    {Array.from({ length: Math.min(numPages, 11) }, (_, i) => {
-                        let p: number
-                        if (numPages <= 11) p = i
-                        else if (currentPage <= 5) p = i
-                        else if (currentPage >= numPages - 6) p = numPages - 11 + i
-                        else p = currentPage - 5 + i
+                <div className="flex items-center justify-between px-5 py-3 border-t border-neutral-200 bg-white flex-shrink-0">
+                    {/* 빈 공간 (좌) */}
+                    <div className="w-24" />
 
-                        return (
-                            <button key={p}
-                                onClick={() => flipBookRef.current?.pageFlip()?.turnToPage(p)}
-                                className={`transition-all rounded-full ${
-                                    currentPage === p
-                                        ? 'w-5 h-2 bg-neutral-900'
-                                        : 'w-2 h-2 bg-neutral-300 hover:bg-neutral-500'
-                                }`}
-                            />
-                        )
-                    })}
+                    {/* 페이지 점 네비게이터 (중앙) */}
+                    <div className="flex items-center gap-1.5">
+                        {Array.from({ length: Math.min(numPages, 11) }, (_, i) => {
+                            let p: number
+                            if (numPages <= 11) p = i
+                            else if (currentPage <= 5) p = i
+                            else if (currentPage >= numPages - 6) p = numPages - 11 + i
+                            else p = currentPage - 5 + i
+                            return (
+                                <button key={p}
+                                    onClick={() => flipBookRef.current?.pageFlip()?.turnToPage(p)}
+                                    className={`transition-all rounded-full ${
+                                        currentPage === p
+                                            ? 'w-5 h-2 bg-neutral-900'
+                                            : 'w-2 h-2 bg-neutral-300 hover:bg-neutral-500'
+                                    }`}
+                                />
+                            )
+                        })}
+                    </div>
+
+                    {/* 줌 컨트롤 (우) */}
+                    <div className="flex items-center border border-neutral-200">
+                        <button
+                            onClick={() => setZoomIdx(i => Math.max(0, i - 1))}
+                            disabled={zoomIdx === 0}
+                            className="w-7 h-7 flex items-center justify-center text-neutral-400 hover:text-neutral-900 disabled:opacity-30 transition-colors border-r border-neutral-200"
+                        >
+                            <Minus className="w-3 h-3" />
+                        </button>
+                        <span className="text-[10px] font-bold tabular-nums text-neutral-500 w-10 text-center">
+                            {Math.round(ZOOM_LEVELS[zoomIdx] * 100)}%
+                        </span>
+                        <button
+                            onClick={() => setZoomIdx(i => Math.min(ZOOM_LEVELS.length - 1, i + 1))}
+                            disabled={zoomIdx === ZOOM_LEVELS.length - 1}
+                            className="w-7 h-7 flex items-center justify-center text-neutral-400 hover:text-neutral-900 disabled:opacity-30 transition-colors border-l border-neutral-200"
+                        >
+                            <Plus className="w-3 h-3" />
+                        </button>
+                    </div>
                 </div>
             )}
         </div>

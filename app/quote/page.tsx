@@ -229,16 +229,23 @@ export default function QuotePageEnhanced() {
     }
 
     return (
-        <div className="min-h-screen pt-20 pb-12 bg-background transition-colors duration-300">
-            <div className="container mx-auto px-4 max-w-5xl">
-                <div className="mb-8">
-                    <div className="flex items-center justify-between mb-4">
-                        <h1 className="text-3xl font-bold">견적 요청하기</h1>
-                        <span className="text-sm font-medium text-muted-foreground">
-                            Step {step === 0 ? 1 : (formData.serviceType === 'pdf' ? (step === 3 ? 2 : 3) : step + 1)} of {totalSteps}
+        <div className="min-h-screen pt-16 pb-16 bg-white">
+            <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
+                {/* 섹션 헤더 */}
+                <div className="pt-8 pb-10">
+                    <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-neutral-400 flex items-center gap-3 mb-4">
+                        <span className="w-8 h-px bg-neutral-300 inline-block" />
+                        제작 의뢰
+                    </p>
+                    <div className="flex items-end justify-between gap-4">
+                        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-900">견적 요청하기</h1>
+                        <span className="text-sm font-bold text-neutral-400 pb-1 tabular-nums">
+                            Step {step === 0 ? 1 : (formData.serviceType === 'pdf' ? (step === 3 ? 2 : 3) : step + 1)} / {totalSteps}
                         </span>
                     </div>
-                    <Progress value={currentProgress} className="h-2" />
+                    <div className="mt-5">
+                        <Progress value={currentProgress} className="h-1" />
+                    </div>
                 </div>
 
                 <div className="flex flex-col lg:flex-row gap-8">
