@@ -113,7 +113,40 @@ export function FlipViewer({ fileUrl, fileName = 'document.pdf' }: FlipViewerPro
         return () => window.removeEventListener('resize', update)
     }, [isFullscreen])
 
-    const onFlip = useCallback((e: any) => setCurrentPage(e.data), [])
+    const playFlipSound = useCallback(() => {
+        try {
+            const ctx = new (window.AudioContext || (window as any).webkitAudioContext)()
+            const duration = 0.18
+            const bufferSize = Math.floor(ctx.sampleRate * duration)
+            const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate)
+            const data = buffer.getChannelData(0)
+            for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1
+
+            const source = ctx.createBufferSource()
+            source.buffer = buffer
+
+            const filter = ctx.createBiquadFilter()
+            filter.type = 'bandpass'
+            filter.frequency.value = 2800
+            filter.Q.value = 0.6
+
+            const gain = ctx.createGain()
+            gain.gain.setValueAtTime(0, ctx.currentTime)
+            gain.gain.linearRampToValueAtTime(0.25, ctx.currentTime + 0.012)
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration)
+
+            source.connect(filter)
+            filter.connect(gain)
+            gain.connect(ctx.destination)
+            source.start()
+            source.stop(ctx.currentTime + duration)
+        } catch { /* 오디오 미지원 환경 무시 */ }
+    }, [])
+
+    const onFlip = useCallback((e: any) => {
+        setCurrentPage(e.data)
+        playFlipSound()
+    }, [playFlipSound])
     const goNext = () => flipBookRef.current?.pageFlip()?.flipNext()
     const goPrev = () => flipBookRef.current?.pageFlip()?.flipPrev()
 
