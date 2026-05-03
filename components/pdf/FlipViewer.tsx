@@ -3,7 +3,7 @@
 import { useState, useRef, useCallback, useEffect, forwardRef } from 'react'
 import HTMLFlipBook from 'react-pageflip'
 import { pdfjs } from 'react-pdf'
-import { ChevronLeft, ChevronRight, Download, Maximize2, Minimize2, Loader2, Music2, MusicOff, Volume2, VolumeOff } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Download, Maximize2, Minimize2, Loader2, Music, Volume2, VolumeX } from 'lucide-react'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
 
@@ -271,9 +271,14 @@ export function FlipViewer({ fileUrl, fileName = 'document.pdf' }: FlipViewerPro
                     <button
                         onClick={() => setMusicEnabled(v => !v)}
                         title={musicEnabled ? '배경음악 끄기' : '배경음악 켜기'}
-                        className={`w-8 h-8 flex items-center justify-center transition-colors ${musicEnabled ? 'text-neutral-900' : 'text-neutral-300 hover:text-neutral-500'}`}
+                        className={`w-8 h-8 flex items-center justify-center transition-colors relative ${musicEnabled ? 'text-neutral-900' : 'text-neutral-300 hover:text-neutral-500'}`}
                     >
-                        {musicEnabled ? <Music2 className="w-4 h-4" /> : <MusicOff className="w-4 h-4" />}
+                        <Music className="w-4 h-4" />
+                        {!musicEnabled && (
+                            <span className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <span className="w-5 h-px bg-current rotate-45 block" />
+                            </span>
+                        )}
                     </button>
                     {/* 효과음 토글 */}
                     <button
@@ -281,7 +286,7 @@ export function FlipViewer({ fileUrl, fileName = 'document.pdf' }: FlipViewerPro
                         title={sfxEnabled ? '효과음 끄기' : '효과음 켜기'}
                         className={`w-8 h-8 flex items-center justify-center transition-colors ${sfxEnabled ? 'text-neutral-900' : 'text-neutral-300 hover:text-neutral-500'}`}
                     >
-                        {sfxEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeOff className="w-4 h-4" />}
+                        {sfxEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
                     </button>
                     <div className="w-px h-4 bg-neutral-200 mx-1" />
                     <button onClick={toggleFullscreen} title={isFullscreen ? '축소' : '전체화면'}
