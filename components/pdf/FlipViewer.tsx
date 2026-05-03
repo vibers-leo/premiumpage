@@ -3,7 +3,7 @@
 import { useState, useRef, useCallback, useEffect, forwardRef } from 'react'
 import HTMLFlipBook from 'react-pageflip'
 import { pdfjs } from 'react-pdf'
-import { ChevronLeft, ChevronRight, Download, Maximize2, Minimize2, Loader2 } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Download, Maximize2, Minimize2, Loader2, Music2, MusicOff, Volume2, VolumeOff } from 'lucide-react'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
 
@@ -39,8 +39,13 @@ export function FlipViewer({ fileUrl, fileName = 'document.pdf' }: FlipViewerPro
     const [currentPage, setCurrentPage] = useState(0)
     const [isFullscreen, setIsFullscreen] = useState(false)
     const [dimensions, setDimensions] = useState({ width: 460, height: 650 })
+    const [sfxEnabled, setSfxEnabled] = useState(true)
+    const [musicEnabled, setMusicEnabled] = useState(false)
     const flipBookRef = useRef<any>(null)
     const containerRef = useRef<HTMLDivElement>(null)
+    const audioCtxRef = useRef<AudioContext | null>(null)
+    const musicGainRef = useRef<GainNode | null>(null)
+    const musicOscillatorsRef = useRef<OscillatorNode[]>([])
 
     // ── PDF → 캔버스 이미지 사전 렌더링
     useEffect(() => {
@@ -61,7 +66,7 @@ export function FlipViewer({ fileUrl, fileName = 'document.pdf' }: FlipViewerPro
 
                 setLoadProgress({ cur: 0, total })
 
-                const scale = 2.0 // 레티나 대응 고해상도
+                const scale = 2.0
                 const images: string[] = []
 
                 for (let i = 1; i <= total; i++) {
@@ -98,11 +103,9 @@ export function FlipViewer({ fileUrl, fileName = 'document.pdf' }: FlipViewerPro
         const update = () => {
             if (!containerRef.current) return
             const w = containerRef.current.clientWidth
-            const h = containerRef.current.clientHeight - 96 // 상하 툴바 여유
+            const h = containerRef.current.clientHeight - 96
 
-            // A4 비율 (210:297 ≒ 0.707)
             const ratio = 0.707
-            // 펼친 책: 양면이 나란히 → 단면 폭 = 전체의 약 47%
             const singleW = Math.min(w * 0.47, h * ratio, 560)
             const singleH = singleW / ratio
 
@@ -113,9 +116,20 @@ export function FlipViewer({ fileUrl, fileName = 'document.pdf' }: FlipViewerPro
         return () => window.removeEventListener('resize', update)
     }, [isFullscreen])
 
+    // ── AudioContext 공유 헬퍼
+    const getAudioCtx = useCallback(() => {
+        if (!audioCtxRef.current) {
+            audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
+        }
+        if (audioCtxRef.current.state === 'suspended') audioCtxRef.current.resume()
+        return audioCtxRef.current
+    }, [])
+
+    // ── 효과음
     const playFlipSound = useCallback(() => {
+        if (!sfxEnabled) return
         try {
-            const ctx = new (window.AudioContext || (window as any).webkitAudioContext)()
+            const ctx = getAudioCtx()
             const duration = 0.18
             const bufferSize = Math.floor(ctx.sampleRate * duration)
             const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate)
@@ -140,13 +154,83 @@ export function FlipViewer({ fileUrl, fileName = 'document.pdf' }: FlipViewerPro
             gain.connect(ctx.destination)
             source.start()
             source.stop(ctx.currentTime + duration)
-        } catch { /* 오디오 미지원 환경 무시 */ }
+        } catch { /* 미지원 환경 무시 */ }
+    }, [sfxEnabled, getAudioCtx])
+
+    // ── 배경음악 시작
+    const startMusic = useCallback(() => {
+        try {
+            const ctx = getAudioCtx()
+            const masterGain = ctx.createGain()
+            masterGain.gain.setValueAtTime(0, ctx.currentTime)
+            masterGain.gain.linearRampToValueAtTime(0.035, ctx.currentTime + 2.5)
+            masterGain.connect(ctx.destination)
+            musicGainRef.current = masterGain
+
+            // Am 코드 — 조용한 앰비언트 분위기
+            const freqs = [110, 130.81, 164.81, 220, 261.63, 329.63]
+            const oscs = freqs.map((freq, idx) => {
+                const osc = ctx.createOscillator()
+                osc.type = idx % 2 === 0 ? 'sine' : 'triangle'
+                osc.frequency.value = freq
+
+                // 미세한 디튠으로 공간감
+                const detune = (idx - freqs.length / 2) * 1.2
+                osc.detune.value = detune
+
+                // 각 음마다 개별 gain으로 밸런스 조정
+                const oscGain = ctx.createGain()
+                oscGain.gain.value = idx < 3 ? 0.6 : 0.4
+                osc.connect(oscGain)
+                oscGain.connect(masterGain)
+                osc.start()
+                return osc
+            })
+
+            // 느린 트레몰로 LFO (0.12Hz, ±15%)
+            const lfo = ctx.createOscillator()
+            lfo.frequency.value = 0.12
+            const lfoGain = ctx.createGain()
+            lfoGain.gain.value = 0.012
+            lfo.connect(lfoGain)
+            lfoGain.connect(masterGain.gain)
+            lfo.start()
+            oscs.push(lfo)
+
+            musicOscillatorsRef.current = oscs
+        } catch { /* 미지원 환경 무시 */ }
+    }, [getAudioCtx])
+
+    // ── 배경음악 정지
+    const stopMusic = useCallback(() => {
+        const ctx = audioCtxRef.current
+        const gain = musicGainRef.current
+        if (!ctx || !gain) return
+        const stopAt = ctx.currentTime + 1.5
+        gain.gain.linearRampToValueAtTime(0, stopAt)
+        setTimeout(() => {
+            musicOscillatorsRef.current.forEach(osc => { try { osc.stop() } catch { } })
+            musicOscillatorsRef.current = []
+            musicGainRef.current = null
+        }, 1600)
     }, [])
+
+    // ── musicEnabled 변경 시 음악 제어
+    useEffect(() => {
+        if (musicEnabled) startMusic()
+        else stopMusic()
+    }, [musicEnabled]) // eslint-disable-line react-hooks/exhaustive-deps
+
+    // ── 언마운트 시 음악 정지
+    useEffect(() => {
+        return () => { stopMusic() }
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     const onFlip = useCallback((e: any) => {
         setCurrentPage(e.data)
         playFlipSound()
     }, [playFlipSound])
+
     const goNext = () => flipBookRef.current?.pageFlip()?.flipNext()
     const goPrev = () => flipBookRef.current?.pageFlip()?.flipPrev()
 
@@ -183,6 +267,23 @@ export function FlipViewer({ fileUrl, fileName = 'document.pdf' }: FlipViewerPro
                     )}
                 </div>
                 <div className="flex items-center gap-1">
+                    {/* 배경음악 토글 */}
+                    <button
+                        onClick={() => setMusicEnabled(v => !v)}
+                        title={musicEnabled ? '배경음악 끄기' : '배경음악 켜기'}
+                        className={`w-8 h-8 flex items-center justify-center transition-colors ${musicEnabled ? 'text-neutral-900' : 'text-neutral-300 hover:text-neutral-500'}`}
+                    >
+                        {musicEnabled ? <Music2 className="w-4 h-4" /> : <MusicOff className="w-4 h-4" />}
+                    </button>
+                    {/* 효과음 토글 */}
+                    <button
+                        onClick={() => setSfxEnabled(v => !v)}
+                        title={sfxEnabled ? '효과음 끄기' : '효과음 켜기'}
+                        className={`w-8 h-8 flex items-center justify-center transition-colors ${sfxEnabled ? 'text-neutral-900' : 'text-neutral-300 hover:text-neutral-500'}`}
+                    >
+                        {sfxEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeOff className="w-4 h-4" />}
+                    </button>
+                    <div className="w-px h-4 bg-neutral-200 mx-1" />
                     <button onClick={toggleFullscreen} title={isFullscreen ? '축소' : '전체화면'}
                         className="w-8 h-8 flex items-center justify-center text-neutral-400 hover:text-neutral-900 transition-colors">
                         {isFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
@@ -230,7 +331,6 @@ export function FlipViewer({ fileUrl, fileName = 'document.pdf' }: FlipViewerPro
                             <ChevronLeft className="w-5 h-5" />
                         </button>
 
-                        {/* 플립북 — 정적 이미지로 구성되어 드래그 시 부드러움 */}
                         <HTMLFlipBook
                             ref={flipBookRef}
                             width={dimensions.width}
