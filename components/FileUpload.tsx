@@ -116,8 +116,8 @@ export function FileUpload({
                 onDrop={handleDrop}
                 className={`relative border border-dashed p-8 text-center transition-all ${
                     dragActive
-                        ? 'border-neutral-900 bg-neutral-50'
-                        : 'border-neutral-300 hover:border-neutral-500 bg-white'
+                        ? 'border-neutral-400 bg-neutral-100'
+                        : 'border-neutral-200 hover:border-neutral-400 bg-neutral-50'
                 }`}
             >
                 <input
