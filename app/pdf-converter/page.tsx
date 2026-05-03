@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Upload, FileText, CheckCircle2, AlertCircle, Copy, Check, ExternalLink, Download, Loader2 } from 'lucide-react'
+import { Upload, FileText, CheckCircle2, AlertCircle, Copy, Check, ExternalLink, Download, Loader2, ArrowRight, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 import { SectionHeader } from '@/components/SectionHeader'
 import { generateFlipbookHTML } from '@/lib/generate-flipbook-html'
@@ -277,6 +277,37 @@ export default function PDFConverterPage() {
                                     >
                                         새 파일 업로드
                                     </button>
+                                </div>
+                            </div>
+
+                            {/* 업셀 — 전문 제작 의뢰 유도 */}
+                            <div className="max-w-3xl bg-neutral-950 text-white p-8">
+                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                                    <div>
+                                        <div className="flex items-center gap-2 mb-3">
+                                            <Sparkles className="w-3.5 h-3.5 text-neutral-400" />
+                                            <span className="text-[11px] font-bold tracking-wider uppercase text-neutral-400">커스텀 버전이 필요하신가요?</span>
+                                        </div>
+                                        <h3 className="text-lg font-extrabold tracking-tight mb-2">브랜드 맞춤 전자카탈로그로 업그레이드</h3>
+                                        <p className="text-neutral-400 text-sm leading-relaxed">
+                                            지금 보시는 플립 뷰어에 브랜드 디자인·다국어·인터랙티브 효과를 더한<br className="hidden md:block" />
+                                            전문가 버전을 제작해드립니다.
+                                        </p>
+                                    </div>
+                                    <Link
+                                        href="/quote?plan=1"
+                                        className="flex-shrink-0 h-11 px-7 bg-white text-neutral-900 font-bold text-sm flex items-center gap-2 hover:bg-neutral-100 transition-colors whitespace-nowrap"
+                                    >
+                                        제작 의뢰하기 <ArrowRight className="w-4 h-4" />
+                                    </Link>
+                                </div>
+                                <div className="mt-6 pt-6 border-t border-neutral-800 flex flex-wrap gap-x-8 gap-y-2">
+                                    {['브랜드 맞춤 UI/UX 디자인', '영문 · 한글 다국어 지원', '전용 도메인 연결', '월정액 유지보수'].map(f => (
+                                        <div key={f} className="flex items-center gap-2 text-xs text-neutral-400">
+                                            <Check className="w-3 h-3 text-neutral-500 flex-shrink-0" />
+                                            {f}
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
 

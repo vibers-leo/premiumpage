@@ -3,9 +3,15 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
 import { ArrowRight, ChevronDown, Star, Check, Globe, Layers, Zap, Target } from 'lucide-react'
 import { SectionHeader } from '@/components/SectionHeader'
+
+const FlipViewerDemo = dynamic(
+    () => import('@/components/pdf/FlipViewer').then(m => ({ default: m.FlipViewer })),
+    { ssr: false, loading: () => <div className="h-full bg-neutral-100 flex items-center justify-center"><div className="w-5 h-5 border-2 border-neutral-300 border-t-neutral-600 rounded-full animate-spin" /></div> }
+)
 
 // ─── Data ───
 const portfolioItems = [
@@ -94,21 +100,27 @@ export default function PremiumLandingPage() {
             </div>
           </motion.div>
 
-          {/* 브라우저 목업 */}
+          {/* 브라우저 목업 — 라이브 플립 뷰어 */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-14 border border-neutral-200 bg-neutral-50 overflow-hidden"
           >
-            <div className="flex items-center gap-1.5 px-4 py-2.5 bg-neutral-100 border-b border-neutral-200">
-              <div className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
-              <div className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
-              <div className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
-              <span className="ml-3 text-[11px] text-neutral-400 font-mono">emt.premiumpage.kr</span>
+            <div className="flex items-center justify-between px-4 py-2.5 bg-neutral-100 border-b border-neutral-200">
+              <div className="flex items-center gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
+                <div className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
+                <div className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
+                <span className="ml-3 text-[11px] text-neutral-400 font-mono">premiumpage.kr/viewer · HS-TECH Catalog</span>
+              </div>
+              <span className="hidden sm:block text-[10px] font-bold text-neutral-400 tracking-wider">← 드래그하여 페이지를 넘겨보세요</span>
             </div>
-            <div className="relative aspect-[16/8] md:aspect-[16/7]">
-              <Image src="/og/emt.png" alt="EMT Global 전자카탈로그" fill className="object-cover object-top" />
+            <div style={{ height: '520px' }}>
+              <FlipViewerDemo
+                fileUrl="/api/storage/proxy?k=premiumpage%2Fpdfs%2F1777767071710-y04tqy.pdf"
+                fileName="HS-TECH Catalog"
+              />
             </div>
           </motion.div>
         </div>
