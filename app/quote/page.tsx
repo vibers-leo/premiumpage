@@ -229,24 +229,26 @@ export default function QuotePageEnhanced() {
     }
 
     return (
-        <div className="min-h-screen pt-16 pb-16 bg-white">
-            <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
-                {/* 섹션 헤더 */}
-                <div className="pt-8 pb-10">
-                    <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-neutral-400 flex items-center gap-3 mb-4">
-                        <span className="w-8 h-px bg-neutral-300 inline-block" />
-                        제작 의뢰
-                    </p>
+        <div className="min-h-screen bg-white">
+            {/* 섹션 헤더 — 다른 페이지와 동일한 구조 */}
+            <section className="pt-12 pb-8 md:pt-16">
+                <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
                     <div className="flex items-end justify-between gap-4">
-                        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-900">견적 요청하기</h1>
-                        <span className="text-sm font-bold text-neutral-400 pb-1 tabular-nums">
+                        <div className="mb-12 md:mb-16 max-w-2xl">
+                            <div className="text-[11px] font-bold tracking-[0.25em] uppercase text-neutral-400 mb-4 flex items-center gap-3">
+                                <div className="w-8 h-px bg-neutral-300" />
+                                제작 의뢰
+                            </div>
+                            <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight text-neutral-900">견적 요청하기</h1>
+                        </div>
+                        <span className="text-sm font-bold text-neutral-400 pb-1 tabular-nums shrink-0">
                             Step {step === 0 ? 1 : (formData.serviceType === 'pdf' ? (step === 3 ? 2 : 3) : step + 1)} / {totalSteps}
                         </span>
                     </div>
-                    <div className="mt-5">
-                        <Progress value={currentProgress} className="h-1" />
-                    </div>
+                    <Progress value={currentProgress} className="h-1 -mt-8 md:-mt-10" />
                 </div>
+            </section>
+            <div className="container mx-auto px-6 md:px-8 max-w-screen-xl pb-16">
 
                 <div className="flex flex-col lg:flex-row gap-8">
                     {/* 메인 폼 영역 */}
@@ -706,6 +708,7 @@ export default function QuotePageEnhanced() {
                         </div>
                     </aside>
                 </div>
+            </div>
             </div>
         </div>
     )
