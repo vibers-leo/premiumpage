@@ -114,10 +114,11 @@ export function FileUpload({
                 onDragLeave={handleDrag}
                 onDragOver={handleDrag}
                 onDrop={handleDrop}
-                className={`relative border-2 border-dashed rounded-lg p-8 text-center transition-all ${dragActive
-                        ? 'border-purple-500 bg-purple-500/10'
-                        : 'border-gray-700 hover:border-purple-500/50 bg-gray-900/50'
-                    }`}
+                className={`relative border border-dashed p-8 text-center transition-all ${
+                    dragActive
+                        ? 'border-neutral-900 bg-neutral-50'
+                        : 'border-neutral-300 hover:border-neutral-500 bg-white'
+                }`}
             >
                 <input
                     type="file"
@@ -128,58 +129,46 @@ export function FileUpload({
                     disabled={files.length >= maxFiles}
                 />
 
-                <Upload className="w-12 h-12 mx-auto mb-4 text-gray-400" />
-                <p className="text-lg font-semibold text-white mb-2">
+                <Upload className="w-8 h-8 mx-auto mb-3 text-neutral-300" />
+                <p className="text-sm font-bold text-neutral-700 mb-1">
                     파일을 드래그하거나 클릭하여 업로드
                 </p>
-                <p className="text-sm text-gray-400">
-                    최대 {maxFiles}개, 파일당 {maxSize}MB 이하
-                </p>
-                <p className="text-xs text-gray-500 mt-2">
-                    지원 형식: 이미지, PDF
+                <p className="text-xs text-neutral-400">
+                    최대 {maxFiles}개 · 파일당 {maxSize}MB · 이미지, PDF
                 </p>
             </div>
 
             {/* 에러 메시지 */}
             {error && (
-                <div className="p-3 bg-red-500/10 border border-red-500/50 rounded-lg">
-                    <p className="text-sm text-red-400">{error}</p>
+                <div className="p-3 border border-red-200 bg-red-50">
+                    <p className="text-sm text-red-500">{error}</p>
                 </div>
             )}
 
             {/* 업로드된 파일 목록 */}
             {files.length > 0 && (
-                <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-gray-300">
-                        업로드된 파일 ({files.length}/{maxFiles})
-                    </h4>
-                    <div className="space-y-2">
-                        {files.map((file, index) => (
-                            <div
-                                key={index}
-                                className="flex items-center gap-3 p-3 bg-gray-900/50 border border-gray-700 rounded-lg group hover:border-purple-500/50 transition-all"
-                            >
-                                {getFileIcon(file)}
-                                <div className="flex-1 min-w-0">
-                                    <p className="text-sm font-medium text-white truncate">
-                                        {file.name}
-                                    </p>
-                                    <p className="text-xs text-gray-400">
-                                        {formatFileSize(file.size)}
-                                    </p>
-                                </div>
-                                <Button
-                                    type="button"
-                                    variant="ghost"
-                                    size="sm"
-                                    onClick={() => removeFile(index)}
-                                    className="opacity-0 group-hover:opacity-100 transition-opacity text-red-400 hover:text-red-300 hover:bg-red-500/10"
-                                >
-                                    <X className="w-4 h-4" />
-                                </Button>
+                <div className="space-y-1.5">
+                    {files.map((file, index) => (
+                        <div
+                            key={index}
+                            className="flex items-center gap-3 px-4 py-2.5 border border-neutral-200 bg-neutral-50 group"
+                        >
+                            {getFileIcon(file)}
+                            <div className="flex-1 min-w-0">
+                                <p className="text-sm font-medium text-neutral-800 truncate">{file.name}</p>
+                                <p className="text-xs text-neutral-400">{formatFileSize(file.size)}</p>
                             </div>
-                        ))}
-                    </div>
+                            <Button
+                                type="button"
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => removeFile(index)}
+                                className="opacity-0 group-hover:opacity-100 transition-opacity text-neutral-400 hover:text-red-500 hover:bg-transparent"
+                            >
+                                <X className="w-4 h-4" />
+                            </Button>
+                        </div>
+                    ))}
                 </div>
             )}
         </div>
