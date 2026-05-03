@@ -63,5 +63,4 @@ jobs:
           username: ${{ secrets.NCP_USER }}
           key: ${{ secrets.NCP_SSH_KEY }}
           script: |
-            docker image prune -af --filter "until=24h"
             docker builder prune -af --filter "until=24h"
