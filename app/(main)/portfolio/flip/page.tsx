@@ -2,8 +2,6 @@ import Link from 'next/link'
 import { ExternalLink, FileText, BookOpen } from 'lucide-react'
 import { SectionHeader } from '@/components/SectionHeader'
 
-// 생성된 flip-links.json 기반 (없으면 정적 폴백)
-// 배포 후 업데이트됨
 const FLIP_LINKS = [
     {
         id: 'hstech',
@@ -11,7 +9,15 @@ const FLIP_LINKS = [
         subtitle: 'Industrial Measurement Sensors',
         pages: 26,
         tag: 'Industrial',
-        viewerUrl: '/viewer?k=premiumpage%2Fpdfs%2Fhstech.pdf&title=HS-TECH+Catalog',
+        viewerUrl: '/viewer?k=premiumpage%2Fpdfs%2F1777767071710-y04tqy.pdf&title=HS-TECH+Catalog',
+    },
+    {
+        id: 'gentop',
+        name: 'GENTOP',
+        subtitle: 'Smart Building & ICT Solutions',
+        pages: 28,
+        tag: 'Smart Building',
+        viewerUrl: '/viewer?k=premiumpage%2Fpdfs%2F1777767336063-85ql2g.pdf&title=GENTOP+Catalog',
     },
     {
         id: 'air-hstech',
@@ -19,23 +25,23 @@ const FLIP_LINKS = [
         subtitle: 'DC Engine-off Air Conditioner · GENWISH',
         pages: 25,
         tag: 'Air Conditioning',
-        viewerUrl: '/viewer?k=premiumpage%2Fpdfs%2Fair-hstech.pdf&title=Air+HS-TECH+Catalog',
-    },
-    {
-        id: 'gentop',
-        name: 'GENTOP',
-        subtitle: 'Smart Building & ICT Solutions',
-        pages: 21,
-        tag: 'Smart Building',
-        viewerUrl: '/viewer?k=premiumpage%2Fpdfs%2Fgentop.pdf&title=GENTOP+Catalog',
+        viewerUrl: '/viewer?k=premiumpage%2Fpdfs%2F1777767338063-24q5pg.pdf&title=Air+HS-TECH+Catalog',
     },
     {
         id: 'hangseong',
         name: '항성산업사',
         subtitle: 'Automotive Motor Press Parts',
-        pages: 17,
+        pages: 25,
         tag: 'Automotive',
-        viewerUrl: '/viewer?k=premiumpage%2Fpdfs%2Fhangseong.pdf&title=항성산업사+Catalog',
+        viewerUrl: '/viewer?k=premiumpage%2Fpdfs%2F1777767339827-fb5lb5.pdf&title=%ED%95%AD%EC%84%B1%EC%82%B0%EC%97%85%EC%82%AC+Catalog',
+    },
+    {
+        id: 'emt',
+        name: 'EMT',
+        subtitle: 'Smart Sensors & Future Mobility',
+        pages: 22,
+        tag: 'Smart Sensor',
+        viewerUrl: '/viewer?k=premiumpage%2Fpdfs%2F1777767341734-x72hs1.pdf&title=EMT+Catalog',
     },
 ]
 
@@ -59,7 +65,7 @@ export default function PortfolioFlipPage() {
 
             <section className="pb-20">
                 <div className="container mx-auto px-6 md:px-8 max-w-screen-xl">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-200 max-w-4xl">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-200 max-w-5xl">
                         {FLIP_LINKS.map((item) => (
                             <div key={item.id} className="bg-white p-8">
                                 <div className="flex items-start justify-between mb-6">
@@ -92,7 +98,7 @@ export default function PortfolioFlipPage() {
                         ))}
                     </div>
 
-                    <div className="mt-12 max-w-4xl border border-neutral-200 p-6">
+                    <div className="mt-12 max-w-5xl border border-neutral-200 p-6">
                         <div className="flex items-start gap-4">
                             <BookOpen className="w-5 h-5 text-neutral-400 flex-shrink-0 mt-0.5" />
                             <div>
