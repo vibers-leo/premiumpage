@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ArrowLeft } from 'lucide-react'
 import { Footer } from '@/components/Footer'
 import { ChatWidget } from '@/components/ChatWidget'
 
@@ -125,6 +125,14 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
             )}
 
             <main className={isIndividualTemplate ? "min-h-screen" : "pt-12 min-h-screen"}>
+                {!isIndividualTemplate && pathname !== '/' && (
+                    <div className="lg:hidden border-b border-neutral-100 bg-white px-6 py-2.5">
+                        <Link href="/" className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-500 hover:text-neutral-900 transition-colors">
+                            <ArrowLeft className="w-3.5 h-3.5" />
+                            메인으로
+                        </Link>
+                    </div>
+                )}
                 {children}
             </main>
             {!isIndividualTemplate && <Footer />}

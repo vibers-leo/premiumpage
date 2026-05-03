@@ -1,11 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { templates, developmentPlans, maintenancePlans, proposalPlans } from '@/lib/data'
 import { formatPrice } from '@/lib/data-utils'
-import { ArrowLeft, ArrowRight, Check, Sparkles, Rocket, Mail, Phone, Building2, FileText, Loader2, Zap, Layers, Presentation } from 'lucide-react'
+import { ArrowRight, Check, Sparkles, Rocket, Mail, Phone, Building2, FileText, Loader2, Zap, Layers, Presentation } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -233,10 +232,6 @@ export default function QuotePageEnhanced() {
         <div className="min-h-screen pt-20 pb-12 bg-background transition-colors duration-300">
             <div className="container mx-auto px-4 max-w-5xl">
                 <div className="mb-8">
-                    <Link href="/" className="inline-flex items-center text-muted-foreground hover:text-foreground mb-4 transition-colors">
-                        <ArrowLeft className="w-4 h-4 mr-1" />
-                        메인으로 돌아가기
-                    </Link>
                     <div className="flex items-center justify-between mb-4">
                         <h1 className="text-3xl font-bold">견적 요청하기</h1>
                         <span className="text-sm font-medium text-muted-foreground">
